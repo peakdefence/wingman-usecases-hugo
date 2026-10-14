@@ -1,0 +1,16 @@
+{{/* Context: a video map from data/videos.yaml */}}
+{{ $l := site.Language.Lang }}
+{{ $title := index .title $l | default .title.en }}
+{{ $desc := index (.description | default dict) $l | default (index (.description | default dict) "en") }}
+<figure class="video">
+  <div class="yt" data-yt="{{ .youtube }}">
+    <a class="ytlink" href="https://youtu.be/{{ .youtube }}" data-play aria-label="{{ i18n "play" }}: {{ $title }}">
+      <img src="https://i.ytimg.com/vi/{{ .youtube }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+      <span class="playbtn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+    </a>
+  </div>
+  <figcaption>
+    <b>{{ $title }}</b>{{ with .lang }}{{ if ne . $l }} <span class="badge" title="{{ i18n "video_lang" }}">{{ upper . }}</span>{{ end }}{{ end }}
+    {{ with $desc }}<span>{{ . }}</span>{{ end }}
+  </figcaption>
+</figure>

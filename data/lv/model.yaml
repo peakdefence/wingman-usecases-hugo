@@ -1,0 +1,222 @@
+# Latviešu teksti datu modelim. Trūkstošās atslēgas tiek ņemtas no angļu versijas.
+
+layers:
+  obligations: Saistības
+  context: Konteksts
+  exposure: Apdraudējums
+  response: Reaģēšana
+  assurance: Pārliecība
+
+entities:
+  requirement:
+    name: Prasības
+    def: Ko no jums prasa likums, standarts, līgums vai iekšējs noteikums, viens punkts vienā ierakstā. Prasības tiek sasaistītas starp standartiem.
+    rec: [ "Avots: NIS2, DORA, ISO 27001, VDAR, klienta līgums", "Punkta teksts, saglabāts burtiski", "Piemērojamība un tvērums", "Sasaistītie punkti citos standartos" ]
+    grc: Pierāda atbilstību punktu pa punktam un ļauj vienai kontrolei segt vairākus standartus vienlaikus.
+    cyber: Pārvērš regulējumu konkrētās drošības prasībās, ar kurām inženieri var strādāt.
+    ex: ISO 27001 A.5.18 Piekļuves tiesības, sasaistīta ar NIS2 21. panta 2. daļas i) punktu.
+  document:
+    name: Dokumenti
+    def: Politikas, procedūras, plāni, novērtējumi un ieraksti, kuros organizācija pieraksta, kā tā strādā un ko tā nolēma.
+    rec: [ "Veids: politika, procedūra, plāns, novērtējums, protokols", "Versija, īpašnieks un apstiprināšanas datums", "Pārskatīšanas cikls", "Saturs vai pats fails" ]
+    grc: Apstiprināti, versiju kontrolēti nodomu apliecinājumi. Auditori tos lasa, lai uzzinātu, kādas kontroles organizācija deklarē.
+    cyber: Instrukcijas, kurām cilvēki seko incidenta vai izmaiņu laikā.
+    ex: Piekļuves pārvaldības politika v3; klientu atbalsta DPIA; vadības pārskata protokols.
+  asset:
+    name: Aktīvi
+    def: Viss, uz ko organizācija balstās un ko aizsargā, tostarp pakalpojumi, sistēmas, dati, procesi, telpas, personas datu apstrādes darbības un MI lietojumi. Aktīvi ir atkarīgi no citiem aktīviem.
+    rec: [ "Veids: pakalpojums, SaaS, dati, process, telpas, apstrādes darbība, MI lietojums", "Kritiskums un klasifikācija", "Biznesa un tehniskais īpašnieks", "Atkarības: uz kā tas darbojas, kur tas atrodas" ]
+    grc: Nosaka ISMS tvērumu, apstrādes darbību reģistru un darbības ietekmes analīzi.
+    cyber: Uzbrukuma virsma un tās atkarību karte, kas parāda, kas apstājas, ja kaut kas cits sabojājas.
+    ex: Klientu portāls darbojas mākoņplatformā, kurā glabājas klientu dati.
+  supplier:
+    name: Piegādātāji
+    tag: Aktīva veids
+    def: Ārējs uzņēmums, uz kuru organizācija paļaujas. WINGMAN piegādātājs ir piegādātāja tipa aktīvs, tāpēc tam ir visas aktīva saites.
+    rec: [ "Sniegtais pakalpojums un līgums", "Kritiskums un nodotie dati", "Sertifikāti un novērtēšanas datums", "Izejas vai aizvietošanas plāns" ]
+    grc: Trešo pušu risku vadība izmanto tos pašus riskus, kontroles un pierādījumus kā viss pārējais.
+    cyber: Piegādātāja incidenta gadījumā uzreiz redzams, kurus pakalpojumus un datus tas skar.
+    ex: Mitināšanas pakalpojumu sniedzējs, algu aprēķina pakalpojums, identitātes pakalpojums.
+  role:
+    name: Lomas
+    def: "Atbildība neatkarīgi no tā, kas to pilda: CISO, riska īpašnieks, kontroles īpašnieks, DAS, incidentu vadītājs."
+    rec: [ "Pienākumi un lēmumu tiesības (R, A, C, I)", "Nepieciešamā kompetence", "Aizvietotājs", "Formāla iecelšana, piem., NIS2 vadības struktūra" ]
+    grc: Atbildība saglabājas, mainoties darbiniekiem, jo ieraksti pieder lomām.
+    cyber: Skaidri eskalācijas ceļi un tas, kas drīkst lemt incidenta laikā.
+    ex: "Kontroles īpašnieks: IT vadītājs. Riska īpašnieks: darbības vadītājs."
+  person:
+    name: Personas
+    def: "Cilvēki organizācijā un ap to: darbinieki, līgumdarbinieki un piegādātāju kontaktpersonas."
+    rec: [ "Vārds, struktūrvienība un kontakti", "Lomas", "Apmācības un iepazīšanās ar politikām", "Piešķirtās piekļuves" ]
+    grc: Parāda, kas ir apmācīts, kas iepazinies ar politiku un kas ko apstiprināja.
+    cyber: Kam zvanīt un kuru piekļuvi noņemt, kad cilvēks aiziet.
+    ex: Viena persona pilda gan CISO, gan incidentu vadītāja lomu.
+  risk:
+    name: Riski
+    def: Kaut kas, kas var noiet greizi, novērtēts pēc varbūtības un ietekmes, ar apstrādes lēmumu. Riski apkopojas augstāka līmeņa riskos.
+    rec: [ "Scenārijs: kā tas varētu notikt", "Varbūtība, ietekme un vērtējums", "Apstrāde: mazināt, pieņemt, nodot, novērst", "Augstāka līmeņa risks, īpašnieks un nākamās pārskatīšanas datums" ]
+    grc: Pamats piemērojamības paziņojumam un apstrādes plāniem, no procesa līdz uzņēmuma līmenim.
+    cyber: Sakārto drošības darbus pēc reālā apdraudējuma, nevis pēc skaļākā pieprasījuma.
+    ex: Klientu datu noplūde caur kontu ar pārāk plašām tiesībām apkopojas riskā "Klientu uzticības zaudējums".
+  threat:
+    name: Draudi
+    def: "Kas vai kas varētu nodarīt kaitējumu: aktors, notikums vai apstāklis."
+    rec: [ "Kategorija: aktors, nejaušs, dabas, piegādātājs", "Spējas un nodoms", "Avots, piem., draudu izlūkošana", "Nozīme nozarei" ]
+    grc: Padara risku scenārijus konkrētus un pārskatāmus, nevis vispārīgus.
+    cyber: Savieno draudu izlūkošanu ar reģistru, lai jaunumi pārvērstos rīcībā.
+    ex: Izspiedējvīrusu grupas, kas mērķē uz reģiona SaaS uzņēmumiem.
+  vulnerability:
+    name: Ievainojamības
+    def: Vājums, ko draudi varētu izmantot, tehnoloģijās, procesos, cilvēkos vai pie piegādātāja.
+    rec: [ "Apraksts un avots: skenēšana, ielaušanās tests, audits, brīdinājums", "Nopietnība", "Skartie aktīvi", "Novēršanas statuss un termiņš" ]
+    grc: Pierādījums, ka ievainojamību pārvaldība darbojas, ar datumiem.
+    cyber: Risku vērtējumi mainās, ievainojamībām atveroties un aizveroties.
+    ex: Administrēšanas saskarne pieejama no interneta, atrasta ielaušanās testā.
+  signal:
+    name: Signāli
+    def: "Pazīme, ka kaut kas mainās: monitoringa brīdinājums, riska indikators pārsniedz slieksni, draudu jaunumi, piegādātāja paziņojums, skenera rezultāts."
+    rec: [ "Avots un laiks", "Indikators un slieksnis", "Nopietnība", "Izvērtēšanas rezultāts" ]
+    grc: Galvenie riska indikatori, kas maina riskus starp plānotajām pārskatīšanām.
+    cyber: Agrīns brīdinājums, pirms notikums kļūst par incidentu.
+    ex: Saņemts piegādātāja paziņojums par incidentu; neveiksmīgu pieteikšanos skaits virs sliekšņa.
+  incident:
+    name: Incidenti
+    def: "Kaut kas, kas tiešām nogāja greizi: notikums, kas ietekmēja konfidencialitāti, integritāti vai pieejamību."
+    rec: [ "Laika līnija un nopietnība", "Ziņošanas termiņi, piem., NIS2 24 h un 72 h", "Reaģēšanas darbības un komunikācija", "Pamatcēlonis un mācības" ]
+    grc: Parāda, ka ziņošanas pienākumi izpildīti un pēcincidenta analīze veikta.
+    cyber: Pēcincidenta analīze tieši atjauno riskus un kontroles.
+    ex: "Mitināšanas pārtraukums, 4 stundas; pamatcēlonis: rezerves pārslēgšanās nekad netika testēta."
+  control:
+    name: Kontroles
+    def: "Ko organizācija dara, lai mazinātu risku vai izpildītu prasību: tehniski, organizatoriski vai fiziski pasākumi."
+    rec: [ "Apraksts un veids", "Statuss: plānota vai darbojas", "Īpašnieka loma un biežums", "Darbības efektivitāte" ]
+    grc: "Modeļa centrs: viena kontrole var izpildīt daudzas prasības un mazināt daudzus riskus."
+    cyber: Paši drošības pasākumi, ar to, kas tos veic un cik bieži.
+    ex: Administratoru kontu ceturkšņa piekļuves pārskats, īpašnieks IT vadītājs.
+  task:
+    name: Uzdevumi
+    def: Viens darbs ar atbildīgo un termiņu.
+    rec: [ "Apraksts", "Izpildītājs un termiņš", "Statuss", "Rezultāts un pielikumi" ]
+    grc: Korektīvās darbības tiek izsekotas līdz slēgšanai, ar datumiem, ko auditors var pārbaudīt.
+    cyber: Lēmumi pārvēršas paveiktā darbā, nevis sapulču piezīmēs.
+    ex: Noņemt neizmantotos administratoru kontus. IT vadītājs, līdz 30. novembrim.
+  plan:
+    name: Plāni
+    def: "Uzdevumu kopums laikā vienam mērķim: apstrādes plāns, pārskatīšanas kalendārs, audita programma, drošības ceļa karte."
+    rec: [ "Mērķis un periods", "Atskaites punkti un biežums", "Atbildīgā loma", "Progress un kavējumi" ]
+    grc: Atkārtoto pienākumu gada cikls, redzams vienuviet.
+    cyber: Drošības ceļa kartes ar progresu, kas apkopojas no uzdevumiem.
+    ex: 2027. gada risku apstrādes plāns; ceturkšņa piekļuves pārskatu kalendārs.
+  audit:
+    name: Auditi
+    def: "Strukturēta pārbaude, vai prasības ir izpildītas un kontroles darbojas: iekšējs, ārējs vai piegādātāja audits. Auditam var būt vairāki tvērumi."
+    rec: [ "Tvērums: prasības un aptvertie produkti vai pakalpojumi", "Izlasītie dokumenti, lai noteiktu deklarētās kontroles", "Intervijas un izlase", "Ziņojums" ]
+    grc: Neatkarīga pārliecība vadībai, sertifikācijas institūcijām un regulatoriem.
+    cyber: Pārbauda to, kas tiek darīts, pret to, kas uzrakstīts.
+    ex: Iekšējais ISO 27001 audits ar diviem produktiem tvērumā.
+  finding:
+    name: Konstatējumi
+    tag: Kļūst par secinājumu
+    def: Novērojums audita vai pārskatīšanas laikā. Kad auditors to apstiprina, tas kļūst par secinājumu par prasību.
+    rec: [ "Veids: neatbilstība, novērojums, pozitīvs", "Atsauces uz pierādījumiem", "Ieteiktā nopietnība", "Saskaņotā rīcība" ]
+    grc: Katrs novērojums tiek reģistrēts vienreiz un sasaistīts ar attiecīgo punktu.
+    cyber: Auditoru atrastie vājie punkti kļūst par izsekotu darbu, nevis ziņojuma lappusēm.
+    ex: Izmaiņu pārskatīšana netiek veikta, kā prasa procedūra (A.8.32).
+  conclusion:
+    name: Secinājumi
+    def: "Apstiprinātais rezultāts par prasību katram tvērumam: atbilst, atbilst ar ieteikumu, maza vai būtiska neatbilstība."
+    rec: [ "Prasība un tvērums", "Rezultāts un pamatojums", "Konstatējumi, uz kuriem tas balstās", "Datums un auditors" ]
+    grc: Audita rezultāts katram punktam, salīdzināms gadu no gada.
+    cyber: Parāda, kuras jomas ir nobriedušas un kurās jāiegulda.
+    ex: "A.8.32 Izmaiņu pārvaldība, produkts B: maza neatbilstība."
+  evidence:
+    name: Pierādījumi
+    tag: Beidzas derīgums
+    def: Pierādījums, ka kontrole darbojas, piemēram, ieraksts, ekrānuzņēmums, žurnāla izvilkums, transkripts vai ziņojums, derīgs noteiktu laiku.
+    rec: [ "Artefakts vai atsauce uz to", "Kad un kas savāca, auditējamā apstiprinājums", "Derīgs līdz (derīguma termiņš)", "Kontrole un periods, ko tas aptver" ]
+    grc: Auditam gatavi pierādījumi, ar brīdinājumu pirms tie novecojuši.
+    cyber: Parāda, ka kontroles darbojas, nevis tikai eksistē uz papīra.
+    ex: 3. ceturkšņa piekļuves pārskata ieraksts, derīgs līdz 31. janvārim.
+
+edges:
+  requirement-control: { v: izpilda, p: izpilda, why: Viena kontrole var segt punktus no vairākiem standartiem. }
+  requirement-requirement: { v: sasaistīta ar, p: sasaistīta ar, why: NIS2 pants sasaistās ar jau segtiem ISO 27001 un DORA punktiem. }
+  requirement-document: { v: skaidrota, p: skaidro, why: Politika nosaka, kā punkts šeit tiek piemērots. }
+  control-document: { v: aprakstīta, p: apraksta, why: Uzrakstītais noteikums un prakse ir blakus. }
+  control-risk: { v: mazina, p: mazina, why: Atlikušais risks seko kontroļu statusam. }
+  control-asset: { v: aizsargā, p: aizsargā, why: Redzams katra aktīva vai produkta pārklājums. }
+  control-evidence: { v: pierādīta ar, p: pierāda, why: Derīguma termiņš parāda, kad pierādījums noveco. }
+  control-task: { v: uzlabo, p: uzlabo, why: Plānotām kontrolēm ir darbi, atbildīgie un termiņi. }
+  task-plan: { v: ietilpst, p: ietver, why: Progress apkopojas programmās un kalendāros. }
+  risk-risk: { v: apkopojas, p: ietver, why: Procesu riski apkopojas uzņēmuma līmeņa riskos. }
+  risk-asset: { v: ietekmē, p: ietekmē, why: Ietekme balstās uz to, ar ko organizācija tiešām strādā. }
+  risk-supplier: { v: saistīts ar, p: saistīts ar, why: Trešo pušu riski norāda piegādātāju. }
+  asset-asset: { v: atkarīgs no, p: nepieciešams, why: "Atkarību kartes: kur atrodas katrs pakalpojums un datu kopa." }
+  supplier-asset: { v: nodrošina, p: nodrošina, why: Atkarība no trešajām pusēm ir daļa no ietekmes analīzes. }
+  supplier-document: { v: saistošs, p: saista, why: Līgumi, datu apstrādes līgumi un izejas plāni ir pie piegādātāja. }
+  threat-vulnerability: { v: izmanto, p: izmanto, why: Scenāriji ir konkrēti, nevis vispārīgi. }
+  threat-risk: { v: ietekmē, p: ietekmē, why: Varbūtība seko draudu ainai. }
+  vulnerability-asset: { v: atrasta, p: satur, why: Apdraudējums atrodas reālā sistēmā. }
+  vulnerability-risk: { v: palielina, p: palielina, why: Atvērti vājumi paaugstina vērtējumu, novēršana to samazina. }
+  vulnerability-task: { v: novērsta ar, p: novērš, why: Novēršanai ir atbildīgais un termiņš. }
+  signal-risk: { v: norāda, p: norāda, why: Agrīns brīdinājums starp plānotām pārskatīšanām. }
+  signal-threat: { v: norāda, p: norāda, why: Draudu jaunumi nonāk reģistrā. }
+  signal-vulnerability: { v: ziņo, p: ziņo, why: Skeneru rezultāti un brīdinājumi atver ievainojamības. }
+  signal-supplier: { v: attiecas, p: attiecas, why: Piegādātāju uzraudzība nodrošina agrīnu brīdinājumu. }
+  signal-incident: { v: eskalējas, p: no, why: Izvērtēšanas lēmumi tiek reģistrēti. }
+  incident-risk: { v: īsteno, p: īstenots, why: Pēcincidenta analīze atjauno vērtējumus un apstrādi. }
+  incident-asset: { v: skar, p: skar, why: Ietekme un ziņošanas apjoms ir skaidri uzreiz. }
+  incident-supplier: { v: saistīts ar, p: saistīts ar, why: Piegādātāja izraisīti incidenti tiek izsekoti līdz piegādātājam. }
+  incident-document: { v: ziņots, p: ziņo par, why: "Paziņojumi iestādēm, klientiem un piegādātājiem tiek saglabāti." }
+  incident-task: { v: turpinās ar, p: turpina, why: Mācības pārvēršas darbā. }
+  audit-document: { v: lasa, p: lasīts, why: Dokumenti parāda kontroles, ko organizācija deklarē. }
+  audit-asset: { v: tvērumā, p: tvērumā, why: Viens audits var aptvert vairākus produktus, katru ar savām kontrolēm. }
+  audit-supplier: { v: novērtē, p: novērtēts, why: Piegādātāju novērtēšana izmanto audita metodi. }
+  audit-requirement: { v: pārbauda, p: pārbaudīta, why: Audita tvērums ir izsekojams līdz punktiem. }
+  audit-control: { v: pārbauda, p: pārbaudīta, why: Deklarētais un darbībā esošais tiek pārbaudīts kopā. }
+  audit-evidence: { v: izvērtē, p: izvērtēts, why: Auditori redz jau esošos pierādījumus. }
+  audit-finding: { v: reģistrē, p: reģistrēts, why: Katrs novērojums tiek reģistrēts vienreiz. }
+  finding-conclusion: { v: kļūst par, p: no, why: Apstiprināts konstatējums ir rezultāts par punktu. }
+  conclusion-requirement: { v: vērtē, p: vērtēta, why: Atbilstības statuss katram punktam un tvērumam, gadu no gada. }
+  finding-task: { v: novērsts ar, p: novērš, why: Korektīvā darbība tiek izsekota līdz slēgšanai. }
+  evidence-finding: { v: pamato, p: pamatots ar, why: Katrs konstatējums norāda, uz ko tas balstās. }
+  document-asset: { v: aptver, p: aptverts, why: "Novērtējumi (DPIA, BIA, izmaiņas) reģistrē, ko tie aptver." }
+  document-task: { v: rada, p: no, why: Lēmumi protokolos un novērtējumos kļūst par darbu. }
+  plan-audit: { v: plāno, p: plānots, why: Audita programma ir gada kalendārā. }
+  plan-risk: { v: pārskata, p: pārskatīts, why: Risku pārskatīšana ir plānota, nevis jāatceras. }
+  plan-asset: { v: pārskata, p: pārskatīts, why: Aktīvu un piegādātāju pārskatīšana notiek laikā. }
+  plan-document: { v: pārskata, p: pārskatīts, why: Politikas tiek pārskatītas savā ciklā. }
+  person-role: { v: pilda, p: pilda, why: Darbinieki mainās, atbildība paliek. }
+  person-task: { v: izpilda, p: piešķirts, why: Darbs nonāk pie konkrēta cilvēka. }
+  role-risk: { v: pārvalda, p: pārvalda, why: Katram riskam ir atbildīgais. }
+  role-control: { v: pārvalda, p: pārvalda, why: Katrai kontrolei ir izpildītājs. }
+  role-asset: { v: pārvalda, p: pārvalda, why: Katram aktīvam ir biznesa un tehniskais īpašnieks. }
+  role-incident: { v: vada, p: vada, why: Skaidrs incidentu vadītājs un reaģētāji. }
+  role-plan: { v: atbild par, p: atbild, why: Katrai programmai ir viena atbildīgā loma. }
+  role-document: { v: noteikta, p: nosaka, why: Pienākumi ir pierakstīti. }
+
+questions:
+  supplier-fails: { q: "Galvenais piegādātājs nedarbojas. Ko tas skar un kas mūs aizsargā?", a: "No piegādātāja uz pakalpojumiem, ko tas nodrošina, un visu, kas no tiem atkarīgs, uz riskiem šiem pakalpojumiem un kontrolēm, kas tos mazina." }
+  prove-clause: { q: "Vai šodien varam pierādīt šo ISO 27001 punktu?", a: "No punkta uz kontrolēm, kas to izpilda, un uz to pierādījumiem. Novecojuši pierādījumi parādās kā nepilnība, pirms to atrod auditors." }
+  owner-left: { q: "Mūsu CISO aizgāja. Kam tagad pieder viņas kontroles un riski?", a: "Īpašumtiesības ir lomai, nevis cilvēkam. Piešķiriet lomu pēctecim, un visi ieraksti seko." }
+  incident-risks: { q: "Kurus riskus šis incidents īstenoja?", a: "No incidenta uz skartajiem aktīviem un īstenotajiem riskiem, augšup uz uzņēmuma līmeņa risku, uz kontrolēm, kurām vajadzēja nostrādāt, un turpmākajiem uzdevumiem." }
+  threat-news: { q: "Jauni draudu jaunumi. Vai tie attiecas uz mums?", a: "No signāla uz draudiem, uz vājumiem, ko tie izmanto, uz aktīviem, kuros tie ir, un riskiem, ko tie palielina." }
+  finding-closed: { q: "Vai pagājušā gada audita konstatējums ir slēgts?", a: "No audita uz konstatējumu, uz korektīvo uzdevumu un pierādījumu, ka tas izdarīts, uz secinājumu par punktu." }
+
+gaps:
+  risk-no-control: { t: Risks bez kontroles, m: "Neapstrādāts apdraudējums vai pieņemšana, ko neviens nav reģistrējis." }
+  control-no-evidence: { t: Kontrole bez derīga pierādījuma, m: "Deklarēta, bet nav pierādīts, ka darbojas. Novecojis pierādījums ir kā nekāds." }
+  requirement-no-control: { t: Prasība bez kontroles, m: "Atbilstības nepilnība, redzama pirms audita." }
+  no-owner: { t: Ieraksts bez īpašnieka lomas, m: Neviens par to neatbild. }
+  sod-conflict: { t: Viena persona pilda nesavienojamas lomas, m: "Pienākumu nošķiršana ir pārkāpta, piem., viena persona ievieš un apstiprina izmaiņas." }
+  finding-no-task: { t: Konstatējums bez uzdevuma, m: Korektīvā darbība nav sākta. }
+  asset-no-risk: { t: Aktīvs bez novērtēta riska, m: Tvēruma daļa, ko neviens nav skatījis. }
+  supplier-unlinked: { t: Piegādātājs bez saitēm, m: Trešās puses atkarība, kas nav redzama ietekmes analīzē. }
+
+lenses:
+  - [ Saistības, Sasaistīt katru punktu ar kontrolēm un pierādījumiem., Pārvērst regulējumu drošības bāzes prasībās. ]
+  - [ Riski, "Novērtēt, apstrādāt vai pieņemt, ar atbildīgu īpašnieku.", Sakārtot darbu pēc draudiem un ievainojamībām reālos aktīvos. ]
+  - [ Pārliecība, "Auditi, konstatējumi, secinājumi un pierādījumi katram punktam.", Nepārtraukti pārbaudīt, ka kontroles darbojas. ]
+  - [ Atbildība, "Lomas ar lēmumu tiesībām, līdz pat vadības struktūrai.", "Īpašnieki, dežūras un eskalācija." ]
+  - [ Izmaiņas, Politikas un reģistri tiek pārskatīti pēc grafika., "Signāli, incidenti un ievainojamības maina risku starp pārskatīšanām." ]
+  - [ Ziņošana, "Valde, regulators un klientu anketas.", "Apdraudējums, incidenti un novēršanas statuss." ]

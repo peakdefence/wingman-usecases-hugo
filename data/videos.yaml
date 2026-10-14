@@ -1,0 +1,37 @@
+# Videos. Add one entry per video; order here is display order.
+#   youtube:    the video id (the part after youtu.be/)
+#   lang:       spoken / on-screen language of the video
+#   use_cases:  use-case ids (the `uc` value in content/*/use-cases/*.md) the video belongs to
+#   model:      true if the video explains the data model itself (shown on the home page)
+#   title / description: per site language; missing languages fall back to en
+
+- youtube: zV9oQEXCKoA
+  lang: en
+  model: true
+  use_cases: []
+  title:
+    en: WINGMAN AI GRC data model
+    lv: WINGMAN MI GRC datu modelis
+  description:
+    en: How risks, controls, assets and suppliers connect in one model, kept current in WINGMAN or through MCP with AI assistants.
+    lv: Kā riski, kontroles, aktīvi un piegādātāji savienojas vienā modelī, ko uztur WINGMAN vai caur MCP ar MI asistentiem.
+
+- youtube: R-gfF52i8-o
+  lang: en
+  use_cases: [auditing, audit-scopes]
+  title:
+    en: WINGMAN AI GRC – audit use case
+    lv: WINGMAN MI GRC – audita lietojums
+  description:
+    en: An audit step by step, from claimed controls in documents to findings, the report and the fix plan back in WINGMAN.
+    lv: Audits soli pa solim, no dokumentos deklarētajām kontrolēm līdz konstatējumiem, ziņojumam un novēršanas plānam WINGMAN.
+
+- youtube: 3BiAG2N_b-g
+  lang: en
+  use_cases: [risk-review, risk-identification, vulnerability-impact, incident-handling]
+  title:
+    en: WINGMAN AI GRC – risk management use case
+    lv: WINGMAN MI GRC – risku vadības lietojums
+  description:
+    en: Regular risk reviews and new risk identification, plus incidents, signals and vulnerability changes between reviews.
+    lv: Regulāra risku pārskatīšana un jaunu risku identificēšana, kā arī incidenti, signāli un ievainojamību izmaiņas starp pārskatīšanām.

@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
+<title>{{ $title }}</title>
+{{ with .Description | default .Summary | default site.Home.Description }}<meta name="description" content="{{ . | plainify | truncate 180 }}">{{ end }}
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:type" content="{{ cond .IsPage "article" "website" }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.LanguageCode | default .Language.Lang }}" href="{{ .Permalink }}">
+{{ end }}{{ range .AllTranslations }}{{ if eq .Language.Lang "en" }}<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">{{ end }}{{ end }}
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="{{ "favicon.svg" | absURL }}" type="image/svg+xml">
+{{ range slice "rubik-latin-600-normal.woff2" "nunito-latin-400-normal.woff2" }}<link rel="preload" href="{{ printf "fonts/%s" . | absURL }}" as="font" type="font/woff2" crossorigin>
+{{ end }}
+{{ $css := slice (resources.Get "css/fonts.css") (resources.Get "css/main.css") | resources.Concat "css/site.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

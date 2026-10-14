@@ -1,0 +1,6 @@
+{{/* Resolve "a-b" (either order) to dict a, b, v, p, why. Returns nil if unknown. */}}
+{{ $m := .model }}{{ $k := .key }}{{ $parts := split $k "-" }}
+{{ $r := dict }}
+{{ with index $m.edges $k }}{{ $r = merge . (dict "a" (index $parts 0) "b" (index $parts 1)) }}
+{{ else }}{{ $rev := printf "%s-%s" (index $parts 1) (index $parts 0) }}{{ with index $m.edges $rev }}{{ $r = merge . (dict "a" (index $parts 1) "b" (index $parts 0)) }}{{ end }}{{ end }}
+{{ return $r }}

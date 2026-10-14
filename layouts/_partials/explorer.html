@@ -1,0 +1,21 @@
+{{/* Data-model explorer: toolbar, chips, graph and panel. Filled by main.js. */}}
+{{ $m := partial "model.html" . }}
+<div class="toolbar">
+  <div class="seg" role="group" aria-label="{{ i18n "nav_model" }}">
+    <button type="button" id="m-entity" aria-pressed="true">{{ i18n "mode_entity" }}</button>
+    <button type="button" id="m-question" aria-pressed="false">{{ i18n "mode_question" }}</button>
+    <button type="button" id="m-gap" aria-pressed="false">{{ i18n "mode_gap" }}</button>
+  </div>
+  <div><span class="lens-label">{{ i18n "read_as" }}</span>
+    <span class="seg" role="group" aria-label="{{ i18n "read_as" }}">
+      <button type="button" id="l-grc" aria-pressed="true">{{ i18n "lens_grc" }}</button>
+      <button type="button" id="l-cyber" aria-pressed="false">{{ i18n "lens_cyber" }}</button>
+    </span>
+  </div>
+</div>
+<div class="chips" id="chips">{{ range site.Data.graph.nodes }}<button type="button" class="chip" data-go="{{ .id }}" aria-pressed="false">{{ (index $m.entities .id).name }}</button>{{ end }}</div>
+<div class="explorer">
+  <div class="graph"><svg id="graph" viewBox="0 0 1000 650" role="img" aria-label="{{ i18n "graph_label" }}"></svg></div>
+  <aside class="panel" id="panel" aria-live="polite"><noscript><p>{{ i18n "noscript" }}</p></noscript></aside>
+</div>
+{{ partial "graph-data.html" (dict "page" . "mode" "explorer") }}

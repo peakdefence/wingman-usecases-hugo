@@ -1,0 +1,6 @@
+<a class="card case" href="{{ .RelPermalink }}">
+  <p class="eyebrow">{{ .Params.client }}{{ with .Params.sector }} · {{ . }}{{ end }}</p>
+  <h4>{{ .Title }}</h4>
+  <p>{{ .Params.summary | default .Summary | plainify }}</p>
+  {{ with .Params.standards }}<span class="meta">{{ delimit . " · " }}</span>{{ end }}
+</a>

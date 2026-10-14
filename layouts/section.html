@@ -1,0 +1,1 @@
+{{ define "main" }}<section class="block wrap"><h1>{{ .Title }}</h1>{{ .Content }}<div class="cards">{{ range .RegularPages }}<a class="card" href="{{ .RelPermalink }}"><h4>{{ .Title }}</h4></a>{{ end }}</div></section>{{ end }}

@@ -1,0 +1,9 @@
+# GitLab Pages build. Adjust baseURL in hugo.toml (or pass -b) to the final address.
+image: hugomods/hugo:exts-0.147.9
+pages:
+  script:
+    - hugo --gc --minify
+  artifacts:
+    paths: [public]
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

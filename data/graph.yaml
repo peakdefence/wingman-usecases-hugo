@@ -1,0 +1,110 @@
+# Language-neutral structure of the WINGMAN data model graph.
+# Texts for every id and edge live in data/<lang>/model.yaml.
+# The graph is drawn in a 1000 x 650 box; x comes from the layer, ypos is set per node (not "y": YAML reads a bare y as true).
+
+layers:
+  - { id: obligations, x: 110 }
+  - { id: context, x: 305 }
+  - { id: exposure, x: 500 }
+  - { id: response, x: 695 }
+  - { id: assurance, x: 890 }
+
+nodes:
+  - { id: requirement, layer: obligations, ypos: 210 }
+  - { id: document, layer: obligations, ypos: 440 }
+  - { id: asset, layer: context, ypos: 150 }
+  - { id: supplier, layer: context, ypos: 275 }
+  - { id: role, layer: context, ypos: 430 }
+  - { id: person, layer: context, ypos: 560 }
+  - { id: risk, layer: exposure, ypos: 125 }
+  - { id: threat, layer: exposure, ypos: 240 }
+  - { id: vulnerability, layer: exposure, ypos: 355 }
+  - { id: signal, layer: exposure, ypos: 468 }
+  - { id: incident, layer: exposure, ypos: 580 }
+  - { id: control, layer: response, ypos: 200 }
+  - { id: task, layer: response, ypos: 390 }
+  - { id: plan, layer: response, ypos: 545 }
+  - { id: audit, layer: assurance, ypos: 125 }
+  - { id: finding, layer: assurance, ypos: 265 }
+  - { id: conclusion, layer: assurance, ypos: 400 }
+  - { id: evidence, layer: assurance, ypos: 535 }
+
+# [from, to]. The text for each is under edges."from-to" in the language file.
+# A link from a type to itself (risk-risk, asset-asset) is drawn as a loop.
+edges:
+  - [requirement, control]
+  - [requirement, requirement]
+  - [requirement, document]
+  - [control, document]
+  - [control, risk]
+  - [control, asset]
+  - [control, evidence]
+  - [control, task]
+  - [task, plan]
+  - [risk, risk]
+  - [risk, asset]
+  - [risk, supplier]
+  - [asset, asset]
+  - [supplier, asset]
+  - [supplier, document]
+  - [threat, vulnerability]
+  - [threat, risk]
+  - [vulnerability, asset]
+  - [vulnerability, risk]
+  - [vulnerability, task]
+  - [signal, risk]
+  - [signal, threat]
+  - [signal, vulnerability]
+  - [signal, supplier]
+  - [signal, incident]
+  - [incident, risk]
+  - [incident, asset]
+  - [incident, supplier]
+  - [incident, document]
+  - [incident, task]
+  - [audit, document]
+  - [audit, asset]
+  - [audit, supplier]
+  - [audit, requirement]
+  - [audit, control]
+  - [audit, evidence]
+  - [audit, finding]
+  - [finding, conclusion]
+  - [conclusion, requirement]
+  - [finding, task]
+  - [evidence, finding]
+  - [document, asset]
+  - [document, task]
+  - [plan, audit]
+  - [plan, risk]
+  - [plan, asset]
+  - [plan, document]
+  - [person, role]
+  - [person, task]
+  - [role, risk]
+  - [role, control]
+  - [role, asset]
+  - [role, incident]
+  - [role, plan]
+  - [role, document]
+
+questions:
+  - { id: supplier-fails, path: [[supplier, asset], [asset, asset], [risk, asset], [control, risk]] }
+  - { id: prove-clause, path: [[requirement, control], [control, evidence], [control, document]] }
+  - { id: owner-left, path: [[person, role], [role, control], [role, risk]] }
+  - { id: incident-risks, path: [[incident, asset], [incident, risk], [risk, risk], [control, risk], [incident, task]] }
+  - { id: threat-news, path: [[signal, threat], [threat, vulnerability], [vulnerability, asset], [vulnerability, risk]] }
+  - { id: finding-closed, path: [[audit, finding], [finding, task], [evidence, finding], [finding, conclusion]] }
+
+gaps:
+  - { id: risk-no-control, a: risk, b: control }
+  - { id: control-no-evidence, a: control, b: evidence }
+  - { id: requirement-no-control, a: requirement, b: control }
+  - { id: no-owner, a: role, b: control }
+  - { id: sod-conflict, a: person, b: role, conflict: true }
+  - { id: finding-no-task, a: finding, b: task }
+  - { id: asset-no-risk, a: asset, b: risk }
+  - { id: supplier-unlinked, a: supplier, b: asset }
+
+# Use-case groups, in display order. Names are in i18n/<lang>.toml as group_<id>.
+groups: [assurance, risk, operations, compliance, accountability]

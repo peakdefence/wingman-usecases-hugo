@@ -1,0 +1,15 @@
+# Netlify build. Production uses the site's primary URL (custom domain once set),
+# previews use their own URL so links work there too.
+[build]
+  publish = "public"
+  command = "hugo --gc --minify -b $URL"
+
+[build.environment]
+  HUGO_VERSION = "0.148.1"
+  HUGO_ENV = "production"
+
+[context.deploy-preview]
+  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"

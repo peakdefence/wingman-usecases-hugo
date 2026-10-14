@@ -1,0 +1,224 @@
+# English texts for the data model. Other languages copy this file to data/<lang>/model.yaml
+# and translate the values; any key left out falls back to English.
+
+layers:
+  obligations: Obligations
+  context: Context
+  exposure: Exposure
+  response: Response
+  assurance: Assurance
+
+entities:
+  requirement:
+    name: Requirements
+    def: What a law, standard, contract or internal rule asks of you, one clause per record. Requirements map to each other across standards.
+    rec: [ "Source: NIS2, DORA, ISO 27001, GDPR, a customer contract", "Clause text, kept verbatim", "Applicability and scope", "Mapped clauses in other standards" ]
+    grc: Proves conformity clause by clause, and lets one control count for several standards at once.
+    cyber: Turns regulation into concrete security expectations that engineers can act on.
+    ex: ISO 27001 A.5.18 Access rights, mapped to NIS2 Art. 21(2)(i).
+  document:
+    name: Documents
+    def: Policies, procedures, plans, assessments and records, where the organisation writes down how it works and what it decided.
+    rec: [ "Type: policy, procedure, plan, assessment, minutes", "Version, owner and approval date", "Review cycle", "The content or the file itself" ]
+    grc: Approved, versioned statements of intent. Auditors read them to learn which controls are claimed.
+    cyber: The runbooks people follow during an incident or a change.
+    ex: Access management policy v3; DPIA for customer support; management review minutes.
+  asset:
+    name: Assets
+    def: What the organisation runs on and protects, including services, systems, data, processes, facilities, personal data processing and AI use cases. Assets depend on assets.
+    rec: [ "Type: service, SaaS, data, process, facility, processing activity, AI use case", "Criticality and classification", "Business and technical owner", "Dependencies: what it runs on, where it resides" ]
+    grc: Defines the scope of the ISMS, the record of processing and the business impact analysis.
+    cyber: The attack surface and its dependency map, showing what breaks when something else does.
+    ex: Customer portal runs on the cloud platform, which stores customer records.
+  supplier:
+    name: Suppliers
+    tag: Asset type
+    def: An outside company the organisation relies on. In WINGMAN a supplier is an asset of the vendor type, so it takes every asset link.
+    rec: [ "Service provided and contract", "Criticality and data shared", "Certifications and evaluation date", "Exit or substitution plan" ]
+    grc: Third-party risk management uses the same risks, controls and evidence as everything else.
+    cyber: A supplier breach shows at once which services and data it touches.
+    ex: Cloud hosting provider, payroll provider, identity provider.
+  role:
+    name: Roles
+    def: "A responsibility independent of who holds it: CISO, risk owner, control owner, DPO, incident manager."
+    rec: [ "Responsibilities and decision rights (R, A, C, I)", "Required competence", "Deputy", "Formal designation, e.g. NIS2 management body" ]
+    grc: Accountability survives staff changes because records are owned by roles.
+    cyber: Clear escalation paths and who may decide during an incident.
+    ex: "Control owner: IT lead. Risk owner: Head of operations."
+  person:
+    name: People
+    def: "The individuals in and around the organisation: staff, contractors and supplier contacts."
+    rec: [ "Name, unit and contact", "Roles held", "Training and policy acknowledgements", "Access they hold" ]
+    grc: Shows who was trained, who acknowledged a policy and who approved what.
+    cyber: Who to call, and whose access to remove when they leave.
+    ex: One person holds the CISO role and the incident manager role.
+  risk:
+    name: Risks
+    def: Something that could go wrong, rated by likelihood and impact, with a treatment decision. Risks roll up into higher-level risks.
+    rec: [ "Scenario: how it would happen", "Likelihood, impact and score", "Treatment: reduce, accept, transfer, avoid", "Parent risk, owner and next review date" ]
+    grc: The basis for the Statement of Applicability and treatment plans, from process level to enterprise level.
+    cyber: Ranks security work by real exposure instead of by the loudest request.
+    ex: Customer data leak through an over-privileged account rolls up into "Loss of customer trust".
+  threat:
+    name: Threats
+    def: "Who or what could cause harm: an actor, an event or a condition."
+    rec: [ "Category: actor, accidental, natural, supplier", "Capability and intent", "Source, e.g. threat intelligence", "Relevance to the sector" ]
+    grc: Makes risk scenarios concrete and reviewable instead of generic.
+    cyber: Connects threat intelligence to the register, so news becomes action.
+    ex: Ransomware groups targeting SaaS providers in the region.
+  vulnerability:
+    name: Vulnerabilities
+    def: A weakness a threat could use, in technology, process, people or a supplier.
+    rec: [ "Description and source: scan, pentest, audit, advisory", "Severity", "Affected assets", "Remediation status and due date" ]
+    grc: Evidence that vulnerability management runs, with dates.
+    cyber: Risk ratings move as vulnerabilities open and close.
+    ex: Admin interface reachable from the internet, found in the pentest.
+  signal:
+    name: Signals
+    def: "An indicator that something is changing: a monitoring alert, a risk indicator crossing its threshold, threat news, a supplier notice, a scanner result."
+    rec: [ "Source and time", "Indicator and threshold", "Severity", "Triage outcome" ]
+    grc: Key risk indicators that move risks between scheduled reviews.
+    cyber: Early warning, before an event becomes an incident.
+    ex: Supplier breach notice received; failed logins above threshold.
+  incident:
+    name: Incidents
+    def: "Something that did go wrong: an event that affected confidentiality, integrity or availability."
+    rec: [ "Timeline and severity", "Reporting deadlines, e.g. NIS2 24 h and 72 h", "Response actions and communications", "Root cause and lessons learned" ]
+    grc: Shows reporting duties were met and post-mortems happened.
+    cyber: Post-mortems feed straight back into risks and controls.
+    ex: "Hosting outage, 4 hours; root cause: failover never tested."
+  control:
+    name: Controls
+    def: "What the organisation does to reduce a risk or meet a requirement: technical, organisational or physical."
+    rec: [ "Description and type", "Status: planned or operating", "Owner role and frequency", "Operating effectiveness" ]
+    grc: "The centre of the model: one control can satisfy many requirements and reduce many risks."
+    cyber: The security measures themselves, with who runs them and how often.
+    ex: Quarterly access review of admin accounts, owned by the IT lead.
+  task:
+    name: Tasks
+    def: One piece of work with an owner and a due date.
+    rec: [ "Description", "Assignee and due date", "Status", "Outcome and attachments" ]
+    grc: Corrective actions are tracked to closure, with dates an auditor can check.
+    cyber: Decisions turn into finished work instead of meeting notes.
+    ex: Remove unused admin accounts. IT lead, due 30 November.
+  plan:
+    name: Plans
+    def: "A set of tasks over time toward one goal: a treatment plan, a review calendar, an audit programme, a security roadmap."
+    rec: [ "Goal and period", "Milestones and cadence", "Accountable role", "Progress and delays" ]
+    grc: The annual wheel of recurring obligations, visible in one place.
+    cyber: Security roadmaps with progress that rolls up from tasks.
+    ex: 2027 risk treatment plan; quarterly access review calendar.
+  audit:
+    name: Audits
+    def: "A structured check of whether requirements are met and controls operate: internal, external or of a supplier. An audit can have several scopes."
+    rec: [ "Scope: requirements and the products or services covered", "Documents read for the claimed controls", "Interviews and sampling", "Report" ]
+    grc: Independent assurance for management, certification bodies and regulators.
+    cyber: Checks what is done against what is written.
+    ex: Internal ISO 27001 audit with two products in scope.
+  finding:
+    name: Findings
+    tag: Becomes a conclusion
+    def: An observation raised during an audit or review. When the auditor confirms it, it becomes a conclusion on the requirement.
+    rec: [ "Kind: nonconformity, observation, positive", "Evidence references", "Proposed severity", "Agreed response" ]
+    grc: Every observation is recorded once and traced to the clause it concerns.
+    cyber: Weak spots found by auditors become tracked work, not report pages.
+    ex: Change review not done as the procedure requires (A.8.32).
+  conclusion:
+    name: Conclusions
+    def: "The confirmed result for a requirement, per scope: compliant, compliant with a recommendation, minor or major nonconformity."
+    rec: [ "Requirement and scope concluded on", "Result and justification", "Findings it rests on", "Date and auditor" ]
+    grc: The audit outcome per clause, comparable from one year to the next.
+    cyber: Shows which areas are mature and which need investment.
+    ex: "A.8.32 Change management, Product B: minor nonconformity."
+  evidence:
+    name: Evidence
+    tag: Expires
+    def: Proof that a control operates, such as a record, screenshot, log export, transcript or report, valid for a set period.
+    rec: [ "The artefact or a reference to it", "Collected when and by whom, approved by the auditee", "Valid until (expiry date)", "Control and period it covers" ]
+    grc: Audit-ready proof, with a warning before it goes stale.
+    cyber: Shows controls run, not only that they exist on paper.
+    ex: Q3 access review record, valid until 31 January.
+
+# v = verb read from the first entity, p = the same link read from the second, why = what the link gives you
+edges:
+  requirement-control: { v: met by, p: meets, why: One control can cover clauses from several standards. }
+  requirement-requirement: { v: maps to, p: mapped from, why: A NIS2 article maps to ISO 27001 and DORA clauses already covered. }
+  requirement-document: { v: interpreted in, p: interprets, why: The policy states how the clause applies here. }
+  control-document: { v: described in, p: describes, why: The written rule and the practice sit side by side. }
+  control-risk: { v: reduces, p: reduced by, why: Residual risk follows the status of its controls. }
+  control-asset: { v: protects, p: protected by, why: "Coverage of each asset, or each product, is visible." }
+  control-evidence: { v: proven by, p: proves, why: Expiry shows when proof goes stale. }
+  control-task: { v: improved by, p: improves, why: Planned controls carry work, owners and dates. }
+  task-plan: { v: part of, p: contains, why: Progress rolls up into programmes and calendars. }
+  risk-risk: { v: rolls up to, p: has below it, why: Process risks roll up into enterprise risks. }
+  risk-asset: { v: affects, p: affected by, why: Impact rests on what the organisation actually runs. }
+  risk-supplier: { v: involves, p: involved in, why: Third-party risks name the supplier. }
+  asset-asset: { v: depends on, p: needed by, why: "Dependency maps: where each service and dataset resides." }
+  supplier-asset: { v: provides, p: provided by, why: Third-party dependencies are part of impact analysis. }
+  supplier-document: { v: bound by, p: binds, why: "Contracts, DPAs and exit plans sit with the supplier." }
+  threat-vulnerability: { v: exploits, p: exploited by, why: "Scenarios are specific, not generic." }
+  threat-risk: { v: drives, p: driven by, why: Likelihood follows the threat picture. }
+  vulnerability-asset: { v: found on, p: carries, why: Exposure is located on a real system. }
+  vulnerability-risk: { v: raises, p: raised by, why: "Open weaknesses push the score up; fixes bring it down." }
+  vulnerability-task: { v: fixed by, p: fixes, why: Remediation has an owner and a deadline. }
+  signal-risk: { v: indicates, p: indicated by, why: Early warning between scheduled reviews. }
+  signal-threat: { v: points to, p: pointed to by, why: Threat news reaches the register. }
+  signal-vulnerability: { v: reports, p: reported by, why: Scanner results and advisories open vulnerabilities. }
+  signal-supplier: { v: concerns, p: concerned by, why: Supplier monitoring feeds early warning. }
+  signal-incident: { v: escalates to, p: escalated from, why: Triage decisions are recorded. }
+  incident-risk: { v: realises, p: realised by, why: Post-mortems update ratings and treatments. }
+  incident-asset: { v: affects, p: affected by, why: Impact and reporting scope are clear at once. }
+  incident-supplier: { v: involves, p: involved in, why: Supplier-caused incidents are traced to the supplier. }
+  incident-document: { v: reported in, p: reports on, why: "Notices to authorities, customers and suppliers are kept." }
+  incident-task: { v: followed up by, p: follows up, why: Lessons learned turn into work. }
+  audit-document: { v: reads, p: read by, why: Documents show the controls the organisation claims to have. }
+  audit-asset: { v: scoped to, p: in scope of, why: "One audit can cover several products, each with its own controls." }
+  audit-supplier: { v: assesses, p: assessed by, why: Supplier evaluations use the audit method. }
+  audit-requirement: { v: tests, p: tested by, why: Audit scope is traceable to clauses. }
+  audit-control: { v: tests, p: tested by, why: Claimed and operated are checked together. }
+  audit-evidence: { v: examines, p: examined in, why: Auditors see the proof that already exists. }
+  audit-finding: { v: raises, p: raised in, why: Each observation is recorded once. }
+  finding-conclusion: { v: becomes, p: confirmed from, why: A confirmed finding is the result for its clause. }
+  conclusion-requirement: { v: judges, p: judged by, why: "Compliance status per clause and scope, year on year." }
+  finding-task: { v: resolved by, p: resolves, why: Corrective action is tracked to closure. }
+  evidence-finding: { v: supports, p: supported by, why: Every finding cites what it rests on. }
+  document-asset: { v: covers, p: covered by, why: "Assessments (DPIA, BIA, change) record what they cover." }
+  document-task: { v: leads to, p: comes from, why: Decisions in minutes and assessments become work. }
+  plan-audit: { v: schedules, p: scheduled in, why: The audit programme sits in the yearly calendar. }
+  plan-risk: { v: reviews, p: reviewed in, why: "Risk reviews are scheduled, not remembered." }
+  plan-asset: { v: reviews, p: reviewed in, why: Asset and supplier reviews come round on time. }
+  plan-document: { v: reviews, p: reviewed in, why: Policies are reviewed on their cycle. }
+  person-role: { v: holds, p: held by, why: "Staff change; accountability stays." }
+  person-task: { v: assigned, p: assigned to, why: Work lands with a named person. }
+  role-risk: { v: owns, p: owned by, why: Every risk has someone accountable. }
+  role-control: { v: owns, p: owned by, why: Every control has someone who runs it. }
+  role-asset: { v: owns, p: owned by, why: Every asset has a business and a technical owner. }
+  role-incident: { v: leads, p: led by, why: Incident manager and responders are clear. }
+  role-plan: { v: accountable for, p: owned by, why: Every programme has one accountable role. }
+  role-document: { v: defined in, p: defines, why: Responsibilities are written down. }
+
+questions:
+  supplier-fails: { q: "A key supplier fails. What is hit, and what protects us?", a: "From the supplier to the services it provides and everything that depends on them, to the risks on those services, to the controls that reduce them." }
+  prove-clause: { q: "Can we prove this ISO 27001 clause today?", a: "From the clause to the controls that meet it, to their evidence. Expired evidence shows up as a gap before the auditor finds it." }
+  owner-left: { q: "Our CISO has left. Who owns her controls and risks now?", a: "Ownership sits on the role, not the person. Assign the role to the successor and every record follows." }
+  incident-risks: { q: "Which risks did this incident make real?", a: "From the incident to the affected assets and the realised risks, up to the enterprise risk they roll into, to the controls that should have held and the follow-up tasks." }
+  threat-news: { q: "New threat news. Does it concern us?", a: "From the signal to the threat, to the weaknesses it exploits, to the assets carrying them and the risks they raise." }
+  finding-closed: { q: "Is last year's audit finding closed?", a: "From the audit to the finding, to the corrective task and the evidence it was done, to the conclusion on the clause." }
+
+gaps:
+  risk-no-control: { t: Risk with no control, m: "Untreated exposure, or an acceptance nobody recorded." }
+  control-no-evidence: { t: Control with no valid evidence, m: "Claimed, not shown to operate. Expired evidence counts as none." }
+  requirement-no-control: { t: Requirement with no control, m: "A compliance gap, visible before an audit." }
+  no-owner: { t: Record with no owner role, m: No one is accountable for it. }
+  sod-conflict: { t: One person holds conflicting roles, m: "Segregation of duties is broken, e.g. the same person implements and approves a change." }
+  finding-no-task: { t: Finding with no task, m: Corrective action has not started. }
+  asset-no-risk: { t: Asset with no assessed risk, m: Part of the scope nobody has looked at. }
+  supplier-unlinked: { t: Supplier linked to nothing, m: A third-party dependency invisible to impact analysis. }
+
+lenses:
+  - [ Obligations, Map every clause to controls and proof., Turn regulation into security baselines. ]
+  - [ Risk, "Assess, treat or accept, with an accountable owner.", Rank work by threats and vulnerabilities on real assets. ]
+  - [ Assurance, "Audits, findings, conclusions and evidence per clause.", "Verify controls operate, continuously." ]
+  - [ Accountability, "Roles with decision rights, up to the management body.", "Owners, on-call duty and escalation." ]
+  - [ Change, Policies and registers reviewed on schedule., "Signals, incidents and vulnerabilities move risk between reviews." ]
+  - [ Reporting, "Board, regulator and customer questionnaires.", "Exposure, incidents and remediation status." ]

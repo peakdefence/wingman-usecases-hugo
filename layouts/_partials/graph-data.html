@@ -1,0 +1,15 @@
+{{/* Emits the model as JSON for assets/js/main.js. Context: dict "page" . "mode" "explorer|usecase" */}}
+{{ $p := .page }}
+{{ $m := partial "model.html" $p }}
+{{ $g := site.Data.graph }}
+{{ $layers := slice }}{{ range $g.layers }}{{ $layers = $layers | append (dict "id" .id "x" .x "name" (index $m.layers .id)) }}{{ end }}
+{{ $nodes := slice }}{{ range $g.nodes }}{{ $nodes = $nodes | append (merge (index $m.entities .id) (dict "id" .id "layer" .layer "y" .ypos)) }}{{ end }}
+{{ $edges := slice }}{{ range $g.edges }}{{ $a := index . 0 }}{{ $b := index . 1 }}{{ $t := index $m.edges (printf "%s-%s" $a $b) }}{{ $edges = $edges | append (dict "a" $a "b" $b "v" $t.v "p" $t.p "why" $t.why) }}{{ end }}
+{{ $qs := slice }}{{ range $g.questions }}{{ $t := index $m.questions .id }}{{ $qs = $qs | append (dict "id" .id "path" .path "q" $t.q "a" $t.a) }}{{ end }}
+{{ $gs := slice }}{{ range $g.gaps }}{{ $t := index $m.gaps .id }}{{ $gs = $gs | append (dict "id" .id "a" .a "b" .b "conflict" (.conflict | default false) "t" $t.t "m" $t.m) }}{{ end }}
+{{ $ucs := slice }}{{ range where site.RegularPages "Section" "use-cases" }}{{ $ns := slice }}{{ range .Params.stages }}{{ $ns = $ns | append .nodes }}{{ end }}{{ $ucs = $ucs | append (dict "uc" .Params.uc "title" .Title "url" .RelPermalink "nodes" (uniq $ns)) }}{{ end }}
+{{ $keys := slice "why_grc" "why_cyber" "what_records" "linked_to" "used_in" "example" "follow_links" "the_path" "gap_title" "gap_note" "missing" "conflict" "mode_question" "mode_gap" "stage" "of" "open_in_model" }}
+{{ $t := dict }}{{ range $keys }}{{ $t = merge $t (dict . (i18n .)) }}{{ end }}
+{{ $d := dict "mode" .mode "layers" $layers "nodes" $nodes "edges" $edges "questions" $qs "gaps" $gs "usecases" $ucs "t" $t "home" site.Home.RelPermalink }}
+{{ if eq .mode "usecase" }}{{ $d = merge $d (dict "stages" $p.Params.stages "uc" $p.Params.uc) }}{{ end }}
+<script type="application/json" id="wm-data">{{ $d | jsonify | safeJS }}</script>

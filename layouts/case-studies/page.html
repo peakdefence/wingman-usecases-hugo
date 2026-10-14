@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="block wrap prose-wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></nav>
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.summary }}<p class="lede">{{ . }}</p>{{ end }}
+  <dl class="facts">
+    {{ with .Params.client }}<div><dt>{{ i18n "case_client" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.sector }}<div><dt>{{ i18n "case_sector" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.standards }}<div><dt>{{ i18n "standards" }}</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
+    {{ with .Params.use_cases }}<div><dt>{{ i18n "case_uses" }}</dt><dd>
+      {{ range $i, $u := . }}{{ range where (where site.RegularPages "Section" "use-cases") "Params.uc" $u }}{{ if $i }}, {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
+    </dd></div>{{ end }}
+  </dl>
+  <div class="prose">{{ .Content }}</div>
+  {{ with .Params.videos }}{{ $ids := . }}
+    <h2>{{ i18n "related_videos" }}</h2>
+    {{ partial "videos.html" (where site.Data.videos "youtube" "in" $ids) }}
+  {{ end }}
+</article>
+{{ end }}

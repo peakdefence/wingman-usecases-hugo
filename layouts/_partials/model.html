@@ -1,0 +1,4 @@
+{{/* English model texts, overlaid with the current language. Missing keys fall back to English. */}}
+{{ $m := site.Data.en.model }}
+{{ if ne site.Language.Lang "en" }}{{ with index site.Data site.Language.Lang }}{{ with .model }}{{ $m = merge $m . }}{{ end }}{{ end }}{{ end }}
+{{ return $m }}

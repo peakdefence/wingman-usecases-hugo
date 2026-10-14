@@ -1,0 +1,12 @@
+<section class="cta">
+  <div class="wrap ctain">
+    <div><h2>{{ i18n "cta_title" }}</h2><p>{{ i18n "cta_text" }}</p></div>
+    <a class="btn" href="{{ site.Params.contactURL }}">{{ i18n "cta_button" }}</a>
+  </div>
+</section>
+<footer class="site">
+  <div class="wrap foot">
+    <span>{{ partial "logo.html" . }} © {{ now.Year }} {{ site.Params.company }} · WINGMAN</span>
+    <span>{{ i18n "footer_note" }}</span>
+  </div>
+</footer>

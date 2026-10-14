@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ $l := site.Language.Lang }}
+<section class="block wrap">
+  <p class="eyebrow">{{ i18n "videos_eyebrow" }}</p>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ i18n "videos_lede" }}</p>
+  {{ partial "videos.html" site.Data.videos }}
+</section>
+<section class="block wrap">
+  <h2>{{ i18n "nav_usecases" }}</h2>
+  <div class="tablewrap"><table><tbody>
+  {{ range site.Data.videos }}{{ $v := . }}
+    <tr><td class="e">{{ index .title $l | default .title.en }}</td><td>
+    {{ if .model }}<a href="{{ site.Home.RelPermalink }}#model">{{ i18n "nav_model" }}</a>{{ end }}
+    {{ range $i, $u := .use_cases }}{{ range where (where site.RegularPages "Section" "use-cases") "Params.uc" $u }}{{ if or $i $v.model }} · {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
+    </td></tr>
+  {{ end }}
+  </tbody></table></div>
+</section>
+{{ end }}

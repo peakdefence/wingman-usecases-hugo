@@ -1,0 +1,20 @@
+{{ $m := partial "model.html" . }}
+<section class="ref wrap" id="relationships">
+  <p class="eyebrow">{{ i18n "model_eyebrow" }}</p>
+  <h2>{{ i18n "rel_title" }}</h2>
+  <p class="lede">{{ i18n "rel_lede" }}</p>
+  <div class="filter"><label for="relf">{{ i18n "rel_filter" }}</label>
+    <select id="relf"><option value="">{{ i18n "rel_all" }}</option>{{ range site.Data.graph.nodes }}<option value="{{ .id }}">{{ (index $m.entities .id).name }}</option>{{ end }}</select></div>
+  <div class="tablewrap"><table id="reltable"><thead><tr><th>{{ i18n "th_from" }}</th><th>{{ i18n "th_rel" }}</th><th>{{ i18n "th_to" }}</th><th>{{ i18n "th_why" }}</th></tr></thead><tbody>
+  {{ range site.Data.graph.edges }}{{ $a := index . 0 }}{{ $b := index . 1 }}{{ $t := index $m.edges (printf "%s-%s" $a $b) }}
+    <tr data-a="{{ $a }}" data-b="{{ $b }}"><td class="e">{{ (index $m.entities $a).name }}</td><td class="v">{{ $t.v }}</td><td class="e">{{ (index $m.entities $b).name }}</td><td>{{ $t.why }}</td></tr>
+  {{ end }}</tbody></table></div>
+</section>
+<section class="ref wrap" id="lenses">
+  <p class="eyebrow">{{ i18n "lens_grc" }} · {{ i18n "lens_cyber" }}</p>
+  <h2>{{ i18n "lens_title" }}</h2>
+  <p class="lede">{{ i18n "lens_lede" }}</p>
+  <div class="tablewrap"><table class="lenses"><thead><tr><th>{{ i18n "th_theme" }}</th><th>{{ i18n "lens_grc" }}</th><th>{{ i18n "lens_cyber" }}</th></tr></thead><tbody>
+  {{ range $m.lenses }}<tr><td>{{ index . 0 }}</td><td class="lg">{{ index . 1 }}</td><td class="lc">{{ index . 2 }}</td></tr>{{ end }}
+  </tbody></table></div>
+</section>

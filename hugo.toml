@@ -1,0 +1,34 @@
+# WINGMAN use cases site
+# Set baseURL to where the site is served. A sub-path works too, e.g. https://peakdefence.com/use-cases/
+baseURL = "https://usecases.wingman.peakdefence.com/"
+title = "WINGMAN use cases"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+# To add a language: add a block here, then i18n/<code>.toml, data/<code>/model.yaml
+# and content/<code>/ (see README.md). Anything not translated falls back to English.
+[languages.en]
+  languageName = "English"
+  languageCode = "en"
+  contentDir = "content/en"
+  weight = 1
+[languages.lv]
+  languageName = "Latviešu"
+  languageCode = "lv"
+  contentDir = "content/lv"
+  weight = 2
+
+[params]
+  company = "Peak Defence"
+  contactURL = "https://peakdefence.com/"
+  # Videos load from youtube-nocookie.com only after a visitor clicks play.
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[outputs]
+  home = ["html"]
+  section = ["html"]

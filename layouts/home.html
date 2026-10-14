@@ -1,0 +1,50 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap herogrid">
+    <div class="text">
+      <p class="eyebrow">{{ i18n "hero_eyebrow" }}</p>
+      <h1>{{ i18n "hero_title" }}</h1>
+      <p class="lede">{{ i18n "hero_lede" }}</p>
+      <div class="ctas">
+        {{ with site.GetPage "/use-cases" }}<a class="btn" href="{{ .RelPermalink }}">{{ i18n "hero_cta_uc" }}</a>{{ end }}
+        <a class="btn ghost" href="#model">{{ i18n "hero_cta_model" }}</a>
+      </div>
+    </div>
+    <div class="compare">
+      <div><h3>{{ i18n "compare_left_t" }}</h3><p>{{ i18n "compare_left" }}</p></div>
+      <div class="on"><h3>{{ i18n "compare_right_t" }}</h3><p>{{ i18n "compare_right" }}</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap" id="model">
+  <p class="eyebrow">{{ i18n "model_eyebrow" }}</p>
+  <h2>{{ i18n "model_title" }}</h2>
+  <p class="lede">{{ i18n "model_lede" }}</p>
+  {{ partial "explorer.html" . }}
+</section>
+
+<section class="block wrap" id="use-cases">
+  <p class="eyebrow">{{ i18n "uc_eyebrow" }}</p>
+  <h2>{{ i18n "uc_title" }}</h2>
+  <p class="lede">{{ i18n "uc_lede" }}</p>
+  {{ partial "uc-grid.html" . }}
+</section>
+
+<section class="block wrap" id="videos">
+  <p class="eyebrow">{{ i18n "videos_eyebrow" }}</p>
+  <h2>{{ i18n "videos_title" }}</h2>
+  <p class="lede">{{ i18n "videos_lede" }}</p>
+  {{ partial "videos.html" site.Data.videos }}
+</section>
+
+<section class="block wrap" id="case-studies">
+  <p class="eyebrow">{{ i18n "cases_eyebrow" }}</p>
+  <h2>{{ i18n "cases_title" }}</h2>
+  {{ $cs := where site.RegularPages "Section" "case-studies" }}
+  {{ with $cs }}<div class="cards">{{ range first 6 .ByDate.Reverse }}{{ partial "case-card.html" . }}{{ end }}</div>
+  {{ else }}<p class="lede">{{ i18n "cases_empty" }}</p>{{ end }}
+</section>
+
+{{ partial "reference.html" . }}
+{{ end }}

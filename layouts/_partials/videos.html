@@ -1,0 +1,5 @@
+{{/* Context: slice of videos */}}
+{{ if . }}
+<div class="videos">{{ range . }}{{ partial "video.html" . }}{{ end }}</div>
+<p class="fine">{{ i18n "video_consent" }}</p>
+{{ end }}

@@ -1,0 +1,22 @@
+{{/* Use-case cards grouped. Context: page */}}
+{{ $all := where site.RegularPages "Section" "use-cases" }}
+{{ range site.Data.graph.groups }}
+  {{ $g := . }}
+  {{ $in := where $all "Params.group" $g }}
+  {{ with $in }}
+  <div class="ucgroup">
+    <h3 class="gl">{{ i18n (printf "group_%s" $g) }}</h3>
+    <div class="cards">
+    {{ range .ByWeight }}
+      {{ $uc := .Params.uc }}
+      {{ $hasVideo := where site.Data.videos "use_cases" "intersect" (slice $uc) }}
+      <a class="card" href="{{ .RelPermalink }}">
+        <h4>{{ .Title }}</h4>
+        <p>{{ .Params.summary }}</p>
+        <span class="meta">{{ i18n "uc_stages" (dict "Count" (len .Params.stages)) }}{{ if $hasVideo }} · <span class="vid">▶ {{ i18n "related_videos" }}</span>{{ end }}</span>
+      </a>
+    {{ end }}
+    </div>
+  </div>
+  {{ end }}
+{{ end }}

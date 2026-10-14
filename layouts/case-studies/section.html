@@ -1,0 +1,9 @@
+{{ define "main" }}
+<section class="block wrap">
+  <p class="eyebrow">{{ i18n "cases_eyebrow" }}</p>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ i18n "cases_lede" }}</p>
+  {{ with .RegularPages }}<div class="cards">{{ range .ByDate.Reverse }}{{ partial "case-card.html" . }}{{ end }}</div>
+  {{ else }}<p class="lede">{{ i18n "cases_empty" }}</p>{{ end }}
+</section>
+{{ end }}
