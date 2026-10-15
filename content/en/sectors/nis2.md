@@ -64,7 +64,7 @@ stages:
   ai: Prepares the approval pack and lists records with no owner role.
   decides: The management body approves.
 - title: Incidents and reporting
-  text: Signals are triaged into incidents. Each significant incident carries its reporting deadlines, the notices sent and the follow-up work.
+  text: Signals are triaged into incidents and classified against the significance criteria of Regulation No. 397. A significant incident carries the reports to CERT.LV, from the early warning and notification to progress and final reports, and the follow-up work. The incidents form the cyber incident log.
   nodes:
   - signal
   - incident
@@ -76,8 +76,23 @@ stages:
   - incident-asset
   - incident-document
   - incident-task
-  ai: Classifies severity, tracks the 24 h, 72 h and one-month deadlines and drafts the notices.
+  ai: Proposes the classification with reasons, tracks the deadlines and drafts each report in the structure the guidelines require, from the incident record.
   decides: The incident manager decides what is reported.
+- title: Self-assessment report
+  text: The self-assessment report evaluates each formal requirement against the controls in place and their evidence. It is generated from the records, not written from scratch, and the conclusion per requirement is kept for next time.
+  nodes:
+  - requirement
+  - control
+  - evidence
+  - conclusion
+  - document
+  links:
+  - requirement-control
+  - control-evidence
+  - conclusion-requirement
+  - requirement-document
+  ai: Generates the report. For each requirement it lists the controls, their status and valid evidence, proposes a fulfilment level with reasons, and lists the gaps as tasks.
+  decides: The cybersecurity manager reviews; the management body approves before submission.
 - title: Proof and audit
   text: Controls carry evidence with expiry dates. The cybersecurity audit reads the same records the office runs on.
   nodes:
@@ -104,14 +119,17 @@ registers:
   title: Risk register
   text: Risks per service, rolled up into entity-level risks, with likelihood, impact, treatment and the controls that reduce them.
 - entity: incident
-  title: Incident register
-  text: Timeline, severity, reporting deadlines met, notices to the national CSIRT and lessons learned linked back to risks.
+  title: Incident register and cyber incident log
+  text: Timeline, classification against the regulation's criteria, reports to CERT.LV with their deadlines, and lessons learned linked back to risks.
 - entity: vulnerability
   title: Vulnerability register
   text: Findings from scans, pentests and advisories, located on assets, with remediation tasks and due dates.
 - entity: threat
   title: Threat register
   text: Actors and events relevant to the sector, fed by threat intelligence signals and linked to the risks they drive.
+- entity: conclusion
+  title: Self-assessment results
+  text: The fulfilment level of each requirement with the controls and evidence it rests on, generated into the self-assessment report and comparable from one cycle to the next.
 - entity: requirement
   title: Requirements catalogue
   text: The articles of the law and the minimum requirements of the regulation, one record per requirement, mapped to ISO 27001 and to controls.
@@ -122,7 +140,7 @@ use_cases:
 - uc: supplier-evaluation
   text: Supply-chain security as the law asks for it. Critical suppliers are evaluated before onboarding, and supplier notices reach the risk register.
 - uc: incident-handling
-  text: Early warning in 24 hours, notification in 72 hours, final report within a month. Deadlines and notices sit on the incident record.
+  text: Classification against the regulation's significance criteria, then the early warning in 24 hours, the notification in 72 hours, progress reports and the final report to CERT.LV, drafted from the incident record.
 - uc: new-requirements
   text: When the law or the regulation changes, the new clauses are mapped to controls already in place and only the real gaps become tasks.
 - uc: risk-review
@@ -134,7 +152,7 @@ use_cases:
 - uc: roles-raci
   text: The cybersecurity manager, the management body and control owners are roles with written duties and deputies.
 - uc: auditing
-  text: The periodic cybersecurity audit runs on the same records, with conclusions per requirement.
+  text: The self-assessment and the periodic cybersecurity audit run on the same records, with conclusions per requirement.
 questions:
 - q: Can we show the supervisor what we run, who supplies it and how it is protected?
   a: From the services in scope to the systems and suppliers they depend on, to the risks on them and the controls that reduce those risks.
@@ -142,10 +160,14 @@ questions:
   a: From the service to the assets it depends on, to the suppliers that provide them, with their criticality and evaluation date.
 - q: Are we on time with the incident report?
   a: Each significant incident shows the deadlines that apply, what was sent and when, and what remains.
+- q: Can we produce the self-assessment report today?
+  a: Yes. From each requirement to its controls, their status and evidence. WINGMAN generates the report with a proposed fulfilment level per requirement, and gaps are listed before anyone signs.
+- q: Is this incident significant, and what must CERT.LV receive?
+  a: The incident record shows the classification against the regulation's criteria with reasons, the reports due and their deadlines, and drafts of each report.
 - q: Which minimum requirements have no working control?
   a: Requirements with no control, or with controls whose evidence has expired, appear as gaps before the audit does.
 ---
 
-NIS2 asks for more than a set of documents. The entity must know what it runs, who it depends on, which risks it carries and how incidents are handled, and its management body must approve and oversee the measures. In Latvia, the National Cybersecurity Law (Nacionālās kiberdrošības likums) transposes NIS2, and Cabinet Regulation No. 397 sets the minimum cybersecurity requirements, from governance and the cybersecurity manager role to incident classification, backups, encryption and outsourcing. Significant incidents are reported to CERT.LV, the national CSIRT.
+NIS2 asks for more than a set of documents. The entity must know what it runs, who it depends on, which risks it carries and how incidents are handled, and its management body must approve and oversee the measures. In Latvia, the National Cybersecurity Law (Nacionālās kiberdrošības likums) transposes NIS2, and Cabinet Regulation No. 397 sets the minimum cybersecurity requirements, from governance and the cybersecurity manager role to incident classification, backups, encryption and outsourcing. Significant incidents are reported to CERT.LV, the national CSIRT, following the classification and reporting guidelines of the regulation, and entities submit a cybersecurity self-assessment report that evaluates how each requirement is met.
 
-WINGMAN keeps these as linked registers in one model, the way an ISO 27001 ISMS would. The information security office works from one source: what the supervisor, the auditor and the management body see is what the office runs on.
+WINGMAN keeps these as linked registers in one model, the way an ISO 27001 ISMS would. The information security office works from one source: what the supervisor, the auditor and the management body see is what the office runs on. The incident reports and the self-assessment report are generated from the same records, so they match what is actually in place.
