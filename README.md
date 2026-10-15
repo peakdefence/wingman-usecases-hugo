@@ -30,6 +30,7 @@ Append an entry to `data/videos.yaml`:
 - youtube: abc123XYZ          # id from youtu.be/<id>
   lang: en                    # language spoken in the video
   use_cases: [incident-handling]
+  sectors: [nis2]              # optional: shown on these sector pages
   title: { en: "...", lv: "..." }
   description: { en: "...", lv: "..." }
 ```
