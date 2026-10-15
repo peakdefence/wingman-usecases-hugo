@@ -1,0 +1,61 @@
+{{ define "main" }}
+{{ $m := partial "model.html" . }}
+<section class="block wrap ucpage">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></nav>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ .Params.summary }}</p>
+  {{ with .Params.standards }}<p class="stds"><span class="lens-label">{{ i18n "standards" }}</span>{{ range . }}<span class="ent">{{ . }}</span>{{ end }}</p>{{ end }}
+  {{ with .Params.audience }}<p class="stds"><span class="lens-label">{{ i18n "sector_audience" }}</span><span>{{ . }}</span></p>{{ end }}
+  {{ with .Content }}<div class="prose sectorintro">{{ . }}</div>{{ end }}
+</section>
+
+{{ with .Params.registers }}
+<section class="block wrap">
+  <h2>{{ i18n "sector_registers" }}</h2>
+  <p class="lede">{{ i18n "sector_registers_lede" }}</p>
+  <div class="cards">
+  {{ range . }}
+    <div class="card reg">
+      <a class="ent" href="{{ site.Home.RelPermalink }}#e-{{ .entity }}">{{ (index $m.entities .entity).name }}</a>
+      <h4>{{ .title }}</h4>
+      <p>{{ .text }}</p>
+    </div>
+  {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.stages }}
+<section class="block wrap">
+  <h2>{{ i18n "sector_cycle" }}</h2>
+  <p class="lede">{{ i18n "sector_cycle_lede" }}</p>
+  {{ partial "stage-explorer.html" $ }}
+</section>
+{{ end }}
+
+{{ with .Params.use_cases }}
+<section class="block wrap">
+  <h2>{{ i18n "sector_usecases" }}</h2>
+  <p class="lede">{{ i18n "sector_usecases_lede" }}</p>
+  <div class="cards">
+  {{ range . }}{{ $t := .text }}
+    {{ range where (where site.RegularPages "Section" "use-cases") "Params.uc" .uc }}
+    <a class="card" href="{{ .RelPermalink }}"><p class="eyebrow">{{ i18n (printf "group_%s" .Params.group) }}</p><h4>{{ .Title }}</h4><p>{{ $t }}</p></a>
+    {{ end }}
+  {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.questions }}
+<section class="block wrap">
+  <h2>{{ i18n "sector_questions" }}</h2>
+  <div class="qa">{{ range . }}<div class="why"><h3>{{ .q }}</h3><p>{{ .a }}</p></div>{{ end }}</div>
+</section>
+{{ end }}
+
+<section class="block wrap">
+  <h2>{{ i18n "sector_others" }}</h2>
+  <div class="cards">{{ range (where (where site.RegularPages "Section" "sectors") "RelPermalink" "ne" .RelPermalink).ByWeight }}{{ partial "sector-card.html" . }}{{ end }}</div>
+</section>
+{{ end }}

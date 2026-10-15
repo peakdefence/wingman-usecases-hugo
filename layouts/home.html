@@ -31,6 +31,13 @@
   {{ partial "uc-grid.html" . }}
 </section>
 
+<section class="block wrap" id="sectors">
+  <p class="eyebrow">{{ i18n "sectors_eyebrow" }}</p>
+  <h2>{{ i18n "sectors_title" }}</h2>
+  <p class="lede">{{ i18n "sectors_lede" }}</p>
+  <div class="cards">{{ range (where site.RegularPages "Section" "sectors").ByWeight }}{{ partial "sector-card.html" . }}{{ end }}</div>
+</section>
+
 <section class="block wrap" id="videos">
   <p class="eyebrow">{{ i18n "videos_eyebrow" }}</p>
   <h2>{{ i18n "videos_title" }}</h2>

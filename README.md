@@ -14,6 +14,7 @@ hugo --gc --minify     # build to public/
 | Data model structure (entity types, positions, links, questions, gaps, use-case groups) | `data/graph.yaml` |
 | Data model texts per language | `data/<lang>/model.yaml` |
 | Use cases, one page each, with stages in front matter | `content/<lang>/use-cases/<id>.md` |
+| Sectors and regulations (NIS2, financial, ISO 27001/SOC 2, AI, CRA) | `content/<lang>/sectors/<id>.md` |
 | Videos (YouTube ids, titles per language, linked use cases) | `data/videos.yaml` |
 | Case studies | `content/<lang>/case-studies/*.md` |
 | Interface strings | `i18n/<lang>.toml` |
@@ -55,6 +56,18 @@ Copy a file in `content/en/use-cases/`. Each stage has:
 - `conflict: true` (optional): draws the link as a conflict, e.g. segregation of duties.
 
 `group` is one of `assurance`, `risk`, `operations`, `compliance`, `accountability`. `uc` is the stable id used by videos and case studies. Translate at the same file name under each language folder.
+
+## Add or change a sector page
+
+Copy a file in `content/en/sectors/`. Front matter:
+
+- `title`, `short` (label used on use-case pages), `weight`, `summary`, `audience`, `standards`;
+- `registers`: `entity` (an entity id from `data/graph.yaml`), `title`, `text`: the registers WINGMAN keeps for this regulation;
+- `stages`: the governance cycle on the graph, same format as use-case stages;
+- `use_cases`: `uc` (a use-case id) and `text`: what the use case looks like under this regulation. Each listed use case shows the angle on its own page under "Sector angles";
+- `questions`: `q` and `a`.
+
+The body is a short introduction. Translate at the same file name under each language folder.
 
 ## Add a language (e.g. Estonian)
 

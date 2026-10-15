@@ -1,0 +1,8 @@
+{{ define "main" }}
+<section class="block wrap">
+  <p class="eyebrow">WINGMAN</p>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ i18n "sectors_lede" }}</p>
+  <div class="cards">{{ range .Pages.ByWeight }}{{ partial "sector-card.html" . }}{{ end }}</div>
+</section>
+{{ end }}

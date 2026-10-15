@@ -5,6 +5,7 @@
       {{ $home := site.Home.RelPermalink }}
       <a href="{{ $home }}#model">{{ i18n "nav_model" }}</a>
       {{ with site.GetPage "/use-cases" }}<a href="{{ .RelPermalink }}"{{ if or (eq $.Section "use-cases") }} aria-current="true"{{ end }}>{{ i18n "nav_usecases" }}</a>{{ end }}
+      {{ with site.GetPage "/sectors" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "sectors" }} aria-current="true"{{ end }}>{{ i18n "nav_sectors" }}</a>{{ end }}
       {{ with site.GetPage "/videos" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "videos" }} aria-current="true"{{ end }}>{{ i18n "nav_videos" }}</a>{{ end }}
       {{ with site.GetPage "/case-studies" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "case-studies" }} aria-current="true"{{ end }}>{{ i18n "nav_cases" }}</a>{{ end }}
     </nav>
