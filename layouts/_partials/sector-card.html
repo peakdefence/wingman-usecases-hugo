@@ -1,0 +1,5 @@
+<a class="card" href="{{ .RelPermalink }}">
+  <h4>{{ .Title }}</h4>
+  <p>{{ .Params.summary }}</p>
+  {{ with .Params.standards }}<span class="meta">{{ delimit (first 4 .) " · " }}</span>{{ end }}
+</a>

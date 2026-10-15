@@ -1,0 +1,27 @@
+{{/* Graph with a stage stepper. Context: a page with .Params.stages (use case or sector). */}}
+{{ $p := . }}
+{{ $m := partial "model.html" . }}
+{{ $n := len .Params.stages }}
+  <div class="explorer">
+    <div class="graph"><svg id="graph" viewBox="0 0 1000 650" role="img" aria-label="{{ i18n "uc_graph_label" }}"></svg></div>
+    <aside class="panel" aria-live="polite">
+      <div class="stepper" id="stepper" role="group" aria-label="{{ i18n "stages_label" }}" hidden></div>
+      <ol class="stagelist" id="stages">
+      {{ range $i, $s := $p.Params.stages }}
+        <li class="stage" id="stage-{{ add $i 1 }}" data-stage="{{ $i }}">
+          <p class="eyebrow">{{ i18n "stage" }} {{ add $i 1 }} {{ i18n "of" }} {{ $n }}</p>
+          <h3>{{ $s.title }}</h3>
+          <p>{{ $s.text }}</p>
+          <div class="ents" aria-label="{{ i18n "entities_used" }}">{{ range $s.nodes }}<a class="ent" href="{{ site.Home.RelPermalink }}#e-{{ . }}">{{ (index $m.entities .).name }}</a>{{ end }}</div>
+          {{ with $s.links }}<div class="sub"><h4>{{ i18n "links_used" }}</h4><ol class="steps">
+            {{ range . }}{{ $r := partial "edge.html" (dict "model" $m "key" .) }}{{ with $r }}<li><b>{{ (index $m.entities .a).name }}</b> {{ .v }} <b>{{ (index $m.entities .b).name }}</b></li>{{ end }}{{ end }}
+          </ol></div>{{ end }}
+          <div class="support"><span class="lens">{{ i18n "ai_support" }}</span><p>{{ $s.ai }}</p></div>
+          <p class="decide"><b>{{ i18n "decides" }}:</b> {{ $s.decides }}</p>
+        </li>
+      {{ end }}
+      </ol>
+      <div class="nav2" id="stagenav" hidden><button type="button" class="navbtn" data-step="-1">{{ i18n "prev_stage" }}</button><button type="button" class="navbtn" data-step="1">{{ i18n "next_stage" }}</button></div>
+    </aside>
+  </div>
+  {{ partial "graph-data.html" (dict "page" $p "mode" "usecase") }}

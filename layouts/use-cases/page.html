@@ -1,7 +1,5 @@
 {{ define "main" }}
-{{ $m := partial "model.html" . }}
 {{ $uc := .Params.uc }}
-{{ $n := len .Params.stages }}
 <section class="block wrap ucpage">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> / <span>{{ i18n (printf "group_%s" .Params.group) }}</span></nav>
   <h1>{{ .Title }}</h1>
@@ -9,30 +7,19 @@
   {{ with .Params.standards }}<p class="stds"><span class="lens-label">{{ i18n "standards" }}</span>{{ range . }}<span class="ent">{{ . }}</span>{{ end }}</p>{{ end }}
   {{ .Content }}
 
-  <div class="explorer">
-    <div class="graph"><svg id="graph" viewBox="0 0 1000 650" role="img" aria-label="{{ i18n "uc_graph_label" }}"></svg></div>
-    <aside class="panel" aria-live="polite">
-      <div class="stepper" id="stepper" role="group" aria-label="{{ i18n "stages_label" }}" hidden></div>
-      <ol class="stagelist" id="stages">
-      {{ range $i, $s := .Params.stages }}
-        <li class="stage" id="stage-{{ add $i 1 }}" data-stage="{{ $i }}">
-          <p class="eyebrow">{{ i18n "stage" }} {{ add $i 1 }} {{ i18n "of" }} {{ $n }}</p>
-          <h3>{{ $s.title }}</h3>
-          <p>{{ $s.text }}</p>
-          <div class="ents" aria-label="{{ i18n "entities_used" }}">{{ range $s.nodes }}<a class="ent" href="{{ site.Home.RelPermalink }}#e-{{ . }}">{{ (index $m.entities .).name }}</a>{{ end }}</div>
-          {{ with $s.links }}<div class="sub"><h4>{{ i18n "links_used" }}</h4><ol class="steps">
-            {{ range . }}{{ $r := partial "edge.html" (dict "model" $m "key" .) }}{{ with $r }}<li><b>{{ (index $m.entities .a).name }}</b> {{ .v }} <b>{{ (index $m.entities .b).name }}</b></li>{{ end }}{{ end }}
-          </ol></div>{{ end }}
-          <div class="support"><span class="lens">{{ i18n "ai_support" }}</span><p>{{ $s.ai }}</p></div>
-          <p class="decide"><b>{{ i18n "decides" }}:</b> {{ $s.decides }}</p>
-        </li>
-      {{ end }}
-      </ol>
-      <div class="nav2" id="stagenav" hidden><button type="button" class="navbtn" data-step="-1">{{ i18n "prev_stage" }}</button><button type="button" class="navbtn" data-step="1">{{ i18n "next_stage" }}</button></div>
-    </aside>
-  </div>
-  {{ partial "graph-data.html" (dict "page" . "mode" "usecase") }}
+  {{ partial "stage-explorer.html" . }}
 </section>
+
+{{/* Sector pages that give this use case a sector-specific angle */}}
+{{ $angles := slice }}
+{{ range (where site.RegularPages "Section" "sectors").ByWeight }}{{ $sp := . }}{{ range .Params.use_cases }}{{ if eq .uc $uc }}{{ $angles = $angles | append (dict "page" $sp "text" .text) }}{{ end }}{{ end }}{{ end }}
+{{ with $angles }}
+<section class="block wrap">
+  <h2>{{ i18n "sector_angles" }}</h2>
+  <p class="lede">{{ i18n "sector_angles_lede" }}</p>
+  <div class="cards">{{ range . }}<a class="card" href="{{ .page.RelPermalink }}"><p class="eyebrow">{{ .page.Params.short | default .page.Title }}</p><p>{{ .text }}</p></a>{{ end }}</div>
+</section>
+{{ end }}
 
 {{ $vids := where site.Data.videos "use_cases" "intersect" (slice $uc) }}
 {{ with $vids }}
