@@ -14,7 +14,7 @@ hugo --gc --minify     # build to public/
 | Data model structure (entity types, positions, links, questions, gaps, use-case groups) | `data/graph.yaml` |
 | Data model texts per language | `data/<lang>/model.yaml` |
 | Use cases, one page each, with stages in front matter | `content/<lang>/use-cases/<id>.md` |
-| Sectors and regulations (NIS2, financial, ISO 27001/SOC 2, AI, CRA) | `content/<lang>/sectors/<id>.md` |
+| Sectors and regulations (NIS2, financial, ISO 27001/SOC 2, AI, CRA, GDPR) | `content/<lang>/sectors/<id>.md` |
 | Videos (YouTube ids, titles per language, linked use cases) | `data/videos.yaml` |
 | Case studies | `content/<lang>/case-studies/*.md` |
 | Interface strings | `i18n/<lang>.toml` |
