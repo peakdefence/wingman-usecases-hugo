@@ -1,5 +1,5 @@
 ---
-title: Kiberizturības akts
+title: Kibernoturības akts
 short: CRA
 sector: cra
 weight: 50
@@ -135,6 +135,6 @@ questions:
   a: Katra produkta ierakstā ir tā atbalsta periods, tāpēc drošības atjauninājumu pienākumi redzami katrai versijai.
 ---
 
-Kiberizturības akts nosaka kiberdrošības prasības produktiem ar digitāliem elementiem visā to dzīves ciklā: drošu projektēšanu un izstrādi, risku novērtējumu, SBOM, ievainojamību apstrādi un drošības atjauninājumus atbalsta periodā, kā arī atbilstības novērtēšanu, pirms produktam tiek piešķirts CE marķējums. Ziņošana par aktīvi izmantotām ievainojamībām un smagiem incidentiem ir piemērojama no 2026. gada septembra; pārējie pienākumi sekos 2027. gada decembrī.
+Kibernoturības akts nosaka kiberdrošības prasības produktiem ar digitāliem elementiem visā to dzīves ciklā: drošu projektēšanu un izstrādi, risku novērtējumu, SBOM, ievainojamību apstrādi un drošības atjauninājumus atbalsta periodā, kā arī atbilstības novērtēšanu, pirms produktam tiek piešķirts CE marķējums. Ziņošana par aktīvi izmantotām ievainojamībām un smagiem incidentiem ir piemērojama no 2026. gada septembra; pārējie pienākumi sekos 2027. gada decembrī.
 
 Tāpat kā NIS2, arī CRA ir vieglāk izpildīt kā sistēmu, nevis kā projektu. WINGMAN sistēmā produkti un to komponentes ir aktīvi, būtiskās prasības ir sasaistītas ar izstrādes kontrolēm, un ievainojamības, incidenti un dokumentācija ir sasaistīti ar produktu, uz kuru tie attiecas.
