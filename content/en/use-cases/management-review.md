@@ -18,6 +18,9 @@ stages:
   - role-plan
   ai: Builds the agenda from ISO 27001 clause 9.3.
   decides: The CISO.
+  media:
+  - task-calendar
+  - plans-list
 - title: Collect inputs
   text: Status of earlier actions, audit conclusions, risk changes, incidents, signals and supplier performance.
   nodes:

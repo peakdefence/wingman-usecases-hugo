@@ -20,6 +20,12 @@ stages:
   - signal-incident
   - signal-risk
   - signal-supplier
+  media:
+  - ask-incident-detect
+  - ask-incident-detect-1-suggestion
+  - ask-incident-detect-2-accepted
+  - sig-inbox
+  - notif-email-signal
   ai: Groups related signals and proposes whether to open an incident.
   decides: The incident manager decides.
 - title: Triage
@@ -34,6 +40,11 @@ stages:
   - asset-asset
   - incident-risk
   - role-incident
+  media:
+  - ask-skill-incident-triage
+  - ask-skill-incident-triage-1-steps
+  - inc-detail-registered
+  - rec-graph
   ai: Proposes severity and whether NIS2, DORA or GDPR thresholds are met, with the deadlines that follow.
   decides: The incident manager classifies.
 - title: Resolution
@@ -47,6 +58,9 @@ stages:
   - incident-task
   - person-task
   - control-task
+  media:
+  - ask-skill-incident-triage-4-accepted
+  - task-list
   ai: Guides technicians step by step from runbooks linked to the affected assets.
   decides: Responders act; the incident manager closes.
 - title: Communication
@@ -60,6 +74,10 @@ stages:
   - incident-document
   - incident-supplier
   - role-incident
+  media:
+  - ask-skill-incident-authority-notice
+  - ask-skill-incident-authority-notice-1
+  - ask-skill-incident-triage-2-notice
   ai: Drafts the authority report and the customer notice in time for the deadline.
   decides: The incident manager approves and sends.
 - title: Post-mortem and risk review
@@ -75,6 +93,10 @@ stages:
   - plan-risk
   - control-risk
   - control-task
+  media:
+  - ask-skill-incident-triage-3-suggestions
+  - risk-review-card
+  - risk-confirm-3-completed
   ai: Guides the post-mortem and proposes rating changes and new controls.
   decides: The risk owner approves the changes.
 ---

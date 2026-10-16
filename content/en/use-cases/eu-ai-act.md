@@ -18,6 +18,8 @@ stages:
   - supplier-asset
   ai: Drafts entries from procurement and system records.
   decides: Use case owners confirm.
+  media:
+  - asset-list
 - title: Classification
   text: The risk category decides which obligations apply, and they map to obligations already met elsewhere.
   nodes:
@@ -40,6 +42,9 @@ stages:
   - requirement-control
   ai: Reuses existing controls.
   decides: Owners confirm.
+  media:
+  - task-review-start
+  - ask-skill-task-1-help
 - title: Roles
   text: Provider or deployer duties sit with roles.
   nodes:

@@ -67,4 +67,9 @@ stages:
   - control-risk
   ai: Records the agreed updates after approval.
   decides: Owners confirm each update.
+  media:
+  - risk-review-card
+  - risk-accept-1-suggestion
+  - risk-accept-2-accepted
+  - risk-confirm-3-completed
 ---

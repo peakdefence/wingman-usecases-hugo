@@ -1,0 +1,25 @@
+{{/* One media entry from data/media.yaml as a figure. Context: dict "m" (the entry) and optional "lang". */}}
+{{ $m := .m }}
+{{ $l := .lang | default site.Language.Lang }}
+{{ if and $m (ne $m.status "pending") }}
+{{ $title := index $m.title $l | default $m.title.en }}
+{{ $cap := index ($m.caption | default dict) $l | default (index ($m.caption | default dict) "en") }}
+{{ $src := $m.file | relURL }}
+<figure class="media media-{{ $m.type }} area-{{ $m.area }}" id="m-{{ $m.id }}" data-media="{{ $m.id }}">
+  <a class="mediabox" href="{{ $src }}" target="_blank" rel="noopener" aria-label="{{ $title }}">
+    {{ if eq $m.type "video" }}
+    <video src="{{ $src }}" muted loop playsinline controls preload="metadata" width="{{ $m.width }}" height="{{ $m.height }}"></video>
+    {{ else if eq $m.type "gif" }}
+    <img src="{{ $src }}" alt="{{ $title }}" loading="lazy" width="{{ $m.width }}" height="{{ $m.height }}">
+    <span class="badge gif">GIF</span>
+    {{ else }}
+    <img src="{{ $src }}" alt="{{ $title }}" loading="lazy" width="{{ $m.width }}" height="{{ $m.height }}">
+    {{ end }}
+  </a>
+  <figcaption>
+    <span class="eyebrow">{{ i18n (printf "area_%s" $m.area) | default $m.area }}{{ with $m.sequence }} · {{ i18n "step" }} {{ .step }}{{ end }}</span>
+    <b>{{ $title }}</b>
+    {{ with $cap }}<span>{{ . }}</span>{{ end }}
+  </figcaption>
+</figure>
+{{ end }}

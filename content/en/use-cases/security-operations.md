@@ -17,6 +17,8 @@ stages:
   links:
   - role-plan
   - task-plan
+  media:
+  - plans-list
   ai: Shows progress per plan.
   decides: The CISO.
 - title: Daily work
@@ -34,6 +36,9 @@ stages:
   - vulnerability-task
   - incident-task
   - finding-task
+  media:
+  - brief-top
+  - task-list
   ai: Answers "what needs to be done this week" from the links.
   decides: Each person.
 - title: Briefs and reminders
@@ -45,6 +50,9 @@ stages:
   links:
   - person-task
   - task-plan
+  media:
+  - brief-top
+  - notif-email-signal
   ai: Writes the brief and sends reminders in your name after you approve them.
   decides: You approve each send.
 - title: Escalation
@@ -56,6 +64,8 @@ stages:
   links:
   - role-plan
   - task-plan
+  media:
+  - task-overdue
   ai: Proposes escalations by impact.
   decides: The accountable role.
 - title: Signals into work
@@ -69,6 +79,9 @@ stages:
   - signal-incident
   - signal-vulnerability
   - vulnerability-task
+  media:
+  - sig-inbox
+  - ask-skill-incident-triage-4-accepted
   ai: Triages signals into proposed work.
   decides: The security lead decides.
 ---

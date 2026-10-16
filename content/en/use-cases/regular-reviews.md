@@ -16,6 +16,9 @@ stages:
   - role
   links:
   - role-plan
+  media:
+  - plans-list
+  - task-calendar
   ai: Builds the calendar from the requirements that ask for reviews.
   decides: The CISO approves.
 - title: Assets and suppliers
@@ -40,6 +43,8 @@ stages:
   links:
   - plan-document
   - role-document
+  media:
+  - doc-list
   ai: Highlights what changed since the last version.
   decides: Document owners approve.
 - title: Risks and incidents
@@ -51,6 +56,9 @@ stages:
   links:
   - plan-risk
   - incident-risk
+  media:
+  - task-review-card
+  - task-review-start
   ai: Prepares the review pack.
   decides: Risk owners decide.
 - title: Access
@@ -63,6 +71,8 @@ stages:
   links:
   - control-evidence
   - person-role
+  media:
+  - set-access
   ai: Compares access lists with roles.
   decides: Managers confirm.
 - title: Delays
@@ -74,6 +84,9 @@ stages:
   links:
   - person-task
   - task-plan
+  media:
+  - task-overdue
+  - brief-gaps
   ai: Sends reminders in your name after you approve them.
   decides: You decide who is reminded.
 ---

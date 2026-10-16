@@ -18,6 +18,11 @@ stages:
   links:
   - plan-risk
   - role-risk
+  media:
+  - plan-activities
+  - plan-detail
+  - task-review-card
+  - task-calendar
   ai: Prepares the review pack in advance.
   decides: The risk owner.
 - title: Context since last time
@@ -32,6 +37,10 @@ stages:
   - incident-risk
   - signal-risk
   - vulnerability-risk
+  media:
+  - task-review-start
+  - ask-skill-task
+  - ask-skill-task-1-help
   ai: Summarises what changed and proposes a new rating.
   decides: The owner judges.
 - title: Several levels
@@ -40,6 +49,8 @@ stages:
   - risk
   links:
   - risk-risk
+  media:
+  - risk-detail
   ai: Checks that ratings are consistent across levels.
   decides: The risk manager.
 - title: Treatment plan
@@ -53,6 +64,11 @@ stages:
   - control-risk
   - control-task
   - task-plan
+  media:
+  - risk-accept-1-suggestion
+  - risk-accept-2-accepted
+  - risk-confirm-3-completed
+  - ask-skill-task-2-completed
   ai: Drafts the treatment proposal for each risk.
   decides: The owner approves.
 - title: Register check
@@ -65,6 +81,9 @@ stages:
   links:
   - role-risk
   - control-risk
+  media:
+  - brief-gaps
+  - risk-matrix
   ai: The register check lists each gap with a link.
   decides: Fixes are confirmed one by one.
 ---

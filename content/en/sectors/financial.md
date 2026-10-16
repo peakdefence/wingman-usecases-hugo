@@ -24,6 +24,9 @@ stages:
   - role-document
   ai: Proposes the hierarchy from the existing register and the risk appetite statement.
   decides: The risk management function proposes; the management body approves.
+  media:
+  - risk-detail
+  - risk-matrix
 - title: Processes and critical functions
   text: Business processes and critical or important functions are assets, linked to the systems, data and third parties they depend on.
   nodes:
@@ -49,6 +52,11 @@ stages:
   - role-control
   ai: Pre-fills the assessment from last cycle, events since then and control evidence.
   decides: Risk owners rate; the second line challenges.
+  media:
+  - task-review-card
+  - risk-accept-1-suggestion
+  - risk-accept-2-accepted
+  - risk-confirm-3-completed
 - title: Key risk indicators and events
   text: Indicators crossing thresholds, news about the firm or its sector, customer complaints and supplier notices arrive as signals and move risks between assessments.
   nodes:
@@ -62,6 +70,10 @@ stages:
   - signal-threat
   ai: Watches indicators and news, and links each signal to the risks it concerns.
   decides: Risk owners triage.
+  media:
+  - sig-report-1-form
+  - sig-inbox
+  - notif-email-signal
 - title: Loss and incident events
   text: Operational loss events, near misses and major ICT-related incidents are recorded once, with their cause, the risks they realised and the notices sent.
   nodes:
@@ -77,6 +89,8 @@ stages:
   - incident-task
   ai: Classifies the event, drafts root cause and reporting, and proposes rating changes.
   decides: The risk owner and the risk function confirm.
+  media:
+  - inc-detail
 - title: Reporting and oversight
   text: The management body sees exposure against appetite, events and overdue actions. Internal audit tests the same records.
   nodes:
@@ -92,6 +106,8 @@ stages:
   - finding-conclusion
   ai: Drafts the risk report and the oversight pack from current records.
   decides: The management body decides on actions.
+  media:
+  - brief-top
 registers:
 - entity: risk
   title: Non-financial risk register

@@ -1,0 +1,9 @@
+{{/* A row of media figures for a list of ids. Context: dict "ids" (slice of media ids). Unknown and pending ids are skipped. */}}
+{{ $ids := .ids }}
+{{ $found := slice }}
+{{ range $ids }}{{ $id := . }}{{ range site.Data.media }}{{ if and (eq .id $id) (ne .status "pending") }}{{ $found = $found | append . }}{{ end }}{{ end }}{{ end }}
+{{ with $found }}
+<div class="mediastrip" aria-label="{{ i18n "media_label" }}">
+  {{ range . }}{{ partial "media.html" (dict "m" .) }}{{ end }}
+</div>
+{{ end }}

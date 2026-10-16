@@ -16,6 +16,7 @@ hugo --gc --minify     # build to public/
 | Use cases, one page each, with stages in front matter | `content/<lang>/use-cases/<id>.md` |
 | Sectors and regulations (NIS2, financial, ISO 27001/SOC 2, AI, CRA, GDPR) | `content/<lang>/sectors/<id>.md` |
 | Videos (YouTube ids, titles per language, linked use cases) | `data/videos.yaml` |
+| Screenshots and recordings of WINGMAN, one entry per capture, shown under use-case and sector stages and at `/library/` | `static/media/`, `data/media.yaml`, see `MEDIA.md` |
 | Case studies | `content/<lang>/case-studies/*.md` |
 | Interface strings | `i18n/<lang>.toml` |
 | Layouts, styles, script | `layouts/`, `assets/css/main.css`, `assets/js/main.js` |
@@ -36,6 +37,10 @@ Append an entry to `data/videos.yaml`:
 ```
 
 It appears on the home page, the Videos page and every listed use-case page. Set `model: true` for videos about the data model itself.
+
+## Add a screenshot or recording
+
+Drop the file into `static/media/<id>.<ext>`, add an entry to `data/media.yaml` with title and caption in both languages, and list the id under `media:` on the stage(s) it illustrates in the English use-case or sector file. It then shows under that stage, in both languages, and in the screen library at `/library/`. See `MEDIA.md` for the schema, naming and how to combine captures.
 
 ## Add a case study
 
