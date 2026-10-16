@@ -47,3 +47,47 @@
   description:
     en: Live signals on critical functions, ICT and supply-chain risk, major incidents decided by people, and supervisor reports drafted for submission.
     lv: Signāli par kritiskajām funkcijām reāllaikā, IKT un piegādes ķēdes riski, cilvēku pieņemti lēmumi par būtiskiem incidentiem un uzraugam sagatavoti ziņojumu projekti.
+
+- youtube: JU9-xG1nrjY
+  lang: en
+  sectors: [iso27001-soc2, nis2]
+  use_cases: [new-requirements, risk-identification, roles-raci, regular-reviews]
+  title:
+    en: ISMS implementation with WINGMAN AI
+    lv: Informācijas drošības pārvaldības sistēmas ieviešana ar WINGMAN MI
+  description:
+    en: Building an information security management system in WINGMAN, from requirements and scope to risks, controls, owners and the review cycle.
+    lv: Informācijas drošības pārvaldības sistēmas izveide WINGMAN, no prasībām un tvēruma līdz riskiem, kontrolēm, īpašniekiem un pārskatīšanas ciklam.
+
+- youtube: 27NK-t68BE4
+  lang: en
+  sectors: [nis2, financial, gdpr]
+  use_cases: [supplier-evaluation]
+  title:
+    en: WINGMAN AI GRC – supplier assessment automation
+    lv: WINGMAN MI GRC – piegādātāju novērtēšanas automatizācija
+  description:
+    en: Automating supplier assessment with WINGMAN AI, from registering the supplier to the evaluation, the decision and ongoing monitoring.
+    lv: Piegādātāju novērtēšanas automatizācija ar WINGMAN MI, no piegādātāja reģistrēšanas līdz novērtējumam, lēmumam un turpmākai uzraudzībai.
+
+- youtube: 5noxQEdVIaA
+  lang: en
+  sectors: [iso27001-soc2]
+  use_cases: [management-review]
+  title:
+    en: Running a regular ISMS management review with WINGMAN AI
+    lv: Regulārs informācijas drošības vadības pārskats ar WINGMAN MI
+  description:
+    en: Preparing and running the management review from live records, and turning its decisions into tracked tasks.
+    lv: Vadības pārskata sagatavošana un vadīšana no aktuālajiem ierakstiem, un tā lēmumu pārvēršana uzraudzītos uzdevumos.
+
+- youtube: 749sjrOpnqo
+  lang: en
+  sectors: [ai-governance]
+  use_cases: [eu-ai-act]
+  title:
+    en: EU AI Act compliance with WINGMAN, including ISO/IEC 42001 and EN 18286
+    lv: ES MI akta atbilstība ar WINGMAN, ieskaitot ISO/IEC 42001 un EN 18286
+  description:
+    en: Meeting the EU AI Act with WINGMAN, with ISO/IEC 42001 and EN 18286 covered by the same AI use cases, risks and controls.
+    lv: ES MI akta prasību izpilde ar WINGMAN, ISO/IEC 42001 un EN 18286 aptverot ar tiem pašiem MI lietojumiem, riskiem un kontrolēm.
