@@ -2,6 +2,7 @@
 #   youtube:    the video id (the part after youtu.be/)
 #   lang:       spoken / on-screen language of the video
 #   use_cases:  use-case ids (the `uc` value in content/*/use-cases/*.md) the video belongs to
+#   sectors:    sector ids (the `sector` value in content/*/sectors/*.md) the video is shown on
 #   model:      true if the video explains the data model itself (shown on the home page)
 #   title / description: per site language; missing languages fall back to en
 
@@ -35,3 +36,14 @@
   description:
     en: Regular risk reviews and new risk identification, plus incidents, signals and vulnerability changes between reviews.
     lv: Regulāra risku pārskatīšana un jaunu risku identificēšana, kā arī incidenti, signāli un ievainojamību izmaiņas starp pārskatīšanām.
+
+- youtube: JWyzmx6klKc
+  lang: en
+  sectors: [financial]
+  use_cases: [incident-handling, supplier-evaluation, risk-review, management-review]
+  title:
+    en: WINGMAN AI GRC – financial sector (DORA, MiCA, ECB)
+    lv: WINGMAN MI GRC – finanšu sektors (DORA, MiCA, ECB)
+  description:
+    en: Live signals on critical functions, ICT and supply-chain risk, major incidents decided by people, and supervisor reports drafted for submission.
+    lv: Signāli par kritiskajām funkcijām reāllaikā, IKT un piegādes ķēdes riski, cilvēku pieņemti lēmumi par būtiskiem incidentiem un uzraugam sagatavoti ziņojumu projekti.

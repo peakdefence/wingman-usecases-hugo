@@ -9,6 +9,13 @@
   {{ with .Content }}<div class="prose sectorintro">{{ . }}</div>{{ end }}
 </section>
 
+{{ with where site.Data.videos "sectors" "intersect" (slice .Params.sector) }}
+<section class="block wrap">
+  <h2>{{ i18n "related_videos" }}</h2>
+  {{ partial "videos.html" . }}
+</section>
+{{ end }}
+
 {{ with .Params.registers }}
 <section class="block wrap">
   <h2>{{ i18n "sector_registers" }}</h2>

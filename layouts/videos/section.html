@@ -12,7 +12,8 @@
   {{ range site.Data.videos }}{{ $v := . }}
     <tr><td class="e">{{ index .title $l | default .title.en }}</td><td>
     {{ if .model }}<a href="{{ site.Home.RelPermalink }}#model">{{ i18n "nav_model" }}</a>{{ end }}
-    {{ range $i, $u := .use_cases }}{{ range where (where site.RegularPages "Section" "use-cases") "Params.uc" $u }}{{ if or $i $v.model }} · {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
+    {{ range $i, $s := .sectors }}{{ range where (where site.RegularPages "Section" "sectors") "Params.sector" $s }}{{ if or $i $v.model }} · {{ end }}<a href="{{ .RelPermalink }}"><b>{{ .Params.short | default .Title }}</b></a>{{ end }}{{ end }}
+    {{ range $i, $u := .use_cases }}{{ range where (where site.RegularPages "Section" "use-cases") "Params.uc" $u }}{{ if or $i $v.model $v.sectors }} · {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
     </td></tr>
   {{ end }}
   </tbody></table></div>
