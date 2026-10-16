@@ -75,6 +75,10 @@ stages:
   - role-incident
   ai: Finds the activities and systems a request or breach concerns, tracks deadlines and drafts the notifications.
   decides: The DPO advises; the controller decides on notification.
+  media:
+  - ask-skill-incident-authority-notice
+  - ask-skill-incident-authority-notice-1
+  - ask-skill-incident-authority-notice-2
 - title: Accountability
   text: Controls, evidence and audits show the principles are met, per requirement and per processing activity.
   nodes:

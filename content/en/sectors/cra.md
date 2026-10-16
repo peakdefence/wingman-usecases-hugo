@@ -62,6 +62,10 @@ stages:
   - vulnerability-task
   ai: Matches advisories against the SBOM and proposes severity.
   decides: Product security decides on fixes and disclosure.
+  media:
+  - vuln-list
+  - vuln-detail
+  - rec-graph
 - title: Reporting
   text: Actively exploited vulnerabilities and severe incidents carry their 24 h, 72 h and final report deadlines, with the notices sent.
   nodes:

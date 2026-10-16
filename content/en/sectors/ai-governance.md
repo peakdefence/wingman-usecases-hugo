@@ -23,6 +23,8 @@ stages:
   - role-asset
   ai: Drafts entries from procurement, system and survey records, and finds AI features in existing tools.
   decides: Use case owners confirm.
+  media:
+  - asset-list
 - title: Classification and role
   text: Each use case gets an AI Act risk category and the organisation's role, provider or deployer. That decides which obligations apply.
   nodes:
@@ -47,6 +49,10 @@ stages:
   - document-asset
   ai: Proposes risks such as bias, drift, misuse and data leakage from the use case description.
   decides: Risk owners rate and choose a treatment.
+  media:
+  - task-review-start
+  - ask-skill-task
+  - ask-skill-task-1-help
 - title: Controls and work plan
   text: ISO 42001 Annex A controls, EN 18286 quality management requirements and AI Act obligations map to controls. Missing ones become a work plan.
   nodes:

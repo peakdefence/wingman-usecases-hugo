@@ -1,0 +1,46 @@
+{{ define "main" }}
+{{ $l := site.Language.Lang }}
+{{ $areas := slice "brief" "plans" "tasks" "risks" "controls" "requirements" "assets" "vulnerabilities" "incidents" "signals" "threats" "documents" "audits" "graph" "ask" "palette" "settings" "email" }}
+{{ $ucPages := where site.RegularPages "Section" "in" (slice "use-cases" "sectors") }}
+<section class="block wrap">
+  <p class="eyebrow">{{ i18n "library_eyebrow" }}</p>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ .Params.description }}</p>
+  <div class="filter libfilter">
+    <label for="libarea">{{ i18n "library_area" }}</label>
+    <select id="libarea">
+      <option value="">{{ i18n "library_all" }}</option>
+      {{ range $areas }}{{ $a := . }}{{ $n := 0 }}{{ range site.Data.media }}{{ if and (eq .area $a) (ne .status "pending") }}{{ $n = add $n 1 }}{{ end }}{{ end }}{{ if gt $n 0 }}<option value="{{ $a }}">{{ i18n (printf "area_%s" $a) | default $a }} ({{ $n }})</option>{{ end }}{{ end }}
+    </select>
+    <label for="libkind">{{ i18n "library_kind" }}</label>
+    <select id="libkind">
+      <option value="">{{ i18n "library_all" }}</option>
+      <option value="still">{{ i18n "library_stills" }}</option>
+      <option value="action">{{ i18n "library_actions" }}</option>
+    </select>
+  </div>
+  <div class="library" id="library">
+  {{ range site.Data.media }}{{ $m := . }}{{ if ne $m.status "pending" }}
+    <div class="libitem" data-area="{{ $m.area }}" data-kind="{{ if $m.action }}action{{ else }}still{{ end }}">
+      {{ partial "media.html" (dict "m" $m) }}
+      {{/* Use-case stages that reference this id */}}
+      {{ $uses := slice }}
+      {{ range $ucPages }}{{ $pg := . }}{{ range $i, $s := .Params.stages }}{{ range $s.media }}{{ if eq . $m.id }}{{ $uses = $uses | append (dict "page" $pg "i" $i "title" $s.title) }}{{ end }}{{ end }}{{ end }}{{ end }}
+      {{ with $uses }}<p class="usedin"><span class="lens-label">{{ i18n "used_in" }}</span>{{ range . }}<a class="ent" href="{{ .page.RelPermalink }}#stage-{{ add .i 1 }}">{{ .page.Title }} · {{ add .i 1 }}</a>{{ end }}</p>{{ end }}
+    </div>
+  {{ end }}{{ end }}
+  </div>
+</section>
+<script>
+(function () {
+  var a = document.getElementById('libarea'), k = document.getElementById('libkind');
+  if (!a || !k) return;
+  function apply() {
+    document.querySelectorAll('#library .libitem').forEach(function (el) {
+      el.hidden = (a.value && el.dataset.area !== a.value) || (k.value && el.dataset.kind !== k.value);
+    });
+  }
+  a.addEventListener('change', apply); k.addEventListener('change', apply);
+})();
+</script>
+{{ end }}

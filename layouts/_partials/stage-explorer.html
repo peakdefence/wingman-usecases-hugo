@@ -24,4 +24,17 @@
       <div class="nav2" id="stagenav" hidden><button type="button" class="navbtn" data-step="-1">{{ i18n "prev_stage" }}</button><button type="button" class="navbtn" data-step="1">{{ i18n "next_stage" }}</button></div>
     </aside>
   </div>
+  {{/* Screens per stage, full width under the graph. The script shows the current stage's row only.
+       Media ids come from this language's stage, else from the English stage at the same index. */}}
+  {{ $en := $p }}{{ range $p.AllTranslations }}{{ if eq .Language.Lang "en" }}{{ $en = . }}{{ end }}{{ end }}
+  {{ range $i, $s := $p.Params.stages }}
+    {{ $mids := $s.media }}
+    {{ if not $mids }}{{ with index $en.Params.stages $i }}{{ $mids = .media }}{{ end }}{{ end }}
+    {{ with $mids }}
+    <div class="stagemedia" data-stagemedia="{{ $i }}">
+      <p class="eyebrow">{{ i18n "media_label" }} · {{ i18n "stage" }} {{ add $i 1 }}: {{ $s.title }}</p>
+      {{ partial "media-strip.html" (dict "ids" .) }}
+    </div>
+    {{ end }}
+  {{ end }}
   {{ partial "graph-data.html" (dict "page" $p "mode" "usecase") }}

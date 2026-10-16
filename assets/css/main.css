@@ -227,3 +227,30 @@ footer.site { border-top: 1px solid var(--line) }
 .qa h3 { font-size: 1.02rem }
 .qa p { color: var(--ink-2); font-size: .94rem }
 @media (max-width: 640px) { .qa { grid-template-columns: 1fr } }
+
+/* media library (data/media.yaml) */
+.mediastrip { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin-top: 4px }
+.stagemedia { display: flex; flex-direction: column; gap: 10px; margin-top: 22px }
+.js .stagemedia:not(.on) { display: none }
+.media { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0 }
+.mediabox { position: relative; display: block; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface) }
+.mediabox img, .mediabox video { display: block; width: 100%; height: auto }
+.mediabox .badge.gif { position: absolute; right: 8px; top: 8px; background: var(--accent); color: #fff; font-family: var(--f-label); font-size: .7rem; padding: 2px 6px; border-radius: 6px }
+.media figcaption { display: flex; flex-direction: column; gap: 2px; font-size: .9rem }
+.media figcaption .eyebrow { font-family: var(--f-label); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted) }
+.media figcaption span:not(.eyebrow) { color: var(--ink-2) }
+.library { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; margin-top: 18px }
+.libitem[hidden] { display: none }
+.libfilter { margin-top: 14px }
+.usedin { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 6px 0 0; font-size: .85rem }
+.mediabox img, .mediabox video { aspect-ratio: 4 / 3; object-fit: cover; object-position: top }
+.mediabox:hover { border-color: var(--accent) }
+.mediabox .badge.gif { color: var(--on-accent) }
+/* lightbox */
+dialog.lightbox { border: 0; padding: 0; background: transparent; max-width: min(1280px, 96vw); max-height: 96vh; overflow: visible }
+dialog.lightbox::backdrop { background: rgba(20, 18, 40, .82) }
+.lightbox .lbfig { margin: 0; display: flex; flex-direction: column; gap: 10px; max-height: 94vh }
+.lightbox img, .lightbox video { display: block; max-width: 100%; max-height: calc(94vh - 90px); width: auto; height: auto; margin: 0 auto; border-radius: 10px; background: #fff; object-fit: contain }
+.lightbox figcaption { color: #F3F2F8; font-size: .95rem; max-width: 80ch; margin: 0 auto; text-align: center }
+.lightbox figcaption b { display: block; color: #fff }
+.lightbox .lbclose { position: absolute; top: -14px; right: -14px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: #fff; color: #1F1D2D; font-size: 1.3rem; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.3) }

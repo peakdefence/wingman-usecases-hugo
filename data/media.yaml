@@ -166,9 +166,8 @@
   action: true
   entities: [task, risk, control]
   env: stage
-  width: 1232
-  height: 960
-  status: pending
+  width: 960
+  height: 748
   title: { en: "Help me complete this task", lv: "Palīdzi pabeigt šo uzdevumu" }
   caption:
     en: "Start review on a quarterly risk review task, ask Wingman for help, read its findings against the task checklist, accept the likelihood change, and complete the review with the outcome Monitored. The task closes as Done."
@@ -501,9 +500,8 @@
   action: true
   entities: [incident, person]
   env: stage
-  width: 1232
-  height: 960
-  status: pending
+  width: 960
+  height: 748
   title: { en: "Describe what happened; WINGMAN registers the incident", lv: "Apraksti notikušo; WINGMAN reģistrē incidentu" }
   caption:
     en: "A support colleague describes three customer reports of invoice emails with a changed bank account. The orchestrator recognises a suspected incident, offers Register incident or Report a signal, runs the four-step skill, and submits the drafted record as a suggestion. Accept writes it."
@@ -546,9 +544,8 @@
   action: true
   entities: [incident, asset, threat, task]
   env: stage
-  width: 1232
-  height: 960
-  status: pending
+  width: 960
+  height: 748
   title: { en: "Triage with the incident handler", lv: "Triāža kopā ar incidenta apstrādātāju" }
   caption:
     en: "The assigned handler asks for severity, reporting obligations and next-hour decisions. The Incident Management skill runs eleven steps and ends with suggestions: link the two candidate source systems, create the missing threat, and six remediation tasks. The handler accepts or rejects each."
@@ -621,9 +618,8 @@
   action: true
   entities: [incident, document, role]
   env: stage
-  width: 1232
-  height: 960
-  status: pending
+  width: 960
+  height: 748
   title: { en: "Draft the notification to the authority", lv: "Sagatavo paziņojumu uzraudzības iestādei" }
   caption:
     en: "Asked in plain words on the incident, WINGMAN fills the GDPR Article 33 notification from the record: nature of the breach, data subjects, data categories, DPO contact, likely consequences, measures taken, communication to data subjects, other notifications. Every field is marked KNOWN, UNKNOWN or ASSUMED."

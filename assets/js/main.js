@@ -37,6 +37,23 @@ document.addEventListener('click', (e) => {
   box.replaceChildren(f);
 });
 
+// ---------- screenshot lightbox: full size in an overlay; the link still works without script ----------
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('.mediabox');
+  if (!a || e.metaKey || e.ctrlKey || e.shiftKey || typeof HTMLDialogElement !== 'function') return;
+  e.preventDefault();
+  const fig = a.closest('figure');
+  const d = document.createElement('dialog');
+  d.className = 'lightbox';
+  const isVideo = !!a.querySelector('video');
+  const cap = fig.querySelector('figcaption');
+  d.innerHTML = `<button type="button" class="lbclose" aria-label="Close">×</button><figure class="lbfig">${isVideo ? `<video src="${esc(a.getAttribute('href'))}" controls autoplay muted loop playsinline></video>` : `<img src="${esc(a.getAttribute('href'))}" alt="${esc(a.getAttribute('aria-label'))}">`}<figcaption>${cap ? `<b>${esc(cap.querySelector('b')?.textContent)}</b>${esc(cap.querySelector('span:not(.eyebrow)')?.textContent)}` : ''}</figcaption></figure>`;
+  document.body.appendChild(d);
+  d.addEventListener('close', () => { d.remove(); a.focus(); });
+  d.addEventListener('click', (ev) => { if (ev.target === d || ev.target.closest('.lbclose') || ev.target.tagName === 'IMG') d.close(); });
+  d.showModal();
+});
+
 // ---------- relationships table filter ----------
 const relf = $('relf');
 if (relf) relf.addEventListener('change', () => {
@@ -188,6 +205,7 @@ if (dataEl) {
       (s.links || []).forEach((k, n) => { const r = edgeKey(k); if (!r) return; if (s.conflict) { o.gap = r.i; o.gapNodes = new Set([r.a, r.b]); } else o.hot.set(r.i, n + 1); });
       draw(o);
       items.forEach((li, i) => li.classList.toggle('on', i === si));
+      document.querySelectorAll('[data-stagemedia]').forEach((el) => el.classList.toggle('on', +el.dataset.stagemedia === si));
       stepper.querySelectorAll('.stepbtn').forEach((b, i) => b.setAttribute('aria-pressed', i === si ? 'true' : 'false'));
       nav.children[0].disabled = si === 0; nav.children[1].disabled = si === stages.length - 1;
       if (push) history.replaceState(null, '', `#stage-${si + 1}`);

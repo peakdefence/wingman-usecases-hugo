@@ -34,6 +34,9 @@ stages:
   - control-document
   ai: Maps the clauses to existing controls and lists those with no control.
   decides: The cybersecurity manager agrees the gap list.
+  media:
+  - req-detail
+  - ctl-detail
 - title: Risks, threats and vulnerabilities
   text: Risks sit on the services in scope. Threats and vulnerabilities make the scenarios concrete and move ratings between reviews.
   nodes:
@@ -48,6 +51,9 @@ stages:
   - vulnerability-risk
   ai: Proposes risks from the sector threat picture and open vulnerabilities.
   decides: Risk owners rate and choose a treatment.
+  media:
+  - vuln-detail
+  - risk-detail
 - title: Management body accountability
   text: The management body approves the risk management measures and oversees them. Roles carry the duties, so a change of staff does not break the chain.
   nodes:
@@ -63,6 +69,8 @@ stages:
   - role-plan
   ai: Prepares the approval pack and lists records with no owner role.
   decides: The management body approves.
+  media:
+  - brief-top
 - title: Incidents and reporting
   text: Signals are triaged into incidents and classified against the significance criteria of Regulation No. 397. A significant incident carries the reports to CERT.LV, from the early warning and notification to progress and final reports, and the follow-up work. The incidents form the cyber incident log.
   nodes:
@@ -78,6 +86,10 @@ stages:
   - incident-task
   ai: Proposes the classification with reasons, tracks the deadlines and drafts each report in the structure the guidelines require, from the incident record.
   decides: The incident manager decides what is reported.
+  media:
+  - ask-skill-incident-authority-notice
+  - ask-skill-incident-authority-notice-1
+  - ask-skill-incident-triage-2-notice
 - title: Self-assessment report
   text: The self-assessment report evaluates each formal requirement against the controls in place and their evidence. It is generated from the records, not written from scratch, and the conclusion per requirement is kept for next time.
   nodes:
@@ -108,6 +120,8 @@ stages:
   - finding-task
   ai: Lists expired evidence and assembles the audit pack per requirement.
   decides: The auditor concludes; owners fix findings.
+  media:
+  - brief-gaps
 registers:
 - entity: supplier
   title: Supply-chain register

@@ -13,15 +13,18 @@ stage mapped to a WINGMAN screen, with fit and gaps) lives in the working doc
 | The files (stills and recordings) | `static/media/<id>.<ext>` — the id is the file name |
 | One entry per file: what it shows, for whom, in which language | `data/media.yaml` |
 | Which captures a use-case stage shows | `media: [ids]` on the stage in `content/en/use-cases/<uc>.md` |
-**Rendering is not wired up yet.** No layout reads `data/media.yaml` or the `media:` lists, and there is no
-`/library/` page. Both are planned: a figure strip under each use-case stage, and a browsable catalogue at
-`/library/` grouped by screen. Until then the data is the map from stages to captures for later.
+| Which captures a sector stage shows | `media: [ids]` on the stage in `content/en/sectors/<id>.md` |
+| How a figure renders | `layouts/_partials/media.html` (one figure), `media-strip.html` (a row of figures) |
+| Where a stage's figures appear | `layouts/_partials/stage-explorer.html`: a full-width row under the graph; the script shows the current stage's row only |
+| Full-size view | `assets/js/main.js` opens a figure in a lightbox; without script the link opens the file |
+| The browsable catalogue | `/library/`, `layouts/library/section.html`, filter by screen and kind |
+| Labels per language | `i18n/<lang>.toml`, keys `area_*`, `library_*`, `media_label`, `step` |
 
-Only the English use-case file carries `media:`. The plan is for the Latvian page to show the same captures
-for the stage at the same index (falling back to the English stage), so translations never repeat the ids,
-with captions from `data/media.yaml` in the page language and English as fallback. Unknown ids and entries
-with `status: pending` are to be skipped silently, so a stage may reference a capture that is planned but
-not yet dropped in.
+Only the English use-case and sector files carry `media:`. The Latvian page shows the same captures for the
+stage at the same index (it falls back to the English stage), so translations never repeat the ids. Captions
+come from `data/media.yaml` in the page language, with English as fallback. Unknown ids and entries with
+`status: pending` are skipped silently, so a stage may reference a capture that is planned but not yet
+dropped in. The build never breaks because of media.
 
 ## The entry
 
@@ -53,9 +56,9 @@ stills share the `sequence.key`.
 ## What exists today (16 October 2026)
 
 Stills are JPEG or PNG from a 1105×1092 (dev) or 1232×960 (stage) viewport, light theme, sidebar open,
-Ask Wingman closed unless the capture is about it. Recordings are GIFs at 1232×960 from the stage tenant
-(`status: pending` until the files are copied into `static/media/`; they are large — downscale to 960 px
-wide and ≤ 12 fps before committing, or convert to MP4 and set `type: video`).
+Ask Wingman closed unless the capture is about it. Recordings are GIFs from the stage tenant, downscaled to 960×748
+with their original frame timing kept (they are step-by-step recordings with frames held 0.3–2.8 s, so do
+not force a fixed frame delay). Keep each under 5 MB, or convert to MP4 and set `type: video`.
 
 | Flow or screen | Ids | Tells the story of |
 |---|---|---|
@@ -99,8 +102,8 @@ open review, a task with a brief). Record the whole arc from trigger to result; 
 Blur member e-mails, webhook secrets and anything from a customer tenant.
 
 Then: drop the file into `static/media/`, add the entry to `data/media.yaml` with title and caption in
-both languages, and add the id to the stage(s) it belongs to. Once rendering is wired up, open `/library/` and the use-case
-page in `hugo server` and check the strip. If a recording is still on someone's machine, add its entry with
+both languages, and add the id to the stage(s) it belongs to. Open `/library/` and the use-case page in `hugo server` and
+check the strip. If a recording is still on someone's machine, add its entry with
 `status: pending` so the stills carry the stage meanwhile.
 
 Record ids seen in captions (INCIDENT-29043, RSK-1487, TSK-25129 …) are demo data on the named tenant and
