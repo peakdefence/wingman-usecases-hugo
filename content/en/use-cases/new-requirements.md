@@ -16,6 +16,8 @@ stages:
   - requirement
   links:
   - requirement-requirement
+  media:
+  - req-detail
   ai: Proposes clause-to-clause mappings.
   decides: The compliance lead confirms.
 - title: Gap analysis
@@ -27,6 +29,8 @@ stages:
   links:
   - requirement-control
   - control-evidence
+  media:
+  - brief-gaps
   ai: Marks each clause covered, partly covered or open.
   decides: Control owners confirm.
 - title: Context
@@ -41,6 +45,9 @@ stages:
   - control-risk
   - control-asset
   - requirement-document
+  media:
+  - graph-global
+  - ctl-detail
   ai: Finds affected assets and policies.
   decides: Owners confirm.
 - title: Implement

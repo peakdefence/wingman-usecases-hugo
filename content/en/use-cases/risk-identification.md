@@ -41,6 +41,9 @@ stages:
   - risk-supplier
   - threat-risk
   - control-risk
+  media:
+  - risk-detail
+  - rec-graph
   ai: Searches before creating any linked record.
   decides: The owner approves each link.
 - title: Signals
@@ -52,6 +55,11 @@ stages:
   links:
   - signal-risk
   - signal-threat
+  media:
+  - sig-report-1-form
+  - sig-report-2-reviewing
+  - sig-inbox
+  - notif-email-signal
   ai: Proposes indicators and thresholds.
   decides: The owner agrees.
 - title: Planned controls

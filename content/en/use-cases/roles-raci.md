@@ -18,6 +18,8 @@ stages:
   links:
   - role-document
   - person-role
+  media:
+  - set-access
   ai: Drafts role descriptions from the organisation structure.
   decides: Management approves.
 - title: RACI on every record
@@ -35,6 +37,8 @@ stages:
   - role-asset
   - role-plan
   - role-incident
+  media:
+  - asset-list
   ai: Builds the RACI matrix from the links.
   decides: Role holders confirm.
 - title: Coverage gaps
@@ -46,6 +50,9 @@ stages:
   links:
   - role-control
   - role-risk
+  media:
+  - brief-gaps
+  - asset-detail
   ai: Lists unowned records by area.
   decides: The CISO assigns owners.
 - title: Segregation of duties
