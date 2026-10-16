@@ -145,3 +145,5 @@ area_ask = "Ask Wingman"
 area_palette = "Command palette"
 area_settings = "Settings"
 area_email = "Email notification"
+
+close = "Close"

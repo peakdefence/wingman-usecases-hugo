@@ -145,3 +145,5 @@ area_ask = "Jautā Wingman"
 area_palette = "Komandu palete"
 area_settings = "Iestatījumi"
 area_email = "E-pasta paziņojums"
+
+close = "Aizvērt"
