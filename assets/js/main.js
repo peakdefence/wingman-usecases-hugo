@@ -47,7 +47,7 @@ document.addEventListener('click', (e) => {
   d.className = 'lightbox';
   const isVideo = !!a.querySelector('video');
   const cap = fig.querySelector('figcaption');
-  d.innerHTML = `<button type="button" class="lbclose" aria-label="Close">×</button><figure class="lbfig">${isVideo ? `<video src="${esc(a.getAttribute('href'))}" controls autoplay muted loop playsinline></video>` : `<img src="${esc(a.getAttribute('href'))}" alt="${esc(a.getAttribute('aria-label'))}">`}<figcaption>${cap ? `<b>${esc(cap.querySelector('b')?.textContent)}</b>${esc(cap.querySelector('span:not(.eyebrow)')?.textContent)}` : ''}</figcaption></figure>`;
+  d.innerHTML = `<button type="button" class="lbclose" aria-label="${esc(a.dataset.close || 'Close')}">×</button><figure class="lbfig">${isVideo ? `<video src="${esc(a.getAttribute('href'))}" controls autoplay muted loop playsinline></video>` : `<img src="${esc(a.getAttribute('href'))}" alt="${esc(a.getAttribute('aria-label'))}">`}<figcaption>${cap ? `<b>${esc(cap.querySelector('b')?.textContent)}</b>${esc(cap.querySelector('span:not(.eyebrow)')?.textContent)}` : ''}</figcaption></figure>`;
   document.body.appendChild(d);
   d.addEventListener('close', () => { d.remove(); a.focus(); });
   d.addEventListener('click', (ev) => { if (ev.target === d || ev.target.closest('.lbclose') || ev.target.tagName === 'IMG') d.close(); });

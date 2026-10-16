@@ -6,7 +6,7 @@
 {{ $cap := index ($m.caption | default dict) $l | default (index ($m.caption | default dict) "en") }}
 {{ $src := $m.file | relURL }}
 <figure class="media media-{{ $m.type }} area-{{ $m.area }}" id="m-{{ $m.id }}" data-media="{{ $m.id }}">
-  <a class="mediabox" href="{{ $src }}" target="_blank" rel="noopener" aria-label="{{ $title }}">
+  <a class="mediabox" href="{{ $src }}" target="_blank" rel="noopener" aria-label="{{ $title }}" data-close="{{ i18n "close" }}">
     {{ if eq $m.type "video" }}
     <video src="{{ $src }}" muted loop playsinline controls preload="metadata" width="{{ $m.width }}" height="{{ $m.height }}"></video>
     {{ else if eq $m.type "gif" }}
