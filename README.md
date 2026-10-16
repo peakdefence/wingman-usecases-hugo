@@ -15,7 +15,7 @@ hugo --gc --minify     # build to public/
 | Data model texts per language | `data/<lang>/model.yaml` |
 | Use cases, one page each, with stages in front matter | `content/<lang>/use-cases/<id>.md` |
 | Sectors and regulations (NIS2, financial, ISO 27001/SOC 2, AI, CRA, GDPR) | `content/<lang>/sectors/<id>.md` |
-| Videos (YouTube ids, titles per language, linked use cases) | `data/videos.yaml` |
+| Videos (YouTube ids, titles per language, linked use cases and sectors) | `data/videos.yaml` |
 | Screenshots and recordings of WINGMAN, one entry per capture, shown under use-case and sector stages and at `/library/` | `static/media/`, `data/media.yaml`, see `MEDIA.md` |
 | Case studies | `content/<lang>/case-studies/*.md` |
 | Interface strings | `i18n/<lang>.toml` |
