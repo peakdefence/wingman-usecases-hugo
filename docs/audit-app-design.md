@@ -1,6 +1,6 @@
 # AI-supported audit application: design discussion, draft 0.1
 
-Status: discussion draft 0.3. Decisions taken so far are in section 0; open questions are collected in section 13.
+Status: discussion draft 0.4. Decisions taken so far are in section 0; open questions are collected in section 13.
 
 ## 0. Decisions so far
 
@@ -10,6 +10,7 @@ Status: discussion draft 0.3. Decisions taken so far are in section 0; open ques
 | The auditee does not log in | No auditee portal. Pending evidence is chased by the auditor; the app produces reminder texts and the auditor forwards them. Auditee feedback on findings is entered by the auditor as `finding_comment` of kind `auditee response`. |
 | Requirement sources come from the auditor's spreadsheets, uploaded Markdown and PDF documents | Import formats for the MVP: XLSX/CSV with column mapping, Markdown with a heading convention, PDF via extraction with AI-proposed clause splitting that the auditor confirms. No seeded standard texts shipped with the app. |
 | Sources and requirements are kept long term, independent of any audit | The requirement library (sources, requirements, links between requirements) is a top-level, cross-organisation store. See section 3.1. |
+| Mappings between requirements are created in the app through the LLM over MCP, not imported | Imports carry no mapping columns. The MCP surface has the full link lifecycle (propose in batch, confirm, reject, edit, retire, list with provenance), each mapping run is recorded as a `mapping_run`, and the UI offers CRUD on links with when, how and by what each link was created. See section 3.1, "Mapping workflow". |
 | Requirements used in an audit are cloned into the audit as instances, keeping a link to the original | `audit_requirement` is a full copy of the library requirement (ref, title, text, criteria) at clone time, with `origin_requirement_id` and the origin revision. The instance is freely customised for that audit; the library is untouched. The app shows the diff from the origin and can offer, never apply, a refresh from the library. See section 3.2. |
 | Applicability per dimension can be "not applicable" | `applicability` is recorded per requirement × dimension with a mandatory justification for `not_applicable`; no assessment row is created for that pair, and the report lists the exclusions Statement of Applicability style. See section 3.2. |
 | The status-to-grade derivation table lives separately from the grading scheme and is used by the skill, not enforced by the app | A `derivation_rule_set` entity (documentation status × operation status → proposed grade of a given scheme) is stored and versioned in the app and read by the skill through MCP when it proposes a grade. The app records which rule set version a proposal used but never applies the table itself; the confirmed grade is always the auditor's. See section 3.6. |
@@ -51,7 +52,8 @@ Two scopes of data exist in the app: the **requirement library** (sources, requi
 | `person` | People at the auditee and on the audit team. | name, unit, role titles, contact; `kind`: auditor, auditee, reviewer |
 | `requirement_source` | A standard, law, contract, or the auditee's own policy set. | title, publisher, version (e.g. ISO/IEC 27001:2022), language, `kind`: external or internal; `organisation_id` when internal; licence note (see Q11) |
 | `requirement` | One clause. | `source_id`, `ref` (identifier in the source, e.g. A.5.15), title, `text_md` (verbatim), `criteria_md` (generic audit criteria), `origin_document_id` and paragraph ref when extracted from an auditee document, status `proposed` or `confirmed` |
-| `requirement_link` | Typed edge between requirements, within or across sources. | from, to, `type`: sub_requirement, equivalent, more_detailed_than, similar, interprets; `score` 0..1 for similarity; `basis`: manual, imported mapping, ai; status |
+| `requirement_link` | Typed edge between requirements, within or across sources. | from, to, `type`: sub_requirement, equivalent, more_detailed_than, similar, interprets; `score` 0..1 where meaningful; `rationale_md`; `basis`: manual or ai; `mapping_run_id`; status: proposed, confirmed, rejected, retired; decided by and when |
+| `mapping_run` | One LLM mapping session between sources, for traceability. | started by and when, sources or requirement set, link types, method, model id, counts, summary, closed at |
 
 Internal requirements extracted from policies are ordinary `requirement` rows in an internal `requirement_source` owned by the organisation, linked to the external clause with `more_detailed_than` or `interprets`. That keeps one list, one block per requirement, and lets the scope selector treat them like any other requirement.
 
@@ -61,7 +63,7 @@ Sources, requirements and the links between them form a **library that outlives 
 
 1. **Audits clone, then own.** Putting a requirement in scope copies it into an `audit_requirement` instance (section 3.2) together with the library revision it was copied from. The audit works only on its instances; a later correction in the library never changes an audit, and an audit's customisations never leak into the library unless the auditor promotes them explicitly (`promote_to_library`, which creates a new library revision with provenance "from audit X").
 2. **Source files are kept.** Every import keeps the original file (`source_file` on `requirement_source`: the spreadsheet, the Markdown, the PDF) in the object store, plus the extracted text and a per-requirement pointer back into it (sheet and row, heading path, or PDF page and paragraph). The auditor can always open the clause in its original.
-3. **Links are library data with their own provenance.** A `requirement_link` records how it came to be: `manual` (auditor), `imported` (a mapping sheet, e.g. a NIS2 to ISO 27001 crosswalk, with the mapping document kept as a source of kind `mapping`), or `ai` (proposed from vector similarity or a model's reading, with the score and the model id). AI links stay `proposed` until confirmed, and a confirmed link is never overwritten by a later AI run; a new proposal with a different score is a new revision of the link.
+3. **Links are library data with their own provenance.** A `requirement_link` records how it came to be: `manual` (auditor, in the UI or by an explicit MCP call), `ai` (proposed by a model or by vector similarity in a mapping run, with score, rationale, model id and the run id). Import of mapping sheets is not an MVP path. AI links stay `proposed` until confirmed, and a confirmed link is never overwritten by a later run; a new proposal for an existing pair is a new revision of the same link, with the old status kept in history.
 4. **Sources have versions.** A new edition (ISO 27001:2013 to 2022) is a new `requirement_source` with a `supersedes` link to the old one, and requirement-level `requirement_link` rows of type `equivalent` or `more_detailed_than` between the editions, proposed by AI and confirmed by the auditor. Old audits keep pointing at the old edition. Nothing in the library is ever deleted; a source or requirement can be `retired` with a date.
 
 Import pipeline, one tool with three readers:
@@ -73,6 +75,25 @@ Import pipeline, one tool with three readers:
 | PDF | text extraction (pymupdf), OCR fallback, then an AI pass that proposes clause boundaries, refs and titles with page refs | every proposed clause; nothing enters the library from a PDF unconfirmed |
 
 Where to draw the clause boundary (one requirement per numbered clause, or per "shall" sentence) is the auditor's choice per source and is recorded on the source (`granularity`), because mappings between sources only make sense at comparable granularity. Sub-clauses are `requirement` rows linked to their parent with `sub_requirement`.
+
+#### Mapping workflow
+
+Mapping is done by the auditor in an LLM session against the app's MCP, in three steps, with the app keeping the record.
+
+1. **Start a run.** `start_mapping_run(source_a, source_b | scope, link_types, method)` creates a `mapping_run`: who started it, when, the pair of sources (or a list of requirements), the link types wanted, the method (`model`, `similarity`, `both`), and the model id the client reports. Optional: `candidates(run_id)` returns, per requirement in A, the top-k requirements in B by vector similarity with scores, so the skill reads a short list instead of the whole source.
+2. **Propose in batch.** The skill reads both sides and calls `propose_links(run_id, [{from, to, type, score, rationale_md}])`. Each proposal becomes a `requirement_link` with status `proposed`, provenance `ai`, run id, model, score and rationale. Proposing a pair that already has a confirmed link is recorded as a `note` on that link, not as a new link; proposing a pair that has a rejected link reopens it as `proposed` with a new revision.
+3. **Decide.** The auditor reviews in the UI or by MCP: `confirm_link`, `reject_link` (with reason), `update_link` (type, score, rationale), `retire_link` (soft delete, with reason), `create_link` (manual, immediately confirmed). Each decision is a revision with actor and time. `close_mapping_run` records counts (proposed, confirmed, rejected, pending) and a summary.
+
+Rules:
+
+- Links are directional where the type is (`sub_requirement`, `more_detailed_than`, `interprets`) and symmetric where it is not (`equivalent`, `similar`); the app stores one row per pair and renders the inverse reading, as WINGMAN does with `v` and `p`.
+- A link always has a `type`; `score` is optional and is only meaningful for `similar` and `equivalent`.
+- A `rationale_md` is required for AI proposals (why these two clauses match) and optional for manual links. It is what the auditor reads when deciding.
+- Everything is visible: list views show status, type, score, created by (person or model), run, created at, decided by, decided at, and a history tab per link.
+
+MCP, in addition to the lifecycle calls above: `list_links(filter by source, requirement, type, status, run, actor)`, `get_link_history`, `list_mapping_runs`, `get_mapping_run`, `unmapped_requirements(source_a, source_b)` (clauses in A with no confirmed link into B), `mapping_matrix(source_a, source_b)` (a compact table for the report or for the skill).
+
+UI: a mapping page per pair of sources showing A's requirements on the left, their proposed and confirmed links to B on the right with scores and rationale, bulk confirm and reject, an "unmapped" filter, and a runs list with their statistics. Every link opens to a detail with its full history.
 
 ### 3.2 Audit configuration
 
@@ -239,7 +260,7 @@ Skills themselves are plain Markdown and should live in a `skills/` folder of th
 Tools are grouped by stage. Names are indicative.
 
 - Organisation: `list_organisations`, `get_organisation`, `upsert_organisation`, `upload_organisation_attachment`
-- Requirements: `list_requirement_sources`, `import_requirement_source` (CSV, XLSX, Markdown, JSON), `search_requirements` (text and vector), `get_requirement`, `propose_requirement` (AI-extracted, status proposed), `confirm_requirement`, `link_requirements`, `find_similar_requirements`
+- Requirements: `list_requirement_sources`, `import_requirement_source` (CSV, XLSX, Markdown, JSON), `search_requirements` (text and vector), `get_requirement`, `propose_requirement` (AI-extracted, status proposed), `confirm_requirement`, `find_similar_requirements`; mapping lifecycle: `start_mapping_run`, `candidates`, `propose_links`, `confirm_link`, `reject_link`, `update_link`, `retire_link`, `create_link`, `close_mapping_run`, `list_links`, `get_link_history`, `list_mapping_runs`, `unmapped_requirements`, `mapping_matrix`
 - Audit: `create_audit`, `get_audit_status` (the "where are we" call every skill makes first), `set_scope_mode`, `upsert_dimensions`, `add_requirements_to_scope` (clones from the library), `create_audit_requirement` (no origin), `update_audit_requirement`, `diff_from_origin`, `refresh_from_origin` (proposal), `promote_to_library`, `link_audit_requirements`, `remove_from_scope` (with reason), `set_applicability` (with justification), `applicability_report` (exclusions per dimension), `set_criteria_override`, `list_grading_schemes`, `get_derivation_rules` (for the audit's scheme), `set_risk_profile`
 - Documents: `upload_document`, `get_document_text`, `search_documents`, `propose_claimed_control`, `confirm_claimed_control`, `propose_risk_items`
 - Planning: `propose_plan_version`, `agree_plan`, `upsert_event`, `set_event_coverage`, `coverage_report` (requirements × dimensions with no coverage), `upsert_sampling`
@@ -261,7 +282,8 @@ Server-rendered pages, one per entity type, with list, detail, edit, history tab
 - the requirement matrix: requirements × dimensions with documentation status, operation status, grade, evidence count, open pending items, and coverage;
 - the plan calendar: events on a timeline with coverage counts;
 - the finding review page: finding, its evidence, comments, status transitions, with auditee feedback entered by the auditor;
-- the library page: sources with their files, requirements with text and original location, and a link editor that shows proposed links with scores next to confirmed ones.
+- the library page: sources with their files, requirements with text and original location;
+- the mapping page per pair of sources (section 3.1, "Mapping workflow"): proposed and confirmed links with score, rationale, origin run and history, bulk confirm and reject, unmapped filter.
 
 No auditee-facing pages (decision in section 0). Should that change, the pending-evidence page is the first candidate and brings accounts with it.
 
@@ -282,7 +304,7 @@ The report is generated by a skill from `report_data` (or the `report-data.json`
 ## 11. Phasing
 
 **MVP (one auditor, no auditee access)**
-requirement library with XLSX/CSV, Markdown and PDF import, source files kept, typed links with provenance and vector similarity proposals; organisation; audits with scope mode and dimensions, documents with text extraction, plan versions and events with coverage, event records, evidence with links, pending evidence, assessments and findings with workflow, revisions, MCP tools and resources above, workspace export and import, minimal UI. No server-driven AI except embeddings; all reasoning in the client.
+requirement library with XLSX/CSV, Markdown and PDF import, source files kept; mapping workflow over MCP with mapping runs, link lifecycle, vector similarity candidates and the mapping UI; organisation; audits with scope mode and dimensions, documents with text extraction, plan versions and events with coverage, event records, evidence with links, pending evidence, assessments and findings with workflow, revisions, MCP tools and resources above, workspace export and import, minimal UI. No server-driven AI except embeddings; all reasoning in the client.
 
 **Phase 2**
 server-driven jobs via LiteLLM (internal requirement extraction, claimed controls, transcript to evidence), grading schemes beyond the seeded ones, report freezing, library analytics (which clauses are most often nonconforming across audits).
@@ -314,14 +336,15 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 7. ~~Criteria levels?~~ Resolved by cloning: generic criteria on the library requirement, customised criteria on the audit instance. A per-organisation level would be a "clone from last audit of this organisation" shortcut rather than a third storage level. Wanted?
 7a. When a new audit for the same organisation starts, should scope be built from the library, or offered as a clone of the previous audit's instances (keeping their customised criteria and notes), with origin links preserved?
 7b. Should library links among cloned requirements be copied into the audit at clone time (proposed), or always read through the origin?
-8. Which link types matter in practice? The list (sub-requirement, equivalent, more detailed than, similar, interprets) can grow; do you want it fixed or free with a controlled vocabulary?
+8. Which link types matter in practice? The list (sub-requirement, equivalent, more detailed than, similar, interprets) can grow; do you want it fixed or free with a controlled vocabulary? Proposed: a `link_type` table seeded with these five, editable in the UI, so new types need no release.
+8a. Should mapping proposals be allowed between an audit's instances (audit-local links) in the same way, or only in the library with audits inheriting? Proposed: both use the same tools, with a `scope` parameter (library or audit).
 9. Who may confirm an AI-proposed internal requirement into scope: the auditor alone, or should the auditee agree that the policy says what the AI claims?
 10. Should the app compute coverage of a requirement by its sub-requirements (all children compliant implies parent compliant), or is that always the auditor's judgement?
 11. ~~Ship seeded standard texts?~~ Decided by the source decision: no seeded texts, the auditor imports what they hold. The library is private to the instance.
 11a. Clause granularity: one requirement per numbered clause, or per "shall" sentence? Proposed: per source, chosen at import and recorded, defaulting to the numbered clause.
 11b. For PDF imports, should the AI also propose the generic `criteria_md` for each clause at import time, or only split the text and leave criteria to be written when the clause is first used in an audit?
-11c. Do your existing spreadsheets already contain cross-standard mappings (e.g. a NIS2 to ISO 27001 column)? If so, the mapping-sheet reader belongs in the MVP.
-11d. Should similarity proposals run automatically whenever a new source is imported (every new clause against the whole library), or only on request for a chosen pair of sources?
+11c. ~~Mapping columns in spreadsheets?~~ Decided: no; mapping is done through the LLM over MCP with full CRUD and provenance in the UI. A mapping-sheet reader is dropped from the MVP.
+11d. Should similarity candidates be computed automatically when a source is imported (embeddings only, no links created), so that `candidates` is instant when a mapping run starts? Proposed: yes; links are still only created inside a run.
 
 **Scopes and dimensions**
 
