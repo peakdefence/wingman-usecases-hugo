@@ -1,6 +1,6 @@
 # AI-supported audit application: design discussion, draft 0.1
 
-Status: discussion draft 0.8. The open questions that remain are in section 13; everything else is agreed for the MVP. Decisions taken so far are in section 0; open questions are collected in section 13.
+Status: 1.0, agreed MVP design. Section 0 lists the decisions, section 13 the defaults taken for the remaining questions; any of them can be reopened during implementation. Decisions taken so far are in section 0; open questions are collected in section 13.
 
 ## 0. Decisions so far
 
@@ -13,6 +13,11 @@ Status: discussion draft 0.8. The open questions that remain are in section 13; 
 | Generic audit criteria are drafted by the skill only on request | The import skill creates clause text and hierarchy; `criteria_md` on library requirements is filled when the auditor asks, per clause or per source. |
 | Link types are an editable table | `link_type` rows seeded with sub_requirement, equivalent, more_detailed_than, similar, interprets, supersedes; each with label, inverse label, `directional` flag and whether `score` applies. Editable in the UI; mapping tools validate against it. |
 | Server-side AI in the MVP is embeddings only, local or cloud at the operator's choice; all other reasoning runs in the MCP client's model | The app calls one configured embedding model through LiteLLM (e.g. a local Ollama model or a cloud embedding API). No other server-side LLM calls exist in the MVP; the client-driven path is the only reasoning path. Phase 2 server-driven jobs stay optional. |
+| Audit type is a label | Internal, external and supplier audits share one workflow; the type appears in the report and can later gate behaviour if needed. |
+| Parent status is never derived from sub-requirements | The matrix shows children's grades under the parent for information; the parent's assessment is always the auditor's own. |
+| Grading scheme is fixed once the first assessment is confirmed | Before that it can be changed freely; after, the app refuses the change. |
+| Freezing | The audit is frozen when the report is approved. Reopening requires a reason, is logged, and any later report is a new version; the frozen report version is kept. |
+| History granularity and LLM content | Every field change is a JSON patch revision with a periodic full snapshot. For LLM calls only metadata is stored (model, purpose, run id, token counts), never prompt or response content. |
 | "Not verifiable" is a valid final verdict | A follow-up item may end as `not verifiable`, and an assessment may end as "no reasonable assurance" (or the scheme's equivalent), with the report stating clearly that conformity or nonconformity could not be established. The app never forces a conversion into a finding. |
 | Sources and requirements are kept long term, independent of any audit | The requirement library (sources, requirements, links between requirements) is a top-level, cross-organisation store. See section 3.1. |
 | Mappings between requirements are created in the app through the LLM over MCP, not imported | Imports carry no mapping columns. The MCP surface has the full link lifecycle (propose in batch, confirm, reject, edit, retire, list with provenance), each mapping run is recorded as a `mapping_run`, and the UI offers CRUD on links with when, how and by what each link was created. See section 3.1, "Mapping workflow". |
@@ -373,19 +378,19 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 - The audit plan is both a Markdown document and a set of structured events, so iterations are versions and coverage can be checked by a query.
 - Graph database replaced by a relational `link` table plus vector similarity.
 
-## 13. Open questions
+## 13. Questions, decisions and defaults
 
 **Scope and users**
 
 1. ~~Single auditor or audit team?~~ Decided: single auditor.
 2. ~~Does the auditee log in?~~ Decided: no.
-3. External audits on behalf of a certification body versus internal audits: do we need the audit type to change the workflow (for example, mandatory closing meeting, mandatory grading scheme) or only the label?
-4. Should roles (CISO, control owner) be modelled as in WINGMAN, or are persons with role titles enough for an audit record?
+3. ~~Audit type changes workflow?~~ Decided: label only.
+4. Roles: default taken, persons with role titles; a `role` entity is phase 3 with the WINGMAN integration.
 
 **Requirements**
 
 5. ~~Where do sources come from?~~ Decided: the auditor's spreadsheets, Markdown and PDF uploads, kept long term in a shared library.
-6. Versioning of sources (ISO 27001:2013 → 2022): proposed as a new source with `supersedes` plus requirement-level links (section 3.1). Agree?
+6. Source editions: default taken, a new source with `supersedes` plus requirement-level links.
 7. ~~Criteria levels?~~ Resolved by cloning: generic criteria on the library requirement, customised criteria on the audit instance. A per-organisation level would be a "clone from last audit of this organisation" shortcut rather than a third storage level. Wanted?
 7a. ~~New audit from library or from previous audit?~~ Decided: either, chosen at creation; cloning copies scope only, never evidence or findings; previous findings are followed up when the audit is in the same programme.
 7b. ~~Copy library links at clone time?~~ Decided: yes, copied and editable in the audit.
@@ -394,45 +399,45 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 7e. ~~Repeat marker?~~ Decided: marker and links to the previous finding; escalation stays with the skill and the auditor.
 8. ~~Link types fixed or editable?~~ Decided: editable `link_type` table, seeded.
 8a. ~~Mapping tools on audit instances too?~~ Decided: both, via a `scope` parameter; library changes never propagate to audits.
-9. Who may confirm an AI-proposed internal requirement into scope: the auditor alone, or should the auditee agree that the policy says what the AI claims?
-10. Should the app compute coverage of a requirement by its sub-requirements (all children compliant implies parent compliant), or is that always the auditor's judgement?
+9. Confirming internal requirements: default taken, the auditor alone (the auditee does not log in); the auditee's agreement, if sought, is recorded as a note.
+10. ~~Derive parent status from children?~~ Decided: never; shown for information only.
 11. ~~Ship seeded standard texts?~~ Decided by the source decision: no seeded texts, the auditor imports what they hold. The library is private to the instance.
 11a. ~~Clause granularity?~~ Resolved by the import decision: the skill agrees it with the auditor per source and records it on the source; default numbered clause.
 11b. ~~Draft generic criteria at import?~~ Decided: only on request.
 11c. ~~Mapping columns in spreadsheets?~~ Decided: no; mapping is done through the LLM over MCP with full CRUD and provenance in the UI. A mapping-sheet reader is dropped from the MVP.
-11d. Should similarity candidates be computed automatically when a source is imported (embeddings only, no links created), so that `candidates` is instant when a mapping run starts? Proposed: yes; links are still only created inside a run.
+11d. Embeddings on import: default taken, computed automatically; links only inside a run.
 
 **Scopes and dimensions**
 
-12. Are dimensions always organisational (team, service, site), or also temporal (period before and after a change) or supplier-based?
+12. Dimensions: default taken, free-form named dimensions with an optional `kind` (unit, service, site, supplier, period), so nothing is excluded.
 13. ~~Not applicable per dimension?~~ Decided: yes, with mandatory justification, reported as exclusions.
-14. Is one finding across several dimensions, or one conclusion for the whole audit when all dimensions are compliant, the common case? That decides the default the UI offers.
+14. Finding default in multi-scope audits: default taken, the UI proposes one finding per dimension and offers "all dimensions" as a one-click alternative.
 
 **Planning and fieldwork**
 
-15. Should the plan include non-meeting events (system walkthrough, document review session, site visit, sampling session) with the same coverage mechanics? The design assumes yes.
-16. Should sampling plans be first-class (as above) or part of the agenda text?
-17. How do transcripts arrive: pasted text, uploaded files, or a live local transcription stream? Live changes the API shape.
-18. Does evidence need an auditee approval step for every item, or only for transcript-derived evidence as the skill does today?
-19. Evidence validity period (WINGMAN: evidence expires) is important for continuous assurance; is it relevant in a point-in-time audit, or is it only kept for the WINGMAN export?
+15. Non-meeting events: default taken, yes, same coverage mechanics.
+16. Sampling: default taken, first-class `sampling` rows, rendered into the agenda.
+17. Transcripts: default taken, pasted text or uploaded files in the MVP; live streaming is phase 3 with the local agent runner.
+18. Evidence approval: default taken, an optional `approved_by_auditee` flag on every item, required by the skill only for transcript-derived evidence, as today.
+19. Evidence validity: default taken, `valid_until` kept as an optional field for the WINGMAN export; not used by the audit workflow.
 
 **Results**
 
-20. Must the grading scheme be fixed when the audit starts, or can it change before reporting (with re-mapping of grades)?
+20. ~~Grading scheme change?~~ Decided: fixed once the first assessment is confirmed.
 21. ~~Where does the derivation table live?~~ Decided: as its own versioned entity in the app, read and applied by the skill, never by the app.
 21a. ~~Rule set per audit?~~ Decided: one default rule set per scheme for now.
-22. What does "auditee feedback" change: only the text and status of a finding, or can the auditee propose a different grade that the auditor accepts or rejects?
-23. When is an audit frozen, and who may reopen it? Does a reopened audit get a new version of the report?
+22. Auditee feedback: default taken, recorded as comments of kind `auditee response`, including a proposed grade if they make one; only the auditor changes the finding.
+23. ~~Freezing?~~ Decided: frozen at report approval; reopening with a reason; later reports are new versions.
 
 **History and AI**
 
-24. How granular should the history be: every field change (JSON patch) or every save? Every field change is proposed.
-25. Should the content of LLM prompts and responses be stored for traceability, or only metadata? Storing content helps audits of the audit but multiplies the data to protect.
+24. ~~History granularity?~~ Decided: every field change as a JSON patch, periodic snapshots.
+25. ~~Store LLM content?~~ Decided: metadata only.
 26. ~~Which jobs must run fully local?~~ Decided: server-side AI is embeddings only, local or cloud at the operator's choice; everything else runs in the client's model.
-27. Should the app check and report consistency rules itself (requirement in scope with no coverage, finding without evidence, confirmed assessment with pending evidence still open), in the spirit of WINGMAN's gap list? Proposed: yes, as a `gaps` tool and a UI panel.
+27. Consistency checks: default taken, a `gaps` tool and UI panel with the rules listed, in the spirit of WINGMAN's gap list.
 
 **Operations**
 
 28. ~~Single instance or shared?~~ Follows from single auditor: one instance, several organisations and audits, one shared library.
-29. Backup and retention: audit records are often required for years. Is the workspace export the archive format, or do we also need database backups scheduled from the app?
-30. Languages: the record is multilingual (requirements verbatim in their language, working language per audit). Is UI localisation (English, Latvian) needed in the MVP?
+29. Backup: default taken, the workspace export is the archive format per audit; database backups are the operator's `pg_dump`, documented in the deployment guide, not scheduled by the app.
+30. UI language: default taken, English only in the MVP, strings externalised so Latvian can follow.
