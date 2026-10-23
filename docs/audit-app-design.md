@@ -473,3 +473,22 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 28. ~~Single instance or shared?~~ Follows from single auditor: one instance, several organisations and audits, one shared library.
 29. Backup: default taken, the workspace export is the archive format per audit; database backups are the operator's `pg_dump`, documented in the deployment guide, not scheduled by the app.
 30. UI language: default taken, English only in the MVP, strings externalised so Latvian can follow.
+
+## 14. Before building: decisions still needed
+
+Design questions are closed. These are build decisions, each with the default that will be used unless changed.
+
+| # | Decision | Default |
+|---|---|---|
+| B1 | Where the code lives | A new repository, `peakdefence/audit-app` or similar; this Hugo repo keeps only the design document. |
+| B2 | Stack | Python 3.12, FastAPI, SQLAlchemy and Alembic, MCP Python SDK, PostgreSQL 16 with pgvector; UI server-rendered with HTMX; Docker Compose. |
+| B3 | First MCP client | Claude Desktop and Claude Code over streamable HTTP with a bearer token; stdio also supported for Claude Code on the same machine. |
+| B4 | Embedding model for development | Local Ollama `nomic-embed-text` through LiteLLM; a cloud embedding model is a config change. |
+| B5 | File storage in the MVP | A Docker volume behind an S3-style interface; MinIO is optional. |
+| B6 | Skills | Three skills in the app repository: `audit-library` (import and mapping), `audit-run` (the existing wingman-audit stages rewritten to call the app), `audit-report`. The current wingman-audit skill stays untouched until the app replaces it. |
+| B7 | Identifier scheme | `R-`, `M-`, `E-`, `P-`, `F-`, `FU-` per audit as in the skill, with `C-nnn.X` for conclusions per dimension where needed. |
+| B8 | Report structure | The existing `assets/report-template.md` of the wingman-audit skill, extended with the exclusions and follow-up sections. |
+| B9 | Test data | One anonymised requirement spreadsheet, one PDF standard excerpt and one Markdown policy from the auditor, plus a synthetic audit, as fixtures for import, mapping and the matrix. |
+| B10 | Deployment target | Docker Desktop on the auditor's laptop (macOS or Windows); no GPU assumed, so the default embedding model must run on CPU. |
+| B11 | Build order | 1 schema and revision mechanism; 2 library and mapping tools with the import and mapping skills; 3 audit, scope, plan, fieldwork and results tools with the adapted audit skill; 4 UI; 5 workspace export and import and report data. |
+| B12 | Licence and language | Private repository; code, UI and documentation in English. |
