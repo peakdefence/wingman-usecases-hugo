@@ -10,6 +10,8 @@ Status: discussion draft 0.2. Decisions taken so far are in section 0; open ques
 | The auditee does not log in | No auditee portal. Pending evidence is chased by the auditor; the app produces reminder texts and the auditor forwards them. Auditee feedback on findings is entered by the auditor as `finding_comment` of kind `auditee response`. |
 | Requirement sources come from the auditor's spreadsheets, uploaded Markdown and PDF documents | Import formats for the MVP: XLSX/CSV with column mapping, Markdown with a heading convention, PDF via extraction with AI-proposed clause splitting that the auditor confirms. No seeded standard texts shipped with the app. |
 | Sources and requirements are kept long term, independent of any audit | The requirement library (sources, requirements, links between requirements) is a top-level, cross-organisation store. Audits reference it; they never copy it. See section 3.1. |
+| Applicability per dimension can be "not applicable" | `applicability` is recorded per requirement × dimension with a mandatory justification for `not_applicable`; no assessment row is created for that pair, and the report lists the exclusions Statement of Applicability style. See section 3.2. |
+| The status-to-grade derivation table lives separately from the grading scheme and is used by the skill, not enforced by the app | A `derivation_rule_set` entity (documentation status × operation status → proposed grade of a given scheme) is stored and versioned in the app and read by the skill through MCP when it proposes a grade. The app records which rule set version a proposal used but never applies the table itself; the confirmed grade is always the auditor's. See section 3.6. |
 
 
 ## 1. What the app is, and what it is not
@@ -75,11 +77,19 @@ Where to draw the clause boundary (one requirement per numbered clause, or per "
 | Entity | Purpose | Key fields |
 |---|---|---|
 | `grading_scheme` | The conformity criteria set used by an audit. | name; ordered `grades` with code, label, severity rank, colour, and whether it counts as nonconformity. Seeded: ISO 19011 set (conformity, minor NC, major NC, observation, OFI), the skill's set (compliant, RfI, minor, major, no reasonable assurance), a CMMI-style 0..5 maturity scale; custom schemes allowed |
+| `derivation_rule_set` | How documentation and operation status map to a proposed grade. Separate from the scheme; several rule sets can target one scheme. | `grading_scheme_id`, name, version, `rules` (documentation status × operation status → grade, with an optional condition text such as "Major if the gap defeats the requirement's purpose"), `notes_md`. Seeded with the table from the skill's `conventions.md`. Read by skills via MCP; never applied by the app |
 | `audit` | One engagement. | `organisation_id`, title, type (internal, external, supplier), period, dates, working language, `risk_profile_md`, `grading_scheme_id`, `scope_mode`: single or multi; status: planning, fieldwork, reporting, closed, frozen |
 | `dimension` | A scope within a multi-scope audit (a product, team, service or site). | `audit_id`, name, optional link to an `organisation.unit` or a WINGMAN asset id |
-| `audit_requirement` | The scope line: this requirement is audited in this audit. | `audit_id`, `requirement_id`, display id `R-nnn`, `criteria_md` override for this customer, process, roles, `applicability`: all dimensions or a listed subset, `in_scope` with removal date and reason instead of deletion |
+| `audit_requirement` | The scope line: this requirement is audited in this audit. | `audit_id`, `requirement_id`, display id `R-nnn`, `criteria_md` override for this customer, process, roles, `in_scope` with removal date and reason instead of deletion |
+| `applicability` | Whether a requirement applies in a dimension. One row per `audit_requirement` × `dimension` (one row per requirement in single-scope audits). | `status`: applicable, not_applicable; `justification_md` (mandatory for not_applicable); decided by and when; status proposed or confirmed |
 
 Dimensions in WINGMAN terms are the `audit-asset` edge; in the app they are a first-class list so applicability per requirement can be recorded before any asset register exists.
+
+Applicability rules:
+
+- Default is `applicable` everywhere; the auditor (or a skill, as a proposal) sets `not_applicable` with a justification.
+- A `not_applicable` pair gets no `assessment`, is excluded from the coverage check, and is listed in the report under exclusions with its justification, in the style of a Statement of Applicability.
+- Changing applicability after an assessment exists is allowed but creates a revision and, if an assessment is already confirmed, requires a reason; the assessment is kept with status `superseded`, not deleted.
 
 ### 3.3 Organisation knowledge and risk
 
@@ -120,7 +130,7 @@ Two layers, because they answer different questions:
 
 | Entity | Purpose | Key fields |
 |---|---|---|
-| `assessment` | The status of one requirement in one dimension (or the whole audit when `dimension_id` is null). Exactly one per `audit_requirement` × applicable dimension. | `documentation_status`, `operation_status` (not verified, not operating, operating with gaps, operating effectively), `proposed_grade`, `confirmed_grade` (from the audit's grading scheme), `basis_md` with evidence and event references, confirmed by and when |
+| `assessment` | The status of one requirement in one dimension (or the whole audit when `dimension_id` is null). Exactly one per `audit_requirement` × dimension whose applicability is `applicable`. | `documentation_status`, `operation_status` (not verified, not operating, operating with gaps, operating effectively), `proposed_grade` with `derivation_rule_set_id` and version used, `confirmed_grade` (from the audit's grading scheme), `basis_md` with evidence and event references, confirmed by and when |
 | `finding` | A narrated observation: gap, consequence, recommendation. Zero or many per assessment; one finding may concern several requirements or dimensions (a systemic gap). | `audit_id`, display id `F-nnn`, `grade` (from the scheme), `requirement_md`, `gap_md`, `consequence_md`, `recommendation_md`, `status` (workflow below), targets via `finding_link` to `audit_requirement` × `dimension`, evidence via `evidence_link` |
 | `finding_comment` | Discussion and auditee feedback. | `finding_id`, author (person or ai), `text_md`, kind: auditor note, auditee response, reviewer comment, decision |
 | `follow_up_task` | Corrective action agreed on a finding. | `finding_id`, description, owner, due, status; exportable to WINGMAN tasks |
@@ -219,7 +229,7 @@ Tools are grouped by stage. Names are indicative.
 
 - Organisation: `list_organisations`, `get_organisation`, `upsert_organisation`, `upload_organisation_attachment`
 - Requirements: `list_requirement_sources`, `import_requirement_source` (CSV, XLSX, Markdown, JSON), `search_requirements` (text and vector), `get_requirement`, `propose_requirement` (AI-extracted, status proposed), `confirm_requirement`, `link_requirements`, `find_similar_requirements`
-- Audit: `create_audit`, `get_audit_status` (the "where are we" call every skill makes first), `set_scope_mode`, `upsert_dimensions`, `add_requirements_to_scope`, `remove_from_scope` (with reason), `set_applicability`, `set_criteria_override`, `list_grading_schemes`, `set_risk_profile`
+- Audit: `create_audit`, `get_audit_status` (the "where are we" call every skill makes first), `set_scope_mode`, `upsert_dimensions`, `add_requirements_to_scope`, `remove_from_scope` (with reason), `set_applicability` (with justification), `applicability_report` (exclusions per dimension), `set_criteria_override`, `list_grading_schemes`, `get_derivation_rules` (for the audit's scheme), `set_risk_profile`
 - Documents: `upload_document`, `get_document_text`, `search_documents`, `propose_claimed_control`, `confirm_claimed_control`, `propose_risk_items`
 - Planning: `propose_plan_version`, `agree_plan`, `upsert_event`, `set_event_coverage`, `coverage_report` (requirements × dimensions with no coverage), `upsert_sampling`
 - Fieldwork: `add_event_record` (notes, transcript, file), `register_evidence`, `link_evidence`, `approve_evidence`, `register_pending_evidence`, `update_pending_evidence`, `pending_evidence_reminders`
@@ -302,7 +312,7 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 **Scopes and dimensions**
 
 12. Are dimensions always organisational (team, service, site), or also temporal (period before and after a change) or supplier-based?
-13. Can applicability of a requirement to a dimension be "not applicable" with a justification that appears in the report (Statement of Applicability style)?
+13. ~~Not applicable per dimension?~~ Decided: yes, with mandatory justification, reported as exclusions.
 14. Is one finding across several dimensions, or one conclusion for the whole audit when all dimensions are compliant, the common case? That decides the default the UI offers.
 
 **Planning and fieldwork**
@@ -316,7 +326,8 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 **Results**
 
 20. Must the grading scheme be fixed when the audit starts, or can it change before reporting (with re-mapping of grades)?
-21. The skill derives a proposed grade from documentation and operation status with a table. Should that derivation table be part of the grading scheme (configurable) or stay in the skill?
+21. ~~Where does the derivation table live?~~ Decided: as its own versioned entity in the app, read and applied by the skill, never by the app.
+21a. Should the auditor be able to attach a different rule set per audit (e.g. a stricter one for a certification readiness audit), or is one default rule set per grading scheme enough for now?
 22. What does "auditee feedback" change: only the text and status of a finding, or can the auditee propose a different grade that the auditor accepts or rejects?
 23. When is an audit frozen, and who may reopen it? Does a reopened audit get a new version of the report?
 
