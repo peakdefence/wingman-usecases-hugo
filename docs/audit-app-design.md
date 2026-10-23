@@ -1,6 +1,6 @@
 # AI-supported audit application: design discussion, draft 0.1
 
-Status: discussion draft 0.2. Decisions taken so far are in section 0; open questions are collected in section 13.
+Status: discussion draft 0.3. Decisions taken so far are in section 0; open questions are collected in section 13.
 
 ## 0. Decisions so far
 
@@ -9,9 +9,11 @@ Status: discussion draft 0.2. Decisions taken so far are in section 0; open ques
 | Single auditor for now | No accounts, roles or reviewer sign-off in the MVP. One API token; MCP over stdio needs none. The data model keeps `actor` on every revision so a team mode can be added without migration. |
 | The auditee does not log in | No auditee portal. Pending evidence is chased by the auditor; the app produces reminder texts and the auditor forwards them. Auditee feedback on findings is entered by the auditor as `finding_comment` of kind `auditee response`. |
 | Requirement sources come from the auditor's spreadsheets, uploaded Markdown and PDF documents | Import formats for the MVP: XLSX/CSV with column mapping, Markdown with a heading convention, PDF via extraction with AI-proposed clause splitting that the auditor confirms. No seeded standard texts shipped with the app. |
-| Sources and requirements are kept long term, independent of any audit | The requirement library (sources, requirements, links between requirements) is a top-level, cross-organisation store. Audits reference it; they never copy it. See section 3.1. |
+| Sources and requirements are kept long term, independent of any audit | The requirement library (sources, requirements, links between requirements) is a top-level, cross-organisation store. See section 3.1. |
+| Requirements used in an audit are cloned into the audit as instances, keeping a link to the original | `audit_requirement` is a full copy of the library requirement (ref, title, text, criteria) at clone time, with `origin_requirement_id` and the origin revision. The instance is freely customised for that audit; the library is untouched. The app shows the diff from the origin and can offer, never apply, a refresh from the library. See section 3.2. |
 | Applicability per dimension can be "not applicable" | `applicability` is recorded per requirement × dimension with a mandatory justification for `not_applicable`; no assessment row is created for that pair, and the report lists the exclusions Statement of Applicability style. See section 3.2. |
 | The status-to-grade derivation table lives separately from the grading scheme and is used by the skill, not enforced by the app | A `derivation_rule_set` entity (documentation status × operation status → proposed grade of a given scheme) is stored and versioned in the app and read by the skill through MCP when it proposes a grade. The app records which rule set version a proposal used but never applies the table itself; the confirmed grade is always the auditor's. See section 3.6. |
+| One default rule set per grading scheme | `grading_scheme.default_rule_set_id`; no per-audit override in the MVP. The entity stays separate so an override can be added later without a model change. |
 
 
 ## 1. What the app is, and what it is not
@@ -57,7 +59,7 @@ Internal requirements extracted from policies are ordinary `requirement` rows in
 
 Sources, requirements and the links between them form a **library that outlives any audit**. This has four consequences for the model.
 
-1. **Audits reference, never copy.** `audit_requirement` points at `requirement_id`. The clause text and generic criteria are read from the library at report time, with the library revision number recorded on the scope line so a later correction of the library does not silently change a frozen report.
+1. **Audits clone, then own.** Putting a requirement in scope copies it into an `audit_requirement` instance (section 3.2) together with the library revision it was copied from. The audit works only on its instances; a later correction in the library never changes an audit, and an audit's customisations never leak into the library unless the auditor promotes them explicitly (`promote_to_library`, which creates a new library revision with provenance "from audit X").
 2. **Source files are kept.** Every import keeps the original file (`source_file` on `requirement_source`: the spreadsheet, the Markdown, the PDF) in the object store, plus the extracted text and a per-requirement pointer back into it (sheet and row, heading path, or PDF page and paragraph). The auditor can always open the clause in its original.
 3. **Links are library data with their own provenance.** A `requirement_link` records how it came to be: `manual` (auditor), `imported` (a mapping sheet, e.g. a NIS2 to ISO 27001 crosswalk, with the mapping document kept as a source of kind `mapping`), or `ai` (proposed from vector similarity or a model's reading, with the score and the model id). AI links stay `proposed` until confirmed, and a confirmed link is never overwritten by a later AI run; a new proposal with a different score is a new revision of the link.
 4. **Sources have versions.** A new edition (ISO 27001:2013 to 2022) is a new `requirement_source` with a `supersedes` link to the old one, and requirement-level `requirement_link` rows of type `equivalent` or `more_detailed_than` between the editions, proposed by AI and confirmed by the auditor. Old audits keep pointing at the old edition. Nothing in the library is ever deleted; a source or requirement can be `retired` with a date.
@@ -80,10 +82,19 @@ Where to draw the clause boundary (one requirement per numbered clause, or per "
 | `derivation_rule_set` | How documentation and operation status map to a proposed grade. Separate from the scheme; several rule sets can target one scheme. | `grading_scheme_id`, name, version, `rules` (documentation status × operation status → grade, with an optional condition text such as "Major if the gap defeats the requirement's purpose"), `notes_md`. Seeded with the table from the skill's `conventions.md`. Read by skills via MCP; never applied by the app |
 | `audit` | One engagement. | `organisation_id`, title, type (internal, external, supplier), period, dates, working language, `risk_profile_md`, `grading_scheme_id`, `scope_mode`: single or multi; status: planning, fieldwork, reporting, closed, frozen |
 | `dimension` | A scope within a multi-scope audit (a product, team, service or site). | `audit_id`, name, optional link to an `organisation.unit` or a WINGMAN asset id |
-| `audit_requirement` | The scope line: this requirement is audited in this audit. | `audit_id`, `requirement_id`, display id `R-nnn`, `criteria_md` override for this customer, process, roles, `in_scope` with removal date and reason instead of deletion |
+| `audit_requirement` | An audit-local **instance** of a requirement: a clone of the library row at the moment it was put in scope, customised for this audit. | `audit_id`, display id `R-nnn`, `origin_requirement_id` and `origin_revision` (null for requirements created inside the audit), `ref`, `title`, `text_md`, `criteria_md`, `notes_md`, process, roles, `in_scope` with removal date and reason instead of deletion |
 | `applicability` | Whether a requirement applies in a dimension. One row per `audit_requirement` × `dimension` (one row per requirement in single-scope audits). | `status`: applicable, not_applicable; `justification_md` (mandatory for not_applicable); decided by and when; status proposed or confirmed |
 
 Dimensions in WINGMAN terms are the `audit-asset` edge; in the app they are a first-class list so applicability per requirement can be recorded before any asset register exists.
+
+Instance rules:
+
+- Cloning copies ref, title, verbatim text and generic criteria. Everything on the instance is editable; the library row is not touched. The usual customisation is `criteria_md` (how this clause is to be judged for this customer) and `notes_md`; editing `text_md` is allowed but the UI marks the instance as "text differs from source" so a report can quote the original where required.
+- The instance keeps `origin_revision`. The UI and a `diff_from_origin` tool show what was changed locally and what changed in the library since cloning. A `refresh_from_origin` tool proposes a merge; the auditor accepts field by field. Nothing is refreshed automatically.
+- Requirements can also be created directly in the audit with no origin (an ad hoc customer requirement, or an internal requirement extracted from a policy during this audit). They live only in that audit until the auditor promotes them to the library, which creates a library requirement (in an internal source of the organisation, or any chosen source) and sets the instance's origin to it.
+- Links between instances inside an audit (`audit_requirement_link`) are the audit's own. At clone time the library links among the cloned requirements are copied as instance links with provenance `inherited`, so the audit has a complete, editable picture without depending on later library changes. Links to library requirements that are not in scope are not copied but can be looked up through the origin.
+- The report quotes the instance. Where the instance text differs from the origin, the report can show both, with the library source and revision cited.
+- Removing an instance from scope keeps it with `in_scope = false`, date and reason, as before.
 
 Applicability rules:
 
@@ -152,7 +163,7 @@ Single-scope audits are the special case `scope_mode = single`: one implicit dim
 |---|---|
 | audit | `audit` |
 | audit → asset (scoped to) | `dimension` |
-| audit → requirement (tests) | `audit_requirement` |
+| audit → requirement (tests) | `audit_requirement` (audit-local instance with `origin_requirement_id` to the library) |
 | requirement → requirement (maps to) | `requirement_link` with type |
 | requirement → document (interpreted in), control → document | `claimed_control`, internal `requirement` with `origin_document_id` |
 | audit → document (reads) | `document` |
@@ -229,7 +240,7 @@ Tools are grouped by stage. Names are indicative.
 
 - Organisation: `list_organisations`, `get_organisation`, `upsert_organisation`, `upload_organisation_attachment`
 - Requirements: `list_requirement_sources`, `import_requirement_source` (CSV, XLSX, Markdown, JSON), `search_requirements` (text and vector), `get_requirement`, `propose_requirement` (AI-extracted, status proposed), `confirm_requirement`, `link_requirements`, `find_similar_requirements`
-- Audit: `create_audit`, `get_audit_status` (the "where are we" call every skill makes first), `set_scope_mode`, `upsert_dimensions`, `add_requirements_to_scope`, `remove_from_scope` (with reason), `set_applicability` (with justification), `applicability_report` (exclusions per dimension), `set_criteria_override`, `list_grading_schemes`, `get_derivation_rules` (for the audit's scheme), `set_risk_profile`
+- Audit: `create_audit`, `get_audit_status` (the "where are we" call every skill makes first), `set_scope_mode`, `upsert_dimensions`, `add_requirements_to_scope` (clones from the library), `create_audit_requirement` (no origin), `update_audit_requirement`, `diff_from_origin`, `refresh_from_origin` (proposal), `promote_to_library`, `link_audit_requirements`, `remove_from_scope` (with reason), `set_applicability` (with justification), `applicability_report` (exclusions per dimension), `set_criteria_override`, `list_grading_schemes`, `get_derivation_rules` (for the audit's scheme), `set_risk_profile`
 - Documents: `upload_document`, `get_document_text`, `search_documents`, `propose_claimed_control`, `confirm_claimed_control`, `propose_risk_items`
 - Planning: `propose_plan_version`, `agree_plan`, `upsert_event`, `set_event_coverage`, `coverage_report` (requirements × dimensions with no coverage), `upsert_sampling`
 - Fieldwork: `add_event_record` (notes, transcript, file), `register_evidence`, `link_evidence`, `approve_evidence`, `register_pending_evidence`, `update_pending_evidence`, `pending_evidence_reminders`
@@ -282,7 +293,8 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 ## 12. Things in the original list that this design changes
 
 - "One finding per requirement" becomes **one assessment per requirement × dimension, zero or many findings**, because a systemic gap spans requirements and a requirement can carry both a nonconformity and an opportunity for improvement. The assessment keeps the one-row-per-requirement property for the matrix and the report.
-- Internal requirements are not a separate entity; they are requirements in an internal source, linked to the external clause.
+- Internal requirements are not a separate entity; they are requirements in an internal source of the organisation (library) or audit-local instances without an origin until promoted, linked to the external clause.
+- Requirements in scope are **clones**, not references (decided). The cost is that a library correction has to be pulled into each audit deliberately; the benefit is that an audit is self-contained, customisable and stable, and that a frozen audit never depends on the library.
 - The audit plan is both a Markdown document and a set of structured events, so iterations are versions and coverage can be checked by a query.
 - Graph database replaced by a relational `link` table plus vector similarity.
 
@@ -299,7 +311,9 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 
 5. ~~Where do sources come from?~~ Decided: the auditor's spreadsheets, Markdown and PDF uploads, kept long term in a shared library.
 6. Versioning of sources (ISO 27001:2013 → 2022): proposed as a new source with `supersedes` plus requirement-level links (section 3.1). Agree?
-7. Should "audit criteria" exist at three levels (generic on the requirement, per organisation, per audit), or are generic plus per-audit override enough?
+7. ~~Criteria levels?~~ Resolved by cloning: generic criteria on the library requirement, customised criteria on the audit instance. A per-organisation level would be a "clone from last audit of this organisation" shortcut rather than a third storage level. Wanted?
+7a. When a new audit for the same organisation starts, should scope be built from the library, or offered as a clone of the previous audit's instances (keeping their customised criteria and notes), with origin links preserved?
+7b. Should library links among cloned requirements be copied into the audit at clone time (proposed), or always read through the origin?
 8. Which link types matter in practice? The list (sub-requirement, equivalent, more detailed than, similar, interprets) can grow; do you want it fixed or free with a controlled vocabulary?
 9. Who may confirm an AI-proposed internal requirement into scope: the auditor alone, or should the auditee agree that the policy says what the AI claims?
 10. Should the app compute coverage of a requirement by its sub-requirements (all children compliant implies parent compliant), or is that always the auditor's judgement?
@@ -327,7 +341,7 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 
 20. Must the grading scheme be fixed when the audit starts, or can it change before reporting (with re-mapping of grades)?
 21. ~~Where does the derivation table live?~~ Decided: as its own versioned entity in the app, read and applied by the skill, never by the app.
-21a. Should the auditor be able to attach a different rule set per audit (e.g. a stricter one for a certification readiness audit), or is one default rule set per grading scheme enough for now?
+21a. ~~Rule set per audit?~~ Decided: one default rule set per scheme for now.
 22. What does "auditee feedback" change: only the text and status of a finding, or can the auditee propose a different grade that the auditor accepts or rejects?
 23. When is an audit frozen, and who may reopen it? Does a reopened audit get a new version of the report?
 
