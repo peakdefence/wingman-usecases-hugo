@@ -1,6 +1,16 @@
 # AI-supported audit application: design discussion, draft 0.1
 
-Status: discussion draft. Nothing here is decided. Open questions are collected in section 13.
+Status: discussion draft 0.2. Decisions taken so far are in section 0; open questions are collected in section 13.
+
+## 0. Decisions so far
+
+| Decision | Consequence |
+|---|---|
+| Single auditor for now | No accounts, roles or reviewer sign-off in the MVP. One API token; MCP over stdio needs none. The data model keeps `actor` on every revision so a team mode can be added without migration. |
+| The auditee does not log in | No auditee portal. Pending evidence is chased by the auditor; the app produces reminder texts and the auditor forwards them. Auditee feedback on findings is entered by the auditor as `finding_comment` of kind `auditee response`. |
+| Requirement sources come from the auditor's spreadsheets, uploaded Markdown and PDF documents | Import formats for the MVP: XLSX/CSV with column mapping, Markdown with a heading convention, PDF via extraction with AI-proposed clause splitting that the auditor confirms. No seeded standard texts shipped with the app. |
+| Sources and requirements are kept long term, independent of any audit | The requirement library (sources, requirements, links between requirements) is a top-level, cross-organisation store. Audits reference it; they never copy it. See section 3.1. |
+
 
 ## 1. What the app is, and what it is not
 
@@ -27,6 +37,8 @@ Three sources shape the design:
 
 Names follow WINGMAN where the concept is the same, so a later integration (import requirements and controls from a WINGMAN tenant, push findings and tasks back) is a mapping, not a translation.
 
+Two scopes of data exist in the app: the **requirement library** (sources, requirements, links; shared across all organisations and audits, kept indefinitely) and **engagement data** (organisation, its documents, its internal requirements, its audits). Internal requirement sources belong to an organisation but live in the same tables as external sources, so cross-source links work uniformly.
+
 ### 3.1 Organisation and reference data
 
 | Entity | Purpose | Key fields |
@@ -38,6 +50,25 @@ Names follow WINGMAN where the concept is the same, so a later integration (impo
 | `requirement_link` | Typed edge between requirements, within or across sources. | from, to, `type`: sub_requirement, equivalent, more_detailed_than, similar, interprets; `score` 0..1 for similarity; `basis`: manual, imported mapping, ai; status |
 
 Internal requirements extracted from policies are ordinary `requirement` rows in an internal `requirement_source` owned by the organisation, linked to the external clause with `more_detailed_than` or `interprets`. That keeps one list, one block per requirement, and lets the scope selector treat them like any other requirement.
+
+#### The requirement library
+
+Sources, requirements and the links between them form a **library that outlives any audit**. This has four consequences for the model.
+
+1. **Audits reference, never copy.** `audit_requirement` points at `requirement_id`. The clause text and generic criteria are read from the library at report time, with the library revision number recorded on the scope line so a later correction of the library does not silently change a frozen report.
+2. **Source files are kept.** Every import keeps the original file (`source_file` on `requirement_source`: the spreadsheet, the Markdown, the PDF) in the object store, plus the extracted text and a per-requirement pointer back into it (sheet and row, heading path, or PDF page and paragraph). The auditor can always open the clause in its original.
+3. **Links are library data with their own provenance.** A `requirement_link` records how it came to be: `manual` (auditor), `imported` (a mapping sheet, e.g. a NIS2 to ISO 27001 crosswalk, with the mapping document kept as a source of kind `mapping`), or `ai` (proposed from vector similarity or a model's reading, with the score and the model id). AI links stay `proposed` until confirmed, and a confirmed link is never overwritten by a later AI run; a new proposal with a different score is a new revision of the link.
+4. **Sources have versions.** A new edition (ISO 27001:2013 to 2022) is a new `requirement_source` with a `supersedes` link to the old one, and requirement-level `requirement_link` rows of type `equivalent` or `more_detailed_than` between the editions, proposed by AI and confirmed by the auditor. Old audits keep pointing at the old edition. Nothing in the library is ever deleted; a source or requirement can be `retired` with a date.
+
+Import pipeline, one tool with three readers:
+
+| Input | Reader | What the auditor confirms |
+|---|---|---|
+| XLSX or CSV | column mapping (ref, title, text, extra columns kept as key-value) with a saved mapping profile per spreadsheet layout | the mapping once per layout, then only anomalies (empty refs, duplicates) |
+| Markdown | heading convention: `## <ref> <title>` followed by body; or a front-matter table | the parsed list, shown side by side with the text |
+| PDF | text extraction (pymupdf), OCR fallback, then an AI pass that proposes clause boundaries, refs and titles with page refs | every proposed clause; nothing enters the library from a PDF unconfirmed |
+
+Where to draw the clause boundary (one requirement per numbered clause, or per "shall" sentence) is the auditor's choice per source and is recorded on the source (`granularity`), because mappings between sources only make sense at comparable granularity. Sub-clauses are `requirement` rows linked to their parent with `sub_requirement`.
 
 ### 3.2 Audit configuration
 
@@ -208,9 +239,10 @@ Server-rendered pages, one per entity type, with list, detail, edit, history tab
 
 - the requirement matrix: requirements × dimensions with documentation status, operation status, grade, evidence count, open pending items, and coverage;
 - the plan calendar: events on a timeline with coverage counts;
-- the finding review page: finding, its evidence, comments, status transitions, with auditee feedback entry.
+- the finding review page: finding, its evidence, comments, status transitions, with auditee feedback entered by the auditor;
+- the library page: sources with their files, requirements with text and original location, and a link editor that shows proposed links with scores next to confirmed ones.
 
-An auditee-facing page for pending evidence (see what was promised, upload it, write a note) is the one place where a second kind of user appears, and it drives the authentication question (Q2).
+No auditee-facing pages (decision in section 0). Should that change, the pending-evidence page is the first candidate and brings accounts with it.
 
 ## 9. Report generation and portability
 
@@ -221,21 +253,21 @@ The report is generated by a skill from `report_data` (or the `report-data.json`
 ## 10. Security and privacy
 
 - Audit records contain personal data (names in transcripts, HR samples) and confidential policies. Default deployment binds to localhost or a private network; TLS termination is the operator's job.
-- Authentication: MVP is a single auditor with an API token; MCP over stdio needs none. Multi-user (audit team, reviewer, auditee) needs accounts and roles and is a second phase (Q2).
+- Authentication: single auditor with an API token (decided); MCP over stdio needs none. Multi-user would need accounts and roles; the revision model already records the actor, so it is additive.
 - Recordings and transcripts carry a consent flag; the skill's "transcribes locally" promise should hold: transcription via a local Whisper container or the client, never a third-party transcription service by default.
 - Encryption at rest is left to the volume; secrets (LLM keys) live in LiteLLM's config, not in the app database.
 - Every outbound LLM call is logged (model, purpose, token counts, no content) so the auditor can state in the report which models touched the record.
 
 ## 11. Phasing
 
-**MVP (one auditor, one organisation at a time)**
-organisation, requirement sources and requirements with import, audits with scope mode and dimensions, documents with text extraction, plan versions and events with coverage, event records, evidence with links, pending evidence, assessments and findings with workflow, revisions, MCP tools and resources above, workspace export and import, minimal UI. No server-driven AI except embeddings; all reasoning in the client.
+**MVP (one auditor, no auditee access)**
+requirement library with XLSX/CSV, Markdown and PDF import, source files kept, typed links with provenance and vector similarity proposals; organisation; audits with scope mode and dimensions, documents with text extraction, plan versions and events with coverage, event records, evidence with links, pending evidence, assessments and findings with workflow, revisions, MCP tools and resources above, workspace export and import, minimal UI. No server-driven AI except embeddings; all reasoning in the client.
 
 **Phase 2**
-server-driven jobs via LiteLLM (internal requirement extraction, claimed controls, transcript to evidence), similarity linking, grading schemes beyond the seeded ones, report freezing, auditee pending-evidence page with accounts.
+server-driven jobs via LiteLLM (internal requirement extraction, claimed controls, transcript to evidence), grading schemes beyond the seeded ones, report freezing, library analytics (which clauses are most often nonconforming across audits).
 
 **Phase 3**
-WINGMAN integration (import requirements, controls, documents, people from a tenant; push findings and tasks), multi-audit views per organisation (year on year per requirement, follow-up of last year's findings), local agent runner for fully offline operation.
+WINGMAN integration (import requirements, controls, documents, people from a tenant; push findings and tasks), multi-audit views per organisation (year on year per requirement, follow-up of last year's findings), local agent runner for fully offline operation, and, if ever wanted, team mode and an auditee page.
 
 ## 12. Things in the original list that this design changes
 
@@ -248,20 +280,24 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 
 **Scope and users**
 
-1. Is the app for one auditor (you) or for an audit team with a reviewer or lead auditor sign-off? That decides whether a `review` step and roles exist in the MVP.
-2. Does the auditee ever log in (to answer pending evidence, to respond to findings), or does all auditee input arrive through the auditor? This is the biggest driver of authentication and UI effort.
+1. ~~Single auditor or audit team?~~ Decided: single auditor.
+2. ~~Does the auditee log in?~~ Decided: no.
 3. External audits on behalf of a certification body versus internal audits: do we need the audit type to change the workflow (for example, mandatory closing meeting, mandatory grading scheme) or only the label?
 4. Should roles (CISO, control owner) be modelled as in WINGMAN, or are persons with role titles enough for an audit record?
 
 **Requirements**
 
-5. Where do requirement sources come from first: your own curated Markdown or spreadsheets, WINGMAN export, or public texts? This decides the import formats for the MVP.
-6. Versioning of sources (ISO 27001:2013 → 2022): new source with `supersedes` links, or versions inside one source?
+5. ~~Where do sources come from?~~ Decided: the auditor's spreadsheets, Markdown and PDF uploads, kept long term in a shared library.
+6. Versioning of sources (ISO 27001:2013 → 2022): proposed as a new source with `supersedes` plus requirement-level links (section 3.1). Agree?
 7. Should "audit criteria" exist at three levels (generic on the requirement, per organisation, per audit), or are generic plus per-audit override enough?
 8. Which link types matter in practice? The list (sub-requirement, equivalent, more detailed than, similar, interprets) can grow; do you want it fixed or free with a controlled vocabulary?
 9. Who may confirm an AI-proposed internal requirement into scope: the auditor alone, or should the auditee agree that the policy says what the AI claims?
 10. Should the app compute coverage of a requirement by its sub-requirements (all children compliant implies parent compliant), or is that always the auditor's judgement?
-11. Standard texts are copyrighted (ISO, CMMI). Storing verbatim text for your own use is one thing; shipping seeded sources with the app is another. Do we ship only structure and let users import texts they have licensed?
+11. ~~Ship seeded standard texts?~~ Decided by the source decision: no seeded texts, the auditor imports what they hold. The library is private to the instance.
+11a. Clause granularity: one requirement per numbered clause, or per "shall" sentence? Proposed: per source, chosen at import and recorded, defaulting to the numbered clause.
+11b. For PDF imports, should the AI also propose the generic `criteria_md` for each clause at import time, or only split the text and leave criteria to be written when the clause is first used in an audit?
+11c. Do your existing spreadsheets already contain cross-standard mappings (e.g. a NIS2 to ISO 27001 column)? If so, the mapping-sheet reader belongs in the MVP.
+11d. Should similarity proposals run automatically whenever a new source is imported (every new clause against the whole library), or only on request for a chosen pair of sources?
 
 **Scopes and dimensions**
 
@@ -293,6 +329,6 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 
 **Operations**
 
-28. Single instance per auditor on a laptop, or a shared instance for several engagements? Multi-tenancy within one instance is simple at the organisation level but affects authentication.
+28. ~~Single instance or shared?~~ Follows from single auditor: one instance, several organisations and audits, one shared library.
 29. Backup and retention: audit records are often required for years. Is the workspace export the archive format, or do we also need database backups scheduled from the app?
 30. Languages: the record is multilingual (requirements verbatim in their language, working language per audit). Is UI localisation (English, Latvian) needed in the MVP?
