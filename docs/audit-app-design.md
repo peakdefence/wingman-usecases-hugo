@@ -1,6 +1,6 @@
 # AI-supported audit application: design discussion, draft 0.1
 
-Status: discussion draft 0.4. Decisions taken so far are in section 0; open questions are collected in section 13.
+Status: discussion draft 0.5. Decisions taken so far are in section 0; open questions are collected in section 13.
 
 ## 0. Decisions so far
 
@@ -11,6 +11,10 @@ Status: discussion draft 0.4. Decisions taken so far are in section 0; open ques
 | Requirement sources come from the auditor's spreadsheets, uploaded Markdown and PDF documents | Import formats for the MVP: XLSX/CSV with column mapping, Markdown with a heading convention, PDF via extraction with AI-proposed clause splitting that the auditor confirms. No seeded standard texts shipped with the app. |
 | Sources and requirements are kept long term, independent of any audit | The requirement library (sources, requirements, links between requirements) is a top-level, cross-organisation store. See section 3.1. |
 | Mappings between requirements are created in the app through the LLM over MCP, not imported | Imports carry no mapping columns. The MCP surface has the full link lifecycle (propose in batch, confirm, reject, edit, retire, list with provenance), each mapping run is recorded as a `mapping_run`, and the UI offers CRUD on links with when, how and by what each link was created. See section 3.1, "Mapping workflow". |
+| A new audit starts from scratch or as a clone of a previous audit | Cloning copies the scope (requirement instances with their customisations, dimensions, applicability, audit-local links) and nothing from fieldwork or results (no events, evidence, assessments, findings). See section 3.2, "Starting from a previous audit". |
+| Audits belong to an audit programme; a follow-up audit checks the previous report's findings | When the auditor marks a new audit as part of the same programme as previous audits, their confirmed findings and follow-up tasks are brought in as `finding_follow_up` items to be verified (fixed, partially fixed, not fixed, not verifiable). See section 3.6, "Follow-up of previous findings". |
+| Library links among cloned requirements are copied into the audit at clone time and are editable there | `audit_requirement_link` rows with provenance `inherited`, then owned by the audit. |
+| Mapping tools work on the library and on an audit's instances, with a `scope` parameter | Changes to library links never propagate to existing audits; an audit's links stay as at clone time unless the auditor edits them or explicitly pulls a refresh. |
 | Requirements used in an audit are cloned into the audit as instances, keeping a link to the original | `audit_requirement` is a full copy of the library requirement (ref, title, text, criteria) at clone time, with `origin_requirement_id` and the origin revision. The instance is freely customised for that audit; the library is untouched. The app shows the diff from the origin and can offer, never apply, a refresh from the library. See section 3.2. |
 | Applicability per dimension can be "not applicable" | `applicability` is recorded per requirement × dimension with a mandatory justification for `not_applicable`; no assessment row is created for that pair, and the report lists the exclusions Statement of Applicability style. See section 3.2. |
 | The status-to-grade derivation table lives separately from the grading scheme and is used by the skill, not enforced by the app | A `derivation_rule_set` entity (documentation status × operation status → proposed grade of a given scheme) is stored and versioned in the app and read by the skill through MCP when it proposes a grade. The app records which rule set version a proposal used but never applies the table itself; the confirmed grade is always the auditor's. See section 3.6. |
@@ -93,7 +97,9 @@ Rules:
 
 MCP, in addition to the lifecycle calls above: `list_links(filter by source, requirement, type, status, run, actor)`, `get_link_history`, `list_mapping_runs`, `get_mapping_run`, `unmapped_requirements(source_a, source_b)` (clauses in A with no confirmed link into B), `mapping_matrix(source_a, source_b)` (a compact table for the report or for the skill).
 
-UI: a mapping page per pair of sources showing A's requirements on the left, their proposed and confirmed links to B on the right with scores and rationale, bulk confirm and reject, an "unmapped" filter, and a runs list with their statistics. Every link opens to a detail with its full history.
+Scope. Every mapping call takes `scope = library` (default) or `scope = audit:<id>`. In audit scope the same tools create and manage `audit_requirement_link` rows between the audit's instances, with the same statuses and provenance. Library links and audit links are independent after clone time: changing, confirming or retiring a link in the library does not touch any audit, and `diff_from_origin` lists link differences next to text differences so the auditor can pull a library change in deliberately, if ever.
+
+UI: a mapping page per pair of sources (or, in audit scope, for the audit's instances) showing A's requirements on the left, their proposed and confirmed links to B on the right with scores and rationale, bulk confirm and reject, an "unmapped" filter, and a runs list with their statistics. Every link opens to a detail with its full history.
 
 ### 3.2 Audit configuration
 
@@ -101,7 +107,8 @@ UI: a mapping page per pair of sources showing A's requirements on the left, the
 |---|---|---|
 | `grading_scheme` | The conformity criteria set used by an audit. | name; ordered `grades` with code, label, severity rank, colour, and whether it counts as nonconformity. Seeded: ISO 19011 set (conformity, minor NC, major NC, observation, OFI), the skill's set (compliant, RfI, minor, major, no reasonable assurance), a CMMI-style 0..5 maturity scale; custom schemes allowed |
 | `derivation_rule_set` | How documentation and operation status map to a proposed grade. Separate from the scheme; several rule sets can target one scheme. | `grading_scheme_id`, name, version, `rules` (documentation status × operation status → grade, with an optional condition text such as "Major if the gap defeats the requirement's purpose"), `notes_md`. Seeded with the table from the skill's `conventions.md`. Read by skills via MCP; never applied by the app |
-| `audit` | One engagement. | `organisation_id`, title, type (internal, external, supplier), period, dates, working language, `risk_profile_md`, `grading_scheme_id`, `scope_mode`: single or multi; status: planning, fieldwork, reporting, closed, frozen |
+| `audit_programme` | A series of audits of one organisation against the same objective (e.g. the ISMS internal audit programme), as in WINGMAN's plan → audit edge. | `organisation_id`, title, objective_md, cadence, status |
+| `audit` | One engagement. | `organisation_id`, `programme_id` nullable, `cloned_from_audit_id` nullable, `follows_up_audit_ids` (previous audits in the programme whose findings are to be verified), title, type (internal, external, supplier), period, dates, working language, `risk_profile_md`, `grading_scheme_id`, `scope_mode`: single or multi; status: planning, fieldwork, reporting, closed, frozen |
 | `dimension` | A scope within a multi-scope audit (a product, team, service or site). | `audit_id`, name, optional link to an `organisation.unit` or a WINGMAN asset id |
 | `audit_requirement` | An audit-local **instance** of a requirement: a clone of the library row at the moment it was put in scope, customised for this audit. | `audit_id`, display id `R-nnn`, `origin_requirement_id` and `origin_revision` (null for requirements created inside the audit), `ref`, `title`, `text_md`, `criteria_md`, `notes_md`, process, roles, `in_scope` with removal date and reason instead of deletion |
 | `applicability` | Whether a requirement applies in a dimension. One row per `audit_requirement` × `dimension` (one row per requirement in single-scope audits). | `status`: applicable, not_applicable; `justification_md` (mandatory for not_applicable); decided by and when; status proposed or confirmed |
@@ -116,6 +123,20 @@ Instance rules:
 - Links between instances inside an audit (`audit_requirement_link`) are the audit's own. At clone time the library links among the cloned requirements are copied as instance links with provenance `inherited`, so the audit has a complete, editable picture without depending on later library changes. Links to library requirements that are not in scope are not copied but can be looked up through the origin.
 - The report quotes the instance. Where the instance text differs from the origin, the report can show both, with the library source and revision cited.
 - Removing an instance from scope keeps it with `in_scope = false`, date and reason, as before.
+
+#### Starting from a previous audit
+
+When creating an audit the auditor chooses **from scratch** (scope built from the library) or **clone a previous audit** of the same organisation. Cloning copies, as new rows with provenance `cloned from audit X`:
+
+- requirement instances with their customised text, criteria, notes, process and roles; `origin_requirement_id` and `origin_revision` are carried over unchanged, so the new audit still knows which library revision it ultimately descends from, and `diff_from_origin` keeps working;
+- dimensions, and applicability per requirement × dimension with its justifications;
+- audit-local links between instances;
+- the grading scheme and scope mode;
+- optionally the previous plan as a starting draft (events without dates, coverage kept), since the people and processes are usually the same. Default off.
+
+Not cloned: event records, evidence, pending evidence, assessments, findings, comments, follow-up tasks, the report. Instances removed from scope in the previous audit are offered in a separate list, not cloned by default.
+
+If the previous audit is in the same programme, cloning also sets `follows_up_audit_ids`, which triggers the follow-up mechanism in section 3.6. The two choices are independent: an audit can follow up a previous one with a scope built from scratch, or clone a scope without following up.
 
 Applicability rules:
 
@@ -166,8 +187,21 @@ Two layers, because they answer different questions:
 | `finding` | A narrated observation: gap, consequence, recommendation. Zero or many per assessment; one finding may concern several requirements or dimensions (a systemic gap). | `audit_id`, display id `F-nnn`, `grade` (from the scheme), `requirement_md`, `gap_md`, `consequence_md`, `recommendation_md`, `status` (workflow below), targets via `finding_link` to `audit_requirement` × `dimension`, evidence via `evidence_link` |
 | `finding_comment` | Discussion and auditee feedback. | `finding_id`, author (person or ai), `text_md`, kind: auditor note, auditee response, reviewer comment, decision |
 | `follow_up_task` | Corrective action agreed on a finding. | `finding_id`, description, owner, due, status; exportable to WINGMAN tasks |
+| `finding_follow_up` | Verification, in this audit, of a finding from a previous audit in the same programme. | `audit_id`, `previous_finding_id`, display id `FU-nnn`, the previous finding's grade and text (read-only copy), its follow-up tasks and their last status, `verdict`: fixed, partially fixed, not fixed, not verifiable, `basis_md` with evidence and event refs, `resulting_finding_id` nullable, confirmed by and when |
 
 Finding status workflow, enforced by the app: `draft` → `proposed` (complete: requirement, evidence, gap, consequence all present) → `with_auditee` (feedback invited) → `confirmed` (becomes the conclusion for its targets; sets `assessment.confirmed_grade`) or `withdrawn`. A confirmed finding is what WINGMAN calls a conclusion. The app refuses `proposed` while any of the four parts is missing, which is the skill's finding discipline made structural.
+
+#### Follow-up of previous findings
+
+When an audit lists `follows_up_audit_ids`, the app creates one `finding_follow_up` per confirmed finding of those audits (nonconformities by default; observations and opportunities for improvement included on request), each carrying a read-only copy of the previous finding, its grade, its evidence references and its follow-up tasks with their last known status. The previous report itself (the `document` of kind `report`) is attached to the new audit as reading material.
+
+What happens with them:
+
+- **Planning.** Each follow-up item is a coverage target like a requirement: the coverage check reports follow-ups with no event, and agendas get a "previous findings to verify" block with the original gap and the corrective action promised. The skill is expected to plan them early, since an unfixed major from last year is usually the most important thing to establish.
+- **Fieldwork.** Evidence links can target a `finding_follow_up`. Pending evidence can be promised against it.
+- **Verdict.** The auditor confirms a verdict per item. `not fixed` or `partially fixed` normally produces a new finding in this audit (`resulting_finding_id`), typically with raised severity because it is a repeat; the skill proposes it, the auditor decides. `fixed` closes the item with the evidence that shows it. `not verifiable` is kept visible in the report as such.
+- **Instances.** A follow-up item is matched to this audit's requirement instances through the previous finding's targets and their `origin_requirement_id`, so it lands on the right row of the matrix even when the scope was rebuilt from the library. If no instance matches (the requirement is out of scope this time), the item is still verified but flagged "requirement not in scope".
+- **Report.** A dedicated section lists previous findings and their verdicts, which most audit standards expect from a follow-up audit.
 
 Single-scope audits are the special case `scope_mode = single`: one implicit dimension, one assessment per requirement, and the UI hides the dimension column.
 
@@ -188,7 +222,7 @@ Single-scope audits are the special case `scope_mode = single`: one implicit dim
 | requirement → requirement (maps to) | `requirement_link` with type |
 | requirement → document (interpreted in), control → document | `claimed_control`, internal `requirement` with `origin_document_id` |
 | audit → document (reads) | `document` |
-| plan → audit (schedules) | `audit_plan`, `audit_event` |
+| plan → audit (schedules) | `audit_programme` (the programme), `audit_plan`, `audit_event` (the engagement plan) |
 | audit → evidence, evidence → finding | `evidence`, `evidence_link` |
 | audit → finding (raises) | `finding` |
 | finding → conclusion (becomes), conclusion → requirement (judges) | `finding.status = confirmed`, `assessment.confirmed_grade` per requirement and dimension |
@@ -261,7 +295,7 @@ Tools are grouped by stage. Names are indicative.
 
 - Organisation: `list_organisations`, `get_organisation`, `upsert_organisation`, `upload_organisation_attachment`
 - Requirements: `list_requirement_sources`, `import_requirement_source` (CSV, XLSX, Markdown, JSON), `search_requirements` (text and vector), `get_requirement`, `propose_requirement` (AI-extracted, status proposed), `confirm_requirement`, `find_similar_requirements`; mapping lifecycle: `start_mapping_run`, `candidates`, `propose_links`, `confirm_link`, `reject_link`, `update_link`, `retire_link`, `create_link`, `close_mapping_run`, `list_links`, `get_link_history`, `list_mapping_runs`, `unmapped_requirements`, `mapping_matrix`
-- Audit: `create_audit`, `get_audit_status` (the "where are we" call every skill makes first), `set_scope_mode`, `upsert_dimensions`, `add_requirements_to_scope` (clones from the library), `create_audit_requirement` (no origin), `update_audit_requirement`, `diff_from_origin`, `refresh_from_origin` (proposal), `promote_to_library`, `link_audit_requirements`, `remove_from_scope` (with reason), `set_applicability` (with justification), `applicability_report` (exclusions per dimension), `set_criteria_override`, `list_grading_schemes`, `get_derivation_rules` (for the audit's scheme), `set_risk_profile`
+- Audit: `create_audit` (from scratch or `clone_from_audit`, with `follows_up_audits`), `list_audit_programmes`, `upsert_audit_programme`, `list_finding_follow_ups`, `set_follow_up_verdict`, `get_audit_status` (the "where are we" call every skill makes first), `set_scope_mode`, `upsert_dimensions`, `add_requirements_to_scope` (clones from the library), `create_audit_requirement` (no origin), `update_audit_requirement`, `diff_from_origin`, `refresh_from_origin` (proposal), `promote_to_library`, `link_audit_requirements`, `remove_from_scope` (with reason), `set_applicability` (with justification), `applicability_report` (exclusions per dimension), `set_criteria_override`, `list_grading_schemes`, `get_derivation_rules` (for the audit's scheme), `set_risk_profile`
 - Documents: `upload_document`, `get_document_text`, `search_documents`, `propose_claimed_control`, `confirm_claimed_control`, `propose_risk_items`
 - Planning: `propose_plan_version`, `agree_plan`, `upsert_event`, `set_event_coverage`, `coverage_report` (requirements × dimensions with no coverage), `upsert_sampling`
 - Fieldwork: `add_event_record` (notes, transcript, file), `register_evidence`, `link_evidence`, `approve_evidence`, `register_pending_evidence`, `update_pending_evidence`, `pending_evidence_reminders`
@@ -269,7 +303,7 @@ Tools are grouped by stage. Names are indicative.
 - History: `get_history` (entity), `get_audit_log`, `diff_revisions`
 - Export: `export_workspace` (skill format), `import_workspace`, `report_data` (everything the report template needs, in one structured payload)
 
-Resources (read-only, URI-addressable, so a skill can `@`-reference them): `audit://{id}/requirements.md` (the `10-requirements.md` view), `audit://{id}/plan.md`, `audit://{id}/events/{Mnn}/agenda.md`, `audit://{id}/findings.md`, `audit://{id}/log.md`, `audit://{id}/report-data.json`.
+Resources (read-only, URI-addressable, so a skill can `@`-reference them): `audit://{id}/requirements.md` (the `10-requirements.md` view), `audit://{id}/plan.md`, `audit://{id}/events/{Mnn}/agenda.md`, `audit://{id}/findings.md`, `audit://{id}/follow-ups.md`, `audit://{id}/log.md`, `audit://{id}/report-data.json`.
 
 Prompts: one per stage, mirroring the skill's stage references, so a client without the skill installed still gets the method.
 
@@ -334,10 +368,13 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 5. ~~Where do sources come from?~~ Decided: the auditor's spreadsheets, Markdown and PDF uploads, kept long term in a shared library.
 6. Versioning of sources (ISO 27001:2013 → 2022): proposed as a new source with `supersedes` plus requirement-level links (section 3.1). Agree?
 7. ~~Criteria levels?~~ Resolved by cloning: generic criteria on the library requirement, customised criteria on the audit instance. A per-organisation level would be a "clone from last audit of this organisation" shortcut rather than a third storage level. Wanted?
-7a. When a new audit for the same organisation starts, should scope be built from the library, or offered as a clone of the previous audit's instances (keeping their customised criteria and notes), with origin links preserved?
-7b. Should library links among cloned requirements be copied into the audit at clone time (proposed), or always read through the origin?
+7a. ~~New audit from library or from previous audit?~~ Decided: either, chosen at creation; cloning copies scope only, never evidence or findings; previous findings are followed up when the audit is in the same programme.
+7b. ~~Copy library links at clone time?~~ Decided: yes, copied and editable in the audit.
+7c. Should cloning offer the previous plan (events without dates, coverage kept) as a draft? Proposed: optional, default off.
+7d. Follow-up scope: nonconformities only by default, observations and OFIs on request. Agree? And should `not verifiable` be allowed as a final verdict, or must it become a finding ("could not confirm the corrective action")?
+7e. Should a repeat finding carry a visible "repeat" marker and a reference to the previous finding in the report, and should the derivation rule set have a row for it (e.g. repeat minor becomes major)? Proposed: marker and reference yes; the escalation rule stays with the skill and the auditor.
 8. Which link types matter in practice? The list (sub-requirement, equivalent, more detailed than, similar, interprets) can grow; do you want it fixed or free with a controlled vocabulary? Proposed: a `link_type` table seeded with these five, editable in the UI, so new types need no release.
-8a. Should mapping proposals be allowed between an audit's instances (audit-local links) in the same way, or only in the library with audits inheriting? Proposed: both use the same tools, with a `scope` parameter (library or audit).
+8a. ~~Mapping tools on audit instances too?~~ Decided: both, via a `scope` parameter; library changes never propagate to audits.
 9. Who may confirm an AI-proposed internal requirement into scope: the auditor alone, or should the auditee agree that the policy says what the AI claims?
 10. Should the app compute coverage of a requirement by its sub-requirements (all children compliant implies parent compliant), or is that always the auditor's judgement?
 11. ~~Ship seeded standard texts?~~ Decided by the source decision: no seeded texts, the auditor imports what they hold. The library is private to the instance.
