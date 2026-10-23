@@ -1,6 +1,6 @@
 # AI-supported audit application: design discussion, draft 0.1
 
-Status: discussion draft 0.7. Decisions taken so far are in section 0; open questions are collected in section 13.
+Status: discussion draft 0.8. The open questions that remain are in section 13; everything else is agreed for the MVP. Decisions taken so far are in section 0; open questions are collected in section 13.
 
 ## 0. Decisions so far
 
@@ -10,6 +10,9 @@ Status: discussion draft 0.7. Decisions taken so far are in section 0; open ques
 | The auditee does not log in | No auditee portal. Pending evidence is chased by the auditor; the app produces reminder texts and the auditor forwards them. Auditee feedback on findings is entered by the auditor as `finding_comment` of kind `auditee response`. |
 | Requirement sources come from the auditor's spreadsheets, uploaded Markdown and PDF documents | No seeded standard texts shipped with the app. |
 | Import is done by the LLM agent over MCP, not by server-side parsers | The app stores the source file and offers text extraction as a helper. The skill reads the file, decides the clause granularity with the auditor, and creates each requirement as an individual entity through MCP, with a pointer back into the file; it creates links the same way. The same skill path serves PDF, Excel and Markdown. Every entry is editable one by one in the UI and over MCP. See section 3.1, "Import". |
+| Generic audit criteria are drafted by the skill only on request | The import skill creates clause text and hierarchy; `criteria_md` on library requirements is filled when the auditor asks, per clause or per source. |
+| Link types are an editable table | `link_type` rows seeded with sub_requirement, equivalent, more_detailed_than, similar, interprets, supersedes; each with label, inverse label, `directional` flag and whether `score` applies. Editable in the UI; mapping tools validate against it. |
+| Server-side AI in the MVP is embeddings only, local or cloud at the operator's choice; all other reasoning runs in the MCP client's model | The app calls one configured embedding model through LiteLLM (e.g. a local Ollama model or a cloud embedding API). No other server-side LLM calls exist in the MVP; the client-driven path is the only reasoning path. Phase 2 server-driven jobs stay optional. |
 | "Not verifiable" is a valid final verdict | A follow-up item may end as `not verifiable`, and an assessment may end as "no reasonable assurance" (or the scheme's equivalent), with the report stating clearly that conformity or nonconformity could not be established. The app never forces a conversion into a finding. |
 | Sources and requirements are kept long term, independent of any audit | The requirement library (sources, requirements, links between requirements) is a top-level, cross-organisation store. See section 3.1. |
 | Mappings between requirements are created in the app through the LLM over MCP, not imported | Imports carry no mapping columns. The MCP surface has the full link lifecycle (propose in batch, confirm, reject, edit, retire, list with provenance), each mapping run is recorded as a `mapping_run`, and the UI offers CRUD on links with when, how and by what each link was created. See section 3.1, "Mapping workflow". |
@@ -63,6 +66,7 @@ Two scopes of data exist in the app: the **requirement library** (sources, requi
 | `requirement` | One clause. | `source_id`, `ref` (identifier in the source, e.g. A.5.15), title, `text_md` (verbatim), `criteria_md` (generic audit criteria), `location` in the source file (page and paragraph, sheet and row, or heading path), `extra` key-values, `import_run_id`, `origin_document_id` when extracted from an auditee document, status `proposed`, `confirmed` or `retired` |
 | `import_run` | One LLM import session from a source file, for traceability. | started by and when, source, file, model id, counts, summary, closed at |
 | `requirement_link` | Typed edge between requirements, within or across sources. | from, to, `type`: sub_requirement, equivalent, more_detailed_than, similar, interprets; `score` 0..1 where meaningful; `rationale_md`; `basis`: manual or ai; `mapping_run_id`; status: proposed, confirmed, rejected, retired; decided by and when |
+| `link_type` | Controlled vocabulary of link types, editable. | code, label, inverse label (`v` and `p` as in WINGMAN), `directional`, `uses_score`, description, active |
 | `mapping_run` | One LLM mapping session between sources, for traceability. | started by and when, sources or requirement set, link types, method, model id, counts, summary, closed at |
 
 Internal requirements extracted from policies are ordinary `requirement` rows in an internal `requirement_source` owned by the organisation, linked to the external clause with `more_detailed_than` or `interprets`. That keeps one list, one block per requirement, and lets the scope selector treat them like any other requirement.
@@ -104,7 +108,7 @@ Mapping is done by the auditor in an LLM session against the app's MCP, in three
 Rules:
 
 - Links are directional where the type is (`sub_requirement`, `more_detailed_than`, `interprets`) and symmetric where it is not (`equivalent`, `similar`); the app stores one row per pair and renders the inverse reading, as WINGMAN does with `v` and `p`.
-- A link always has a `type`; `score` is optional and is only meaningful for `similar` and `equivalent`.
+- A link always has a `type` from the `link_type` table; `score` is accepted only where the type has `uses_score`. New types are added in the UI, not in code.
 - A `rationale_md` is required for AI proposals (why these two clauses match) and optional for manual links. It is what the auditor reads when deciding.
 - Everything is visible: list views show status, type, score, created by (person or model), run, created at, decided by, decided at, and a history tab per link.
 
@@ -283,7 +287,8 @@ docker compose
              background jobs: text extraction, OCR, chunking, embeddings, transcript processing
   db         PostgreSQL 16 + pgvector
   files      MinIO (or a volume)
-  litellm    optional: LiteLLM proxy with its config.yaml (providers, model aliases, routing)
+  litellm    LiteLLM proxy with its config.yaml; in the MVP used only for the embedding model (local Ollama or a cloud API)
+  ollama     optional: local embedding model (and, later, local chat models for the agent runner)
   ui         optional: minimal web UI (server-rendered HTMX or a small SPA), read and edit per entity
 ```
 
@@ -292,9 +297,9 @@ Python because the MCP SDK, LiteLLM, document parsing (pymupdf, python-docx, uns
 ### 6.1 Two ways an LLM touches the app
 
 1. **Client-driven (interactive).** An MCP client (Claude Desktop, Claude Code, or a local agent runner) calls the app's MCP tools. The skills live in the client. The model is whatever the client uses. The app does not call any LLM here.
-2. **Server-driven (background).** The app itself calls an LLM for jobs that should not depend on a chat session: extracting text and internal requirement candidates from an uploaded policy, embedding chunks, turning a transcript into proposed evidence, nightly similarity linking. These calls go through LiteLLM, with a per-job model setting (`jobs.extract_requirements.model = anthropic/claude-...`, `jobs.embed.model = ollama/nomic-embed-text`, and so on), falling back to an instance default.
+2. **Server-driven (background).** In the MVP this is **embeddings only** (decided): the app embeds requirement texts and document chunks through LiteLLM with one configured model, local (e.g. Ollama) or cloud, at the operator's choice. Changing the embedding model re-embeds the library in a background job and is recorded, since similarity candidates depend on it. Any further server-side jobs (internal requirement extraction, transcript to evidence) are phase 2 and optional; the design keeps the per-job model setting for them.
 
-Both paths write through the same service layer, so revisions and provenance are identical whether a human in Claude Desktop or a background job made the change.
+Both paths write through the same service layer, so revisions and provenance are identical whether a human in Claude Desktop or a background job made the change. A consequence of the decision above: the app works with no LLM credentials at all except for the embedding model, and even that can be a local container.
 
 ### 6.2 Running the same skills on cloud or local models
 
@@ -352,7 +357,7 @@ The report is generated by a skill from `report_data` (or the `report-data.json`
 ## 11. Phasing
 
 **MVP (one auditor, no auditee access)**
-requirement library with source file storage, text extraction helper, import runs and requirement CRUD over MCP (the skill creates the entries); mapping workflow over MCP with mapping runs, link lifecycle, vector similarity candidates and the mapping UI; organisation; audits with scope mode and dimensions, documents with text extraction, plan versions and events with coverage, event records, evidence with links, pending evidence, assessments and findings with workflow, revisions, MCP tools and resources above, workspace export and import, minimal UI. No server-driven AI except embeddings; all reasoning in the client.
+requirement library with source file storage, text extraction helper, import runs and requirement CRUD over MCP (the skill creates the entries); mapping workflow over MCP with mapping runs, link lifecycle, vector similarity candidates and the mapping UI; organisation; audits with scope mode and dimensions, documents with text extraction, plan versions and events with coverage, event records, evidence with links, pending evidence, assessments and findings with workflow, revisions, MCP tools and resources above, workspace export and import, minimal UI. Server-side AI is embeddings only, local or cloud; all reasoning in the client's model.
 
 **Phase 2**
 server-driven jobs via LiteLLM (internal requirement extraction, claimed controls, transcript to evidence), grading schemes beyond the seeded ones, report freezing, library analytics (which clauses are most often nonconforming across audits).
@@ -387,13 +392,13 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 7c. ~~Offer the previous plan as a draft?~~ Decided: yes, optional, default off.
 7d. ~~Follow-up scope?~~ Decided: nonconformities by default, observations and OFIs all or selected at the auditor's choice. `not verifiable` may stand as a final verdict, stated clearly in the report.
 7e. ~~Repeat marker?~~ Decided: marker and links to the previous finding; escalation stays with the skill and the auditor.
-8. Which link types matter in practice? The list (sub-requirement, equivalent, more detailed than, similar, interprets) can grow; do you want it fixed or free with a controlled vocabulary? Proposed: a `link_type` table seeded with these five, editable in the UI, so new types need no release.
+8. ~~Link types fixed or editable?~~ Decided: editable `link_type` table, seeded.
 8a. ~~Mapping tools on audit instances too?~~ Decided: both, via a `scope` parameter; library changes never propagate to audits.
 9. Who may confirm an AI-proposed internal requirement into scope: the auditor alone, or should the auditee agree that the policy says what the AI claims?
 10. Should the app compute coverage of a requirement by its sub-requirements (all children compliant implies parent compliant), or is that always the auditor's judgement?
 11. ~~Ship seeded standard texts?~~ Decided by the source decision: no seeded texts, the auditor imports what they hold. The library is private to the instance.
 11a. ~~Clause granularity?~~ Resolved by the import decision: the skill agrees it with the auditor per source and records it on the source; default numbered clause.
-11b. Should the import skill also draft generic `criteria_md` per clause, or leave criteria for when the clause is first used in an audit? This is now purely a skill behaviour; proposed default: on request only, since criteria are the auditor's judgement and a whole standard's worth of drafts is expensive to review.
+11b. ~~Draft generic criteria at import?~~ Decided: only on request.
 11c. ~~Mapping columns in spreadsheets?~~ Decided: no; mapping is done through the LLM over MCP with full CRUD and provenance in the UI. A mapping-sheet reader is dropped from the MVP.
 11d. Should similarity candidates be computed automatically when a source is imported (embeddings only, no links created), so that `candidates` is instant when a mapping run starts? Proposed: yes; links are still only created inside a run.
 
@@ -423,7 +428,7 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 
 24. How granular should the history be: every field change (JSON patch) or every save? Every field change is proposed.
 25. Should the content of LLM prompts and responses be stored for traceability, or only metadata? Storing content helps audits of the audit but multiplies the data to protect.
-26. Which background jobs must run without any cloud model (fully local)? That decides which local models have to be evaluated for the MVP.
+26. ~~Which jobs must run fully local?~~ Decided: server-side AI is embeddings only, local or cloud at the operator's choice; everything else runs in the client's model.
 27. Should the app check and report consistency rules itself (requirement in scope with no coverage, finding without evidence, confirmed assessment with pending evidence still open), in the spirit of WINGMAN's gap list? Proposed: yes, as a `gaps` tool and a UI panel.
 
 **Operations**
