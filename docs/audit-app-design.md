@@ -269,16 +269,47 @@ Single-scope audits are the special case `scope_mode = single`: one implicit dim
 
 ## 5. Storage: is a graph database needed?
 
-Recommendation: **PostgreSQL with pgvector, not a graph database**, for the MVP and probably for good.
+Re-evaluated against the agreed model (section 0), which has considerably more edges than the first draft: library links with states and revisions, audit instances pointing at origins, inherited audit-local links, follow-up chains across audits, mapping and import runs, evidence and finding links.
 
-Reasons:
+### 5.1 What the data looks like
 
-- The graph is small (a few thousand requirements, hundreds of links per audit) and the queries are shallow: one or two hops (requirement → links → requirements; evidence → requirement; finding → evidence). Recursive CTEs over a `link` table handle this comfortably.
-- Version history and provenance (section 3.7) are much simpler in a relational store. Versioned graphs are a research topic; versioned rows are a trigger.
-- Similarity between requirements is a vector problem, not a graph problem. pgvector gives cosine similarity over `requirement.text_md` and `document_chunk` embeddings in the same database, and the result is stored as a `requirement_link` of type `similar` with a score.
-- One container fewer. Backups are `pg_dump`.
+It is a graph, with roughly these characteristics:
 
-Keep the door open: all typed relations go through one `link` table (`from_type, from_id, to_type, to_id, type, score, metadata, provenance`), mirroring WINGMAN's edge list. If richer traversals are ever needed, Apache AGE adds openCypher inside the same PostgreSQL, or the `link` table is exported to Neo4j for analysis.
+| Property | Expected size and shape |
+|---|---|
+| Nodes | Library: tens of thousands of requirements at most (a dozen standards at clause level). Per audit: hundreds of instances, tens of events, hundreds of evidence items and links. Over years: tens of audits per organisation. |
+| Edges | Library links: up to a few hundred thousand if every standard is mapped to every other. Everything else is small. |
+| Typical traversals | One to three hops: instance → origin → links → other standard; finding → evidence → event; follow-up → previous finding → its targets → origin → this audit's instance. |
+| Variable-length traversals | Two real cases: transitive equivalence across several standards ("what in DORA corresponds to this NIS2 article via ISO 27001"), and finding lineage across audits ("repeated since 2023"). Both are short chains over small, typed edge sets. |
+| Edge properties | Heavy: type, status, score, rationale, provenance, run id, revisions. Edges here are first-class records that people edit and that have history, not thin connections. |
+| Integrity rules | Many: one assessment per instance × dimension, one link per pair and type, display ids unique per audit, status workflows, frozen audits. |
+| Read patterns of the UI and report | Tabular: the requirement × dimension matrix, lists filtered by status and actor, the mapping matrix, the log. |
+
+### 5.2 How the options score
+
+| Criterion | PostgreSQL (+ pgvector) | Native graph (Neo4j, Memgraph, or an embedded engine such as Kùzu) |
+|---|---|---|
+| History and provenance on every record and every edge | Natural: a `revision` table and triggers; edges are rows. | Awkward: relationships with history are usually reified into nodes, which turns the graph back into tables, or history is kept outside the graph. |
+| Integrity constraints | Full: composite unique keys, foreign keys, check constraints, transactions across many tables. | Limited and vendor-specific; composite constraints are often an enterprise feature; workflow rules land in application code either way. |
+| One to three hop traversals | Joins or a short recursive CTE; milliseconds at this scale. | Native and more readable in Cypher; same speed at this scale. |
+| Variable-length paths (transitive equivalence, lineage) | Recursive CTE over the `link` table; fine for chains of a handful of hops over 10^5 edges. Gets unpleasant only with deep, unbounded paths over millions of edges, which this app does not have. | The clear strength. Pattern queries are shorter to write and to change. |
+| Vector similarity for mapping candidates | pgvector, mature, same transaction. | Available in current Neo4j and Memgraph; fine. |
+| Tabular views, matrix, report data | Native. | Possible, but aggregation into tables is where Cypher is least comfortable and the UI would mostly fight the model. |
+| Editable link types | A `link_type` table; the edge type is data. | Relationship types are schema-ish in most engines; a dynamic type is usually a property on a generic relationship, which forfeits part of the engine's indexing. |
+| Operations in a local Docker deployment | One container, `pg_dump`, familiar tooling, every ORM. | One more container, or an embedded file; backup and migration tooling thinner; fewer people know it. |
+| Visibility to the skill and the MCP client | None; tools return JSON either way. | None. |
+
+### 5.3 Conclusion
+
+The recommendation stays **PostgreSQL with pgvector**, now for a sharper reason: in this app the edges are **records** (edited, proposed, confirmed, rejected, versioned, attributed), and the thing a graph database is best at, fast unbounded traversal over thin edges, is the one thing this workload barely needs. The two variable-length cases are short and bounded and are served by two recursive views, `requirement_equivalence_closure(max_hops)` and `finding_lineage`. Both become MCP tools so the skill never writes a traversal itself.
+
+Three commitments keep the graph option open at no cost:
+
+1. **One typed `link` table** for every relation between records (`from_type, from_id, to_type, to_id, link_type, scope, status, score, rationale, provenance, run_id`), with the specialised tables (`requirement_link`, `audit_requirement_link`, `evidence_link`, `finding_link`) as views or thin subclasses over it. The whole graph is then one `SELECT`.
+2. **Graph projection on demand.** A `graph_export` tool emits nodes and edges (JSON or GraphML) for the library, an organisation or an audit, so the auditor can open it in a graph tool, or a phase 3 read-only Memgraph or Neo4j projection can be fed from it for exploration. That projection is derived, never the system of record.
+3. **Apache AGE** can be added inside the same PostgreSQL later if Cypher is wanted for ad hoc questions, without moving data.
+
+When this would flip: if the product's centre of gravity moved from the audit record to a **cross-standard requirement knowledge graph** used for exploration (hundreds of standards, millions of links, deep "how does clause X relate to anything in regulation Y" questions as the main feature), a hybrid with a native graph store for the library would be justified. For an audit system of record it is not, and it would cost the history, constraints and tabular views the record needs most.
 
 Files (uploads, evidence, exports) go to an S3-compatible store (MinIO container) or a plain volume behind the same interface. Full-text search via PostgreSQL `tsvector`.
 
@@ -325,6 +356,7 @@ Tools are grouped by stage. Names are indicative.
 - Fieldwork: `add_event_record` (notes, transcript, file), `register_evidence`, `link_evidence`, `approve_evidence`, `register_pending_evidence`, `update_pending_evidence`, `pending_evidence_reminders`
 - Results: `propose_assessment`, `confirm_assessment`, `propose_finding`, `transition_finding`, `comment_on_finding`, `create_follow_up_task`
 - History: `get_history` (entity), `get_audit_log`, `diff_revisions`
+- Graph: `equivalence_closure` (requirement, max hops, link types), `finding_lineage` (finding or follow-up), `graph_export` (library, organisation or audit as nodes and edges)
 - Export: `export_workspace` (skill format), `import_workspace`, `report_data` (everything the report template needs, in one structured payload)
 
 Resources (read-only, URI-addressable, so a skill can `@`-reference them): `audit://{id}/requirements.md` (the `10-requirements.md` view), `audit://{id}/plan.md`, `audit://{id}/events/{Mnn}/agenda.md`, `audit://{id}/findings.md`, `audit://{id}/follow-ups.md`, `audit://{id}/log.md`, `audit://{id}/report-data.json`.
@@ -376,7 +408,7 @@ WINGMAN integration (import requirements, controls, documents, people from a ten
 - Internal requirements are not a separate entity; they are requirements in an internal source of the organisation (library) or audit-local instances without an origin until promoted, linked to the external clause.
 - Requirements in scope are **clones**, not references (decided). The cost is that a library correction has to be pulled into each audit deliberately; the benefit is that an audit is self-contained, customisable and stable, and that a frozen audit never depends on the library.
 - The audit plan is both a Markdown document and a set of structured events, so iterations are versions and coverage can be checked by a query.
-- Graph database replaced by a relational `link` table plus vector similarity.
+- Graph database replaced by a relational `link` table plus vector similarity, with recursive views for the two bounded path queries and a graph export for projection (section 5, re-evaluated against the final model).
 
 ## 13. Questions, decisions and defaults
 
