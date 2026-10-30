@@ -36,6 +36,7 @@ dropped in. The build never breaks because of media.
   action: false                   # true for a recording of the user doing something
   entities: [task, risk]          # ids from data/graph.yaml that are visible in the capture
   env: dev                        # dev | stage — the tenant; record ids in the caption exist there
+  lang: lv                        # optional: on-screen UI language when not English
   sequence: { key: risk-accept, step: 2 }   # optional: stills that belong to one flow, in order
   width: 1105
   height: 1092
@@ -73,6 +74,15 @@ not force a fixed frame delay). Keep each under 5 MB, or convert to MP4 and set 
 | Records and their links | `risk-list`, `risk-matrix`, `risk-detail`, `ctl-detail`, `req-detail`, `asset-list`, `asset-detail`, `vuln-list`, `vuln-detail`, `inc-detail`, `doc-list` | most "link" stages |
 | The graph | `rec-graph`, `graph-global` | vulnerability-impact 2, new-requirements 3, any dependency stage |
 | Entry points | `ask-scope`, `palette-create`, `set-access` | incident-handling 4, change-management 4, roles-raci 1 |
+
+### Latvian UI captures (30 October 2026)
+
+29 stills with ids `lv-*`, taken on the stage tenant "Valsts iestāde A" (demo data) at 1447×840 with Ask
+Wingman open, for the Latvian video on the Nacionālās kiberdrošības likums and MK noteikumi Nr. 397. Flows:
+`lv-ask-mk397-gaps` (requirements without a working control), `lv-inc-register` (incident registered from
+chat, accepted, record created as INCIDENT-29582), `lv-early-warning` (CERT.LV early warning: mandatory
+fields, drafts, follow-up tasks) and `lv-selfassess` (Compliance Review of REQ-9408 with a task suggestion).
+They fit the NIS2 sector stages on the Latvian page; they are not yet referenced from any `media:` list.
 
 ## How to combine captures on a stage
 

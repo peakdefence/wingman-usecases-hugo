@@ -11,6 +11,7 @@
 #   entities:  entity ids from data/graph.yaml that the capture shows
 #   sequence:  optional group key + step for stills that belong to one flow (shown in order)
 #   env:       tenant the capture came from (dev | stage); records named in captions exist there
+#   lang:      optional; on-screen language of the UI when it is not English (lv)
 #   width/height: pixel size of the file, so the page keeps its layout while loading
 #   title / caption: per language; a missing language falls back to en
 #   status:    omit when the file is in static/media; "pending" when the entry is planned or the
@@ -725,3 +726,459 @@
   caption:
     en: "Six documents with owner and version. The portfolio summary notes that none is formally approved yet."
     lv: "Seši dokumenti ar īpašnieku un versiju. Portfeļa kopsavilkums norāda, ka neviens vēl nav formāli apstiprināts."
+
+# ---------------------------------------------------------------- Latvian UI (stage, 30 October 2026)
+# Tenant "Valsts iestāde A" (demo data), viewport 1447×840, Ask Wingman open. Taken for the Latvian
+# NKL / MK 397 video. lang: the on-screen language of the capture.
+- id: lv-brief-top
+  file: media/lv-brief-top.jpg
+  type: image
+  area: brief
+  action: false
+  entities: [risk, incident, control, asset, task, plan]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "The Brief in Latvian: programme state", lv: "Pārskats latviski: programmas stāvoklis" }
+  caption:
+    en: "The daily brief of the demo tenant 'Valsts iestāde A' in Latvian: where risk concentrates, coverage and control, watch points, with Ask Wingman open on the right."
+    lv: "Demo tenanta 'Valsts iestāde A' dienas pārskats latviski: kur koncentrējas risks, pārklājums un kontrole, uzraugāmie punkti; labajā pusē atvērts Ask Wingman."
+
+- id: lv-brief-gaps
+  file: media/lv-brief-gaps.jpg
+  type: image
+  area: brief
+  action: false
+  entities: [risk, requirement, task, vulnerability, incident]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "Gaps to close and the risk heat map", lv: "Novēršamās nepilnības un risku siltumkarte" }
+  caption:
+    en: "Organisation temperature tiles (critical risks, untreated high risks, overdue tasks, unassessed vulnerabilities, open incidents), the register checks with 53 requirements without a mapped control, and the impact × likelihood heat map."
+    lv: "Organizācijas temperatūra (kritiskie riski, neapstrādāti augsta līmeņa riski, nokavētie uzdevumi, nenovērtētās ievainojamības, atvērtie incidenti), reģistra pārbaudes ar 53 prasībām bez kontroles un ietekmes × varbūtības siltumkarte."
+
+- id: lv-req-list-mk397
+  file: media/lv-req-list-mk397.jpg
+  type: image
+  area: requirements
+  action: false
+  entities: [requirement]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "MK 397 requirements catalogue", lv: "MK noteikumu Nr. 397 prasību katalogs" }
+  caption:
+    en: "55 requirements, each a record with its clause number, type 'external – regulatory' and source MK 397, sortable and exportable."
+    lv: "55 prasības, katra kā ieraksts ar klauzulas numuru, tipu 'ārēji – normatīvo aktu prasības' un avotu MK 397; kārtojamas un eksportējamas."
+
+- id: lv-req-detail
+  file: media/lv-req-detail.jpg
+  type: image
+  area: requirements
+  action: false
+  entities: [requirement, control, document]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "One MK 397 requirement", lv: "Viena MK 397 prasība" }
+  caption:
+    en: "REQ-9415 'Kiberdrošības politika' (clause 3.2.21.1): the AI summary, the requirement text, slots to link documents, controls, assets and audits, and the custom field 'control implementation status'."
+    lv: "REQ-9415 'Kiberdrošības politika' (3.2.21.1): MI kopsavilkums, prasības teksts, vietas, kur piesaistīt dokumentus, kontroles, aktīvus un auditus, un pielāgotais lauks 'kontroļu ieviešanas statuss'."
+
+- id: lv-ask-mk397-gaps-1
+  file: media/lv-ask-mk397-gaps-1.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [requirement, control]
+  env: stage
+  lang: lv
+  sequence: { key: lv-ask-mk397-gaps, step: 1 }
+  width: 1447
+  height: 840
+  title: { en: "Asking which MK 397 requirements have no working control", lv: "Jautājums, kurām MK 397 prasībām nav strādājošas kontroles" }
+  caption:
+    en: "The question typed in Latvian in Ask Wingman and the start of the answer: 55 requirements, only two with a linked control, controls without status or owner, each named with a link."
+    lv: "Latviski uzdots jautājums Ask Wingman un atbildes sākums: 55 prasības, tikai divām piesaistīta kontrole, kontroles bez statusa un īpašnieka, katra nosaukta ar saiti."
+
+- id: lv-ask-mk397-gaps-2
+  file: media/lv-ask-mk397-gaps-2.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [requirement, control]
+  env: stage
+  lang: lv
+  sequence: { key: lv-ask-mk397-gaps, step: 2 }
+  width: 1447
+  height: 840
+  title: { en: "The five most important gaps, ranked", lv: "Piecas būtiskākās nepilnības, sarindotas" }
+  caption:
+    en: "The answer continues: incident management process, multi-factor authentication, event logging, backup creation and network management, each with the related requirements linked."
+    lv: "Atbildes turpinājums: incidentu pārvaldības process, daudzfaktoru autentifikācija, notikumu reģistrācija, rezerves kopiju veidošana un tīkla pārvaldība, katra ar saistīto prasību saitēm."
+
+- id: lv-asset-list
+  file: media/lv-asset-list.jpg
+  type: image
+  area: assets
+  action: false
+  entities: [asset, person]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "Assets of the demo institution", lv: "Demo iestādes aktīvi" }
+  caption:
+    en: "Seven assets with business and technical owner, type and status: the state information system, the data centre, suppliers and AI services."
+    lv: "Septiņi aktīvi ar biznesa un tehnisko īpašnieku, tipu un statusu: valsts informācijas sistēma, datu centrs, piegādātāji un MI pakalpojumi."
+
+- id: lv-asset-graph
+  file: media/lv-asset-graph.jpg
+  type: image
+  area: assets
+  action: false
+  entities: [asset]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "Assets as a graph", lv: "Aktīvi kā grafs" }
+  caption:
+    en: "The same assets in the graph view, where dependencies between systems and suppliers become edges."
+    lv: "Tie paši aktīvi grafa skatā, kur atkarības starp sistēmām un piegādātājiem kļūst par šķautnēm."
+
+- id: lv-graph-global
+  file: media/lv-graph-global.jpg
+  type: image
+  area: graph
+  action: false
+  entities: [risk, asset, control, requirement, task, document]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "The global graph: 23 nodes, 27 edges", lv: "Globālais grafs: 23 mezgli, 27 šķautnes" }
+  caption:
+    en: "Explore mode starting from all risks, two hops deep: risks and threats at the top, assets (LVRTC data centre) on the right, controls and documents at the bottom, tasks on the left."
+    lv: "Izpētes režīms, sākot no visiem riskiem, divu soļu dziļumā: riski un draudi augšā, aktīvi (LVRTC datu centrs) pa labi, kontroles un dokumenti apakšā, uzdevumi pa kreisi."
+
+- id: lv-risk-matrix
+  file: media/lv-risk-matrix.jpg
+  type: image
+  area: risks
+  action: false
+  entities: [risk]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "Risk matrix and the five risks", lv: "Risku matrica un pieci riski" }
+  caption:
+    en: "Impact × likelihood matrix with all five risks placed, and the list beside it with severity chips: NIS2/DORA compliance, supplier dependency, ransomware, key staff loss, developer dependency."
+    lv: "Ietekmes × varbūtības matrica ar visiem pieciem riskiem un saraksts blakus ar smaguma zīmēm: NIS2/DORA atbilstība, piegādātāja atkarība, izspiedējvīruss, atslēgas darbinieku zaudēšana, izstrādātāja atkarība."
+
+- id: lv-risk-detail
+  file: media/lv-risk-detail.jpg
+  type: image
+  area: risks
+  action: false
+  entities: [risk, asset, control]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "A risk record in Latvian", lv: "Riska ieraksts latviski" }
+  caption:
+    en: "RSK-414 'NIS2 un DORA regulu atbilstības nodrošināšana': score 9 (3 × 3), the AI summary, the risk description with factors, owner, the review card and the position on the matrix."
+    lv: "RSK-414 'NIS2 un DORA regulu atbilstības nodrošināšana': vērtējums 9 (3 × 3), MI kopsavilkums, riska apraksts ar faktoriem, īpašnieks, pārskata karte un novietojums matricā."
+
+- id: lv-inc-register-1-typed
+  file: media/lv-inc-register-1-typed.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [incident, asset, risk]
+  env: stage
+  lang: lv
+  sequence: { key: lv-inc-register, step: 1 }
+  width: 1447
+  height: 840
+  title: { en: "Registering an incident from chat: the ask", lv: "Incidenta reģistrēšana no čata: pieprasījums" }
+  caption:
+    en: "The incident described in Latvian in Ask Wingman: ransomware on the LVRTC data-centre server running IS 'Lāčplēsis', 30% of files encrypted, service unavailable; asked to classify by MK 397 significance criteria and set CERT.LV deadlines."
+    lv: "Incidents aprakstīts latviski Ask Wingman: izspiedējvīruss uz LVRTC datu centra servera, kurā darbojas IS 'Lāčplēsis', šifrēti 30% failu, pakalpojums nav pieejams; lūgts klasificēt pēc MK 397 nozīmīguma kritērijiem un noteikt CERT.LV termiņus."
+
+- id: lv-inc-register-2-suggestion
+  file: media/lv-inc-register-2-suggestion.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [incident]
+  env: stage
+  lang: lv
+  sequence: { key: lv-inc-register, step: 2 }
+  width: 1447
+  height: 840
+  title: { en: "The proposed incident record", lv: "Ierosinātais incidenta ieraksts" }
+  caption:
+    en: "The Register incident skill proposes the record: title, a description with the significance assessment per MK 397 and the reporting steps (early warning 24 h, notification 72 h, final report)."
+    lv: "Prasme 'Register incident' ierosina ierakstu: virsraksts, apraksts ar nozīmīguma novērtējumu pēc MK 397 un ziņošanas soļi (agrīnais brīdinājums 24 h, paziņojums 72 h, gala ziņojums)."
+
+- id: lv-inc-register-3-mitigation
+  file: media/lv-inc-register-3-mitigation.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [incident, task]
+  env: stage
+  lang: lv
+  sequence: { key: lv-inc-register, step: 3 }
+  width: 1447
+  height: 840
+  title: { en: "Reported date and mitigation recommendations", lv: "Ziņošanas datums un mazināšanas ieteikumi" }
+  caption:
+    en: "The same suggestion further down: reported date and nine mitigation recommendations, from isolating the server to informing residents and the post-incident review."
+    lv: "Tas pats ieteikums tālāk: ziņošanas datums un deviņi mazināšanas ieteikumi, no servera izolēšanas līdz iedzīvotāju informēšanai un pēcincidenta analīzei."
+
+- id: lv-inc-register-4-accept
+  file: media/lv-inc-register-4-accept.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [incident]
+  env: stage
+  lang: lv
+  sequence: { key: lv-inc-register, step: 4 }
+  width: 1447
+  height: 840
+  title: { en: "The person accepts", lv: "Cilvēks pieņem" }
+  caption:
+    en: "The Accept / Reject buttons under the suggestion: WINGMAN proposes, the incident manager decides."
+    lv: "Pogas Pieņemt / Noraidīt zem ieteikuma: WINGMAN ierosina, incidentu vadītājs izlemj."
+
+- id: lv-inc-register-5-accepted
+  file: media/lv-inc-register-5-accepted.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [incident]
+  env: stage
+  lang: lv
+  sequence: { key: lv-inc-register, step: 5 }
+  width: 1447
+  height: 840
+  title: { en: "Accepted – record created", lv: "Pieņemts – ieraksts izveidots" }
+  caption:
+    en: "After accepting: 'Pieņemts – ierakstīts ierakstā' and the incident exists in the register."
+    lv: "Pēc pieņemšanas: 'Pieņemts – ierakstīts ierakstā', un incidents ir reģistrā."
+
+- id: lv-inc-list-new
+  file: media/lv-inc-list-new.jpg
+  type: image
+  area: incidents
+  action: false
+  entities: [incident, person]
+  env: stage
+  lang: lv
+  sequence: { key: lv-inc-register, step: 6 }
+  width: 1447
+  height: 840
+  title: { en: "The incident register with the new record", lv: "Incidentu reģistrs ar jauno ierakstu" }
+  caption:
+    en: "Four incidents, INCIDENT-29582 at the top, owner Juris Puce, created on the same day."
+    lv: "Četri incidenti, INCIDENT-29582 augšā, īpašnieks Juris Puce, izveidots tajā pašā dienā."
+
+- id: lv-inc-detail-new
+  file: media/lv-inc-detail-new.jpg
+  type: image
+  area: incidents
+  action: false
+  entities: [incident, asset]
+  env: stage
+  lang: lv
+  sequence: { key: lv-inc-register, step: 7 }
+  width: 1447
+  height: 840
+  title: { en: "The new incident record", lv: "Jaunais incidenta ieraksts" }
+  caption:
+    en: "INCIDENT-29582 'Izspiedējvīrusa uzbrukums LVRTC datu centra serverim – IS Lāčplēsis nepieejama': the description with the MK 397 assessment, mitigation recommendations, and the requisites still to be set (detection time, severity, notification decision)."
+    lv: "INCIDENT-29582 'Izspiedējvīrusa uzbrukums LVRTC datu centra serverim – IS Lāčplēsis nepieejama': apraksts ar MK 397 novērtējumu, mazināšanas ieteikumi un vēl aizpildāmie rekvizīti (uzzināšanas laiks, smagums, lēmums par paziņošanu)."
+
+- id: lv-early-warning-1-typed
+  file: media/lv-early-warning-1-typed.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [incident, document]
+  env: stage
+  lang: lv
+  sequence: { key: lv-early-warning, step: 1 }
+  width: 1447
+  height: 840
+  title: { en: "Asking for the CERT.LV early warning", lv: "Pieprasījums sagatavot agrīno brīdinājumu CERT.LV" }
+  caption:
+    en: "With the incident scoped, the ask in Latvian: prepare the early warning for CERT.LV per MK 397, fill the mandatory fields from the record and say what a person still has to add."
+    lv: "Ar incidentu tvērumā, pieprasījums latviski: sagatavot agrīno brīdinājumu CERT.LV atbilstoši MK 397, aizpildīt obligātos laukus no ieraksta un norādīt, kas vēl jāpapildina cilvēkam."
+
+- id: lv-early-warning-2-fields
+  file: media/lv-early-warning-2-fields.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [incident]
+  env: stage
+  lang: lv
+  sequence: { key: lv-early-warning, step: 2 }
+  width: 1447
+  height: 840
+  title: { en: "Mandatory fields the person must confirm", lv: "Obligātie lauki, kas jāapstiprina cilvēkam" }
+  caption:
+    en: "The Incident Management skill stops and lists what it cannot decide: the notification legal basis, the significance level with reasoning, personal data impact, the notification decision and the time of awareness."
+    lv: "Prasme 'Incident Management' apstājas un uzskaita, ko tā nevar izlemt: paziņošanas juridisko bāzi, nozīmīguma līmeni ar pamatojumu, personas datu apdraudējumu, paziņošanas lēmumu un informēšanas laiku."
+
+- id: lv-early-warning-3-drafts
+  file: media/lv-early-warning-3-drafts.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [incident, document]
+  env: stage
+  lang: lv
+  sequence: { key: lv-early-warning, step: 3 }
+  width: 1447
+  height: 840
+  title: { en: "Communication drafts and interim status", lv: "Komunikācijas melnraksti un starpposma statuss" }
+  caption:
+    en: "After the answers: the communication drafts (regulatory notification, citizens, data protection authority), the interim root-cause status and the lesson so far, each tied to the incident and the earlier INC-2025-0117."
+    lv: "Pēc atbildēm: komunikācijas melnraksti (normatīvais paziņojums, iedzīvotāji, Datu valsts inspekcija), starpposma sakņu cēloņa statuss un līdzšinējā mācība, katrs sasaistīts ar incidentu un agrāko INC-2025-0117."
+
+- id: lv-early-warning-4-tasks
+  file: media/lv-early-warning-4-tasks.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [incident, task]
+  env: stage
+  lang: lv
+  sequence: { key: lv-early-warning, step: 4 }
+  width: 1447
+  height: 840
+  title: { en: "Suggested follow-up tasks", lv: "Ierosinātie turpmākie uzdevumi" }
+  caption:
+    en: "Creation suggestions for remediation tasks (register the regulatory regime and the CERT.LV notification procedure, review the ransomware risk), each with description and Accept / Reject."
+    lv: "Izveides ieteikumi novēršanas uzdevumiem (reģistrēt regulatīvo režīmu un CERT.LV paziņošanas procedūru, pārvērtēt izspiedējvīrusa risku), katrs ar aprakstu un Pieņemt / Noraidīt."
+
+- id: lv-ctl-list
+  file: media/lv-ctl-list.jpg
+  type: image
+  area: controls
+  action: false
+  entities: [control, person]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "The three controls of the demo institution", lv: "Demo iestādes trīs kontroles" }
+  caption:
+    en: "Incident management process, third-party ICT risk, backup storage: three controls, mostly without status and owner, which is what the self-assessment will find."
+    lv: "Incidentu pārvaldības process, trešo pušu IKT risks, rezerves kopiju glabāšana: trīs kontroles, lielākoties bez statusa un īpašnieka, ko pašvērtējums arī konstatēs."
+
+- id: lv-selfassess-1-typed
+  file: media/lv-selfassess-1-typed.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [requirement, control, evidence]
+  env: stage
+  lang: lv
+  sequence: { key: lv-selfassess, step: 1 }
+  width: 1447
+  height: 840
+  title: { en: "Asking for the MK 397 self-assessment", lv: "Pieprasījums sagatavot MK 397 pašvērtējumu" }
+  caption:
+    en: "The ask in Latvian: draft the cybersecurity self-assessment report on MK 397, per requirement group the controls, their status and evidence, the proposed fulfilment level with reasoning, and the gaps to turn into tasks."
+    lv: "Pieprasījums latviski: sagatavot kiberdrošības pašvērtējuma ziņojuma projektu par MK 397, katrai prasību grupai kontroles, to statusu un pierādījumus, ierosināto izpildes līmeni ar pamatojumu un uzdevumos pārvēršamās nepilnības."
+
+- id: lv-selfassess-2-pick
+  file: media/lv-selfassess-2-pick.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [requirement]
+  env: stage
+  lang: lv
+  sequence: { key: lv-selfassess, step: 2 }
+  width: 1447
+  height: 840
+  title: { en: "Compliance Review asks where to start", lv: "Compliance Review jautā, ar ko sākt" }
+  caption:
+    en: "The skill works one requirement at a time and lists the MK 397 requirements it found, from the cybersecurity manager to the NKDC status notification."
+    lv: "Prasme strādā pa vienai prasībai un uzskaita atrastās MK 397 prasības, no kiberdrošības pārvaldnieka līdz statusa paziņojumam NKDC."
+
+- id: lv-selfassess-3-result
+  file: media/lv-selfassess-3-result.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [requirement, control, conclusion]
+  env: stage
+  lang: lv
+  sequence: { key: lv-selfassess, step: 3 }
+  width: 1447
+  height: 840
+  title: { en: "Compliance conclusion per requirement", lv: "Atbilstības secinājums katrai prasībai" }
+  caption:
+    en: "For REQ-9408 'Prasības kiberdrošības pārvaldniekam' (MK 397 clause 3.1.11): compliance state Non-Compliant, all ten duties without a control, document or task, and an action plan starting with appointing the manager."
+    lv: "Prasībai REQ-9408 'Prasības kiberdrošības pārvaldniekam' (MK 397 3.1.11): atbilstības stāvoklis Non-Compliant, visi desmit pienākumi bez kontroles, dokumenta vai uzdevuma, un rīcības plāns, kas sākas ar pārvaldnieka nozīmēšanu."
+
+- id: lv-selfassess-4-task
+  file: media/lv-selfassess-4-task.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [requirement, task]
+  env: stage
+  lang: lv
+  sequence: { key: lv-selfassess, step: 4 }
+  width: 1447
+  height: 840
+  title: { en: "Gaps become tasks", lv: "Nepilnības kļūst par uzdevumiem" }
+  caption:
+    en: "The creation suggestion for the task 'Nozīmēt kiberdrošības pārvaldnieku un izdot parakstītu iecelšanas rīkojumu MK 397 p. 3.1.11 izpildei', linked to the requirement, with acceptance criteria and Accept / Reject."
+    lv: "Izveides ieteikums uzdevumam 'Nozīmēt kiberdrošības pārvaldnieku un izdot parakstītu iecelšanas rīkojumu MK 397 p. 3.1.11 izpildei', piesaistīts prasībai, ar pieņemšanas kritērijiem un Pieņemt / Noraidīt."
+
+- id: lv-plans
+  file: media/lv-plans.jpg
+  type: image
+  area: plans
+  action: false
+  entities: [plan, task]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "The 2026 cyber-risk management plan", lv: "Kiberrisku pārvaldības plāns 2026" }
+  caption:
+    en: "One plan in draft with its tasks and progress; 'Piedāvāt plānu' asks WINGMAN to draft one."
+    lv: "Viens plāns melnrakstā ar uzdevumiem un progresu; 'Piedāvāt plānu' lūdz WINGMAN to sagatavot."
+
+- id: lv-tasks
+  file: media/lv-tasks.jpg
+  type: image
+  area: tasks
+  action: false
+  entities: [task, person]
+  env: stage
+  lang: lv
+  width: 1447
+  height: 840
+  title: { en: "My tasks in Latvian", lv: "Mani uzdevumi latviski" }
+  caption:
+    en: "Tasks filtered to one person with the quick views for this week, this month, overdue and all."
+    lv: "Uzdevumi, filtrēti vienai personai, ar ātrajiem skatiem: šonedēļ, šomēnes, nokavētie un visi."
+
