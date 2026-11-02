@@ -84,6 +84,16 @@ chat, accepted, record created as INCIDENT-29582), `lv-early-warning` (CERT.LV e
 fields, drafts, follow-up tasks) and `lv-selfassess` (Compliance Review of REQ-9408 with a task suggestion).
 They fit the NIS2 sector stages on the Latvian page; they are not yet referenced from any `media:` list.
 
+### ISO 27001 ISMS captures (2 November 2026)
+
+31 stills for the ISO 27001 ISMS videos, focused on Plans and Tasks. `lv-isms-*` were taken on "Valsts iestāde A"
+(Latvian UI, 1447×840 or 1482×812 or 1568×765), `en-isms-*` on "PeakDefence OU" (English UI, 1568×765); all demo
+data. Flows: `lv-isms-plan` (annual ISMS plan drafted with Wingman: ask, instruction, month-by-month schedule,
+configuration, activities, generated tasks), `lv-isms-review` and `en-isms-review` (a generated review task: prepared
+card, Risk Review skill, findings, completion and accepted suggestion), `lv-isms-a59` and `en-isms-a59` (ISO 27001
+A.5.9: how to implement it, and the audit evidence it needs) and `en-isms-plan` (the "Regular ISMS core activities"
+plan: tasks, activities, instruction). Not yet referenced from any `media:` list.
+
 ## How to combine captures on a stage
 
 A stage carries one idea; its media strip should show that idea in two to four frames, in the order a

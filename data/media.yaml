@@ -1182,3 +1182,511 @@
     en: "Tasks filtered to one person with the quick views for this week, this month, overdue and all."
     lv: "Uzdevumi, filtrēti vienai personai, ar ātrajiem skatiem: šonedēļ, šomēnes, nokavētie un visi."
 
+
+# ---------------------------------------------------------------- ISO 27001 ISMS captures (stage, 2 November 2026)
+# lv-isms-*: tenant "Valsts iestāde A", Latvian UI. en-isms-*: tenant "PeakDefence OU", English UI. Demo data.
+# Taken for the ISO 27001 ISMS videos (Plans and Tasks). Sizes vary with the browser window.
+- id: lv-isms-plan-1-ask
+  file: media/lv-isms-plan-1-ask.jpg
+  type: image
+  area: plans
+  action: true
+  entities: [plan]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-plan, step: 1 }
+  width: 1447
+  height: 840
+  title: { en: "Asking Wingman for the annual ISMS plan", lv: "Pieprasījums Wingman sagatavot ISMS gada plānu" }
+  caption:
+    en: "In a new plan, the ask in Latvian: turn it into the ISO/IEC 27001:2022 annual plan with asset, access, supplier, policy and risk reviews, the internal audit and the management review, assigned to record owners and spread evenly over the year."
+    lv: "Jaunā plānā pieprasījums latviski: pārvērst to par ISO/IEC 27001:2022 gada plānu ar aktīvu, piekļuvju, piegādātāju, politiku un risku pārskatīšanām, iekšējo auditu un vadības pārskatu, piešķirot ierakstu īpašniekiem un vienmērīgi sadalot pa gadu."
+
+- id: lv-isms-plan-2-instruction
+  file: media/lv-isms-plan-2-instruction.jpg
+  type: image
+  area: plans
+  action: true
+  entities: [plan]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-plan, step: 2 }
+  width: 1447
+  height: 840
+  title: { en: "Proposed plan instruction with ISO clauses", lv: "Ierosinātā plāna instrukcija ar ISO punktiem" }
+  caption:
+    en: "Wingman proposes the instruction text: each recurring activity with its cadence and the ISO 27001 clause or Annex A control behind it."
+    lv: "Wingman piedāvā instrukcijas tekstu: katra regulārā aktivitāte ar biežumu un ISO 27001 punktu vai A pielikuma kontroli, uz ko tā balstās."
+
+- id: lv-isms-plan-3-schedule
+  file: media/lv-isms-plan-3-schedule.jpg
+  type: image
+  area: plans
+  action: true
+  entities: [plan, task]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-plan, step: 3 }
+  width: 1447
+  height: 840
+  title: { en: "Month-by-month schedule for 2027", lv: "Grafiks pa mēnešiem 2027. gadam" }
+  caption:
+    en: "The proposed schedule spreads the reviews across the months so they do not land in the same week; the internal audit in September feeds the December management review."
+    lv: "Piedāvātais grafiks izkārto pārskatīšanas pa mēnešiem, lai tās nesakristu vienā nedēļā; septembra iekšējā audita rezultāti tiek izmantoti decembra vadības pārskatā."
+
+- id: lv-isms-plan-4-config
+  file: media/lv-isms-plan-4-config.jpg
+  type: image
+  area: plans
+  action: false
+  entities: [plan]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-plan, step: 4 }
+  width: 1447
+  height: 840
+  title: { en: "The plan configuration", lv: "Plāna konfigurācija" }
+  caption:
+    en: "PLN-29906 'ISMS gada plāns 2027' with the instruction saved: cadence per activity and the rule that tasks go to the record owner, spread evenly."
+    lv: "PLN-29906 'ISMS gada plāns 2027' ar saglabātu instrukciju: biežums katrai aktivitātei un noteikums, ka uzdevumi tiek piešķirti ieraksta īpašniekam un sadalīti vienmērīgi."
+
+- id: lv-isms-plan-5-activities
+  file: media/lv-isms-plan-5-activities.jpg
+  type: image
+  area: plans
+  action: false
+  entities: [plan, risk, asset, document]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-plan, step: 5 }
+  width: 1447
+  height: 840
+  title: { en: "Nine active activities with cadence", lv: "Deviņas aktīvas aktivitātes ar biežumu" }
+  caption:
+    en: "Management review, internal audit, supplier and access reviews, policy and procedure review, asset review, risk procedure review and risk reviews by level, each with target, cadence and generation mode."
+    lv: "Vadības pārskats, iekšējais audits, piegādātāju un piekļuves tiesību pārskatīšana, politiku un procedūru pārskatīšana, aktīvu pārskatīšana, risku procedūras pārskatīšana un risku pārskatīšana pēc līmeņa, katrai mērķis, biežums un ģenerēšanas veids."
+
+- id: lv-isms-plan-6-tasks
+  file: media/lv-isms-plan-6-tasks.jpg
+  type: image
+  area: tasks
+  action: false
+  entities: [plan, task, person]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-plan, step: 6 }
+  width: 1447
+  height: 840
+  title: { en: "Generated tasks with owners and due dates", lv: "Ģenerētie uzdevumi ar izpildītājiem un termiņiem" }
+  caption:
+    en: "The plan has generated 16 tasks from December 2026 to November 2027, each assigned to the owner of the risk, asset or document it reviews."
+    lv: "Plāns ir ģenerējis 16 uzdevumus no 2026. gada decembra līdz 2027. gada novembrim, katrs piešķirts pārskatāmā riska, aktīva vai dokumenta īpašniekam."
+
+- id: lv-isms-review-1-card
+  file: media/lv-isms-review-1-card.jpg
+  type: image
+  area: tasks
+  action: false
+  entities: [task, risk]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-review, step: 1 }
+  width: 1447
+  height: 840
+  title: { en: "A risk review task with the prepared review", lv: "Riska pārskatīšanas uzdevums ar sagatavotu pārskatu" }
+  caption:
+    en: "TSK-29980 'Riska pārskats: Piegādātāja atkarība un vendor lock-in (RSK-406)': the review card shows what changed and the checklist from the plan."
+    lv: "TSK-29980 'Riska pārskats: Piegādātāja atkarība un vendor lock-in (RSK-406)': pārskata karte rāda, kas mainījies, un plāna kontrolsarakstu."
+
+- id: lv-isms-review-2-skill
+  file: media/lv-isms-review-2-skill.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [task, risk]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-review, step: 2 }
+  width: 1447
+  height: 840
+  title: { en: "Ask Wingman runs the Risk Review skill", lv: "Ask Wingman palaiž prasmi 'Risk Review'" }
+  caption:
+    en: "Asked in Latvian to help complete the review, Wingman runs the Risk Review steps against the risk and its links."
+    lv: "Pēc lūguma latviski palīdzēt pabeigt pārskatu Wingman izpilda Risk Review soļus pret risku un tā saitēm."
+
+- id: lv-isms-review-3-findings
+  file: media/lv-isms-review-3-findings.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [task, risk]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-review, step: 3 }
+  width: 1447
+  height: 840
+  title: { en: "Review findings in Latvian", lv: "Pārskata secinājumi latviski" }
+  caption:
+    en: "The answer: what still holds, what is missing and what to decide, with links to the risk, task and plan."
+    lv: "Atbilde: kas joprojām ir spēkā, kā trūkst un kas jāizlemj, ar saitēm uz risku, uzdevumu un plānu."
+
+- id: lv-isms-review-4-done
+  file: media/lv-isms-review-4-done.jpg
+  type: image
+  area: tasks
+  action: false
+  entities: [task]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-review, step: 4 }
+  width: 1482
+  height: 812
+  title: { en: "Task completed", lv: "Uzdevums pabeigts" }
+  caption:
+    en: "The task status set to 'Pabeigts' after the review: the completed task is the evidence, with date and owner."
+    lv: "Uzdevuma statuss pēc pārskatīšanas ir 'Pabeigts': pabeigtais uzdevums ir pierādījums ar datumu un atbildīgo."
+
+- id: lv-isms-a59-1-ask
+  file: media/lv-isms-a59-1-ask.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [control, requirement]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-a59, step: 1 }
+  width: 1482
+  height: 812
+  title: { en: "Asking how to implement ISO 27001 A.5.9", lv: "Jautājums, kā ieviest ISO 27001 A.5.9" }
+  caption:
+    en: "On the controls list, asked in Latvian how to implement Annex A 5.9 (inventory of information and other associated assets), who owns it and what evidence is needed."
+    lv: "Kontroļu sarakstā latviski uzdots jautājums, kā ieviest A pielikuma 5.9 (informācijas un ar to saistīto aktīvu uzskaite), kam tā pieder un kādi pierādījumi vajadzīgi."
+
+- id: lv-isms-a59-2-answer
+  file: media/lv-isms-a59-2-answer.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [control, requirement, asset]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-a59, step: 2 }
+  width: 1482
+  height: 812
+  title: { en: "What the control does and who owns it", lv: "Ko kontrole dara un kam tā pieder" }
+  caption:
+    en: "The answer starts from what the tenant already has: the asset register and the related policy, then what the control does and who should own it."
+    lv: "Atbilde sākas ar to, kas tenantā jau ir: aktīvu reģistrs un saistītā politika, tad ko kontrole dara un kam tai jāpieder."
+
+- id: lv-isms-a59-3-steps
+  file: media/lv-isms-a59-3-steps.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [control, asset, task]
+  env: stage
+  lang: lv
+  sequence: { key: lv-isms-a59, step: 3 }
+  width: 1482
+  height: 812
+  title: { en: "Gaps and recommended steps", lv: "Nepilnības un ieteicamie soļi" }
+  caption:
+    en: "Gaps found in the current asset records and five recommended steps, with an offer to turn them into suggestions."
+    lv: "Pašreizējos aktīvu ierakstos atrastās nepilnības un pieci ieteicamie soļi, ar piedāvājumu tos pārvērst ieteikumos."
+
+- id: lv-isms-risk-review-brief
+  file: media/lv-isms-risk-review-brief.jpg
+  type: image
+  area: risks
+  action: false
+  entities: [risk, asset, control]
+  env: stage
+  lang: lv
+  width: 1568
+  height: 765
+  title: { en: "Full review brief of a risk", lv: "Riska pilnais pārskata kopsavilkums" }
+  caption:
+    en: "RSK-406 with the review card expanded: current state, connections to assets and controls, and the decision question for the owner."
+    lv: "RSK-406 ar izvērstu pārskata karti: pašreizējais stāvoklis, saites uz aktīviem un kontrolēm un lēmuma jautājums īpašniekam."
+
+- id: en-isms-plans
+  file: media/en-isms-plans.jpg
+  type: image
+  area: plans
+  action: false
+  entities: [plan]
+  env: stage
+  lang: en
+  width: 1568
+  height: 765
+  title: { en: "Plans list", lv: "Plānu saraksts" }
+  caption:
+    en: "Twelve plans in PeakDefence OU, among them 'Regular ISMS core activities'; 'Propose a plan' asks Wingman to draft one."
+    lv: "Divpadsmit plāni PeakDefence OU, starp tiem 'Regular ISMS core activities'; 'Propose a plan' lūdz Wingman sagatavot plānu."
+
+- id: en-isms-plan-tasks
+  file: media/en-isms-plan-tasks.jpg
+  type: image
+  area: plans
+  action: false
+  entities: [plan, task, person]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-plan, step: 1 }
+  width: 1568
+  height: 765
+  title: { en: "ISMS core plan: 38 tasks with owners and dates", lv: "ISMS pamatplāns: 38 uzdevumi ar īpašniekiem un termiņiem" }
+  caption:
+    en: "PLN-6855 generated tasks for document reviews, risk reviews, the internal audit and the management review, each with an assignee and due date."
+    lv: "PLN-6855 ģenerētie uzdevumi dokumentu un risku pārskatīšanai, iekšējam auditam un vadības pārskatam, katram izpildītājs un termiņš."
+
+- id: en-isms-plan-activities
+  file: media/en-isms-plan-activities.jpg
+  type: image
+  area: plans
+  action: false
+  entities: [plan, risk, audit, document]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-plan, step: 2 }
+  width: 1568
+  height: 765
+  title: { en: "Activities with target and cadence", lv: "Aktivitātes ar mērķi un biežumu" }
+  caption:
+    en: "Six active activities: high, medium and low risk reviews at different cadences, the annual internal audit, the annual policy review and the semi-annual management review."
+    lv: "Sešas aktīvas aktivitātes: augsta, vidēja un zema līmeņa risku pārskatīšana ar dažādu biežumu, ikgadējais iekšējais audits, ikgadējā politiku pārskatīšana un pusgada vadības pārskats."
+
+- id: en-isms-plan-config
+  file: media/en-isms-plan-config.jpg
+  type: image
+  area: plans
+  action: false
+  entities: [plan]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-plan, step: 3 }
+  width: 1568
+  height: 765
+  title: { en: "The plan instruction", lv: "Plāna instrukcija" }
+  caption:
+    en: "The configuration instruction that covers the regular core activities expected by ISO 27001:2022: risk review, internal audit, document review and management review."
+    lv: "Konfigurācijas instrukcija, kas aptver ISO 27001:2022 sagaidītās regulārās pamataktivitātes: risku pārskatīšanu, iekšējo auditu, dokumentu pārskatīšanu un vadības pārskatu."
+
+- id: en-isms-my-tasks
+  file: media/en-isms-my-tasks.jpg
+  type: image
+  area: tasks
+  action: false
+  entities: [task, person]
+  env: stage
+  lang: en
+  width: 1568
+  height: 765
+  title: { en: "My tasks with recurring reviews", lv: "Mani uzdevumi ar regulārām pārskatīšanām" }
+  caption:
+    en: "The 'My tasks' quick view: recurring review tasks generated by plans, sorted by due date, next to the overdue and this-week views."
+    lv: "Ātrais skats 'Mani uzdevumi': plānu ģenerēti regulārie pārskatīšanas uzdevumi, sakārtoti pēc termiņa, blakus nokavēto un šīs nedēļas skatiem."
+
+- id: en-isms-review-1-card
+  file: media/en-isms-review-1-card.jpg
+  type: image
+  area: tasks
+  action: false
+  entities: [task, risk]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-review, step: 1 }
+  width: 1568
+  height: 765
+  title: { en: "A scheduled risk review with the prepared brief", lv: "Plānots riska pārskats ar sagatavotu kopsavilkumu" }
+  caption:
+    en: "TSK-29690 'Scheduled review: Personal data without processor controls (RSK-26138)': what changed since the risk was created and the question 'Does this risk still stand as written?'."
+    lv: "TSK-29690 'Scheduled review: Personal data without processor controls (RSK-26138)': kas mainījies kopš riska izveides un jautājums 'Vai risks joprojām ir spēkā, kā aprakstīts?'."
+
+- id: en-isms-review-2-skill
+  file: media/en-isms-review-2-skill.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [task, risk]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-review, step: 2 }
+  width: 1568
+  height: 765
+  title: { en: "Ask Wingman runs the Risk Review skill", lv: "Ask Wingman palaiž prasmi 'Risk Review'" }
+  caption:
+    en: "Asked to help complete the review, Wingman identifies the risk, fetches its details and assesses score, controls and links step by step."
+    lv: "Pēc lūguma palīdzēt pabeigt pārskatu Wingman identificē risku, iegūst tā datus un soli pa solim izvērtē vērtējumu, kontroles un saites."
+
+- id: en-isms-review-3-findings
+  file: media/en-isms-review-3-findings.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [task, risk, control]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-review, step: 3 }
+  width: 1568
+  height: 765
+  title: { en: "Review findings", lv: "Pārskata secinājumi" }
+  caption:
+    en: "Findings: an invalid impact value, no linked controls, a missed audit finding and three controls the risk needs that do not exist yet."
+    lv: "Secinājumi: nederīga ietekmes vērtība, nav piesaistītu kontroļu, palaists garām audita konstatējums un trīs vajadzīgas kontroles, kuru vēl nav."
+
+- id: en-isms-review-4-plan
+  file: media/en-isms-review-4-plan.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [task, risk]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-review, step: 4 }
+  width: 1568
+  height: 765
+  title: { en: "Action plan for the risk", lv: "Rīcības plāns riskam" }
+  caption:
+    en: "The action plan with immediate steps, owner and expected effect on the rating."
+    lv: "Rīcības plāns ar tūlītējiem soļiem, atbildīgo un sagaidāmo ietekmi uz vērtējumu."
+
+- id: en-isms-review-5-complete
+  file: media/en-isms-review-5-complete.jpg
+  type: image
+  area: tasks
+  action: true
+  entities: [task, risk]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-review, step: 5 }
+  width: 1568
+  height: 765
+  title: { en: "Review completed, changes suggested", lv: "Pārskats pabeigts, ierosinātas izmaiņas" }
+  caption:
+    en: "After 'Confirm & complete': the task is Done, the review is completed with today's date and two suggested changes (status, impact) wait for Accept or Skip."
+    lv: "Pēc 'Confirm & complete': uzdevums ir Done, pārskats pabeigts ar šodienas datumu, un divas ierosinātās izmaiņas (statuss, ietekme) gaida Accept vai Skip."
+
+- id: en-isms-review-6-accepted
+  file: media/en-isms-review-6-accepted.jpg
+  type: image
+  area: tasks
+  action: true
+  entities: [task, risk]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-review, step: 6 }
+  width: 1568
+  height: 765
+  title: { en: "The owner accepts a suggested change", lv: "Īpašnieks pieņem ierosināto izmaiņu" }
+  caption:
+    en: "The impact change 0 → 4 accepted; the status change left for the owner to decide."
+    lv: "Ietekmes izmaiņa 0 → 4 pieņemta; statusa izmaiņa atstāta īpašnieka lēmumam."
+
+- id: en-isms-brief
+  file: media/en-isms-brief.jpg
+  type: image
+  area: brief
+  action: false
+  entities: [risk, incident, asset, control, task, plan]
+  env: stage
+  lang: en
+  width: 1568
+  height: 765
+  title: { en: "The Brief of PeakDefence OU", lv: "PeakDefence OU pārskats" }
+  caption:
+    en: "State of the programme: where risk concentrates, coverage and control, and the watch list with open incidents."
+    lv: "Programmas stāvoklis: kur koncentrējas risks, pārklājums un kontrole, un uzraugāmo saraksts ar atvērtajiem incidentiem."
+
+- id: en-isms-risk-list
+  file: media/en-isms-risk-list.jpg
+  type: image
+  area: risks
+  action: false
+  entities: [risk, person]
+  env: stage
+  lang: en
+  width: 1568
+  height: 765
+  title: { en: "My risks with owner and severity", lv: "Mani riski ar īpašnieku un smagumu" }
+  caption:
+    en: "Risks filtered to one owner, with severity chips and score."
+    lv: "Riski, filtrēti vienam īpašniekam, ar smaguma zīmēm un vērtējumu."
+
+- id: en-isms-risk-matrix
+  file: media/en-isms-risk-matrix.jpg
+  type: image
+  area: risks
+  action: false
+  entities: [risk]
+  env: stage
+  lang: en
+  width: 1568
+  height: 765
+  title: { en: "Risk matrix", lv: "Risku matrica" }
+  caption:
+    en: "Impact × likelihood matrix next to the risk list."
+    lv: "Ietekmes × varbūtības matrica blakus risku sarakstam."
+
+- id: en-isms-assets
+  file: media/en-isms-assets.jpg
+  type: image
+  area: assets
+  action: false
+  entities: [asset, person]
+  env: stage
+  lang: en
+  width: 1568
+  height: 765
+  title: { en: "Asset register", lv: "Aktīvu reģistrs" }
+  caption:
+    en: "Seventy-six assets with business and technical owners, type and status."
+    lv: "Septiņdesmit seši aktīvi ar biznesa un tehniskajiem īpašniekiem, tipu un statusu."
+
+- id: en-isms-graph
+  file: media/en-isms-graph.jpg
+  type: image
+  area: graph
+  action: false
+  entities: [risk, asset, control, requirement, task, plan]
+  env: stage
+  lang: en
+  width: 1568
+  height: 765
+  title: { en: "The graph: 261 nodes, 447 edges", lv: "Grafs: 261 mezgls, 447 šķautnes" }
+  caption:
+    en: "Clustered layout from all risks, two hops: risks, assets, controls and tasks as linked records, with plans among the most connected nodes."
+    lv: "Klasterizēts izkārtojums no visiem riskiem divu soļu dziļumā: riski, aktīvi, kontroles un uzdevumi kā sasaistīti ieraksti; plāni starp visvairāk saistītajiem mezgliem."
+
+- id: en-isms-a59-req
+  file: media/en-isms-a59-req.jpg
+  type: image
+  area: requirements
+  action: false
+  entities: [requirement]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-a59, step: 1 }
+  width: 1568
+  height: 765
+  title: { en: "ISO 27001 Annex A 5.9 as a record", lv: "ISO 27001 A pielikuma 5.9 kā ieraksts" }
+  caption:
+    en: "REQ-1095 'Inventory of information and other associated assets', source ISO/IEC 27001:2022 Annex A, clause A.5.9."
+    lv: "REQ-1095 'Inventory of information and other associated assets', avots ISO/IEC 27001:2022 A pielikums, punkts A.5.9."
+
+- id: en-isms-a59-evidence
+  file: media/en-isms-a59-evidence.jpg
+  type: image
+  area: ask
+  action: true
+  entities: [requirement, evidence]
+  env: stage
+  lang: en
+  sequence: { key: en-isms-a59, step: 2 }
+  width: 1568
+  height: 765
+  title: { en: "Audit Evidence Prep for A.5.9", lv: "Audita pierādījumu sagatavošana A.5.9" }
+  caption:
+    en: "The Audit Evidence Prep skill builds the evidence log: what to collect, where to get it and what the auditor will verify."
+    lv: "Prasme Audit Evidence Prep sagatavo pierādījumu žurnālu: ko savākt, kur to iegūt un ko auditors pārbaudīs."
+
