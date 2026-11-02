@@ -86,7 +86,7 @@ They fit the NIS2 sector stages on the Latvian page; they are not yet referenced
 
 ### ISO 27001 ISMS captures (2 November 2026)
 
-31 stills for the ISO 27001 ISMS videos, focused on Plans and Tasks. `lv-isms-*` were taken on "Valsts iestāde A"
+32 stills for the ISO 27001 ISMS videos, focused on Plans and Tasks. `lv-isms-*` were taken on "Valsts iestāde A"
 (Latvian UI, 1447×840 or 1482×812 or 1568×765), `en-isms-*` on "PeakDefence OU" (English UI, 1568×765); all demo
 data. Flows: `lv-isms-plan` (annual ISMS plan drafted with Wingman: ask, instruction, month-by-month schedule,
 configuration, activities, generated tasks), `lv-isms-review` and `en-isms-review` (a generated review task: prepared
