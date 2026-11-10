@@ -20,6 +20,8 @@ hugo --gc --minify     # build to public/
 | Case studies | `content/<lang>/case-studies/*.md` |
 | Knowledge base: guides and copy-and-paste prompts, one page per topic | `content/<lang>/knowledge-base/*.md`, shortcodes in `layouts/_shortcodes/prompt.html` and `wingman.html` |
 | Interface strings | `i18n/<lang>.toml` |
+| Visit counter (cookieless): functions, shared logic and tests | `netlify/functions/hit.mjs`, `netlify/functions/stats.mjs`, `netlify/lib/analytics.mjs` |
+| Privacy page with the opt-out switch | `content/<lang>/privacy.md`, shortcode `layouts/_shortcodes/analytics-optout.html` |
 | Layouts, styles, script | `layouts/`, `assets/css/main.css`, `assets/js/main.js` |
 
 Fonts (Rubik, Nunito, Maven Pro) are self-hosted in `static/fonts/`. The site makes no third-party requests except YouTube thumbnails; the player loads from `youtube-nocookie.com` only after a visitor clicks play.
@@ -86,6 +88,14 @@ Copy a file in `content/en/sectors/`. Front matter:
 - `questions`: `q` and `a`.
 
 The body is a short introduction. Translate at the same file name under each language folder.
+
+## Visit counter
+
+The site counts visits itself, without cookies or third parties. The page script sends a beacon to `/api/hit` for the page view, for each `h2` and prompt block that scrolls into view, and for each prompt copied. The function hashes the visitor's address and browser with a random salt that changes every day, keeps the hash only inside that day's document, and replaces it by a count two days later. Known bots, Global Privacy Control, Do Not Track and the opt-out switch on `/privacy/` are honoured. Data lives in the Netlify Blobs store `hits`.
+
+Setup on Netlify: set the environment variable `STATS_TOKEN` to a long random string (required; the stats page returns 503 without it) and optionally `HIT_SECRET` as an extra ingredient of the daily hash. Then open `https://<site>/api/stats?token=<STATS_TOKEN>`: per day, per page and per section tables, `&days=7|30|90`, `&page=/path/` to filter the section table, `&format=json` for raw numbers. Uniques are per UTC day and summed over the period.
+
+Run `npm test` for the logic tests. `npm install` is only needed for the functions; Hugo itself has no npm dependency.
 
 ## Add a language (e.g. Estonian)
 

@@ -161,3 +161,12 @@ kb_see_usecase = "Skatīt lietojumu"
 prompt_label = "Uzvedne kopēšanai"
 copy = "Kopēt uzvedni"
 copied = "Nokopēts"
+
+# privacy and visit counter
+nav_privacy = "Privātums"
+optout_off = "Atteikties no uzskaites"
+optout_on = "Atkal uzskaitīt manus apmeklējumus"
+optout_state_on = "Jūsu apmeklējumi šobrīd tiek uzskaitīti, bez sīkdatnēm."
+optout_state_off = "Jūs esat atteicies. Jūsu apmeklējumi šajā pārlūkā netiek uzskaitīti."
+optout_signal = "Jūsu pārlūks sūta privātuma signālu, tāpēc jūsu apmeklējumi netiek uzskaitīti."
+optout_noscript = "Slēdzim nepieciešams JavaScript. Bez tā nekas netiek uzskaitīts."

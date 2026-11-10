@@ -271,3 +271,7 @@ dialog.lightbox::backdrop { background: rgba(20, 18, 40, .82) }
 .inwm a { font-family: var(--f-label); font-weight: 600; text-decoration: none }
 .related { margin-top: 10px; display: flex; flex-direction: column; gap: 14px }
 @media (max-width: 760px) { .kb .prose table { display: block; overflow-x: auto; white-space: nowrap } .kb .prose td, .kb .prose th { white-space: normal; min-width: 150px } }
+.optout { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px }
+.optout .btn { cursor: pointer; border: 0 }
+.optout .btn[aria-pressed="true"] { background: var(--accent); color: var(--on-accent) }
+.foot a { color: inherit }

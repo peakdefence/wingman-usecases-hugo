@@ -1,0 +1,2 @@
+{{- /* Opt-out switch for the visit counter; the script in main.js drives it. Attribute names must not start with "on" after "data-", or Hugo escapes them as JavaScript. */ -}}
+<p class="optout"><button type="button" class="btn ghost" data-optout data-txt-out="{{ i18n "optout_on" }}" data-txt-in="{{ i18n "optout_off" }}" data-state-on="{{ i18n "optout_state_on" }}" data-state-off="{{ i18n "optout_state_off" }}" data-signal="{{ i18n "optout_signal" }}">{{ i18n "optout_off" }}</button> <span class="fine" data-optout-status>{{ i18n "optout_noscript" }}</span></p>

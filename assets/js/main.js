@@ -244,3 +244,48 @@ document.addEventListener('click', async (e) => {
   b.dataset.state = 'done';
   setTimeout(() => { b.textContent = label; delete b.dataset.state; }, 1800);
 });
+
+// ---------- cookieless visit counter: page views, sections scrolled into view, prompts copied ----------
+// Nothing is stored in the browser except the opt-out flag. Honours Global Privacy Control and Do Not Track.
+(() => {
+  const OPT = 'wm-optout';
+  const signal = !!navigator.globalPrivacyControl || navigator.doNotTrack === '1';
+  const off = () => signal || store.get(OPT) === '1';
+  // opt-out control on the privacy page
+  document.querySelectorAll('[data-optout]').forEach((b) => {
+    const status = b.parentElement.querySelector('[data-optout-status]');
+    const paint = () => {
+      const o = off();
+      b.textContent = o ? b.dataset.txtOut : b.dataset.txtIn;
+      b.setAttribute('aria-pressed', o ? 'true' : 'false');
+      if (status) status.textContent = signal ? b.dataset.signal : o ? b.dataset.stateOff : b.dataset.stateOn;
+      b.disabled = signal;
+    };
+    b.addEventListener('click', () => { store.set(OPT, off() ? '0' : '1'); paint(); });
+    paint();
+  });
+  if (off() || !('sendBeacon' in navigator || 'fetch' in window)) return;
+  const path = location.pathname;
+  let ref = '';
+  try { const h = new URL(document.referrer).hostname; ref = h && h !== location.hostname ? h : ''; } catch (e) { ref = ''; }
+  const send = (e, s) => {
+    if (off()) return;
+    const body = JSON.stringify({ p: path, e, s: s || '', r: e === 'view' ? ref : '' });
+    try {
+      if (navigator.sendBeacon && navigator.sendBeacon('/api/hit', new Blob([body], { type: 'text/plain' }))) return;
+      fetch('/api/hit', { method: 'POST', body, keepalive: true, headers: { 'content-type': 'text/plain' } }).catch(() => {});
+    } catch (err) { /* counting is best effort */ }
+  };
+  send('view');
+  const targets = [...document.querySelectorAll('main .prose h2[id], main .prompt[id]')];
+  if (targets.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (!en.isIntersecting) return; io.unobserve(en.target); send('section', en.target.id); });
+    }, { threshold: 0.25 });
+    targets.forEach((t) => io.observe(t));
+  }
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-copy]');
+    if (b) send('copy', b.dataset.copy.replace(/-text$/, ''));
+  });
+})();

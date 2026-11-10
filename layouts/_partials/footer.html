@@ -7,6 +7,6 @@
 <footer class="site">
   <div class="wrap foot">
     <span>{{ partial "logo.html" . }} © {{ now.Year }} {{ site.Params.company }} · WINGMAN</span>
-    <span>{{ i18n "footer_note" }}</span>
+    <span>{{ i18n "footer_note" }}{{ with site.GetPage "/privacy" }} · <a href="{{ .RelPermalink }}">{{ i18n "nav_privacy" }}</a>{{ end }}</span>
   </div>
 </footer>
