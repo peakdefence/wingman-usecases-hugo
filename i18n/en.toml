@@ -147,3 +147,17 @@ area_settings = "Settings"
 area_email = "Email notification"
 
 close = "Close"
+
+# knowledge base
+nav_kb = "Knowledge base"
+kb_eyebrow = "Knowledge base"
+kb_lede = "Guides and ready-to-use prompts for security and compliance work. They work with any capable LLM and without WINGMAN; a short note on each page shows how the same step runs when the records are already linked."
+kb_regulations = "Regulations"
+kb_audience = "Who it is for"
+kb_updated = "Updated"
+kb_related = "The same process in WINGMAN"
+kb_in_wingman = "In WINGMAN"
+kb_see_usecase = "See the use case"
+prompt_label = "Prompt to copy"
+copy = "Copy prompt"
+copied = "Copied"

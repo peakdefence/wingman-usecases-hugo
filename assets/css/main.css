@@ -254,3 +254,20 @@ dialog.lightbox::backdrop { background: rgba(20, 18, 40, .82) }
 .lightbox figcaption { color: #F3F2F8; font-size: .95rem; max-width: 80ch; margin: 0 auto; text-align: center }
 .lightbox figcaption b { display: block; color: #fff }
 .lightbox .lbclose { position: absolute; top: -14px; right: -14px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: #fff; color: #1F1D2D; font-size: 1.3rem; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.3) }
+
+/* knowledge base: prompt blocks and the quiet WINGMAN note */
+.kb .prose table { border-collapse: collapse; width: 100%; font-size: .95rem }
+.kb .prose th, .kb .prose td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line) }
+.kb .prose th { font-family: var(--f-label); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.kb .prose ol, .kb .prose ul { margin: 0; padding-left: 1.3em }
+.prompt { margin: 6px 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden }
+.prompt figcaption { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--surface-2) }
+.prompt figcaption b { font-family: var(--f-display); font-weight: 600 }
+.prompt .copy { margin-left: auto; border: 0; cursor: pointer; background: var(--accent); color: var(--on-accent); padding: 7px 14px; border-radius: 999px; font-family: var(--f-label); font-weight: 700; font-size: .85rem }
+.prompt .copy[data-state="done"] { background: var(--accent-soft); color: var(--accent) }
+.prompt pre { margin: 0; padding: 16px 18px; max-height: 30rem; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-family: var(--f-body); font-size: .93rem; line-height: 1.55; color: var(--ink) }
+.inwm { display: flex; flex-direction: column; gap: 6px; padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--band); border-radius: 0 12px 12px 0; color: var(--ink-2); font-size: .95rem }
+.inwm p { margin: 0 }
+.inwm a { font-family: var(--f-label); font-weight: 600; text-decoration: none }
+.related { margin-top: 10px; display: flex; flex-direction: column; gap: 14px }
+@media (max-width: 760px) { .kb .prose table { display: block; overflow-x: auto; white-space: nowrap } .kb .prose td, .kb .prose th { white-space: normal; min-width: 150px } }

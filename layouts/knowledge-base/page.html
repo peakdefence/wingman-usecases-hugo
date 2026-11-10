@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="block wrap prose-wrap kb">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></nav>
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.summary }}<p class="lede">{{ . }}</p>{{ end }}
+  <dl class="facts">
+    {{ with .Params.regulations }}<div><dt>{{ i18n "kb_regulations" }}</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
+    {{ with .Params.audience }}<div><dt>{{ i18n "kb_audience" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.updated }}<div><dt>{{ i18n "kb_updated" }}</dt><dd>{{ time.Format "2 January 2006" . }}</dd></div>{{ end }}
+  </dl>
+  <div class="prose">{{ .Content }}</div>
+  {{ $uc := .Params.uc }}{{ $ucp := "" }}{{ with $uc }}{{ range where (where site.RegularPages "Section" "use-cases") "Params.uc" . }}{{ $ucp = . }}{{ end }}{{ end }}
+  {{ with $ucp }}
+  <section class="related">
+    <h2>{{ i18n "kb_related" }}</h2>
+    <div class="cards"><a class="card" href="{{ .RelPermalink }}"><p class="eyebrow">{{ i18n "nav_usecases" }}</p><h4>{{ .Title }}</h4><p>{{ .Params.summary }}</p></a></div>
+  </section>
+  {{ end }}
+  {{ with .Params.videos }}{{ $ids := . }}
+    <h2>{{ i18n "related_videos" }}</h2>
+    {{ partial "videos.html" (where site.Data.videos "youtube" "in" $ids) }}
+  {{ end }}
+</article>
+{{ end }}

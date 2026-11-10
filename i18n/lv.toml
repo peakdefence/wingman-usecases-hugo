@@ -147,3 +147,17 @@ area_settings = "Iestatījumi"
 area_email = "E-pasta paziņojums"
 
 close = "Aizvērt"
+
+# knowledge base
+nav_kb = "Zināšanu bāze"
+kb_eyebrow = "Zināšanu bāze"
+kb_lede = "Ceļveži un gatavas uzvednes drošības un atbilstības darbam. Tās strādā ar jebkuru pietiekami spējīgu valodas modeli un bez WINGMAN; īsa piezīme katrā lapā parāda, kā tas pats solis notiek, kad ieraksti jau ir sasaistīti."
+kb_regulations = "Regulējums"
+kb_audience = "Kam tas domāts"
+kb_updated = "Atjaunots"
+kb_related = "Tas pats process WINGMAN"
+kb_in_wingman = "WINGMAN"
+kb_see_usecase = "Skatīt lietojumu"
+prompt_label = "Uzvedne kopēšanai"
+copy = "Kopēt uzvedni"
+copied = "Nokopēts"

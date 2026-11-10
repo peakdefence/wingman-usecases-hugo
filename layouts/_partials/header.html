@@ -9,6 +9,7 @@
       {{ with site.GetPage "/library" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "library" }} aria-current="true"{{ end }}>{{ i18n "nav_library" }}</a>{{ end }}
       {{ with site.GetPage "/videos" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "videos" }} aria-current="true"{{ end }}>{{ i18n "nav_videos" }}</a>{{ end }}
       {{ with site.GetPage "/case-studies" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "case-studies" }} aria-current="true"{{ end }}>{{ i18n "nav_cases" }}</a>{{ end }}
+      {{ with site.GetPage "/knowledge-base" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "knowledge-base" }} aria-current="true"{{ end }}>{{ i18n "nav_kb" }}</a>{{ end }}
     </nav>
     {{ if gt (len site.Languages) 1 }}
     <nav class="langs" aria-label="{{ i18n "lang_switch" }}">
