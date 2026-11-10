@@ -223,3 +223,24 @@ if (dataEl) {
     render(false);
   }
 }
+
+// ---------- knowledge base: copy a prompt block to the clipboard ----------
+document.addEventListener('click', async (e) => {
+  const b = e.target.closest('[data-copy]');
+  if (!b) return;
+  const pre = document.getElementById(b.dataset.copy);
+  if (!pre) return;
+  const text = pre.textContent;
+  let ok = false;
+  try { await navigator.clipboard.writeText(text); ok = true; } catch (err) {
+    const r = document.createRange(); r.selectNodeContents(pre);
+    const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    try { ok = document.execCommand('copy'); } catch (e2) { ok = false; }
+    s.removeAllRanges();
+  }
+  if (!ok) { pre.focus(); return; }
+  const label = b.textContent;
+  b.textContent = b.dataset.done || 'Copied';
+  b.dataset.state = 'done';
+  setTimeout(() => { b.textContent = label; delete b.dataset.state; }, 1800);
+});

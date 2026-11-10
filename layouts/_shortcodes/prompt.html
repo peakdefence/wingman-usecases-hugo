@@ -1,0 +1,10 @@
+{{- /* A copy-and-paste prompt block. Usage: {{< prompt id="slug" title="..." >}}plain text{{< /prompt >}} */ -}}
+{{- $id := .Get "id" | default (printf "prompt-%d" .Ordinal) -}}
+<figure class="prompt" id="{{ $id }}">
+  <figcaption>
+    <span class="eyebrow">{{ i18n "prompt_label" }}</span>
+    <b>{{ .Get "title" }}</b>
+    <button type="button" class="copy" data-copy="{{ $id }}-text" data-done="{{ i18n "copied" }}" aria-describedby="{{ $id }}-text">{{ i18n "copy" }}</button>
+  </figcaption>
+  <pre id="{{ $id }}-text" tabindex="0">{{ trim .Inner "\n" }}</pre>
+</figure>

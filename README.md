@@ -18,6 +18,7 @@ hugo --gc --minify     # build to public/
 | Videos (YouTube ids, titles per language, linked use cases and sectors) | `data/videos.yaml` |
 | Screenshots and recordings of WINGMAN, one entry per capture, shown under use-case and sector stages and at `/library/` | `static/media/`, `data/media.yaml`, see `MEDIA.md` |
 | Case studies | `content/<lang>/case-studies/*.md` |
+| Knowledge base: guides and copy-and-paste prompts, one page per topic | `content/<lang>/knowledge-base/*.md`, shortcodes in `layouts/_shortcodes/prompt.html` and `wingman.html` |
 | Interface strings | `i18n/<lang>.toml` |
 | Layouts, styles, script | `layouts/`, `assets/css/main.css`, `assets/js/main.js` |
 
@@ -51,6 +52,17 @@ hugo new content/en/case-studies/my-case.md
 Fill in the front matter (`client`, `sector`, `standards`, `use_cases`, `videos`) and set `draft: false` to publish. Keep it anonymised: no company, people or tool names, and only results the client has confirmed. Put the Latvian version at the same file name under `content/lv/case-studies/` so the language switch links them. Each use-case page lists the case studies whose `use_cases` include it.
 
 The example `internal-iso-27001-audit.md` is a draft skeleton and is not built until `draft: false`. Preview drafts with `hugo server -D`.
+
+## Add a knowledge base page
+
+Copy a file in `content/en/knowledge-base/`. Front matter: `title`, `summary` (quote it if it contains a colon), `weight`, `regulations` (list, shown on the card and the page), `audience`, `uc` (a use-case id, linked at the bottom as "the same process in WINGMAN"), `updated`, optional `videos`.
+
+Two shortcodes do the work in the body:
+
+- `{{< prompt id="slug" title="..." >}} plain text {{< /prompt >}}` renders a prompt block with a copy button. The text inside is kept verbatim, so write it as it should be pasted into an LLM; Markdown is not rendered there.
+- `{{< wingman uc="incident-handling" stage="4" >}} one or two sentences {{< /wingman >}}` renders the quiet "In WINGMAN" note with a link to that use case stage.
+
+Pages are meant to be useful without WINGMAN; keep the WINGMAN note short and after the content it refers to. Translate at the same file name under each language folder. Prompts can stay in English in a translation when they tell the model to answer in the user's language; translate the framing text.
 
 ## Add or change a use case
 

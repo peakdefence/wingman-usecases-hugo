@@ -1,0 +1,9 @@
+{{- /* A quiet note on how the step runs in WINGMAN, linking to a use case stage. Usage: {{< wingman uc="incident-handling" stage="4" >}}text{{< /wingman >}} */ -}}
+{{- $uc := .Get "uc" -}}
+{{- $p := "" -}}
+{{- range where (where site.RegularPages "Section" "use-cases") "Params.uc" $uc }}{{ $p = . }}{{ end -}}
+<aside class="inwm">
+  <p class="eyebrow">{{ i18n "kb_in_wingman" }}</p>
+  <div>{{ trim .Inner "\n" | markdownify }}</div>
+  {{ with $p }}<a href="{{ .RelPermalink }}{{ with $.Get "stage" }}#stage-{{ . }}{{ end }}">{{ i18n "kb_see_usecase" }}: {{ .Title }}</a>{{ end }}
+</aside>

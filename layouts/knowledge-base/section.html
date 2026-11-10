@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="block wrap">
+  <p class="eyebrow">{{ i18n "kb_eyebrow" }}</p>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ i18n "kb_lede" }}</p>
+  <div class="prose">{{ .Content }}</div>
+  <div class="cards">{{ range .RegularPages.ByWeight }}
+    <a class="card" href="{{ .RelPermalink }}">
+      {{ with .Params.regulations }}<p class="eyebrow">{{ delimit . " · " }}</p>{{ end }}
+      <h4>{{ .Title }}</h4>
+      <p>{{ .Params.summary | default .Summary | plainify }}</p>
+      {{ with .Params.audience }}<span class="meta">{{ . }}</span>{{ end }}
+    </a>{{ end }}
+  </div>
+</section>
+{{ end }}
