@@ -3,3 +3,5 @@ resources/_gen/
 .hugo_build.lock
 .claude/settings.local.json
 .DS_Store
+node_modules/
+.netlify/

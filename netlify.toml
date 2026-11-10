@@ -13,3 +13,9 @@
 
 [context.branch-deploy]
   command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+# Cookieless visit counter: two functions served at /api/hit and /api/stats (paths set in the function files).
+# Set STATS_TOKEN (required for /api/stats) and optionally HIT_SECRET in the site's environment variables.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

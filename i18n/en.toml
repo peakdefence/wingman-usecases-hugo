@@ -161,3 +161,12 @@ kb_see_usecase = "See the use case"
 prompt_label = "Prompt to copy"
 copy = "Copy prompt"
 copied = "Copied"
+
+# privacy and visit counter
+nav_privacy = "Privacy"
+optout_off = "Opt out of counting"
+optout_on = "Count my visits again"
+optout_state_on = "Your visits are currently counted, without cookies."
+optout_state_off = "You are opted out. Your visits are not counted in this browser."
+optout_signal = "Your browser sends a privacy signal, so your visits are not counted."
+optout_noscript = "The switch needs JavaScript. Without it nothing is counted at all."
