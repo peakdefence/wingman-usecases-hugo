@@ -171,6 +171,7 @@ a.ent:hover { background: var(--accent-soft); color: var(--accent) }
 .ytlink:hover .playbtn { transform: scale(1.08) }
 .video figcaption { display: flex; flex-direction: column; gap: 4px }
 .video figcaption span:not(.badge) { color: var(--ink-2); font-size: .92rem }
+.video figcaption .badge { align-self: flex-start; margin-left: 0 }
 
 /* tables */
 .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface) }
@@ -205,13 +206,28 @@ footer.site { border-top: 1px solid var(--line) }
 .foot { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; padding-block: 22px 32px; color: var(--muted); font-size: .88rem }
 .foot .logo { width: 18px; height: 18px; vertical-align: -3px; margin-right: 4px }
 
+/* home: one brain, three doors */
+.access { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 24px; align-items: start; margin-top: 6px }
+.doors { display: flex; flex-direction: column; gap: 12px; min-width: 0 }
+.door { display: flex; gap: 16px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px }
+.door > div { display: flex; flex-direction: column; gap: 4px; min-width: 0 }
+.door .lens { font-family: var(--f-label); font-weight: 700; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent) }
+.door h3 { font-size: 1.08rem }
+.door p:not(.lens) { color: var(--ink-2); font-size: .94rem }
+.dglyph { width: 28px; height: 28px; fill: none; stroke: var(--on-accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round }
+.featured { display: flex; flex-direction: column; gap: 8px; min-width: 0 }
+.principles { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px }
+.principles li { background: var(--accent-soft); border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px }
+.principles h3 { font-size: .98rem }
+.principles p { font-size: .92rem; color: var(--ink-2) }
+
 @media (max-width: 1000px) {
-  .herogrid, .explorer { grid-template-columns: 1fr }
+  .herogrid, .explorer, .access { grid-template-columns: 1fr }
   .panel { position: static; max-height: none }
 }
 @media (max-width: 640px) {
   body { font-size: 16px }
-  .compare { grid-template-columns: 1fr }
+  .compare, .principles { grid-template-columns: 1fr }
   .nav { margin-left: 0; width: 100% }
   .brand span { display: none }
   .herogrid { padding-block: 40px }

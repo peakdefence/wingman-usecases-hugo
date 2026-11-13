@@ -4,7 +4,20 @@
 #   use_cases:  use-case ids (the `uc` value in content/*/use-cases/*.md) the video belongs to
 #   sectors:    sector ids (the `sector` value in content/*/sectors/*.md) the video is shown on
 #   model:      true if the video explains the data model itself (shown on the home page)
+#   feature:    true for the one video shown in the home page section "One brain, three doors"
 #   title / description: per site language; missing languages fall back to en
+
+- youtube: lWWx_3-dm6M
+  lang: en
+  model: true
+  feature: true
+  use_cases: [vulnerability-impact, incident-handling, security-operations]
+  title:
+    en: WINGMAN – the security brain of your organisation
+    lv: WINGMAN – jūsu organizācijas drošības smadzenes
+  description:
+    en: People, AI assistants and agents through MCP, and signals from other systems all work on the same records, with people approving and every change recorded.
+    lv: Cilvēki, MI asistenti un aģenti caur MCP, kā arī signāli no citām sistēmām strādā ar tiem pašiem ierakstiem, cilvēkiem apstiprinot un katrai izmaiņai paliekot vēsturē.
 
 - youtube: zV9oQEXCKoA
   lang: en

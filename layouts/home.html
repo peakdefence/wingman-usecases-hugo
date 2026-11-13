@@ -17,6 +17,34 @@
   </div>
 </section>
 
+<section class="block wrap" id="access">
+  <p class="eyebrow">{{ i18n "access_eyebrow" }}</p>
+  <h2>{{ i18n "access_title" }}</h2>
+  <p class="lede">{{ i18n "access_lede" }}</p>
+  <div class="access">
+    <div class="doors">
+      {{ range slice "people" "ai" "sys" }}
+      <div class="door">
+        <span class="ico" aria-hidden="true">{{ partial "door-icon.html" . }}</span>
+        <div>
+          <p class="lens">{{ i18n (printf "door_%s_via" .) }}</p>
+          <h3>{{ i18n (printf "door_%s_t" .) }}</h3>
+          <p>{{ i18n (printf "door_%s" .) }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ with where site.Data.videos "feature" true }}
+    <div class="featured">{{ partial "video.html" (index . 0) }}<p class="fine">{{ i18n "video_consent" }}</p></div>
+    {{ end }}
+  </div>
+  <ul class="principles">
+    {{ range slice "approve" "access" "deploy" }}
+    <li><h3>{{ i18n (printf "pr_%s_t" .) }}</h3><p>{{ i18n (printf "pr_%s" .) }}</p></li>
+    {{ end }}
+  </ul>
+</section>
+
 <section class="block wrap" id="model">
   <p class="eyebrow">{{ i18n "model_eyebrow" }}</p>
   <h2>{{ i18n "model_title" }}</h2>
@@ -42,7 +70,7 @@
   <p class="eyebrow">{{ i18n "videos_eyebrow" }}</p>
   <h2>{{ i18n "videos_title" }}</h2>
   <p class="lede">{{ i18n "videos_lede" }}</p>
-  {{ partial "videos.html" site.Data.videos }}
+  {{ partial "videos.html" (where site.Data.videos "feature" "!=" true) }}
 </section>
 
 <section class="block wrap" id="case-studies">
