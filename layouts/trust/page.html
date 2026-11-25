@@ -3,6 +3,7 @@
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></nav>
   <h1>{{ .Title }}</h1>
   <p class="lede">{{ .Params.summary }}</p>
+  {{ if .Params.loop }}{{ partial "loop.html" (dict "compact" true) }}{{ end }}
   <div class="prose trust">{{ .Content }}</div>
 </article>
 

@@ -2,6 +2,7 @@
 title: Kā tiek kontrolēts MI
 short: Kā tiek kontrolēts MI
 slug_id: control
+loop: true
 weight: 20
 summary: WINGMAN MI ierosina, lēmumu pieņem konkrēts cilvēks. Šajā lapā aprakstīts, ko tas nozīmē ierakstos, kurš ko var mainīt, kāda vēsture tiek saglabāta un ko MI nedara.
 samples: [risk-change-trail, audit-trace]

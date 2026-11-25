@@ -24,11 +24,12 @@
 {{ with .Params.does }}
 <section class="block wrap">
   <h2>{{ i18n "for_does" }}</h2>
+  {{ partial "loop.html" (dict "compact" true) }}
   <p class="lede">{{ i18n "for_does_lede" }}</p>
   <ol class="promises">
   {{ $d := . }}
-  {{ range site.Data.home.promises }}{{ $id := .id }}{{ with index $d $id }}
-    <li class="promise"><h3>{{ i18n (printf "prom_%s_t" $id) }}</h3><p>{{ . }}</p></li>
+  {{ range site.Data.home.promises }}{{ $id := .id }}{{ $icon := .icon }}{{ with index $d $id }}
+    <li class="promise"><span class="ico">{{ partial "icon.html" $icon }}</span><h3>{{ i18n (printf "prom_%s_t" $id) }}</h3><p>{{ . }}</p></li>
   {{ end }}{{ end }}
   </ol>
 </section>

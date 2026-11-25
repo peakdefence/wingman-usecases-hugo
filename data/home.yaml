@@ -5,16 +5,16 @@
 # every use case should appear under exactly one promise.
 
 situations:
-  - { id: start, page: /for/start }
-  - { id: accountable, page: /for/board }
-  - { id: alone, page: /for/solo }
-  - { id: team, page: /for/ciso }
-  - { id: moving, page: /for/ciso }
-  - { id: auditor, page: /for/auditor }
-  - { id: consultant, page: /for/consultant }
+  - { id: start, icon: start, page: /for/start }
+  - { id: accountable, icon: briefcase, page: /for/board }
+  - { id: alone, icon: person, page: /for/solo }
+  - { id: team, icon: shield, page: /for/ciso }
+  - { id: moving, icon: pulse, page: /for/ciso }
+  - { id: auditor, icon: search, page: /for/auditor }
+  - { id: consultant, icon: people, page: /for/consultant }
 
 promises:
-  - { id: knowledge, model: true, use_cases: [roles-raci, new-requirements] }
-  - { id: projects, use_cases: [risk-identification, business-impact-analysis, auditing, audit-scopes, eu-ai-act, gdpr-dpia] }
-  - { id: regular, use_cases: [regular-reviews, risk-review, supplier-evaluation, management-review, security-operations] }
-  - { id: events, use_cases: [incident-handling, vulnerability-impact, change-management] }
+  - { id: knowledge, icon: record, model: true, use_cases: [roles-raci, new-requirements] }
+  - { id: projects, icon: flag, use_cases: [risk-identification, business-impact-analysis, auditing, audit-scopes, eu-ai-act, gdpr-dpia] }
+  - { id: regular, icon: calendar, use_cases: [regular-reviews, risk-review, supplier-evaluation, management-review, security-operations] }
+  - { id: events, icon: bell, use_cases: [incident-handling, vulnerability-impact, change-management] }

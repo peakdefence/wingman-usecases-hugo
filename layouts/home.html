@@ -19,15 +19,20 @@
   </div>
 </section>
 
+<section class="block wrap" id="how">
+  {{ partial "loop.html" (dict "compact" false) }}
+</section>
+
 <section class="block wrap" id="situations">
   <p class="eyebrow">{{ i18n "sit_eyebrow" }}</p>
   <h2>{{ i18n "sit_title" }}</h2>
   <p class="lede">{{ i18n "sit_lede" }}</p>
   <div class="cards sits">
   {{ range site.Data.home.situations }}
-    {{ $id := .id }}
+    {{ $id := .id }}{{ $icon := .icon }}
     {{ with site.GetPage .page }}
     <a class="card sit" href="{{ .RelPermalink }}">
+      <span class="ico">{{ partial "icon.html" $icon }}</span>
       <h3>{{ i18n (printf "sit_%s_t" $id) }}</h3>
       <p>{{ i18n (printf "sit_%s_p" $id) }}</p>
       <span class="meta go">{{ .Params.short | default .Title }} →</span>
@@ -35,6 +40,18 @@
     {{ end }}
   {{ end }}
   </div>
+</section>
+
+<section class="block wrap" id="see">
+  <p class="eyebrow">{{ i18n "see_eyebrow" }}</p>
+  <h2>{{ i18n "see_title" }}</h2>
+  <p class="lede">{{ i18n "see_lede" }}</p>
+  <div class="seegrid">
+    {{ range site.Data.media }}{{ if eq .id "brief-top" }}{{ partial "media.html" (dict "m" .) }}{{ end }}{{ end }}
+    {{ range first 1 (where site.Data.videos "model" true) }}{{ partial "video.html" . }}{{ end }}
+  </div>
+  <p class="morelinks">{{ with site.GetPage "/library" }}<a class="more" href="{{ .RelPermalink }}">{{ i18n "see_more_screens" }} →</a>{{ end }}<a class="more" href="#videos">{{ i18n "all_videos" }} →</a></p>
+  <p class="fine">{{ i18n "video_consent" }}</p>
 </section>
 
 <section class="block wrap" id="promises">
@@ -45,6 +62,7 @@
   {{ range site.Data.home.promises }}
     {{ $id := .id }}
     <li class="promise">
+      <span class="ico">{{ partial "icon.html" .icon }}</span>
       <h3>{{ i18n (printf "prom_%s_t" $id) }}</h3>
       <p>{{ i18n (printf "prom_%s_p" $id) }}</p>
       <ul class="uclinks" aria-label="{{ i18n "nav_usecases" }}">

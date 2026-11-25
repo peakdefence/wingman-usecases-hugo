@@ -326,3 +326,27 @@ h1.forq { font-size: clamp(1.8rem, 3.6vw, 2.7rem); max-width: 22ch }
 .sample .inwm { margin: 0 }
 .sample .prose blockquote { margin: 0; padding: 10px 16px; border-left: 3px solid var(--line); color: var(--ink-2) }
 .rolesnote { color: var(--muted); font-size: .92rem; margin: 4px 0 0 }
+
+/* visuals: icons, the four-step loop, the product strip */
+.icon { width: 22px; height: 22px; display: block; stroke-width: 2 }
+.ico { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); flex: none }
+.card.sit .ico { margin-bottom: 2px }
+.promise .ico { margin-bottom: 2px }
+.promise h3::before { display: none }
+.loopwrap { display: flex; flex-direction: column; gap: 16px }
+.loopwrap.compact { margin: 4px 0 8px }
+.loop { list-style: none; margin: 6px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 34px }
+.loop .step { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 8px }
+.loop .step.human { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft) }
+.loop .step .num { position: absolute; top: 14px; right: 16px; font-family: var(--f-label); font-weight: 700; color: var(--muted); font-size: .85rem }
+.loop .step h3 { font-size: 1.05rem }
+.loop .step p { color: var(--ink-2); font-size: .94rem; margin: 0 }
+.loop .step:not(:last-child)::after { content: ""; position: absolute; right: -26px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); background: var(--accent); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat }
+.loopback { color: var(--muted); font-size: .95rem; margin: 0; display: flex; align-items: center; gap: 8px }
+.loopback::before { content: "↺"; color: var(--accent); font-size: 1.2rem }
+.seegrid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px; align-items: start }
+.seegrid .media img { width: 100%; height: auto }
+@media (max-width: 1000px) { .loop { grid-template-columns: repeat(2, minmax(0, 1fr)) } .loop .step:nth-child(2)::after { display: none } .seegrid { grid-template-columns: 1fr } }
+@media (max-width: 600px) { .loop { grid-template-columns: 1fr; gap: 30px } .loop .step:not(:last-child)::after { display: block; right: auto; left: 50%; top: auto; bottom: -24px; transform: translateX(-50%) rotate(90deg) } }
+.loop .ico { background: var(--accent); color: var(--on-accent) }
+.loop .step.human .ico { width: 48px; height: 48px }
