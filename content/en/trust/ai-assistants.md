@@ -13,8 +13,8 @@ ask:
 - Whether my own skills can run inside Ask Wingman
 next:
   title: See WINGMAN connected to an assistant
-  text: We can show Claude working on a fictional company's records, from a question to an accepted change.
-  ask: A walk-through of WINGMAN connected to Claude, on a fictional company
+  text: We can show Claude working on a fictional organisation's records, from a question to an accepted change.
+  ask: A walk-through of WINGMAN connected to Claude, on a fictional organisation
 ---
 
 ## How the assistant connects

@@ -85,7 +85,7 @@ sectors:
 - iso27001-soc2
 - financial
 next:
-  title: Apskatiet to ar saviem reģistriem
-  text: Varam izrādīt reģistru pārbaudes, riska pārskatīšanu un ievainojamību ar jūsu pašu ierakstiem.
-  ask: Reģistru pārbaužu, riska pārskatīšanas un ievainojamības demonstrācija uz izdomātas organizācijas piemēra
+  title: Apskatiet to uz piemēra, pēc tam ar saviem reģistriem
+  text: Varam izrādīt reģistru pārbaudes, riska pārskatīšanu un ievainojamību uz izdomātas organizācijas piemēra vai ar jūsu pašu ierakstiem.
+  ask: Reģistru pārbaužu, riska pārskatīšanas un ievainojamības demonstrācija uz izdomātas organizācijas piemēra vai ar mūsu pašu ierakstiem
 ---

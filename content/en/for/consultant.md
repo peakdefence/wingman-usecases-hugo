@@ -79,7 +79,7 @@ sectors:
 - nis2
 next:
   title: Try your next workshop on one client
-  text: We can run a risk identification on the fictional company with you, or set one up for a client of yours.
-  ask: A risk identification run together, on a fictional company or for one of my clients
+  text: We can run a risk identification on the fictional organisation with you, or set one up for a client of yours.
+  ask: A risk identification run together, on a fictional organisation or for one of my clients
 linkedin: true
 ---

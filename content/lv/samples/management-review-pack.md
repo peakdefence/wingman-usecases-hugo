@@ -2,7 +2,7 @@
 title: Ceturkšņa vadības pārskata materiāli
 weight: 10
 summary: Ko vadības institūcija saņem pirms ceturkšņa pārskata un kas tiek fiksēts pēc tā. Katra rinda nāk no ieraksta, ko var atvērt.
-for: [board, ciso, auditor, solo]
+for: [board, ciso, auditor]
 use_cases: [management-review]
 ---
 

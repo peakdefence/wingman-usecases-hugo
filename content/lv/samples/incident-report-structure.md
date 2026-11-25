@@ -2,7 +2,7 @@
 title: "Ziņošana CERT.LV par nozīmīgu incidentu: struktūras piemērs"
 weight: 70
 summary: Nozīmīga incidenta ziņojumu uzbūve, sagatavota no incidenta ieraksta. Nav oficiālā veidne; termiņi jāpārbauda Nacionālās kiberdrošības likumā.
-for: [solo, board]
+for: [solo]
 use_cases: [incident-handling]
 ---
 

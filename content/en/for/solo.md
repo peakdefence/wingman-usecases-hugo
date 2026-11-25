@@ -79,6 +79,6 @@ sectors:
 - nis2
 next:
   title: See the self-assessment report come from the records
-  text: We can show the report and an incident report draft on the fictional company, in Latvian.
+  text: We can show the report and an incident report draft on the fictional organisation, in Latvian.
   ask: A sample self-assessment report and a CERT.LV incident report draft, on a fictional organisation
 ---

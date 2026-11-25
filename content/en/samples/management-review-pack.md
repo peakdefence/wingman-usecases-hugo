@@ -2,7 +2,7 @@
 title: A quarterly management review pack
 weight: 10
 summary: What the management body receives before a quarterly review, and what is recorded after it. Every line comes from a record that can be opened.
-for: [board, ciso, auditor, solo]
+for: [board, ciso, auditor]
 use_cases: [management-review]
 ---
 

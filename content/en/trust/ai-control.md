@@ -13,8 +13,8 @@ ask:
 - Which further controls can be added to an assistant's connection
 next:
   title: Follow one suggestion from proposal to history
-  text: We can show a suggestion being made, accepted and recorded, on a fictional company.
-  ask: A walk-through of one AI suggestion from proposal to the record's history, on a fictional company
+  text: We can show a suggestion being made, accepted and recorded, on a fictional organisation.
+  ask: A walk-through of one AI suggestion from proposal to the record's history, on a fictional organisation
 ---
 
 **For the management body, in short.** AI drafts and proposes. Every change to the records is kept with the person who made it and the time, and that history cannot be edited or deleted. A named person is accountable for every change, including those made by an assistant working for them. Permissions decide what each person, and each assistant they connect, may do.

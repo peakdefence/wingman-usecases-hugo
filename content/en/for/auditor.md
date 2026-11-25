@@ -84,6 +84,6 @@ sectors:
 - iso27001-soc2
 next:
   title: Follow one requirement from claim to conclusion
-  text: 'We can walk through an audit on the fictional company: one requirement, its claimed control, the evidence, the finding and the conclusion.'
-  ask: A walk-through of one requirement from claimed control to conclusion, on a fictional company
+  text: 'We can walk through an audit on the fictional organisation: one requirement, its claimed control, the evidence, the finding and the conclusion.'
+  ask: A walk-through of one requirement from claimed control to conclusion, on a fictional organisation
 ---

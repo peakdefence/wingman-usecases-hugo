@@ -75,6 +75,6 @@ sectors:
 - financial
 next:
   title: See the management view on a worked example
-  text: We can walk you through the Brief and a management review on a fictional company with realistic records, or on your own.
-  ask: A 30-minute walk-through of the Brief and a management review, on a fictional company
+  text: We can walk you through the Brief and a management review on a fictional organisation with realistic records, or on your own.
+  ask: A 30-minute walk-through of the Brief and a management review, on a fictional organisation
 ---

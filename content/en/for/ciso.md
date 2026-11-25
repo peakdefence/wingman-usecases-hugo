@@ -85,7 +85,7 @@ sectors:
 - iso27001-soc2
 - financial
 next:
-  title: See it on your own registers
-  text: We can walk through the register checks, a risk review and a vulnerability on your own records.
-  ask: A walk-through of the register checks, a risk review and a vulnerability, on a fictional company
+  title: See it on an example, then on your own registers
+  text: We can walk through the register checks, a risk review and a vulnerability on a fictional organisation, or on your own records.
+  ask: A walk-through of the register checks, a risk review and a vulnerability, on a fictional organisation or on our own records
 ---

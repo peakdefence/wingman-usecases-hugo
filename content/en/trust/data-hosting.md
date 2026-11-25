@@ -13,7 +13,7 @@ ask:
 - Peak Defence's own certifications
 next:
   title: Go through the options for your organisation
-  text: We can walk through the deployment and AI options against your own requirements, on a fictional company.
+  text: We can walk through the deployment and AI options against your own requirements, on a fictional organisation.
   ask: A walk-through of the data and AI options against our requirements
 ---
 
