@@ -6,7 +6,7 @@ weight: 10
 slug_id: board
 problems:
 - q: Es atbildu personīgi, bet nevarētu parādīt, ko esmu darījis.
-  a: 'Vadības pārskats ir ieraksts: kas tika iesniegts, ko vadības institūcija izlēma un kad. Katrs lēmums kļūst par uzdevumu, kura izpildi varat redzēt. Tā ir jūsu uzraudzības liecība.'
+  a: 'Vadības pārskats ir ieraksts: kas tika iesniegts, ko vadības institūcija izlēma un kad. Katrs lēmums kļūst par uzdevumu, kura izpildi varat redzēt. Tā ir jūsu uzraudzības liecība. Katra ieraksta vēsturē saglabājas, kurš un kad ko mainīja, un šo vēsturi nevar labot vai dzēst.'
 - q: Es parakstu to, kas atnāk dienu pirms sēdes.
   a: 'Vadības pārskats ir regulārs darbs ar datumu un atbildīgo lomu. Tā materiāli tiek salikti no ierakstiem: iepriekšējie lēmumi, auditu rezultāti, risku izmaiņas, incidenti un piegādātāju sniegums. Tas nav atkarīgs no tā, vai kāds iepriekšējā vakarā sagatavo slaidus.'
 - q: Drošību redzu reizi gadā slaidos, kurus nesaprotu.

@@ -3,45 +3,50 @@ title: Kā tiek kontrolēts MI
 short: Kā tiek kontrolēts MI
 slug_id: control
 weight: 20
-summary: MI WINGMAN ierosina, un izlemj konkrēts cilvēks. Šī lapa pasaka, ko tas nozīmē ierakstos, kurš ko var mainīt, kāda vēsture tiek saglabāta un ko MI nedara.
+summary: WINGMAN MI ierosina, lēmumu pieņem konkrēts cilvēks. Šajā lapā aprakstīts, ko tas nozīmē ierakstos, kurš ko var mainīt, kāda vēsture tiek saglabāta un ko MI nedara.
 media: [risk-accept-1-suggestion, risk-accept-2-accepted, risk-confirm-3-completed, sig-inbox]
 ask:
-- Vai ieraksta vēsturi var labot vai dzēst, un kurš to var
 - Vai MI sagatavots teksts paliek atzīmēts arī pēc tam, kad cilvēks to pieņēmis
 - Vai apstiprinājums parāda, ka apstiprinātājs ierakstu ir atvēris
-- Tikai lasāma piekļuve ārējam auditoram
+- Kādas papildu kontroles var ieviest asistenta savienojumam
 next:
   title: Izsekojiet vienam ieteikumam no ierosinājuma līdz vēsturei
   text: Varam parādīt, kā ieteikums tiek izveidots, pieņemts un fiksēts, uz izdomāta uzņēmuma piemēra.
   ask: Demonstrācija, kā viens MI ieteikums nonāk no ierosinājuma līdz ieraksta vēsturei, uz izdomāta uzņēmuma piemēra
 ---
 
+**Vadības institūcijai īsumā.** MI sagatavo un ierosina. Katra ierakstu izmaiņa tiek saglabāta kopā ar cilvēku, kurš to veica, un laiku, un šo vēsturi nevar labot vai dzēst. Par katru izmaiņu atbild konkrēts cilvēks, arī par tām, ko veic viņa vārdā strādājošs asistents. Tiesības nosaka, ko drīkst darīt katrs cilvēks un katrs viņa pieslēgtais asistents.
+
 ## Izmaiņas sākas kā ieteikums
 
-Kad WINGMAN MI vai tam pieslēgts asistents vēlas mainīt ierakstu, tas izveido ieteikumu. Viens ieteikums ir viena izmaiņa: viens lauks, viena saite vai viens jauns ieraksts, ar aprakstu, kas mainās un kāpēc. Nekas nenotiek, kamēr cilvēks to nepieņem vai nenoraida.
+Kad WINGMAN MI vai tam pieslēgts asistents ierosina izmaiņas, tas izveido ieteikumu. Viens ieteikums ir viena izmaiņa: viens lauks, viena saite vai viens jauns ieraksts, ar aprakstu, kas mainās un kāpēc. Nekas no ieteikuma nestājas spēkā, kamēr cilvēks to nepieņem vai nenoraida.
 
-Pārskatīšanā pieņemtie ieteikumi tiek ierakstīti tikai tad, kad pārskatītājs pārskatīšanu pabeidz. Līdz tam katru var atsaukt.
+Pārskatīšanā pieņemtie ieteikumi stājas spēkā tikai tad, kad pārskatītājs pārskatīšanu pabeidz. Līdz tam katru var atsaukt.
 
 ## Kurš ko var mainīt
 
-Tiesības tiek noteiktas katram cilvēkam un var atšķirties pa ierakstu veidiem, piemēram, lasīt visu, bet mainīt tikai riskus un uzdevumus. Asistents, kas pieslēgts ar MCP, pieslēdzas kā konkrēts cilvēks un saņem tieši šī cilvēka tiesības, ne vairāk.
+Tiesības tiek noteiktas katram cilvēkam un katram ierakstu veidam: lasīšana, rakstīšana un dzēšana. Asistents, kas pieslēgts ar MCP, pieslēdzas kā konkrēts cilvēks un saņem tieši šī cilvēka tiesības, ne vairāk. Savienojumam var ieviest papildu kontroles un to var ierobežot ar vienu projektu.
 
-Cilvēki ar rakstīšanas tiesībām var mainīt ierakstus arī tieši, un to var arī viņu pieslēgts asistents. Ja ļaujat asistentam pieņemt ieteikumus vai mainīt ierakstus, tas to dara jūsu vārdā, un vēsturē redzams jūsu vārds. Izvēlieties, kurš darba veids der katram ierakstu veidam.
+Cilvēki ar rakstīšanas tiesībām var mainīt ierakstus arī tieši, un to var arī viņu pieslēgts asistents. Ja ļaujat asistentam pieņemt ieteikumus vai mainīt ierakstus, tas to dara jūsu vārdā: vēsturē jūs esat norādīts kā izmaiņu veicējs, un jūs par tām atbildat. Tiesības un savienojuma kontroles nosaka, kur asistents drīkst mainīt ierakstus un kur tikai ierosināt.
+
+Ārējam auditoram var iestatīt lomu ar tiesībām tikai lasīt, lai auditors redz ierakstus un to vēsturi, bet nevar tos mainīt.
 
 ## Katra izmaiņa tiek fiksēta
 
-Katra ieraksta izmaiņa tiek saglabāta tā vēsturē: kas mainījās, vērtība pirms un pēc, kad un kurš to izdarīja. Laiku iestata sistēma. Tiek fiksētas arī izmaiņas, ko WINGMAN veic pats: kad tas pārraksta ieraksta kopsavilkumu, vēsturē saglabājas modelis, kas to uzrakstīja, un laiks.
+Katra ieraksta izmaiņa tiek saglabāta tā vēsturē: kas mainījās, vērtība pirms un pēc, kad un kurš to izdarīja. Laiku iestata sistēma. Vēsturi nevar labot vai dzēst.
+
+Dažas izmaiņas WINGMAN veic pats, bez ieteikuma, piemēram, atjauno ieraksta kopsavilkumu, kad ieraksts mainās. Arī tās tiek fiksētas, un katram MI rakstītajam kopsavilkumam vēsturē saglabājas modelis, kas to uzrakstīja, un laiks.
 
 Dokumentiem un citiem pielikumiem tiek saglabātas versijas.
 
 ## Konstatējumi norāda savus pierādījumus
 
-Audita konstatējums ir sasaistīts ar pierādījumiem, uz kuriem tas balstās, un katra atsauce norāda, kādā nozīmē: apliecina atbilstību, norāda uz neatbilstību vai sniedz kontekstu. Auditors katru konstatējumu apstiprina vai maina.
+Audita konstatējums ir sasaistīts ar pierādījumiem, uz kuriem tas balstās, un katra atsauce norāda, ar kādu nozīmi: apliecina atbilstību, norāda uz neatbilstību vai sniedz kontekstu. Auditors katru konstatējumu apstiprina vai maina.
 
 ## Ko MI nedara
 
-- **Tas neizlemj.** Ieteikuma pieņemšana, pārskatīšanas pabeigšana un dokumenta apstiprināšana ir cilvēka darbības, kas tiek fiksētas ar šī cilvēka vārdu.
-- **Tas nerada pierādījumus.** Pierādījums ir ieraksts vai fails, ko kāds ir ievācis. MI var norādīt, ka pierādījuma trūkst vai tā derīgums beidzies.
-- **Tas neko nesūta ārpus organizācijas.** Ziņojumi, paziņojumi un atgādinājumi tiek sagatavoti; tos apstiprina un nosūta cilvēks.
+- **Tas pats neizlemj.** Ieteikuma pieņemšana, pārskatīšanas pabeigšana un dokumenta apstiprināšana tiek fiksētas ar cilvēka vārdu. Ja cilvēks ļauj to darīt savam asistentam, asistents rīkojas viņa vārdā, un par to atbild šis cilvēks.
+- **Tas neizlemj, kas ir pierādījums.** Fails, ko augšupielādē asistents, tiek fiksēts kā augšupielādēts tā cilvēka vārdā, kura labā asistents strādā. Vai tas ir pierādījums, izlemj cilvēks, bet auditā auditors. MI var norādīt, ka pierādījuma trūkst vai tā derīgums beidzies.
+- **Tas pats nesūta ziņojumus, paziņojumus vai atgādinājumus.** Tie tiek sagatavoti; tos apstiprina un nosūta cilvēks.
 - **Tas neizvēlas auditora izlasi un neizdara audita secinājumu.** Tas var ierosināt; izlemj auditors.
-- **Tas nepadara deklarētu kontroli patiesu.** Saite starp ierakstiem parāda, ka kāds to ir deklarējis; tikai pierādījums parāda, ka tā notikusi.
+- **Tas nepadara deklarētu kontroli par īstenotu.** Saite starp ierakstiem parāda, ka kāds to ir deklarējis; tikai pierādījums parāda, ka tā notikusi.

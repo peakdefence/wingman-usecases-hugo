@@ -18,7 +18,7 @@ problems:
 - q: Kad sadarbība beidzas, klients saņem zip failu.
   a: Katram klientam ir sava darba vide, un tās datus var eksportēt. Tas, ko izveidojat, paliek tur kā sasaistīti ieraksti, kas pieder klienta lomām, un paliek lietojams, kad jūs aizejat.
 - q: Baidos sajaukt klientus, kad lietoju MI rīkus.
-  a: Katra klienta ieraksti atrodas šī klienta paša darba vidē, nevis sarunu projektā, ko ar roku uzturat kārtībā.
+  a: Katra klienta ieraksti atrodas šī klienta paša darba vidē, nevis sarunu projektā, ko ar roku uzturat kārtībā. Asistenta savienojumu var ierobežot ar viena klienta projektu vai vēl šaurāk, tāpēc vienā sesijā nevar piekļūt cita klienta ierakstiem.
 terms:
 - t: Prasme
   d: Procedūra, ko jūsu MI asistents soli pa solim izpilda ar jūsu WINGMAN ierakstiem, piemēram, risku intervija vai audits. Tā darbojas asistentā, ko jau lietojat, piemēram, Claude.

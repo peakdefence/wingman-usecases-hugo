@@ -16,7 +16,7 @@ problems:
 - q: I see fluent policies that nobody runs.
   a: 'A document shows the claimed control. Evidence shows whether it operates: it records what was collected, when and by whom, and until when it is valid. Evidence past its validity date is flagged; whether evidence from the audit period is sufficient stays the auditor''s call.'
 - q: Who decided this, and on what basis?
-  a: AI changes arrive as suggestions with their reasons. A named person accepts or rejects each one, and nothing is written until then. For findings and conclusions that person is the auditor. A finding cites the evidence it rests on.
+  a: AI changes arrive as suggestions with their reasons. A named person accepts or rejects each one, and nothing is written until then. For findings and conclusions that person is the auditor. A finding cites the evidence it rests on. Each change is kept in the record's history with who made it and when; the time is set by the system, and the history cannot be edited or deleted.
 - q: One requirement, three products, three different answers.
   a: 'An audit can have several scopes. Each control protects its own product, evidence is collected per scope, and each conclusion keeps its scope: compliant for one product, a nonconformity for another.'
 terms:
@@ -31,8 +31,8 @@ terms:
 - t: Skill
   d: A procedure your AI assistant follows step by step on your WINGMAN records, such as a risk interview or an audit. It runs in the assistant you already use, for example Claude.
 does:
-  knowledge: Requirement, claimed control, document, evidence, finding and conclusion are separate linked records. A statement in the report can be followed back to what it rests on wherever that link was made, and a finding must cite its evidence.
-  projects: The audit skill works through scope, claimed controls, plan and interviews, evidence, findings and conclusions. The requirement list comes from WINGMAN or from your own checklist workbook.
+  knowledge: Requirement, claimed control, document, evidence, finding and conclusion are separate linked records. A statement in the report can be followed back to what it rests on wherever that link was made, and a finding must cite its evidence. A read-only auditor role can be configured, so you see the records and their history without being able to change them.
+  projects: The audit skill works through scope, claimed controls, plan and interviews, evidence, findings and conclusions. The requirement list comes from WINGMAN or from your own checklist workbook. An assistant's connection can be restricted to one client's project.
   regular: The audit programme sits in the yearly plan. Corrective actions are tasks with owners and dates, and last year's finding can be followed to its task, its evidence and the conclusion.
   events: Incidents and changes in the audit period are records with dates, available for sampling like any other.
 prompt:
@@ -73,11 +73,8 @@ yours:
 - It does not show that a control operates. A link between records shows that someone claimed it; only evidence shows it ran.
 - It does not settle consent. Recording or transcribing an interview needs the agreement of the people in it.
 ask:
-- Read-only access for an external auditor
-- How dates on records are set, and whether a record's history can be changed
 - How AI-drafted text is marked after a person accepts it
 - Export of audit working papers
-- How one auditor's clients are kept apart
 - Where data is hosted and which AI model processes documents
 use_cases:
 - auditing

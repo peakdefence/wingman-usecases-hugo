@@ -6,7 +6,7 @@ weight: 10
 slug_id: board
 problems:
 - q: I am personally accountable, and I could not show what I did about it.
-  a: 'The management review is a record: what was presented, what the management body decided, and when. Each decision becomes a task you can see finished. That is the trace of your oversight.'
+  a: 'The management review is a record: what was presented, what the management body decided, and when. Each decision becomes a task you can see finished. That is the trace of your oversight. The history of every record keeps who changed what and when, and it cannot be edited or deleted.'
 - q: I sign what arrives the day before the meeting.
   a: 'The management review is a recurring item with a date and an accountable role. Its pack is assembled from the records: earlier actions, audit results, risk changes, incidents and supplier performance. It does not depend on someone compiling slides the night before.'
 - q: I see security once a year, in a slide deck I do not understand.

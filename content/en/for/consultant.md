@@ -18,7 +18,7 @@ problems:
 - q: When the engagement ends, the client gets a zip file.
   a: Each client has its own workspace, and its data can be exported. What you build stays there as linked records, owned by roles at the client, and remains usable when you leave.
 - q: I worry about mixing clients when I use AI tools.
-  a: Each client's records sit in that client's own workspace, not in a chat project you keep tidy by hand.
+  a: Each client's records sit in that client's own workspace, not in a chat project you keep tidy by hand. An assistant's connection can be restricted to a single client's project, or narrower, so one session cannot reach another client's records.
 terms:
 - t: Skill
   d: A procedure your AI assistant follows step by step on your WINGMAN records, such as a risk interview or an audit. It runs in the assistant you already use, for example Claude.

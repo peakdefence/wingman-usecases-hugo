@@ -12,10 +12,15 @@ DRAFT. Not built until `draft: false`. Fill in every [bracket] with a confirmed 
 confirmed, then translate to content/lv/trust/data-hosting.md. Tone: the site's privacy page.
 
 Confirmed by Peak Defence on 2026-11-25:
-- The model behind briefs, Ask Wingman and suggestions is configurable: globally sourced, EU-hosted,
-  or provided by Peak Defence. (Staging used an Anthropic Claude model through an EU endpoint.)
+- The model behind briefs, Ask Wingman and suggestions is set per customer: cloud, EU-restricted cloud,
+  or a fully local deployment; Peak Defence can provide the model. (Staging used an Anthropic Claude
+  model through an EU endpoint.)
 - Web search uses either the built-in search or an external service.
-- MCP access follows the individual user's permissions, which can differ per entity type.
+- MCP access follows the signing-in user's permissions (read, write, delete, per entity type), with
+  further controls possible; a connection can be restricted to one project or narrower.
+- Sign-in to MCP: OAuth or a token, with credentials the organisation is given.
+- Record history cannot be edited or deleted.
+- A read-only auditor role can be configured.
 -->
 
 ## Where your records are stored
@@ -24,7 +29,7 @@ Records, documents and attachments are stored in [country/region] by [hosting pr
 
 ## Which AI services see your data
 
-- **Briefs, Ask Wingman and suggestions inside WINGMAN** are written by a model your organisation chooses: a globally available model, a model hosted in the EU, or a model provided by Peak Defence. [For each option: provider, region, what is sent, retention and training terms.]
+- **Briefs, Ask Wingman and suggestions inside WINGMAN** are written by a model set up for your organisation: in the cloud, in a cloud restricted to the EU, or entirely in a local deployment; Peak Defence can provide the model. [For each option: provider, region, what is sent, retention and training terms.]
 - **Web search** uses WINGMAN's built-in search or an external service. [Confirm that only the query is sent, and name the external provider.]
 - **Your own assistant over MCP** receives the records it reads, under your own agreement with its provider. We do not see that conversation.
 - Can WINGMAN be used with AI switched off? [answer]

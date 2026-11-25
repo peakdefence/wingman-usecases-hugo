@@ -20,7 +20,7 @@ problems:
 - q: My suppliers are a contract list in Excel.
   a: A supplier is a record linked to the services it provides, its contract, its evaluation date and the risks it is involved in. Once a supplier's incident notice is recorded as a signal, the links show which services it touches.
 - q: I am not sure we may put this data into a cloud AI service.
-  a: 'The model that writes briefs, suggestions and Ask Wingman answers is your organisation''s choice: a globally available model, a model hosted in the EU, or a model provided by Peak Defence. Each AI-written brief records which model wrote it, so the choice can be checked.'
+  a: 'The model that writes briefs, suggestions and Ask Wingman answers is set up for your organisation: in the cloud, in a cloud restricted to the EU, or entirely in a local deployment, and Peak Defence can provide the model. Each AI-written brief records which model wrote it, so the choice can be checked.'
 terms:
 - t: Signal
   d: 'A sign that something is changing: a monitoring alert, a scanner result, a supplier''s notice, threat news, or something a colleague reports.'
@@ -65,7 +65,7 @@ yours:
 - Getting owners to answer. WINGMAN sends the task and the reminder; it cannot make a colleague reply.
 ask:
 - Importing the Word and Excel files you already have
-- Which models each AI option uses, and where each one runs
+- Which AI configuration you would recommend for a public body
 - Where the data is hosted
 - Price, licence unit and how it fits a procurement procedure
 - How many hours a month it takes one person
