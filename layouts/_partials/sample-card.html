@@ -1,1 +1,1 @@
-<a class="card" href="{{ .RelPermalink }}"><p class="eyebrow">{{ i18n "sample_eyebrow" }}</p><h4>{{ .Title }}</h4><p>{{ .Params.summary }}</p></a>
+<a class="card" href="{{ .RelPermalink }}"><p class="eyebrow">{{ i18n "sample_eyebrow" }}</p><h4>{{ .Title }}</h4><p>{{ .Params.summary }}</p>{{ with .Params.for }}<p class="meta aud">{{ i18n "sample_for" }}: {{ range $i, $a := . }}{{ if $i }} · {{ end }}{{ i18n (printf "aud_%s" $a) }}{{ end }}</p>{{ end }}</a>

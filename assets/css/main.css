@@ -395,3 +395,4 @@ h1.forq { font-size: clamp(1.8rem, 3.6vw, 2.7rem); max-width: 22ch }
 .sitemap a:hover { color: var(--accent) }
 .sitemap li.head { font-family: var(--f-label); font-size: .72rem; font-weight: 700; color: var(--muted); margin-top: 6px }
 @media (max-width: 900px) { .sitemap { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+.card .aud { color: var(--accent) }
