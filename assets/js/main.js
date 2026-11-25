@@ -182,8 +182,8 @@ if (dataEl) {
     const fromHash = () => {
       const h = location.hash.slice(1);
       if (h.startsWith('e-') && byId[h.slice(2)]) { sel = h.slice(2); mode = 'entity'; render(); $('model')?.scrollIntoView(); }
-      else if (h === 'questions') { mode = 'question'; render(); }
-      else if (h === 'gaps') { mode = 'gap'; render(); }
+      else if (h === 'questions') { mode = 'question'; render(); $('model')?.scrollIntoView(); }
+      else if (h === 'gaps') { mode = 'gap'; render(); $('model')?.scrollIntoView(); }
     };
     render(); fromHash();
     window.addEventListener('hashchange', fromHash);

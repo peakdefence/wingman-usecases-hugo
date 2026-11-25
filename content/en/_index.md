@@ -1,4 +1,4 @@
 ---
 title: WINGMAN use cases
-description: How WINGMAN connects requirements, assets, risks, controls, incidents and audits in one data model, and the GRC and cybersecurity use cases that run on it.
+description: "WINGMAN is the persistent security brain behind your AI assistants: one linked, current record of requirements, assets, risks, controls and evidence, and the projects, routine work and incident handling that run on it."
 ---

@@ -1,0 +1,19 @@
+# Home page structure. Texts are in i18n/<lang>.toml:
+#   situations: sit_<id>_t (the visitor's problem), sit_<id>_p (what WINGMAN does), sit_<id>_go (link label)
+#   promises:   prom_<id>_t, prom_<id>_p
+# `page` is the page a situation card opens. `use_cases` lists use-case ids shown under a promise;
+# every use case should appear under exactly one promise.
+
+situations:
+  - { id: start, page: /sectors/iso27001-soc2 }
+  - { id: accountable, page: /use-cases/management-review }
+  - { id: alone, page: /sectors/nis2 }
+  - { id: team, page: /use-cases/security-operations }
+  - { id: auditor, page: /use-cases/auditing }
+  - { id: consultant, page: /use-cases/risk-identification }
+
+promises:
+  - { id: knowledge, model: true, use_cases: [roles-raci, new-requirements] }
+  - { id: projects, use_cases: [risk-identification, business-impact-analysis, auditing, audit-scopes, eu-ai-act, gdpr-dpia] }
+  - { id: regular, use_cases: [regular-reviews, risk-review, supplier-evaluation, management-review, security-operations] }
+  - { id: events, use_cases: [incident-handling, vulnerability-impact, change-management] }

@@ -1,4 +1,4 @@
 ---
 title: WINGMAN lietojumi
-description: Kā WINGMAN vienā datu modelī savieno prasības, aktīvus, riskus, kontroles, incidentus un auditus, un kādi GRC un kiberdrošības lietojumi uz tā darbojas.
+description: "WINGMAN ir pastāvīgas drošības smadzenes aiz jūsu MI asistentiem: vieni sasaistīti un aktuāli prasību, aktīvu, risku, kontroļu un pierādījumu ieraksti un projekti, regulārie darbi un incidentu risināšana, kas uz tiem balstās."
 ---

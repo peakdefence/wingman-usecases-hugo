@@ -60,6 +60,7 @@ header.site { background: var(--surface); border-bottom: 1px solid var(--line); 
 .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; min-width: 0 }
 .compare div { background: var(--surface-2); border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px }
 .compare div.on { background: var(--accent-soft) }
+.compare.three { grid-template-columns: 1fr }
 .compare h3 { font-size: .98rem }
 .compare p { font-size: .92rem; color: var(--ink-2) }
 
@@ -275,3 +276,24 @@ dialog.lightbox::backdrop { background: rgba(20, 18, 40, .82) }
 .optout .btn { cursor: pointer; border: 0 }
 .optout .btn[aria-pressed="true"] { background: var(--accent); color: var(--on-accent) }
 .foot a { color: inherit }
+
+/* home: situations, promises, questions and gaps */
+.sits { grid-template-columns: repeat(3, minmax(0, 1fr)) }
+@media (max-width: 900px) { .sits { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+@media (max-width: 600px) { .sits { grid-template-columns: 1fr } }
+.card.sit h3 { font-size: 1.08rem; line-height: 1.25 }
+.card .go { color: var(--accent) }
+.promises { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; counter-reset: prom }
+.promise { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px; counter-increment: prom }
+.promise h3::before { content: counter(prom); display: inline-grid; place-items: center; width: 1.7em; height: 1.7em; margin-right: .55em; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-family: var(--f-label); font-size: .85em; font-weight: 700 }
+.promise p { color: var(--ink-2); font-size: .97rem }
+.uclinks { list-style: none; margin: auto 0 0; padding: 6px 0 0; display: flex; flex-wrap: wrap; gap: 6px }
+.uclinks a { display: inline-block; padding: 5px 12px; border-radius: 999px; background: var(--surface-2); color: var(--ink); text-decoration: none; font-family: var(--f-label); font-size: .84rem; font-weight: 600 }
+.uclinks a:hover { background: var(--accent-soft); color: var(--accent) }
+.more { font-family: var(--f-label); font-weight: 700; color: var(--accent); text-decoration: none }
+.more:hover { text-decoration: underline }
+h3.sub { margin-top: 20px; font-size: 1.25rem }
+.gaplist { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px 14px }
+.gaplist li { border-left: 3px solid var(--gap); background: var(--gap-soft); border-radius: 0 10px 10px 0; padding: 10px 14px; display: flex; flex-direction: column; gap: 2px }
+.gaplist span { color: var(--ink-2); font-size: .92rem }
+@media (max-width: 760px) { .promises { grid-template-columns: 1fr } }
