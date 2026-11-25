@@ -8,7 +8,7 @@
         {{ range $groups }}
         <details class="dd{{ if .current }} current{{ end }}" data-dd>
           <summary>{{ .label }}</summary>
-          <div class="panel{{ if eq .key "what" }} wide{{ end }}">
+          <div class="ddpanel{{ if eq .key "what" }} wide{{ end }}">
             {{ with .all }}<a class="all" href="{{ . }}">{{ i18n "nav_all" }} →</a>{{ end }}
             <ul>{{ range .items }}{{ if .head }}<li class="head">{{ .label }}</li>{{ else }}<li><a href="{{ .href }}"{{ if eq .href $.RelPermalink }} aria-current="page"{{ end }}{{ if .ext }} target="_blank" rel="noopener"{{ end }}>{{ .label }}</a></li>{{ end }}{{ end }}</ul>
           </div>

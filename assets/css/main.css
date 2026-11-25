@@ -328,9 +328,9 @@ h1.forq { font-size: clamp(1.8rem, 3.6vw, 2.7rem); max-width: 22ch }
 
 /* visuals: icons, the four-step loop, the product strip */
 .icon { width: 22px; height: 22px; display: block; stroke-width: 2 }
-.ico { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); flex: none }
-.card.sit .ico { margin-bottom: 2px }
-.promise .ico { margin-bottom: 2px }
+.pico { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); flex: none }
+.card.sit .pico { margin-bottom: 2px }
+.promise .pico { margin-bottom: 2px }
 .promise h3::before { display: none }
 .loopwrap { display: flex; flex-direction: column; gap: 16px }
 .loopwrap.compact { margin: 4px 0 8px }
@@ -347,8 +347,8 @@ h1.forq { font-size: clamp(1.8rem, 3.6vw, 2.7rem); max-width: 22ch }
 .seegrid .media img { width: 100%; height: auto }
 @media (max-width: 1000px) { .loop { grid-template-columns: repeat(2, minmax(0, 1fr)) } .loop .step:nth-child(2)::after { display: none } .seegrid { grid-template-columns: 1fr } }
 @media (max-width: 600px) { .loop { grid-template-columns: 1fr; gap: 30px } .loop .step:not(:last-child)::after { display: block; right: auto; left: 50%; top: auto; bottom: -24px; transform: translateX(-50%) rotate(90deg) } }
-.loop .ico { background: var(--accent); color: var(--on-accent) }
-.loop .step.human .ico { width: 48px; height: 48px }
+.loop .pico { background: var(--accent); color: var(--on-accent) }
+.loop .step.human .pico { width: 48px; height: 48px }
 
 /* main menu: dropdowns on desktop, one "Menu" button on phones */
 .menu { margin-left: auto }
@@ -361,14 +361,14 @@ h1.forq { font-size: clamp(1.8rem, 3.6vw, 2.7rem); max-width: 22ch }
 .dd[open] > summary::after { transform: rotate(-135deg) translateY(-1px) }
 .dd > summary:hover, .dd[open] > summary, .dd.current > summary { color: var(--accent) }
 .dd[open] > summary { background: var(--accent-soft) }
-.panel { position: absolute; top: calc(100% + 8px); left: 0; z-index: 20; min-width: 270px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 12px 32px rgba(30, 28, 50, .14); padding: 12px }
-.panel.wide { min-width: 560px; left: -120px }
-.panel ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column }
-.panel.wide ul { display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: row; column-gap: 12px }
-.panel li a { display: block; padding: 7px 10px; border-radius: 8px; text-decoration: none; color: var(--ink); font-size: .95rem }
-.panel li a:hover, .panel li a[aria-current] { background: var(--accent-soft); color: var(--accent) }
-.panel li.head { grid-column: 1 / -1; padding: 10px 10px 2px; font-family: var(--f-label); font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted) }
-.panel .all { display: block; padding: 4px 10px 8px; font-family: var(--f-label); font-weight: 700; font-size: .85rem; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--line); margin-bottom: 6px }
+.ddpanel { position: absolute; top: calc(100% + 8px); left: 0; z-index: 20; min-width: 270px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 12px 32px rgba(30, 28, 50, .14); padding: 12px }
+.ddpanel.wide { min-width: 560px; left: -120px }
+.ddpanel ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column }
+.ddpanel.wide ul { display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: row; column-gap: 12px }
+.ddpanel li a { display: block; padding: 7px 10px; border-radius: 8px; text-decoration: none; color: var(--ink); font-size: .95rem }
+.ddpanel li a:hover, .ddpanel li a[aria-current] { background: var(--accent-soft); color: var(--accent) }
+.ddpanel li.head { grid-column: 1 / -1; padding: 10px 10px 2px; font-family: var(--f-label); font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted) }
+.ddpanel .all { display: block; padding: 4px 10px 8px; font-family: var(--f-label); font-weight: 700; font-size: .85rem; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--line); margin-bottom: 6px }
 .navcta { padding: 8px 16px; font-size: .9rem; white-space: nowrap }
 .brand span { display: none }
 @media (max-width: 1240px) {
@@ -383,8 +383,8 @@ h1.forq { font-size: clamp(1.8rem, 3.6vw, 2.7rem); max-width: 22ch }
   .menu > summary::before { content: "☰" }
   .menu[open] > summary::before { content: "✕" }
   .nav { flex-direction: column; align-items: stretch; margin-top: 10px; max-height: 70vh; overflow-y: auto }
-  .panel, .panel.wide { position: static; min-width: 0; box-shadow: none; border: 0; padding: 0 0 8px 10px; left: auto }
-  .panel.wide ul { grid-template-columns: 1fr }
+  .ddpanel, .ddpanel.wide { position: static; min-width: 0; box-shadow: none; border: 0; padding: 0 0 8px 10px; left: auto }
+  .ddpanel.wide ul { grid-template-columns: 1fr }
   .langs { margin-left: auto }
 }
 @media (max-width: 520px) { .navcta { padding: 7px 12px; font-size: .82rem } .brand b { font-size: .95rem } }
