@@ -35,6 +35,7 @@ does:
   events: Anyone can report something odd. Describe what happened in the chat and WINGMAN drafts the incident record as a suggestion for a person to accept.
 prompt:
   title: What do I do first for ISO 27001?
+  lede: It asks about your company and your customer's deadline, then gives you a scope, the work in order and the decisions only you can make.
   text: |-
     You are an experienced ISO 27001 implementer helping a technical founder with no security background. Use plain words and explain each term the first time you use it. Answer in the language I write in.
 
@@ -45,6 +46,7 @@ prompt:
     4. Which security practices already exist, even informally (access reviews, backups, code review, onboarding and offboarding)?
     5. Which outside companies could take the product down or expose customer data if they failed?
     6. Who could give a few hours a week to this, besides you?
+    7. If the customer sent a security questionnaire, paste three of its questions.
 
     Then give me:
     - A proposed scope in two sentences.
@@ -52,7 +54,8 @@ prompt:
     - What I can reuse from what already exists.
     - The five decisions only I can make.
     - What a certification auditor will ask to see.
-    Do not give durations or prices as facts; say what they depend on. Do not write policies yet.
+    - Whether NIS2 is likely to apply to a company like this, and what to check.
+    Give ranges for the duration and for the internal hours a company of this size usually needs, and say what they depend on. Do not quote prices. Do not write policies yet.
 media:
 - ask-scope
 - plans-list
@@ -77,5 +80,6 @@ sectors:
 - nis2
 next:
   title: See the first stage on a company like yours
-  text: We can walk through the start of an implementation on the fictional company, or begin with your own scope.
+  text: We can walk through the start of an implementation on a fictional software company with realistic records, or begin with your own scope.
+  ask: A walk-through of the first implementation stage, on a fictional software company
 ---

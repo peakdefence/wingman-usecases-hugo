@@ -52,7 +52,7 @@
 {{ with .Params.prompt }}
 <section class="block wrap" id="try">
   <h2>{{ i18n "for_try" }}</h2>
-  <p class="lede">{{ i18n "for_try_lede" }}</p>
+  <p class="lede">{{ with .lede }}{{ . }} {{ end }}{{ i18n "for_try_lede" }}</p>
   <figure class="prompt" id="try-{{ $.Params.slug_id }}">
     <figcaption>
       <span class="eyebrow">{{ i18n "prompt_label" }}</span>
@@ -72,6 +72,7 @@
   <p class="lede">{{ i18n "for_ask_lede" }}</p>
   <form class="askbox" data-ask="{{ $id }}" data-intro="{{ $intro }}" data-url="{{ $.Permalink }}" data-hint="{{ i18n "for_ask_hint" }}" data-subject="{{ i18n "for_ask_subject" (dict "Page" $.Params.short) }}"{{ with site.Params.contactEmail }} data-email="{{ . }}"{{ end }}>
     <ul class="plain ask">
+      {{ with $.Params.next.ask }}<li class="walk"><label><input type="checkbox" value="{{ . }}" data-n="0" checked> <span>{{ . }}</span></label></li>{{ end }}
       {{ range $i, $q := . }}<li><label><input type="checkbox" value="{{ $q }}" data-n="{{ add $i 1 }}"> <span>{{ $q }}</span></label></li>{{ end }}
     </ul>
     <label class="own"><span>{{ i18n "for_ask_own" }}</span><input type="text" maxlength="300" autocomplete="off"></label>
@@ -81,13 +82,14 @@
         <span class="sendrow">
           <button type="button" class="copy" data-copy="{{ $id }}-text" data-done="{{ i18n "copied" }}" data-ask-send>{{ i18n "for_ask_copy" }}</button>
           {{ if site.Params.contactEmail }}<a class="copy" data-ask-mail data-ask-send href="mailto:{{ site.Params.contactEmail }}">{{ i18n "for_ask_email" }}</a>{{ end }}
-          {{ with site.Params.linkedinURL }}<a class="copy" data-copy="{{ $id }}-text" data-done="{{ i18n "copied" }}" data-ask-send href="{{ . }}" target="_blank" rel="noopener">{{ i18n "for_ask_linkedin" }}</a>{{ end }}
-          {{ if not (or site.Params.contactEmail site.Params.linkedinURL) }}<a class="copy" data-copy="{{ $id }}-text" data-done="{{ i18n "copied" }}" data-ask-send href="{{ site.Params.contactURL }}" target="_blank" rel="noopener">{{ i18n "for_ask_contact" }}</a>{{ end }}
+          {{ if $.Params.linkedin }}{{ with site.Params.linkedinURL }}<a class="copy" data-copy="{{ $id }}-text" data-done="{{ i18n "copied" }}" data-ask-send href="{{ . }}" target="_blank" rel="noopener">{{ i18n "for_ask_linkedin" }}</a>{{ end }}{{ end }}
+          {{ if not (or site.Params.contactEmail (and $.Params.linkedin site.Params.linkedinURL)) }}<a class="copy" data-copy="{{ $id }}-text" data-done="{{ i18n "copied" }}" data-ask-send href="{{ site.Params.contactURL }}" target="_blank" rel="noopener">{{ i18n "for_ask_contact" }}</a>{{ end }}
         </span>
       </figcaption>
       <pre id="{{ $id }}-text" tabindex="0">{{ $intro }}
-{{ range . }}
-- {{ . }}{{ end }}
+{{ with $.Params.next.ask }}
+- {{ . }}{{ else }}{{ range $.Params.ask }}
+- {{ . }}{{ end }}{{ end }}
 
 {{ $.Permalink }}</pre>
     </figure>

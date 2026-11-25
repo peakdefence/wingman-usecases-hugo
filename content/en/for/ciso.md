@@ -39,6 +39,7 @@ does:
   events: A scanner result, a supplier notice or threat news arrives as a signal. WINGMAN classifies it, shows what it touches and proposes a risk, an incident or tasks; the owner accepts or rejects.
 prompt:
   title: Where does my programme depend on memory?
+  lede: It asks about your registers and your use of AI, then shows where the programme depends on memory and where registers can disagree.
   text: |-
     You are a peer reviewer for a security leader who runs an established security and compliance programme. Be direct. Answer in the language I write in.
 
@@ -48,7 +49,8 @@ prompt:
     3. How does a scanner finding or a supplier's incident notice reach a risk rating today?
     4. Which recurring reviews exist, and how do you know one was missed?
     5. If you were away for three months, what could your deputy not do?
-    6. Where do you use AI assistants in this work, and what do they read and write?
+    6. Where do you use AI assistants in this work, what do they read and write, and what does the assistant's provider retain?
+    7. How do you answer customer security questionnaires today?
 
     Then give me:
     - The places where the programme depends on one person's memory.
@@ -56,7 +58,8 @@ prompt:
     - The three events that should move a risk rating but currently do not.
     - For each use of AI, what a person approves and where that approval is recorded.
     - The three changes with the largest effect for the least work.
-    Do not recommend products.
+    - Which board metrics I assemble by hand.
+    Present the gaps as a table I can paste into a spreadsheet. Do not recommend products.
 media:
 - brief-gaps
 - task-review-start
@@ -84,4 +87,5 @@ sectors:
 next:
   title: See it on your own registers
   text: We can walk through the register checks, a risk review and a vulnerability on your own records.
+  ask: A walk-through of the register checks, a risk review and a vulnerability, on a fictional company
 ---

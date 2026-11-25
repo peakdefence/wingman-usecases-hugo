@@ -14,7 +14,7 @@ problems:
 - q: Kopsavilkumā pazuda atruna, kas bija svarīga.
   a: Intervijas tiek transkribētas, un transkripts tiek glabāts kā pierādījums, kad intervētais apstiprina, ka tas ir precīzs. Konstatējums var uz to atsaukties, tāpēc sākotnējie vārdi ir pieejami, ja kopsavilkums tiek apstrīdēts.
 - q: Redzu gludas politikas, ko neviens neievēro.
-  a: 'Dokuments parāda deklarēto kontroli. Pierādījums parāda, vai tā darbojas: tajā ir, kas, kad un kurš to ievācis un līdz kuram laikam tas ir derīgs. Pierādījums ar beigušos termiņu neskaitās.'
+  a: 'Dokuments parāda deklarēto kontroli. Pierādījums parāda, vai tā darbojas: tajā ir, kas, kad un kurš to ievācis un līdz kuram laikam tas ir derīgs. Pierādījums, kura derīgums beidzies, tiek atzīmēts; vai audita perioda pierādījumi ir pietiekami, vērtē auditors.'
 - q: Kurš to izlēma, un uz kāda pamata?
   a: MI izmaiņas ienāk kā ieteikumi ar pamatojumu. Konkrēts cilvēks katru pieņem vai noraida, un līdz tam nekas netiek ierakstīts. Konstatējumiem un secinājumiem šis cilvēks ir auditors. Konstatējums norāda pierādījumus, uz kuriem tas balstās.
 - q: Viena prasība, trīs produkti, trīs dažādas atbildes.
@@ -24,8 +24,10 @@ terms:
   d: Tas, ko organizācijas dokumenti apgalvo, ka tā dara. Vai tas tiek darīts, ir atsevišķs jautājums, uz kuru atbild pierādījums.
 - t: Pierādījums
   d: 'Apliecinājums, ka kontrole tiešām notikusi: ieraksts, ekrānuzņēmums, žurnāla izraksts. Tam ir datums, un tā derīgums beidzas.'
-- t: Konstatējums un secinājums
-  d: 'Konstatējums ir audita laikā fiksēts novērojums. Kad auditors to apstiprina, secinājums ir rezultāts šai prasībai: atbilstība vai neatbilstība.'
+- t: Konstatējums
+  d: 'ISO 19011 izpratnē: audita pierādījumu izvērtēšanas rezultāts attiecībā pret prasību, atbilstība vai neatbilstība. WINGMAN konstatējumu fiksē, kad tas izvirzīts, un auditors to apstiprina vai maina.'
+- t: Secinājums
+  d: 'WINGMAN: apstiprinātais rezultāts vienai prasībai vienā tvērumā. ISO 19011 ar „audita secinājumu” saprot visa audita iznākumu, kas izdarīts no visiem konstatējumiem.'
 - t: Prasme
   d: Procedūra, ko jūsu MI asistents soli pa solim izpilda ar jūsu WINGMAN ierakstiem, piemēram, risku intervija vai audits. Tā darbojas asistentā, ko jau lietojat, piemēram, Claude.
 does:
@@ -35,12 +37,14 @@ does:
   events: Audita periodā notikušie incidenti un izmaiņas ir ieraksti ar datumiem, pieejami izlasei tāpat kā jebkuri citi.
 prompt:
   title: Pārbaudiet MI dokumentu izvērtējumu, pirms uz to paļaujaties
+  lede: Ielīmējiet vienu anonimizētu politiku un dažu prasību tekstu. Tā tās sasaista ar citātiem un punktu numuriem, lai redzētu, kur MI izvērtējums kļūdās, pirms uz to paļaujaties.
   text: |-
     Tu palīdzi vadošajam auditoram, kurš strādā saskaņā ar ISO 19011. Auditors vēlas redzēt, cik tālu var uzticēties MI veiktam dokumentu izvērtējumam. Atbildi latviski.
 
-    Es ielīmēšu vienu politiku vai procedūru bez nosaukumiem un vārdiem un pēc tam īsu prasību sarakstu (piemēram, piecas ISO 27001 A pielikuma kontroles).
+    Es ielīmēšu vienu politiku vai procedūru bez nosaukumiem un vārdiem un pēc tam īsa prasību saraksta tekstu (piemēram, piecas ISO 27001 A pielikuma kontroles). Izmanto tikai manis ielīmēto prasību tekstu, nevis to, ko atceries no standarta.
 
     Katrai prasībai sniedz tabulas rindu ar:
+    - Dokumenta versiju vai datumu, kā tas norādīts dokumentā.
     - Vērtējumu: dokumentēta, daļēji dokumentēta vai nedokumentēta.
     - Precīziem dokumenta vārdiem, kas pamato vērtējumu, citējot, ar sadaļas vai punkta numuru, kāds tas ir dokumentā.
     - Ko dokuments apgalvo, ka tiek darīts, vienā teikumā.
@@ -50,6 +54,9 @@ prompt:
     - Citē tikai tekstu, kas ir dokumentā. Ja nevari citēt, vērtējums ir „nedokumentēta”.
     - Nekad neizsecini kontroli no dokumenta vispārējā toņa.
     - Atzīmē katru atrunu („vajadzētu”, „ja iespējams”, „plānots”) un pasaki, kā tā vājina apgalvojumu.
+    - „Daļēji dokumentēta” nozīmē, ka vari citēt pamatojumu, bet tas ir nepilnīgs vai ar atrunām.
+    - Ja dokumentā nav punktu numuru, norādi virsrakstu; nekad neizdomā numuru.
+    - Citē katru fragmentu, kas apgalvojumu ierobežo vai tam runā pretī, arī tvēruma izņēmumus.
     - Nevērtē, vai kontrole darbojas; dokuments to nevar parādīt.
 
     Nobeigumā nosauc trīs atsauces, kuras man vispirms jāpārbauda ar roku, un kāpēc.
@@ -58,10 +65,10 @@ media:
 - ctl-detail
 - doc-list
 yours_title: Ko WINGMAN nedara
-yours_lede: Pateikts skaidri, jo tie ir auditora spriedumi.
+yours_lede: Pateikts skaidri, jo šie spriedumi pieder auditoram un auditējamajiem, nevis programmatūrai.
 yours:
 - Tas neizlemj, kas ir pierādījums. Auditējamais apstiprina, ka transkripts vai ekrānuzņēmums atspoguļo teikto vai parādīto; vai ar to pietiek, vērtē auditors.
-- Tas neizvēlas izlasi. Tas ierosina izlases katram tvērumam; izlasi veic auditors.
+- Tas neizvēlas izlasi. Izlase, ko tas ierosina katram tvērumam, ir tikai ieteikums; izlasi veic auditors, un ieteikumu var neņemt vērā.
 - Tas neizdara secinājumus. Tas sagatavo konstatējumu melnrakstus un ierosina smagumu; auditors katru apstiprina vai maina.
 - Tas neparāda, ka kontrole darbojas. Saite starp ierakstiem parāda, ka kāds to ir deklarējis; tikai pierādījums parāda, ka tā notikusi.
 - Tas neatrisina piekrišanu. Intervijas ierakstīšanai vai transkribēšanai vajadzīga tās dalībnieku piekrišana.
@@ -81,4 +88,5 @@ sectors:
 next:
   title: Izsekojiet vienai prasībai no apgalvojuma līdz secinājumam
   text: 'Varam izrādīt auditu ar izdomāto uzņēmumu: viena prasība, tās deklarētā kontrole, pierādījums, konstatējums un secinājums.'
+  ask: Vienas prasības izsekošana no deklarētās kontroles līdz secinājumam uz izdomāta uzņēmuma piemēra
 ---

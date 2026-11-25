@@ -33,6 +33,7 @@ does:
   events: An incident carries its deadlines, its draft reports and the follow-up tasks. Afterwards the record shows what was done and when.
 prompt:
   title: Where do I stand as the accountable person?
+  lede: It asks you seven questions, one at a time, then tells you where you stand, which decisions to ask for and what you should be able to show.
   text: |-
     You are advising a non-technical chief executive or board member who is accountable for cybersecurity (for example under NIS2 or DORA). Answer in the language I write in.
 
@@ -40,7 +41,7 @@ prompt:
     1. What does the organisation do, how many people work there, and which law or customer makes security your responsibility?
     2. Who looks after security day to day, and is it their only job?
     3. When did management last formally review security, and what was decided?
-    4. Which security documents have you personally approved in the past year?
+    4. Which security documents, if any, have you personally approved in the past year?
     5. If a serious incident started tonight, who would be called, and who decides whether an authority must be told?
     6. How would you know today whether the agreed measures are actually carried out?
     7. What happens if the person from question 2 leaves?
@@ -50,7 +51,9 @@ prompt:
     - Three decisions I should ask for at the next management meeting.
     - Five questions to put to the person who looks after security.
     - What I should be able to show if someone asked how I oversaw security.
+    - How many hours a quarter I should expect to spend on this, and what that depends on.
     Say clearly where the answer depends on national law that I should check. Do not invent legal requirements.
+    Keep the whole answer to one page.
 media:
 - brief-top
 - brief-gaps
@@ -71,6 +74,7 @@ sectors:
 - nis2
 - financial
 next:
-  title: See the management view on real records
-  text: We can walk you through the Brief and a management review, on the fictional company or on your own records.
+  title: See the management view on a worked example
+  text: We can walk you through the Brief and a management review on a fictional company with realistic records, or on your own.
+  ask: A 30-minute walk-through of the Brief and a management review, on a fictional company
 ---

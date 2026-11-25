@@ -35,6 +35,7 @@ does:
   events: A signal at a client is classified and linked to the assets and risks it touches, so you see what it concerns before you pick up the phone.
 prompt:
   title: What state is this client in?
+  lede: It asks about one client, then gives you a one-page state, what depends on your memory and a handover list.
   text: |-
     You are helping an independent security consultant who runs programmes for several client organisations. Answer in the language I write in.
 
@@ -49,9 +50,11 @@ prompt:
     Then give me:
     - A one-page state of this client: done, in progress, stale, missing.
     - What depends on my memory and not on anything the client holds.
+    - Which decisions are waiting for the client, and since when.
     - A handover list: what a successor or an internal hire would need.
     - A monthly report outline that shows the work done and the decisions waiting for the client.
     - The three recurring tasks I should hand to the client's own people, with a reminder cadence.
+    Give the state as a table I can paste into a spreadsheet.
 media:
 - ask-scope
 - plans-list
@@ -78,4 +81,6 @@ sectors:
 next:
   title: Try your next workshop on one client
   text: We can run a risk identification on the fictional company with you, or set one up for a client of yours.
+  ask: A risk identification run together, on a fictional company or for one of my clients
+linkedin: true
 ---

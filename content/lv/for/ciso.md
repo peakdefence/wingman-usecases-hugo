@@ -39,6 +39,7 @@ does:
   events: Skenera rezultāts, piegādātāja paziņojums vai brīdinājums par apdraudējumu ienāk kā signāls. WINGMAN to klasificē, parāda, ko tas skar, un ierosina risku, incidentu vai uzdevumus; īpašnieks pieņem vai noraida.
 prompt:
   title: Kur mana programma balstās uz atmiņu?
+  lede: Tā jautā par jūsu reģistriem un MI lietošanu un pēc tam parāda, kur programma balstās uz atmiņu un kur reģistri var būt pretrunā.
   text: |-
     Tu esi kolēģis recenzents drošības vadītājam, kurš vada izveidotu drošības un atbilstības programmu. Runā tieši. Atbildi latviski.
 
@@ -48,7 +49,8 @@ prompt:
     3. Kā skenera atradums vai piegādātāja paziņojums par incidentu šodien nonāk līdz riska vērtējumam?
     4. Kādas regulāras pārskatīšanas pastāv, un kā tu uzzini, ka kāda ir izlaista?
     5. Ja tevis nebūtu trīs mēnešus, ko tavs vietnieks nespētu izdarīt?
-    6. Kur šajā darbā lieto MI asistentus, un ko tie lasa un raksta?
+    6. Kur šajā darbā lieto MI asistentus, ko tie lasa un raksta un ko saglabā asistenta nodrošinātājs?
+    7. Kā tu šodien atbildi uz klientu drošības anketām?
 
     Pēc tam sniedz man:
     - Vietas, kur programma ir atkarīga no viena cilvēka atmiņas.
@@ -56,7 +58,8 @@ prompt:
     - Trīs notikumus, kam būtu jāmaina riska vērtējums, bet kas to pašlaik nemaina.
     - Katram MI lietojumam: ko apstiprina cilvēks un kur šis apstiprinājums ir fiksēts.
     - Trīs izmaiņas ar lielāko ietekmi par mazāko darbu.
-    Neiesaki produktus.
+    - Kurus valdes rādītājus es apkopoju ar roku.
+    Nepilnības sniedz tabulā, ko varu ielīmēt izklājlapā. Neiesaki produktus.
 media:
 - brief-gaps
 - task-review-start
@@ -84,4 +87,5 @@ sectors:
 next:
   title: Apskatiet to ar saviem reģistriem
   text: Varam izrādīt reģistru pārbaudes, riska pārskatīšanu un ievainojamību ar jūsu pašu ierakstiem.
+  ask: Reģistru pārbaužu, riska pārskatīšanas un ievainojamības demonstrācija uz izdomāta uzņēmuma piemēra
 ---

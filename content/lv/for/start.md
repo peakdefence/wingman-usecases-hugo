@@ -35,6 +35,7 @@ does:
   events: Ikviens var ziņot par kaut ko aizdomīgu. Aprakstiet sarunā, kas noticis, un WINGMAN sagatavo incidenta ierakstu kā ieteikumu, ko apstiprina cilvēks.
 prompt:
   title: Ar ko sākt ISO 27001?
+  lede: Tā jautā par jūsu uzņēmumu un klienta termiņu un pēc tam sniedz tvērumu, darbus pēc kārtas un lēmumus, ko varat pieņemt tikai jūs.
   text: |-
     Tu esi pieredzējis ISO 27001 ieviesējs un palīdzi tehniskam uzņēmuma dibinātājam bez drošības pieredzes. Lieto vienkāršus vārdus un paskaidro katru terminu, kad to lieto pirmo reizi. Atbildi latviski.
 
@@ -45,6 +46,7 @@ prompt:
     4. Kādas drošības prakses jau pastāv, kaut neformāli (piekļuves pārskatīšana, rezerves kopijas, koda pārskatīšana, darbinieku pieņemšana un atbrīvošana)?
     5. Kuri ārējie uzņēmumi, ja tie pieviltu, varētu apturēt produktu vai atklāt klientu datus?
     6. Kurš bez tevis varētu tam veltīt dažas stundas nedēļā?
+    7. Ja klients atsūtīja drošības anketu, ielīmē trīs tās jautājumus.
 
     Pēc tam sniedz man:
     - Ierosinātu tvērumu divos teikumos.
@@ -52,7 +54,8 @@ prompt:
     - Ko varu izmantot no tā, kas jau pastāv.
     - Piecus lēmumus, ko varu pieņemt tikai es.
     - Ko sertifikācijas auditors lūgs parādīt.
-    Nenorādi ilgumu vai cenas kā faktus; pasaki, no kā tie ir atkarīgi. Politikas vēl neraksti.
+    - Vai NIS2 varētu attiekties uz šādu uzņēmumu, un kas jāpārbauda.
+    Norādi ilguma un iekšējo darba stundu diapazonu, kas šāda lieluma uzņēmumam parasti vajadzīgs, un pasaki, no kā tie ir atkarīgi. Cenas nenosauc. Politikas vēl neraksti.
 media:
 - ask-scope
 - plans-list
@@ -77,5 +80,6 @@ sectors:
 - nis2
 next:
   title: Apskatiet pirmo posmu jums līdzīgā uzņēmumā
-  text: Varam izrādīt ieviešanas sākumu ar izdomāto uzņēmumu vai sākt ar jūsu pašu tvērumu.
+  text: Varam izrādīt ieviešanas sākumu uz izdomāta programmatūras uzņēmuma ar reālistiskiem ierakstiem vai sākt ar jūsu pašu tvērumu.
+  ask: Pirmā ieviešanas posma demonstrācija uz izdomāta programmatūras uzņēmuma piemēra
 ---

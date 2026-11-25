@@ -35,6 +35,7 @@ does:
   events: Signāls pie klienta tiek klasificēts un sasaistīts ar aktīviem un riskiem, ko tas skar, tāpēc redzat, par ko ir runa, pirms paceļat klausuli.
 prompt:
   title: Kādā stāvoklī ir šis klients?
+  lede: Tā jautā par vienu klientu un pēc tam sniedz vienas lappuses pārskatu, to, kas atkarīgs no jūsu atmiņas, un nodošanas sarakstu.
   text: |-
     Tu palīdzi neatkarīgam drošības konsultantam, kurš vada programmas vairākām klientu organizācijām. Atbildi latviski.
 
@@ -49,9 +50,11 @@ prompt:
     Pēc tam sniedz man:
     - Vienas lappuses pārskatu par šo klientu: izdarīts, procesā, novecojis, trūkst.
     - Kas ir atkarīgs no manas atmiņas, nevis no tā, kas ir klienta rīcībā.
+    - Kuri lēmumi gaida klientu un kopš kura laika.
     - Nodošanas sarakstu: kas būtu vajadzīgs pēctecim vai jaunam klienta darbiniekam.
     - Ikmēneša ziņojuma struktūru, kas parāda paveikto un lēmumus, ko gaida no klienta.
     - Trīs regulārus uzdevumus, kas man jānodod klienta cilvēkiem, ar atgādinājumu ritmu.
+    Stāvokli sniedz tabulā, ko varu ielīmēt izklājlapā.
 media:
 - ask-scope
 - plans-list
@@ -78,4 +81,6 @@ sectors:
 next:
   title: Izmēģiniet nākamo darbnīcu ar vienu klientu
   text: Varam kopā ar jums veikt risku identificēšanu ar izdomāto uzņēmumu vai sagatavot to kādam jūsu klientam.
+  ask: Kopīga risku identificēšana uz izdomāta uzņēmuma piemēra vai kādam no maniem klientiem
+linkedin: true
 ---

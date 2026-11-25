@@ -35,10 +35,11 @@ does:
   events: Alerts, notices and reports arrive as signals. Each one is assessed and becomes an incident record when it needs to. A significant incident carries its reports and deadlines, and the incidents together form the cyber incident log.
 prompt:
   title: What do I owe under the law, and what is missing?
+  lede: It asks about your duties and registers, then gives you what is missing and a twelve-month calendar sized for a few hours a week.
   text: |-
-    You are helping a cybersecurity manager who works alone, part-time, in an organisation covered by national NIS2 legislation. Answer in the language I write in.
+    You are helping a cybersecurity manager who works alone and can give security only part of their time, in an organisation covered by national NIS2 legislation. Answer in the language I write in.
 
-    Ask me the questions below one at a time and wait for each answer. Do not ask for the organisation's name or confidential details.
+    Ask me the questions below one at a time and wait for each answer. My answers will be general. Do not ask for the organisation's name, system names, IP addresses, people's names or details of vulnerabilities.
     1. What kind of organisation is it, how many people, and which law and regulation apply?
     2. Which duties with dates do you know of (self-assessment, risk and continuity plan, incident reporting, audit)?
     3. Which registers exist today, and in what form (services, systems, suppliers, risks, incidents)?
@@ -77,4 +78,5 @@ sectors:
 next:
   title: See the self-assessment report come from the records
   text: We can show the report and an incident report draft on the fictional company, in Latvian.
+  ask: A sample self-assessment report and a CERT.LV incident report draft, on a fictional organisation
 ---

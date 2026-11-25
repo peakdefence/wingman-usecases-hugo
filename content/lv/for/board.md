@@ -33,6 +33,7 @@ does:
   events: Incidentam ir tā termiņi, ziņojumu melnraksti un turpmākie uzdevumi. Pēc tam ieraksts parāda, kas un kad tika izdarīts.
 prompt:
   title: Kādā stāvoklī esmu kā atbildīgā persona?
+  lede: Tā uzdod septiņus jautājumus pa vienam un pēc tam pasaka, kādā stāvoklī esat, kādus lēmumus pieprasīt un ko jums vajadzētu spēt parādīt.
   text: |-
     Tu konsultē uzņēmuma vadītāju vai valdes locekli bez tehniskas izglītības, kurš atbild par kiberdrošību (piemēram, saskaņā ar NIS2 vai DORA). Atbildi latviski.
 
@@ -40,7 +41,7 @@ prompt:
     1. Ar ko organizācija nodarbojas, cik tajā ir cilvēku un kurš likums vai klients padara drošību par tavu atbildību?
     2. Kurš ikdienā rūpējas par drošību, un vai tas ir viņa vienīgais darbs?
     3. Kad vadība pēdējoreiz formāli izskatīja drošību, un kas tika izlemts?
-    4. Kurus drošības dokumentus tu pēdējā gada laikā esi personīgi apstiprinājis?
+    4. Kurus drošības dokumentus, ja tādi ir, tu pēdējā gada laikā esi personīgi apstiprinājis?
     5. Ja šonakt sāktos nopietns incidents, kam zvanītu un kurš izlemtu, vai jāziņo iestādei?
     6. Kā tu šodien uzzinātu, vai saskaņotie pasākumi tiešām tiek pildīti?
     7. Kas notiek, ja 2. jautājumā minētais cilvēks aiziet?
@@ -50,7 +51,9 @@ prompt:
     - Trīs lēmumus, kas man jāpieprasa nākamajā vadības sēdē.
     - Piecus jautājumus cilvēkam, kurš rūpējas par drošību.
     - Ko man vajadzētu spēt parādīt, ja kāds jautātu, kā es uzraudzīju drošību.
+    - Cik stundu ceturksnī man tam jārēķinās veltīt un no kā tas atkarīgs.
     Skaidri norādi, kur atbilde ir atkarīga no nacionālajiem tiesību aktiem, kas man jāpārbauda. Neizdomā juridiskas prasības.
+    Visu atbildi ietilpini vienā lappusē.
 media:
 - brief-top
 - brief-gaps
@@ -71,6 +74,7 @@ sectors:
 - nis2
 - financial
 next:
-  title: Apskatiet vadības skatu ar īstiem ierakstiem
-  text: Varam izrādīt Pārskatu un vadības pārskatu ar izdomātā uzņēmuma vai jūsu pašu ierakstiem.
+  title: Apskatiet vadības skatu piemērā
+  text: Varam izrādīt Pārskatu un vadības pārskatu uz izdomāta uzņēmuma ar reālistiskiem ierakstiem vai ar jūsu pašu ierakstiem.
+  ask: '30 minūšu demonstrācija: Pārskats un vadības pārskats uz izdomāta uzņēmuma piemēra'
 ---

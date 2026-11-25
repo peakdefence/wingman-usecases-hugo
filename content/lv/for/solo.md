@@ -16,7 +16,7 @@ problems:
 - q: Vadība man atvēl desmit minūtes sēdes beigās.
   a: Apstiprināšanas materiāli tiek sagatavoti no ierakstiem, un protokola melnraksts top no jūsu piezīmēm. Lēmumi kļūst par uzdevumiem ar īpašniekiem, un neizpildītie tiek iekļauti nākamajā pārskatā.
 - q: Visur rakstīts par CISO, incidentu vadītāju un riska īpašnieku. Tas viss esmu es.
-  a: Lomas ir nodalītas no cilvēkiem, un viens cilvēks var pildīt vairākas. Ierakstā tāpat redzams, kura loma izlēma, tāpēc pienākumus vēlāk var sadalīt, neko nepārbūvējot.
+  a: Lomas ir nodalītas no cilvēkiem, un viens cilvēks var pildīt vairākas. Ierakstā redzams arī, kurā lomā lēmums pieņemts, tāpēc pienākumus vēlāk var sadalīt, neko nepārbūvējot.
 - q: Mani piegādātāji ir līgumu saraksts Excel.
   a: Piegādātājs ir ieraksts, kas sasaistīts ar pakalpojumiem, ko tas nodrošina, līgumu, novērtēšanas datumu un riskiem, kuros tas iesaistīts. Kad piegādātāja paziņojums par incidentu ir reģistrēts kā signāls, saites parāda, kurus pakalpojumus tas skar.
 terms:
@@ -34,20 +34,21 @@ does:
   regular: Pārskatīšanas notiek pēc kalendāra. Ir redzams, kuriem pierādījumiem beidzas derīguma termiņš. Pašvērtējuma ziņojums un vadības pārskats tiek sagatavoti no ierakstiem.
   events: Brīdinājumi, paziņojumi un ziņojumi ienāk kā signāli. Katrs tiek izvērtēts, un vajadzības gadījumā tiek izveidots incidenta ieraksts. Nozīmīgam incidentam ir tā ziņojumi un termiņi, un incidenti kopā veido kiberincidentu žurnālu.
 prompt:
-  title: Kas man jāizpilda pēc likuma, un kā trūkst?
+  title: Kas man jāizpilda pēc likuma un kas trūkst?
+  lede: Tā jautā par jūsu pienākumiem un reģistriem un pēc tam sniedz to, kas trūkst, un divpadsmit mēnešu kalendāru dažām stundām nedēļā.
   text: |-
-    Tu palīdzi kiberdrošības pārvaldniekam, kurš strādā viens, nepilnu slodzi, organizācijā, uz kuru attiecas Nacionālās kiberdrošības likums. Atbildi latviski.
+    Tu palīdzi kiberdrošības pārvaldniekam, kurš strādā viens un drošībai var veltīt tikai daļu laika, organizācijā, uz kuru attiecas Nacionālās kiberdrošības likums. Atbildi latviski.
 
-    Uzdod man tālāk minētos jautājumus pa vienam un gaidi katru atbildi. Neprasi organizācijas nosaukumu vai konfidenciālu informāciju.
+    Uzdod man tālāk minētos jautājumus pa vienam un gaidi katru atbildi. Atbildes būs vispārīgas; neprasi organizācijas nosaukumu, sistēmu nosaukumus, IP adreses, personu vārdus vai ievainojamību detaļas.
     1. Kāda veida organizācija tā ir, cik tajā ir cilvēku un kuri likumi un noteikumi uz to attiecas?
     2. Kādus pienākumus ar termiņiem tu zini (pašvērtējums, kiberrisku pārvaldības un darbības nepārtrauktības plāns, ziņošana par incidentiem, audits)?
-    3. Kādi reģistri šodien pastāv, un kādā formā (pakalpojumi, sistēmas, piegādātāji, riski, incidenti)?
+    3. Kādi reģistri šodien pastāv un kādā formā (pakalpojumi, sistēmas, piegādātāji, riski, incidenti)?
     4. Kādām regulārām pārbaudēm būtu jānotiek, un kuras pēdējā gada laikā tiešām notika?
     5. Kurš no vadības ir atbildīgs, un kad viņš pēdējoreiz kaut ko izlēma?
     6. Ko tu darītu pirmajā stundā, ja būtu aizdomas par nozīmīgu incidentu?
 
     Pēc tam sniedz man:
-    - Manu pienākumu sarakstu, kā es tos aprakstīju, katram norādot, kas pastāv un kā trūkst.
+    - Manu pienākumu sarakstu, kā es tos aprakstīju, katram norādot, kas pastāv un kas trūkst.
     - Kalendāru nākamajiem divpadsmit mēnešiem, pa mēnešiem, rēķinoties ar dažām stundām nedēļā.
     - Ko prasīt vadībai, vienā lappusē.
     - Pirmās stundas kontrolsarakstu incidentam.
@@ -77,4 +78,5 @@ sectors:
 next:
   title: Apskatiet, kā pašvērtējuma ziņojums top no ierakstiem
   text: Varam parādīt ziņojumu un incidenta ziņojuma melnrakstu uz izdomātas organizācijas piemēra, latviešu valodā.
+  ask: Pašvērtējuma ziņojuma un CERT.LV incidenta ziņojuma melnraksta piemērs latviešu valodā uz izdomātas organizācijas datiem
 ---
