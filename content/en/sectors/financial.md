@@ -1,6 +1,6 @@
 ---
 title: Financial sector – DORA, MiCA and supervisory expectations
-short: Financial sector
+short: Financial sector (DORA)
 sector: financial
 weight: 20
 summary: Run operational, financial, reputational and other non-financial risk management on one model, and catch the events that should move it.

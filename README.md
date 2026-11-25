@@ -15,7 +15,7 @@ hugo --gc --minify     # build to public/
 | Data model texts per language | `data/<lang>/model.yaml` |
 | Home page structure: the situation cards and the four promises with their use cases | `data/home.yaml`, texts in `i18n/<lang>.toml` (`sit_*`, `prom_*`) |
 | "Who it is for" pages, one per visitor situation: problems, glossary, the four promises from that angle, a self-check prompt, screens, what stays with people, and a question picker built from `ask` | `content/<lang>/for/<id>.md` (all in front matter), layout in `layouts/for/` |
-| "How it works" pages: working with AI assistants, how AI is controlled, and a draft data and hosting page (`draft: true` until its facts are confirmed) | `content/<lang>/trust/`, layout in `layouts/trust/`; the question picker is `layouts/_partials/ask.html` |
+| "How it works" pages: working with AI assistants, how AI is controlled, and data, hosting and AI (confirmed facts only; open points go to its question picker) | `content/<lang>/trust/`, layout in `layouts/trust/`; the question picker is `layouts/_partials/ask.html` |
 | Sample outputs on a fictional company (management review pack, audit trace, risk change trail, consultant report). `for` lists the "Who it is for" pages that show each sample | `content/<lang>/samples/`, layout in `layouts/samples/` |
 | Glossary, built from the `terms` of the "Who it is for" pages plus its own front matter | `content/<lang>/glossary.md`, layout in `layouts/glossary/` |
 | Main menu and footer sitemap: five groups built from the site's sections (`layouts/_partials/navdata.html`); labels in `i18n` (`nav_*`) | `layouts/_partials/header.html`, `footer.html` |

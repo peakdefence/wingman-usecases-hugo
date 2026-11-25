@@ -1,5 +1,5 @@
 ---
-title: Drošības darbību vadība
+title: Ikdienas drošības pārvaldība
 uc: security-operations
 group: operations
 weight: 160

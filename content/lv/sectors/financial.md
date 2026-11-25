@@ -1,6 +1,6 @@
 ---
 title: Finanšu nozare – DORA, MiCA un uzraudzības prasības
-short: Finanšu nozare
+short: Finanšu nozare (DORA)
 sector: financial
 weight: 20
 summary: Vadīt operacionālo, finanšu, reputācijas un citu nefinanšu risku pārvaldību vienā modelī un notvert notikumus, kuriem tā būtu jāmaina.

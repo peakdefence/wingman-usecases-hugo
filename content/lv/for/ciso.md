@@ -1,6 +1,6 @@
 ---
 title: Mūsu reģistri pamazām atšķiras, un risku reģistrs mainās tikai pirms audita
-short: Drošības vadītājiem
+short: Informācijas drošības vadītājiem
 summary: Programma darbojas, bet tā balstās uz izklājlapām, atgādinājumiem un jūsu atmiņu vai uz atbilstības rīku, kas netiek tālāk par savām veidnēm. WINGMAN uztur reģistrus kā vienus sasaistītus ierakstus, kurus jūsu MI asistents lasa un kuriem ierosina izmaiņas, un maina tos tad, kad kaut kas notiek, nevis tad, kad tuvojas audits.
 weight: 30
 slug_id: ciso

@@ -170,6 +170,8 @@ questions:
   a: Prasības bez kontroles vai ar kontrolēm, kuru pierādījumi ir novecojuši, parādās kā nepilnības pirms audita.
 ---
 
+Neesat pārliecināts, vai NIS2 attiecas uz jums, piemēram, kā uz piegādātāju organizācijai, kas ir tvērumā? Sāciet ar ceļvedi [Vai NIS2 attiecas uz jums?]({{< relref "/knowledge-base/nis2-applicability" >}}).
+
 NIS2 prasa vairāk nekā dokumentu kopumu. Subjektam jāzina, ko tas darbina, no kā tas ir atkarīgs, kādus riskus tas nes un kā tiek pārvaldīti incidenti, un tā vadības institūcijai pasākumi jāapstiprina un jāuzrauga. Latvijā NIS2 ir pārņemta Nacionālās kiberdrošības likumā, un Ministru kabineta noteikumi Nr. 397 „Minimālās kiberdrošības prasības” nosaka prasības no pārvaldības un kiberdrošības pārvaldnieka lomas līdz incidentu klasifikācijai, rezerves kopijām, šifrēšanai un ārpakalpojumiem. Par nozīmīgiem incidentiem ziņo CERT.LV atbilstoši noteikumos noteiktajai klasifikācijai un ziņošanas kārtībai, un subjekti iesniedz kiberdrošības pašvērtējuma ziņojumu, kas izvērtē, kā tiek izpildīta katra prasība.
 
 WINGMAN uztur tos kā sasaistītus reģistrus vienā modelī, līdzīgi kā ISO 27001 informācijas drošības pārvaldības sistēmā. Informācijas drošības funkcija strādā no viena avota: tas, ko redz uzraugošā iestāde, auditors un vadības institūcija, ir tas pats, ar ko strādā drošības komanda. Incidentu ziņojumi un pašvērtējuma ziņojums tiek sagatavoti no tiem pašiem ierakstiem, tāpēc tie atbilst tam, kas patiešām ir ieviests.

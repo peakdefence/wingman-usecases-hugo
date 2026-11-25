@@ -184,7 +184,7 @@ questions:
   a: Requirements with no control, or with controls whose evidence has expired, appear as gaps before the audit does.
 ---
 
-This page follows NIS2 as implemented in Latvia. The model works the same way in other member states; the requirements and reporting rules come from your national law, loaded as records.
+This page follows NIS2 as implemented in Latvia. The model works the same way in other member states; the requirements and reporting rules come from your national law, loaded as records. Not sure NIS2 applies to you, for example as a supplier to an entity in scope? Start with [Does NIS2 apply to you?]({{< relref "/knowledge-base/nis2-applicability" >}}).
 
 NIS2 asks for more than a set of documents. The entity must know what it runs, who it depends on, which risks it carries and how incidents are handled, and its management body must approve and oversee the measures. In Latvia, the National Cybersecurity Law (Nacionālās kiberdrošības likums) transposes NIS2, and Cabinet Regulation No. 397 sets the minimum cybersecurity requirements, from governance and the cybersecurity manager role to incident classification, backups, encryption and outsourcing. Significant incidents are reported to CERT.LV, the national CSIRT, following the classification and reporting guidelines of the regulation, and entities submit a cybersecurity self-assessment report that evaluates how each requirement is met.
 

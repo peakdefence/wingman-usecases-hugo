@@ -1,5 +1,5 @@
 ---
-title: Security operations control
+title: Day-to-day security management
 uc: security-operations
 group: operations
 weight: 160

@@ -1,6 +1,6 @@
 ---
 title: Par drošību rūpējos viens, līdztekus citam darbam
-short: Vienam cilvēkam bez drošības komandas
+short: Valsts iestādēm un vienam cilvēkam
 summary: Jūs esat kiberdrošības pārvaldnieks, incidentu vadītājs un risku koordinators, un jums ir arī cits darbs. WINGMAN uztur reģistrus, ko prasa Nacionālās kiberdrošības likums, un sagatavo ziņojumus no tiem, lai tie nebūtu katru reizi jāraksta no nulles.
 weight: 40
 slug_id: solo
