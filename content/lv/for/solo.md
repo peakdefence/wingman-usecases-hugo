@@ -20,7 +20,7 @@ problems:
 - q: Mani piegādātāji ir līgumu saraksts Excel.
   a: Piegādātājs ir ieraksts, kas sasaistīts ar pakalpojumiem, ko tas nodrošina, līgumu, novērtēšanas datumu un riskiem, kuros tas iesaistīts. Kad piegādātāja paziņojums par incidentu ir reģistrēts kā signāls, saites parāda, kurus pakalpojumus tas skar.
 - q: Neesmu pārliecināts, vai šos datus drīkstam nodot mākoņpakalpojumā izvietotam MI.
-  a: 'Modelis, kas raksta kopsavilkumus, ieteikumus un Ask Wingman atbildes, tiek iestatīts jūsu organizācijai: mākonī, mākonī ar ierobežojumu tikai uz ES vai pilnībā lokālā izvietojumā, un modeli var nodrošināt Peak Defence. Katrā MI rakstītā kopsavilkumā saglabājas, kurš modelis to uzrakstīja, tāpēc izvēli var pārbaudīt.'
+  a: 'Modelis, kas raksta kopsavilkumus, ieteikumus un Ask Wingman atbildes, tiek iestatīts jūsu organizācijai: mākonī, mākonī ar ierobežojumu tikai uz ES vai pilnībā lokālā izvietojumā, un modeli var nodrošināt Peak Defence.'
 terms:
 - t: Signāls
   d: 'Pazīme, ka kaut kas mainās: monitoringa brīdinājums, skenera rezultāts, piegādātāja paziņojums, brīdinājums par apdraudējumu vai kolēģa ziņojums.'

@@ -36,7 +36,7 @@ Cilvēki ar rakstīšanas tiesībām var mainīt ierakstus arī tieši, un to va
 
 Katra ieraksta izmaiņa tiek saglabāta tā vēsturē: kas mainījās, vērtība pirms un pēc, kad un kurš to izdarīja. Laiku iestata sistēma. Vēsturi nevar labot vai dzēst.
 
-Dažas izmaiņas WINGMAN veic pats, bez ieteikuma, piemēram, atjauno ieraksta kopsavilkumu, kad ieraksts mainās. Arī tās tiek fiksētas, un katram MI rakstītajam kopsavilkumam vēsturē saglabājas modelis, kas to uzrakstīja, un laiks.
+Dažas izmaiņas WINGMAN veic pats, bez ieteikuma, piemēram, atjauno ieraksta kopsavilkumu, kad ieraksts mainās. Arī tās tiek fiksētas ar laiku.
 
 Ieteikuma pieņemšana vēsturē tiek fiksēta kā atsevišķs ieraksts ar cilvēku, kurš to pieņēma, un laiku.
 

@@ -57,4 +57,4 @@ Inside WINGMAN, **Ask Wingman** is a built-in assistant that opens beside any re
 
 When you connect through MCP, the model is the one in your assistant. You choose it, under your own agreement with its provider.
 
-Inside WINGMAN, the briefs, Ask Wingman and the suggestions are written by a model set up for your organisation. Depending on that configuration it runs in the cloud, in a cloud restricted to the EU, or entirely in a local deployment, and Peak Defence can provide the model. Each AI-written brief records which model wrote it.
+Inside WINGMAN, the briefs, Ask Wingman and the suggestions are written by a model set up for your organisation. Depending on that configuration it runs in the cloud, in a cloud restricted to the EU, or entirely in a local deployment, and Peak Defence can provide the model.

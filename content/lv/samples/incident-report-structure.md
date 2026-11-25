@@ -6,7 +6,7 @@ for: [solo]
 use_cases: [incident-handling]
 ---
 
-**Struktūras piemērs, nav oficiālā veidne.** Tas parāda, ko WINGMAN glabā incidenta ierakstā un ko sagatavo katram ziņojumam. Norādītie termiņi ir NIS2 direktīvas 23. pantā noteiktie, skaitot no konstatēšanas brīža; pārbaudiet tos spēkā esošajā Nacionālās kiberdrošības likumā.
+**Struktūras piemērs, nav oficiālā veidne.** Tas parāda, ko WINGMAN glabā incidenta ierakstā un ko sagatavo katram ziņojumam. Termiņus WINGMAN ņem no ielādētajām Nacionālās kiberdrošības likuma un MK noteikumu Nr. 397 prasībām. Šajā piemērā izmantoti NIS2 direktīvas 23. panta termiņi, skaitot no konstatēšanas brīža, un pie katra norādīts datums un laiks, līdz kuram tas jāizpilda.
 
 **Piemēra aģentūra**, izdomāta valsts iestāde. **Incidents:** INC-07, iestādes e-pakalpojumu portāls nebija pieejams 9 stundas pakalpojumatteices (DDoS) uzbrukuma dēļ. **Konstatēts:** 2026. gada 12. novembrī plkst. 09.58. Termiņi tiek skaitīti no šī brīža.
 
@@ -16,20 +16,20 @@ use_cases: [incident-handling]
 |---|---|
 | Skartais pakalpojums | E-pakalpojumu portāls, iestādes kritisks pakalpojums |
 | Ilgums | 9 stundas |
-| Neizdevušās sesijas | Aptuveni 14 000 |
+| Nesekmīgās sesijas | Aptuveni 14 000 |
 | Skartie dati | Nav konstatēti |
 | Pārrobežu ietekme | Nav konstatēta |
 
-**Ierosināts: nozīmīgs.** WINGMAN ierosināja plkst. 10.42 ar šādu pamatojumu; R. Grava, kiberdrošības pārvaldnieks, apstiprināja plkst. 10.55. A. Lāce, par kiberdrošību atbildīgā vadības pārstāve, informēta plkst. 11.05.
+**Ierosināts: nozīmīgs.** WINGMAN ierosināja plkst. 10.42, pamatojoties uz tabulā norādīto; R. Grava, kiberdrošības pārvaldnieks, apstiprināja plkst. 10.55. A. Lāce, par kiberdrošību atbildīgā vadības pārstāve, informēta plkst. 11.05.
 
 ## Ziņojumi
 
-| Ziņojums | Saturs | Termiņš | Nosūtīja, kad |
+| Ziņojums | Saturs | Termiņš | Nosūtīts (kas, kad) |
 |---|---|---|---|
-| Agrīnais brīdinājums | Aizdomas par nozīmīgu incidentu; skartais pakalpojums; vai iespējama ļaunprātīga darbība | 24 h | R. Grava, 12.11. plkst. 14.10 |
-| Paziņojums par incidentu | Klasifikācija, sākotnējais smaguma un ietekmes novērtējums, kompromitācijas pazīmes | 72 h | R. Grava, 13.11. plkst. 09.30 |
+| Agrīnais brīdinājums | Aizdomas par nozīmīgu incidentu; skartais pakalpojums; vai iespējama ļaunprātīga darbība | 24 h – līdz 13.11. plkst. 09.58 | R. Grava, 12.11. plkst. 14.10 |
+| Paziņojums par incidentu | Klasifikācija, sākotnējais smaguma un ietekmes novērtējums, kompromitācijas pazīmes | 72 h – līdz 15.11. plkst. 09.58 | R. Grava, 13.11. plkst. 09.30 |
 | Starpziņojums | Statuss pēc pieprasījuma vai situācijai mainoties | pēc pieprasījuma | – |
-| Gala ziņojums | Apraksts, pamatcēlonis, veiktie pasākumi, pārrobežu ietekme | 1 mēnesis pēc paziņojuma | līdz 13.12. |
+| Gala ziņojums | Apraksts, pamatcēlonis, veiktie pasākumi, pārrobežu ietekme | 1 mēnesis pēc paziņojuma – līdz 13.12. | – |
 
 Katra ziņojuma melnrakstu WINGMAN sagatavo no incidenta ieraksta. R. Grava to labo, apstiprina un nosūta CERT.LV; WINGMAN to nesūta.
 

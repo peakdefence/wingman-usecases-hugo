@@ -6,7 +6,7 @@ for: [start, consultant]
 use_cases: [new-requirements, risk-identification]
 ---
 
-**Example Labs**, a 60-person software company. A bank customer wants ISO 27001 certification within twelve months. There is no security person; the CTO, T. Ozols, runs it with Claude Code, the implementation skill and WINGMAN. The skill works on WINGMAN's records and creates its tasks there, so every result is kept for the next step and for the people who will do the work.
+**Example Labs**, a 60-person software company. A bank customer wants ISO 27001 certification within twelve months. There is no security person; the CTO, T. Ozols, runs it with Claude Code, the implementation skill and WINGMAN. The skill works on WINGMAN's records and creates its tasks there, so every result is kept for the next step and for the people who will do the work. Over the three days the CTO spends about 12 hours answering and deciding.
 
 ## Day 1, morning: context and scope
 
@@ -14,7 +14,7 @@ The skill asks one question at a time: what the company builds, where it runs, h
 
 - **Scope:** "The development, operation and support of the Example Labs analytics platform, run on a public cloud from the Riga and Tallinn offices. Corporate IT is included as far as it supports the platform."
 - **Assets created, each with an owner:** the analytics platform, the cloud account, the code repository, the identity provider, the customer database, the support desk, and 9 suppliers.
-- **Framework loaded:** ISO/IEC 27001:2022, the requirements of clauses 4 to 10 and the 93 Annex A controls, as requirement records.
+- **Framework loaded:** ISO/IEC 27001:2022, the requirements of clauses 4 to 10 and the 93 Annex A controls, as requirement records: one record per requirement, to which controls, evidence and tasks are linked.
 
 ## Day 1, afternoon: where the company stands
 
@@ -43,7 +43,8 @@ Open and partly covered requirements become controls to build, grouped into work
 | Operations, backup and logging | Platform engineer | 15 | 70 |
 | People: onboarding, awareness, leavers | HR lead | 8 | 30 |
 | Suppliers and contracts | Office manager | 7 | 25 |
-| Management system: policy, risk, internal audit, management review | CTO | 18 | 90 |
+| Management system: policy, risk, management review | CTO | 16 | 80 |
+| Internal audit, by someone outside the work (an external auditor or a consultant) | Internal auditor | 2 | 10 |
 
 ## Days 2 and 3: policies and procedures, out to people
 
@@ -61,7 +62,7 @@ Each of the bank's 240 questions is mapped to a control and a clause. Three of t
 | How are production changes reviewed? | Second review in the release pipeline | A.8.32 | Partly: in place for releases, not yet for hotfixes |
 | Do you test restores from backup? | Quarterly restore test | A.8.13 | Planned: first test due in week 6; no evidence yet |
 
-The other 237 are mapped the same way. Questions that point to a control still being built are listed as gaps, not answered.
+The other 237 are mapped the same way. On day 3, 96 of the 240 could be answered from controls already in place, 61 partly, and 83 point to controls still being built; those are listed as gaps, not answered.
 
 ## Decisions only the CTO makes
 
@@ -74,3 +75,9 @@ The other 237 are mapped the same way. Questions that point to a control still b
 ## What three days do and do not do
 
 Three days produce the scope, the gap analysis, the risk register, the plan with tasks for each person, and the documents: the part that usually takes months of meetings. Doing the work in the plan takes weeks. Proving it takes longer: controls have to run and leave evidence before an auditor can test them. Then come an internal audit, a management review, and the certification body's two audits, the first of the documents and the second of the controls in operation. How many months of records your certification body wants to see is a question for them; WINGMAN shows, control by control, which ones have the evidence.
+
+A typical calendar inside the bank's twelve months: the plan's work is done by week 12; controls then run and collect evidence for about three months; the internal audit and the management review follow in months 5 and 6; the certification body's first audit comes in month 6 and the second in months 7 to 9. Your certification body sets the exact minimums, and its fee is separate.
+
+## With a consultant
+
+The same three days can be run by a consultant on the client's records. The skill can be the consultant's own, with their interview questions and their policy templates. The consultant prepares the five decisions above; the CTO makes them. The records stay in the client's workspace when the engagement ends.

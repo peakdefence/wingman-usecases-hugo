@@ -6,7 +6,7 @@ for: [start, consultant]
 use_cases: [new-requirements, risk-identification]
 ---
 
-**Piemērs Labs**, programmatūras uzņēmums ar 60 darbiniekiem. Bankas klients prasa ISO 27001 sertifikātu divpadsmit mēnešu laikā. Drošības speciālista nav; to vada tehniskais direktors T. Ozols ar Claude Code, ieviešanas prasmi un WINGMAN. Prasme strādā ar WINGMAN ierakstiem un tur arī veido savus uzdevumus, tāpēc katrs rezultāts saglabājas nākamajam solim un cilvēkiem, kas darbu veiks.
+**Piemērs Labs**, programmatūras uzņēmums ar 60 darbiniekiem. Bankas klients prasa ISO 27001 sertifikātu divpadsmit mēnešu laikā. Drošības speciālista nav; to vada tehniskais direktors T. Ozols ar Claude Code, ieviešanas prasmi un WINGMAN. Prasme strādā ar WINGMAN ierakstiem un tur arī veido savus uzdevumus, tāpēc katrs rezultāts saglabājas nākamajam solim un cilvēkiem, kas darbu veiks. Trīs dienās tehniskais direktors atbildēm un lēmumiem velta aptuveni 12 stundas.
 
 ## 1. diena, rīts: konteksts un tvērums
 
@@ -14,7 +14,7 @@ Prasme uzdod vienu jautājumu pēc otra: ko uzņēmums veido, kur tas darbojas, 
 
 - **Tvērums:** „Piemērs Labs analītikas platformas izstrāde, uzturēšana un atbalsts, kas darbojas publiskā mākonī, no Rīgas un Tallinas birojiem. Korporatīvais IT ir iekļauts tiktāl, cik tas atbalsta platformu.”
 - **Izveidotie aktīvi, katram savs īpašnieks:** analītikas platforma, mākoņa konts, koda repozitorijs, identitātes pakalpojums, klientu datubāze, atbalsta dienests un 9 piegādātāji.
-- **Ielādētais ietvars:** ISO/IEC 27001:2022, 4.–10. punkta prasības un 93 A pielikuma kontroles kā prasību ieraksti.
+- **Ielādētais ietvars:** ISO/IEC 27001:2022, 4.–10. punkta prasības un 93 A pielikuma kontroles kā prasību ieraksti: katrai prasībai viens ieraksts, ar kuru sasaista kontroles, pierādījumus un uzdevumus.
 
 ## 1. diena, pēcpusdiena: kur uzņēmums atrodas
 
@@ -43,7 +43,8 @@ Atvērtās un daļēji nosegtās prasības kļūst par ieviešamām kontrolēm, 
 | Darbība, rezerves kopijas un žurnāli | Platformas inženieris | 15 | 70 |
 | Cilvēki: uzņemšana, izpratne, aiziešana | Personāla vadītāja | 8 | 30 |
 | Piegādātāji un līgumi | Biroja vadītāja | 7 | 25 |
-| Pārvaldības sistēma: politika, riski, iekšējais audits, vadības pārskats | Tehniskais direktors | 18 | 90 |
+| Pārvaldības sistēma: politika, riski, vadības pārskats | Tehniskais direktors | 16 | 80 |
+| Iekšējais audits, ko veic darbā neiesaistīta persona (ārējs auditors vai konsultants) | Iekšējais auditors | 2 | 10 |
 
 ## 2. un 3. diena: politikas un procedūras līdz cilvēkiem
 
@@ -61,7 +62,7 @@ Katrs no bankas 240 jautājumiem tiek sasaistīts ar kontroli un standarta punkt
 | Kā tiek pārskatītas izmaiņas ražošanas vidē? | Otrā pārskatīšana izlaides procesā | A.8.32 | Daļēji: izlaidēm ieviests, steidzamajiem labojumiem vēl nav |
 | Vai pārbaudāt atjaunošanu no rezerves kopijām? | Atjaunošanas tests reizi ceturksnī | A.8.13 | Plānots: pirmais tests 6. nedēļā; pierādījuma vēl nav |
 
-Pārējie 237 tiek sasaistīti tāpat. Jautājumi, kas norāda uz vēl neieviestu kontroli, tiek uzskaitīti kā nepilnības, nevis atbildēti.
+Pārējie 237 tiek sasaistīti tāpat. 3. dienā uz 96 no 240 varēja atbildēt ar jau ieviestām kontrolēm, uz 61 – daļēji, bet 83 norāda uz vēl neieviestām kontrolēm; tie tiek uzskaitīti kā nepilnības, nevis atbildēti.
 
 ## Lēmumi, ko var pieņemt tikai tehniskais direktors
 
@@ -74,3 +75,9 @@ Pārējie 237 tiek sasaistīti tāpat. Jautājumi, kas norāda uz vēl neieviest
 ## Ko trīs dienas dod un ko nedod
 
 Trīs dienās top tvērums, nepilnību analīze, risku reģistrs, plāns ar uzdevumiem katram cilvēkam un dokumenti – tā daļa, kas parasti aizņem mēnešiem ilgas sanāksmes. Plānā ietverto darbu paveikt prasa nedēļas. Pierādīt to – vēl ilgāk: kontrolēm jādarbojas un jāatstāj pierādījumi, pirms auditors tās var pārbaudīt. Pēc tam seko iekšējais audits, vadības pārskats un divi sertifikācijas institūcijas auditi: pirmais pārbauda dokumentus, otrais – kontroļu darbību. Cik mēnešu ierakstus vēlas redzēt jūsu sertifikācijas institūcija, jājautā tai; WINGMAN pa kontrolei parāda, kurām pierādījumi jau ir.
+
+Tipisks kalendārs bankas noteiktajos divpadsmit mēnešos: plānā ietvertais darbs paveikts līdz 12. nedēļai; tad aptuveni trīs mēnešus kontroles darbojas un uzkrāj pierādījumus; iekšējais audits un vadības pārskats notiek 5. un 6. mēnesī; sertifikācijas institūcijas pirmais audits – 6. mēnesī, otrais – 7. līdz 9. mēnesī. Precīzos minimumus nosaka jūsu sertifikācijas institūcija, un tās maksa ir atsevišķa.
+
+## Ar konsultantu
+
+Tās pašas trīs dienas var vadīt konsultants ar klienta ierakstiem. Prasme var būt paša konsultanta, ar viņa interviju jautājumiem un politiku veidnēm. Konsultants sagatavo iepriekš minētos piecus lēmumus; tos pieņem tehniskais direktors. Kad sadarbība beidzas, ieraksti paliek klienta darba vidē.

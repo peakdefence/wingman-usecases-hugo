@@ -6,7 +6,7 @@ for: [auditor, start]
 use_cases: [auditing, audit-scopes]
 ---
 
-**Example Co.** Internal audit against ISO/IEC 27001:2022, period 1 April to 21 September 2026, fieldwork 22 to 26 September. Two scopes: Product A and Product B. Auditor: I. Dreimane, internal auditor, not involved in either product's engineering. Grading follows the organisation's internal audit procedure: a nonconformity is major when a requirement is not met systematically or across a whole process.
+**Example Co.** Internal audit against ISO/IEC 27001:2022, period 1 April to 21 September 2026, fieldwork 22 to 26 September. Two scopes: Product A and Product B. Auditor: I. Dreimane, internal auditor, not involved in either product's engineering. Grading follows the organisation's internal audit procedure: a nonconformity is major when a requirement is not met systematically or across a whole process, and minor when the failure is isolated and the process still achieves its purpose.
 
 The requirement traced here is **Annex A 8.32 Change management** in the scope of **Product B**. The audit criteria are the control and the organisation's own change management procedure (clause 8.1 asks that processes are carried out as planned).
 
@@ -44,13 +44,14 @@ Random sample: 4 of 10 without the review before release. Unrecorded hotfixes: 3
 | Deployment log export, 24 September, 41 entries | Indicates a nonconformity |
 | Change records CHG-223, 236, 242, 247 | Indicates a nonconformity |
 | Interview transcript, 23 September, confirmed 25 September | Indicates a nonconformity |
+| Product B: release pipeline configuration export, 24 September (no approval gate) | Indicates a nonconformity |
 | Change management procedure v3, paragraph 4.2 | Context |
-| Product A: deployment log and change records, sample of 10 | Supports conformity |
+| Product A: deployment log export of 24 September and change records CHG-102, 109, 115, 121, 126, 133, 138, 144, 149, 151 | Supports conformity |
 | Product A: release pipeline configuration export, 24 September | Supports conformity |
 
 ## Finding and conclusion
 
-**Finding:** Major nonconformity. Production changes to Product B are released without the second review the procedure requires: 4 of 10 sampled changes, and all 3 hotfixes deployed with no change record. The failure is systematic: the hotfix path bypasses the release pipeline, and the process owner confirmed review depends on memory. Drafted with its evidence by the audit skill; graded by the auditor on 2 October.
+**Finding:** Major nonconformity. Production changes to Product B are released without the second review the procedure requires: 4 of 10 sampled changes, and all 3 hotfixes deployed with no change record. The failure is systematic: Product B's pipeline has no approval gate, hotfixes bypass the pipeline, and the process owner confirmed review depends on memory. Drafted with its evidence by the audit skill; graded by the auditor on 2 October.
 
 **Product A**, for comparison: population reconciled against the deployment log, 52 deployments and 52 change records. 10 sampled at random, all reviewed before release; the release pipeline enforces a second approval (configuration export, 24 September). Conformity.
 
@@ -58,9 +59,9 @@ Random sample: 4 of 10 without the review before release. Unrecorded hotfixes: 3
 
 ## Follow-up
 
-- **Root cause:** hotfixes are deployed outside the release pipeline, so its approval gate never applies to them.
-- **Correction:** retrospective review of the 7 unreviewed deployments, and a check of the 28 untested change records against the deployment log, by 31 October. Owner M. Kalns.
-- **Corrective action:** route hotfixes through the same pipeline gate as Product A. Owner M. Kalns, due 15 December 2026.
+- **Root cause:** Product B's release pipeline has no enforced approval gate (configuration export, 24 September). Normal changes rely on engineers asking for a review, as with CHG-223 and 242; hotfixes bypass the pipeline entirely, as with CHG-236, 247 and the 3 unrecorded deployments.
+- **Correction:** retrospective review of the 7 deployments not reviewed before release, and a check of the 28 untested change records against the deployment log, by 31 October. Owner M. Kalns.
+- **Corrective action:** add the same enforced approval gate as Product A to Product B's pipeline, and route hotfixes through it. Owner M. Kalns, due 15 December 2026.
 - **Effectiveness check:** in March 2027, re-sample Product B deployments for January and February against the deployment log. Owner I. Dreimane. Passed if every sampled deployment, and every hotfix in the log, was reviewed before release.
 
 Management accepted the fix plan at the review on 14 October.

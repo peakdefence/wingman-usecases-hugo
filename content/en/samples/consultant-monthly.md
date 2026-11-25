@@ -13,8 +13,10 @@ use_cases: [regular-reviews, risk-identification]
 | | September | October |
 |---|---|---|
 | Annex A controls covered | 71 of 93 | 78 of 93 |
-| Controls with valid evidence | 36 of 47 | 41 of 47 |
+| Controls in operation with valid evidence | 36 of 47 | 41 of 47 |
 | Open major nonconformities | 0 | 1 (A.8.32, fix due 15 December) |
+
+Example Co. runs 47 controls. One control can cover several Annex A requirements, which is why the two counts differ.
 
 ## My work this month
 

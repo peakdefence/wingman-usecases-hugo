@@ -11,7 +11,7 @@ terms:
 - t: Ask Wingman
   d: WINGMAN iebūvētais asistents. Tas atveras blakus jebkuram ierakstam un piedāvā šim darbam piemērotas prasmes.
 - t: Kopsavilkums
-  d: Īss ieraksta apraksts, ko WINGMAN MI uzraksta no ieraksta un atjauno, kad ieraksts mainās. Vēsturē saglabājas, kurš modelis to uzrakstīja.
+  d: Īss ieraksta apraksts, ko WINGMAN MI uzraksta no ieraksta un atjauno, kad ieraksts mainās.
 - t: Vēsture
   d: Katra ieraksta izmaiņa ar to, kas mainījās, vērtību pirms un pēc, laiku un izmaiņu veicēju. Laiku iestata sistēma, un vēsturi nevar labot vai dzēst.
 ---

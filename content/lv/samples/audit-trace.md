@@ -6,7 +6,7 @@ for: [auditor, start]
 use_cases: [auditing, audit-scopes]
 ---
 
-**Piemērs SIA.** Iekšējais audits pēc ISO/IEC 27001:2022, periods no 2026. gada 1. aprīļa līdz 21. septembrim, audits uz vietas no 22. līdz 26. septembrim. Divi tvērumi: produkts A un produkts B. Auditore: I. Dreimane, iekšējā auditore, nav iesaistīta neviena produkta izstrādē. Smagumu nosaka pēc organizācijas iekšējā audita procedūras: neatbilstība ir būtiska, ja prasība netiek izpildīta sistemātiski vai visā procesā.
+**SIA „Piemērs”.** Iekšējais audits pēc ISO/IEC 27001:2022, periods no 2026. gada 1. aprīļa līdz 21. septembrim, audits uz vietas no 22. līdz 26. septembrim. Divi tvērumi: produkts A un produkts B. Auditore: I. Dreimane, iekšējā auditore, nav iesaistīta neviena produkta izstrādē. Smagumu nosaka pēc organizācijas iekšējā audita procedūras: neatbilstība ir būtiska, ja prasība netiek izpildīta sistemātiski vai visā procesā, un maza, ja kļūme ir atsevišķa un process joprojām sasniedz savu mērķi.
 
 Šeit izsekotā prasība ir **A pielikuma 8.32 Izmaiņu pārvaldība** **produkta B** tvērumā. Audita kritēriji ir šī kontrole un organizācijas pašas izmaiņu pārvaldības procedūra (8.1. punkts prasa, lai procesi tiek veikti, kā plānots).
 
@@ -44,13 +44,14 @@ Nejaušā izlase: 4 no 10 bez pārskatīšanas pirms izlaišanas. Neierakstītie
 | Izlaišanas žurnāla eksports, 24. septembris, 41 ieraksts | Norāda uz neatbilstību |
 | Izmaiņu ieraksti CHG-223, 236, 242, 247 | Norāda uz neatbilstību |
 | Intervijas transkripts, 23. septembris, apstiprināts 25. septembrī | Norāda uz neatbilstību |
+| Produkts B: izlaides procesa konfigurācijas eksports, 24. septembris (nav apstiprināšanas soļa) | Norāda uz neatbilstību |
 | Izmaiņu pārvaldības procedūra, 3. versija, 4.2. punkts | Konteksts |
-| Produkts A: izlaišanas žurnāls un izmaiņu ieraksti, izlase no 10 | Apliecina atbilstību |
+| Produkts A: 24. septembra izlaišanas žurnāla eksports un izmaiņu ieraksti CHG-102, 109, 115, 121, 126, 133, 138, 144, 149, 151 | Apliecina atbilstību |
 | Produkts A: izlaides procesa konfigurācijas eksports, 24. septembris | Apliecina atbilstību |
 
 ## Konstatējums un secinājums
 
-**Konstatējums:** Būtiska neatbilstība. Produkta B izmaiņas ražošanas vidē tiek ieviestas bez procedūrā prasītās otrās pārskatīšanas: 4 no 10 izlases izmaiņām un visi 3 steidzamie labojumi, kas ieviesti bez izmaiņu ieraksta. Kļūme ir sistemātiska: steidzamie labojumi apiet izlaides procesu, un procesa īpašnieks apstiprināja, ka pārskatīšana ir atkarīga no atmiņas. Melnrakstu ar pierādījumiem sagatavoja audita prasme; smagumu noteica auditore 2. oktobrī.
+**Konstatējums:** Būtiska neatbilstība. Produkta B izmaiņas ražošanas vidē tiek ieviestas bez procedūrā prasītās otrās pārskatīšanas: 4 no 10 izlases izmaiņām un visi 3 steidzamie labojumi, kas ieviesti bez izmaiņu ieraksta. Kļūme ir sistemātiska: produkta B izlaides procesā nav apstiprināšanas soļa, steidzamie labojumi procesu apiet, un procesa īpašnieks apstiprināja, ka pārskatīšana ir atkarīga no atmiņas. Melnrakstu ar pierādījumiem sagatavoja audita prasme; smagumu noteica auditore 2. oktobrī.
 
 **Produkts A** salīdzinājumam: kopa saskaņota ar izlaišanas žurnālu, 52 izlaišanas un 52 izmaiņu ieraksti. Nejaušā izlasē 10, visas pārskatītas pirms izlaišanas; izlaides process prasa otro apstiprinājumu (konfigurācijas eksports, 24. septembris). Atbilstība.
 
@@ -58,9 +59,9 @@ Nejaušā izlase: 4 no 10 bez pārskatīšanas pirms izlaišanas. Neierakstītie
 
 ## Turpmākā rīcība
 
-- **Pamatcēlonis:** steidzamos labojumus izlaiž ārpus izlaides procesa, tāpēc uz tiem neattiecas tā apstiprināšanas solis.
-- **Korekcija:** 7 nepārskatīto izlaišanu pārskatīšana pēc fakta un 28 nepārbaudīto izmaiņu ierakstu salīdzināšana ar izlaišanas žurnālu līdz 31. oktobrim. Īpašnieks M. Kalns.
-- **Korektīvā darbība:** steidzamos labojumus virzīt caur to pašu apstiprināšanas soli, kas produktam A. Īpašnieks M. Kalns, termiņš 2026. gada 15. decembris.
+- **Pamatcēlonis:** produkta B izlaides procesā nav obligāta apstiprināšanas soļa (konfigurācijas eksports, 24. septembris). Parastās izmaiņas ir atkarīgas no tā, vai inženieris lūdz pārskatīšanu, kā CHG-223 un 242; steidzamie labojumi procesu apiet pavisam, kā CHG-236, 247 un 3 neierakstītās izlaišanas.
+- **Korekcija:** 7 pirms ieviešanas nepārskatīto izlaišanu pārskatīšana pēc fakta un 28 nepārbaudīto izmaiņu ierakstu salīdzināšana ar izlaišanas žurnālu līdz 31. oktobrim. Īpašnieks M. Kalns.
+- **Korektīvā darbība:** produkta B izlaides procesā ieviest tādu pašu obligātu apstiprināšanas soli kā produktam A un virzīt caur to arī steidzamos labojumus. Īpašnieks M. Kalns, termiņš 2026. gada 15. decembris.
 - **Efektivitātes pārbaude:** 2027. gada martā atkārtota izlase no produkta B janvāra un februāra izlaišanām, salīdzinot ar izlaišanas žurnālu. Īpašniece I. Dreimane. Izpildīta, ja katra izlases izlaišana un katrs žurnālā redzamais steidzamais labojums pirms izlaišanas ir pārskatīts.
 
 Vadība apstiprināja novēršanas plānu pārskatā 14. oktobrī.

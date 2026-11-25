@@ -36,7 +36,7 @@ For an external auditor, a read-only role can be configured, so the auditor sees
 
 Each change to a record is kept in its history: what changed, the value before and after, when, and who made it. The time is set by the system. The history cannot be edited or deleted.
 
-WINGMAN also makes some changes on its own, without a suggestion, such as refreshing a record's brief when the record changes. These are recorded too, and for each AI-written brief the history keeps the model that wrote it and when.
+WINGMAN also makes some changes on its own, without a suggestion, such as refreshing a record's brief when the record changes. These are recorded too, with the time.
 
 Accepting a suggestion is recorded in the history as its own entry, with the person who accepted it and the time.
 

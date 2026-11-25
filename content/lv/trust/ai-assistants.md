@@ -57,4 +57,4 @@ WINGMAN iekšienē **Ask Wingman** ir iebūvēts asistents, kas atveras blakus j
 
 Ja pieslēdzaties ar MCP, modelis ir tas, kas ir jūsu asistentā. To izvēlaties jūs, saskaņā ar savu līgumu ar tā nodrošinātāju.
 
-WINGMAN iekšienē kopsavilkumus, Ask Wingman atbildes un ieteikumus raksta modelis, kas iestatīts jūsu organizācijai. Atkarībā no šīs konfigurācijas tas darbojas mākonī, mākonī ar ierobežojumu tikai uz ES vai pilnībā lokālā izvietojumā, un modeli var nodrošināt Peak Defence. Katrā MI rakstītā kopsavilkumā saglabājas, kurš modelis to uzrakstīja.
+WINGMAN iekšienē kopsavilkumus, Ask Wingman atbildes un ieteikumus raksta modelis, kas iestatīts jūsu organizācijai. Atkarībā no šīs konfigurācijas tas darbojas mākonī, mākonī ar ierobežojumu tikai uz ES vai pilnībā lokālā izvietojumā, un modeli var nodrošināt Peak Defence.

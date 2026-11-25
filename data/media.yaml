@@ -431,8 +431,8 @@
   height: 1092
   title: { en: "The signals inbox", lv: "Signālu iesūtne" }
   caption:
-    en: "Human-reported observations arrive as cards. WINGMAN classifies each one with a confidence score and proposes a risk or an incident; the owner accepts or rejects."
-    lv: "Cilvēku ziņotie novērojumi ienāk kā kartītes. WINGMAN katru klasificē ar ticamības vērtējumu un ierosina risku vai incidentu; īpašnieks pieņem vai noraida."
+    en: "Human-reported observations arrive as cards. WINGMAN classifies each one and proposes a risk or an incident; the owner accepts or rejects."
+    lv: "Cilvēku ziņotie novērojumi ienāk kā kartītes. WINGMAN katru klasificē un ierosina risku vai incidentu; īpašnieks pieņem vai noraida."
 
 - id: sig-report-1-form
   file: media/sig-report-1-form.png

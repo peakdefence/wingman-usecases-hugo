@@ -1,7 +1,14 @@
 <section class="cta">
   <div class="wrap ctain">
-    {{ with .Params.next }}<div><h2>{{ .title }}</h2><p>{{ .text }}</p></div>{{ else }}<div><h2>{{ i18n "cta_title" }}</h2><p>{{ i18n "cta_text" }}</p></div>{{ end }}
-    {{ if .Params.ask }}<a class="btn" href="#ask">{{ i18n "for_cta_button" }}</a>{{ else }}<a class="btn" href="{{ site.Params.contactURL }}">{{ i18n "cta_button" }}</a>{{ end }}
+    {{ $p := . }}
+    {{ $sampleFor := "" }}{{ if eq .Section "samples" }}{{ with .Params.for }}{{ with site.GetPage (printf "/for/%s" (index . 0)) }}{{ $sampleFor = . }}{{ end }}{{ end }}{{ end }}
+    {{ with $sampleFor }}
+    <div><h2>{{ i18n "sample_cta_title" }}</h2><p>{{ i18n "sample_cta_text" (dict "Page" .Params.short) }}</p></div>
+    <a class="btn" href="{{ .RelPermalink }}#ask">{{ i18n "sample_cta_button" }}</a>
+    {{ else }}
+    {{ with $p.Params.next }}<div><h2>{{ .title }}</h2><p>{{ .text }}</p></div>{{ else }}<div><h2>{{ i18n "cta_title" }}</h2><p>{{ i18n "cta_text" }}</p></div>{{ end }}
+    {{ if $p.Params.ask }}<a class="btn" href="#ask">{{ i18n "for_cta_button" }}</a>{{ else }}<a class="btn" href="{{ site.Params.contactURL }}">{{ i18n "cta_button" }}</a>{{ end }}
+    {{ end }}
   </div>
 </section>
 <footer class="site">

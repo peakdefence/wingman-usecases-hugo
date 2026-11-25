@@ -6,15 +6,17 @@ for: [consultant]
 use_cases: [regular-reviews, risk-identification]
 ---
 
-**Klients:** Piemērs SIA. **Mērķis:** ISO 27001 sertifikācijas audits 2027. gada martā. **Mēnesis:** 2026. gada oktobris. Šādu ziņojumu konsultants var salikt no klienta ierakstiem, piemēram, palūdzot to savam asistentam. Šeit minētie ieraksti atrodas klienta darba vidē ar saviem datumiem un īpašniekiem.
+**Klients:** SIA „Piemērs”. **Mērķis:** ISO 27001 sertifikācijas audits 2027. gada martā. **Mēnesis:** 2026. gada oktobris. Šādu ziņojumu konsultants var salikt no klienta ierakstiem, piemēram, palūdzot to savam asistentam. Šeit minētie ieraksti atrodas klienta darba vidē ar saviem datumiem un īpašniekiem.
 
 ## Virzība uz mērķi
 
 | | Septembris | Oktobris |
 |---|---|---|
 | Nosegtās A pielikuma kontroles | 71 no 93 | 78 no 93 |
-| Kontroles ar derīgiem pierādījumiem | 36 no 47 | 41 no 47 |
+| Darbojošās kontroles ar derīgiem pierādījumiem | 36 no 47 | 41 no 47 |
 | Atvērtās būtiskās neatbilstības | 0 | 1 (A.8.32, novēršanas termiņš 15. decembris) |
+
+SIA „Piemērs” darbojas 47 kontroles. Viena kontrole var nosegt vairākas A pielikuma prasības, tāpēc abi skaitļi atšķiras.
 
 ## Mans darbs šomēnes
 

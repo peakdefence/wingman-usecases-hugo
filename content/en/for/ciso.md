@@ -67,7 +67,7 @@ media:
 - risk-detail
 yours:
 - 'The risk decisions: ratings, treatments and acceptances are confirmed by the risk owner.'
-- The triage call. WINGMAN proposes a classification with a confidence score; a person decides.
+- The triage call. WINGMAN proposes a classification; a person decides.
 - What goes out. Reports and reminders are drafted for you and sent after you approve them.
 ask:
 - Import from your spreadsheets, and the export formats

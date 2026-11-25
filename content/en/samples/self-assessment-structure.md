@@ -8,7 +8,7 @@ use_cases: [new-requirements, management-review]
 
 **Structural example, not NKDC's template.** The self-assessment report goes to NKDC, the National Cybersecurity Centre. WINGMAN produces it from the current records whenever it is due, so each report rests on the data of that day, not on last year's document. This example shows what goes into it and where each part comes from. When the report is submitted, these fields go into NKDC's template; requirement numbers are shown as [x] here and come from the loaded requirement records in WINGMAN.
 
-**Example Agency**, a fictional public body with 250 staff, an essential entity under the National Cybersecurity Law. **Period:** 2026. **Produced from the records on:** 20 November 2026 by the cybersecurity manager, R. Grava.
+**Example Agency**, a fictional public body with 250 staff, an essential entity under the National Cybersecurity Law. **Period:** 2026. **Data as of:** 20 November 2026; produced by the cybersecurity manager, R. Grava.
 
 ## Requirements and fulfilment
 
@@ -17,6 +17,7 @@ use_cases: [new-requirements, management-review]
 | Regulation No. 397, p. [x]: cybersecurity manager appointed | Met | Appointed by order of the head; deputy named | CTL-01; order of 12 Feb 2026 | – |
 | Regulation No. 397, p. [x]: risk management | Partly met | Risks assessed for 4 of 6 services | CTL-04; risk register, review of 3 Nov | Assess 2 remaining services, due 15 Jan |
 | Regulation No. 397, p. [x]: backups | Met | Daily backups, restore tested quarterly | CTL-11; restore test of 22 Oct | – |
+| Regulation No. 397, p. [x]: security event logs kept for at least 18 months | Partly met | Logs from 4 of 6 systems kept for 18 months; the e-services portal keeps 6 months | CTL-17; log retention settings, export of 14 Nov | Extend portal log retention to 18 months, due 31 Dec |
 | Regulation No. 397, p. [x]: encryption | Partly met | Laptops encrypted; backups not encrypted at rest | CTL-12; device report of 18 Nov | Encrypt backups, due 31 Jan |
 | Regulation No. 397, p. [x]: outsourcing and suppliers | Not met | 3 of 7 critical suppliers have no security requirements in the contract | CTL-15 | Amend 3 contracts, due 31 Mar |
 | Regulation No. 397, p. [x]: incident classification and reporting | Met | Classified against the criteria; reports sent on time | CTL-20; incident log, 2 incidents | – |
