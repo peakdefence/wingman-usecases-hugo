@@ -17,7 +17,7 @@ stages:
   links:
   - role-plan
   ai: Sagatavo darba kārtību pēc ISO 27001 9.3. punkta.
-  decides: CISO.
+  decides: Drošības vadītājs.
 - title: Ievaddatu apkopošana
   text: Iepriekšējo darbību statuss, audita secinājumi, risku izmaiņas, incidenti, signāli un piegādātāju darbība.
   nodes:
@@ -32,7 +32,18 @@ stages:
   - incident-risk
   - signal-risk
   ai: Apkopo materiālus no ierakstiem.
-  decides: CISO tos pārskata.
+  decides: Drošības vadītājs tos pārskata.
+- title: Lēmumi, ko lūdz pieņemt
+  text: Katrā jautājumā, ko iesniedz vadības institūcijai, norādīts, kāds lēmums tiek lūgts, cik tas maksā, kas notiek, ja atbilde ir „nē”, un kurš to ierosina. Riski virs riska apetītes ir pirmie.
+  nodes:
+  - risk
+  - role
+  - document
+  links:
+  - role-risk
+  - role-document
+  ai: No ierakstiem sagatavo katra lēmuma pieprasījumu ar izmaksām un sekām.
+  decides: Drošības vadītājs pārbauda materiālus pirms izsūtīšanas.
 - title: Sanāksme un protokols
   text: Lēmumi tiek ierakstīti protokolā kā dokuments.
   nodes:
@@ -41,7 +52,7 @@ stages:
   links:
   - role-document
   ai: Sagatavo protokola projektu no piezīmēm.
-  decides: Vadības struktūra apstiprina.
+  decides: Vadības struktūra lemj; katrs lēmums tiek fiksēts ar apstiprinātāju vārdiem.
 - title: No lēmumiem uz uzdevumiem
   text: Katrs lēmums rada uzdevumus plānā ar atbildīgajiem un termiņiem.
   nodes:
@@ -61,5 +72,5 @@ stages:
   links:
   - task-plan
   ai: Seko atvērtajām darbībām.
-  decides: CISO.
+  decides: Drošības vadītājs.
 ---

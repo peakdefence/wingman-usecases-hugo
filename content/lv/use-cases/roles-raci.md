@@ -47,7 +47,7 @@ stages:
   - role-control
   - role-risk
   ai: Uzskaita ierakstus bez īpašnieka pa jomām.
-  decides: CISO nozīmē īpašniekus.
+  decides: Drošības vadītājs nozīmē īpašniekus.
 - title: Pienākumu nošķiršana
   text: Viena persona pilda lomas, kurām jābūt nošķirtām, piemēram, izmaiņu ieviešanu un apstiprināšanu.
   nodes:

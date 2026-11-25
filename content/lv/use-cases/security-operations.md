@@ -1,5 +1,5 @@
 ---
-title: Drošības darbību vadība
+title: Ikdienas drošības pārvaldība
 uc: security-operations
 group: operations
 weight: 160
@@ -18,7 +18,7 @@ stages:
   - role-plan
   - task-plan
   ai: Parāda progresu katram plānam.
-  decides: CISO.
+  decides: Drošības vadītājs.
 - title: Ikdienas darbs
   text: Uzdevumi rodas no kontrolēm, ievainojamībām, incidentiem un konstatējumiem un nonāk pie cilvēkiem.
   nodes:

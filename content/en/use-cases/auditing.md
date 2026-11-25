@@ -3,7 +3,7 @@ title: Auditing
 uc: auditing
 group: assurance
 weight: 10
-summary: Plan, run and close an internal or external audit on the records the organisation already keeps.
+summary: Plan, run and close an internal or supplier audit on the records the organisation already keeps.
 standards:
 - ISO 27001
 - NIS2
@@ -45,7 +45,7 @@ stages:
   - plan-audit
   - role-risk
   - person-role
-  ai: Proposes topics and follow-up questions; transcribes locally.
+  ai: Proposes topics and follow-up questions; transcribes locally, with the interviewees' consent.
   decides: The auditor decides what to ask.
 - title: Evidence
   text: Collect records, samples and screenshots, check their validity, and compare what is done with what is written.
@@ -56,8 +56,8 @@ stages:
   links:
   - audit-evidence
   - control-evidence
-  ai: Promised evidence is tracked with due dates; transcripts and screenshots become evidence once the auditee approves them.
-  decides: The auditee approves what was recorded.
+  ai: Promised evidence is tracked with due dates. The interviewee confirms that a transcript is accurate, and screenshots are recorded with who added them and when.
+  decides: The auditor decides what counts as evidence.
 - title: Reasonable assurance
   text: For each requirement, decide whether the evidence gives reasonable assurance. Where it does not, raise a finding.
   nodes:

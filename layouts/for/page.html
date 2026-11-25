@@ -1,0 +1,91 @@
+{{ define "main" }}
+<section class="block wrap ucpage">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></nav>
+  <p class="eyebrow">{{ .Params.short }}</p>
+  <h1 class="forq">{{ .Title }}</h1>
+  <p class="lede">{{ .Params.summary }}</p>
+</section>
+
+{{ with .Params.problems }}
+<section class="block wrap">
+  <h2>{{ i18n "for_problems" }}</h2>
+  <p class="lede">{{ i18n "for_problems_lede" }}</p>
+  <div class="qa">{{ range . }}<div class="card reg prob"><h3>{{ .q }}</h3><p>{{ .a }}</p></div>{{ end }}</div>
+</section>
+{{ end }}
+
+{{ with .Params.terms }}
+<section class="block wrap">
+  <h2>{{ i18n "for_terms" }}</h2>
+  <dl class="terms">{{ range . }}<div><dt>{{ .t }}</dt><dd>{{ .d }}</dd></div>{{ end }}</dl>
+</section>
+{{ end }}
+
+{{ with .Params.does }}
+<section class="block wrap">
+  <h2>{{ i18n "for_does" }}</h2>
+  {{ partial "loop.html" (dict "compact" true) }}
+  <p class="lede">{{ i18n "for_does_lede" }}</p>
+  <ol class="promises">
+  {{ $d := . }}
+  {{ range site.Data.home.promises }}{{ $id := .id }}{{ $icon := .icon }}{{ with index $d $id }}
+    <li class="promise"><span class="ico">{{ partial "icon.html" $icon }}</span><h3>{{ i18n (printf "prom_%s_t" $id) }}</h3><p>{{ . }}</p></li>
+  {{ end }}{{ end }}
+  </ol>
+</section>
+{{ end }}
+
+{{ with .Params.media }}
+<section class="block wrap">
+  <h2>{{ i18n "for_screens" }}</h2>
+  {{ partial "media-strip.html" (dict "ids" .) }}
+  {{ with where (where site.RegularPages "Section" "samples") "Params.for" "intersect" (slice $.Params.slug_id) }}<div class="cards">{{ range .ByWeight }}{{ partial "sample-card.html" . }}{{ end }}</div>{{ end }}
+</section>
+{{ end }}
+
+{{ with .Params.yours }}
+<section class="block wrap">
+  <h2>{{ $.Params.yours_title | default (i18n "for_yours") }}</h2>
+  <p class="lede">{{ $.Params.yours_lede | default (i18n "for_yours_lede") }}</p>
+  <ul class="plain">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+</section>
+{{ end }}
+
+{{ with .Params.prompt }}
+<section class="block wrap" id="try">
+  <h2>{{ i18n "for_try" }}</h2>
+  <p class="lede">{{ with .lede }}{{ . }} {{ end }}{{ i18n "for_try_lede" }}</p>
+  <figure class="prompt" id="try-{{ $.Params.slug_id }}">
+    <figcaption>
+      <span class="eyebrow">{{ i18n "prompt_label" }}</span>
+      <b>{{ .title }}</b>
+      <button type="button" class="copy" data-copy="try-{{ $.Params.slug_id }}-text" data-done="{{ i18n "copied" }}">{{ i18n "copy" }}</button>
+    </figcaption>
+    <pre id="try-{{ $.Params.slug_id }}-text" tabindex="0">{{ trim .text "\n" }}</pre>
+  </figure>
+</section>
+{{ end }}
+
+{{ partial "ask.html" . }}
+
+<section class="block wrap">
+  <h2>{{ i18n "for_next" }}</h2>
+  <div class="cards">
+  {{ range .Params.use_cases }}{{ with site.GetPage (printf "/use-cases/%s" .) }}
+    <a class="card" href="{{ .RelPermalink }}"><p class="eyebrow">{{ i18n (printf "group_%s" .Params.group) }}</p><h4>{{ .Title }}</h4><p>{{ .Params.summary }}</p></a>
+  {{ end }}{{ end }}
+  {{ range .Params.sectors }}{{ with site.GetPage (printf "/sectors/%s" .) }}{{ partial "sector-card.html" . }}{{ end }}{{ end }}
+  {{ range (where site.RegularPages "Section" "trust").ByWeight }}<a class="card" href="{{ .RelPermalink }}"><p class="eyebrow">{{ .Parent.Title }}</p><h4>{{ .Title }}</h4><p>{{ .Params.summary }}</p></a>{{ end }}
+  </div>
+</section>
+
+<section class="block wrap">
+  <h2>{{ i18n "for_others" }}</h2>
+  <div class="cards sits">
+  {{ range (where (where site.RegularPages "Section" "for") "RelPermalink" "ne" .RelPermalink).ByWeight }}
+    <a class="card sit" href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3><span class="meta go">{{ .Params.short }} →</span></a>
+  {{ end }}
+  </div>
+</section>
+
+{{ end }}

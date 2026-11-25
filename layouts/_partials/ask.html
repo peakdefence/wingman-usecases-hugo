@@ -1,0 +1,33 @@
+{{/* Question picker built from the page's `ask` list, with `next.ask` as the first, ticked item. Context: page. */}}
+{{ with $.Params.ask }}
+{{ $id := printf "ask-%s" $.Params.slug_id }}
+{{ $intro := i18n "for_ask_intro" (dict "Page" $.Params.short) }}
+<section class="block wrap" id="ask">
+  <h2>{{ i18n "for_ask" }}</h2>
+  <p class="lede">{{ i18n "for_ask_lede" }}</p>
+  <form class="askbox" data-ask="{{ $id }}" data-intro="{{ $intro }}" data-url="{{ $.Permalink }}" data-hint="{{ i18n "for_ask_hint" }}" data-subject="{{ i18n "for_ask_subject" (dict "Page" $.Params.short) }}"{{ with site.Params.contactEmail }} data-email="{{ . }}"{{ end }}>
+    <ul class="plain ask">
+      {{ with $.Params.next.ask }}<li class="walk"><label><input type="checkbox" value="{{ . }}" data-n="0" checked> <span>{{ . }}</span></label></li>{{ end }}
+      {{ range $i, $q := . }}<li><label><input type="checkbox" value="{{ $q }}" data-n="{{ add $i 1 }}"> <span>{{ $q }}</span></label></li>{{ end }}
+    </ul>
+    <label class="own"><span>{{ i18n "for_ask_own" }}</span><input type="text" maxlength="300" autocomplete="off"></label>
+    <figure class="prompt">
+      <figcaption>
+        <b>{{ i18n "for_ask_msg" }}</b>
+        <span class="sendrow">
+          <button type="button" class="copy" data-copy="{{ $id }}-text" data-done="{{ i18n "copied" }}" data-ask-send>{{ i18n "for_ask_copy" }}</button>
+          {{ if site.Params.contactEmail }}<a class="copy" data-ask-mail data-ask-send href="mailto:{{ site.Params.contactEmail }}">{{ i18n "for_ask_email" }}</a>{{ end }}
+          {{ if $.Params.linkedin }}{{ with site.Params.linkedinURL }}<a class="copy" data-copy="{{ $id }}-text" data-done="{{ i18n "copied" }}" data-ask-send href="{{ . }}" target="_blank" rel="noopener">{{ i18n "for_ask_linkedin" }}</a>{{ end }}{{ end }}
+          {{ if not (or site.Params.contactEmail (and $.Params.linkedin site.Params.linkedinURL)) }}<a class="copy" data-copy="{{ $id }}-text" data-done="{{ i18n "copied" }}" data-ask-send href="{{ site.Params.contactURL }}" target="_blank" rel="noopener">{{ i18n "for_ask_contact" }}</a>{{ end }}
+        </span>
+      </figcaption>
+      <pre id="{{ $id }}-text" tabindex="0">{{ $intro }}
+{{ with $.Params.next.ask }}
+- {{ . }}{{ else }}{{ range $.Params.ask }}
+- {{ . }}{{ end }}{{ end }}
+
+{{ $.Permalink }}</pre>
+    </figure>
+  </form>
+</section>
+{{ end }}

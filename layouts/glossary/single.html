@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{/* Terms are collected from the "Who it is for" pages and this page's own front matter, once per term. */}}
+{{ $seen := dict }}{{ $terms := slice }}
+{{ range (slice .Params.terms) }}{{ range . }}{{ $k := lower .t }}{{ if not (index $seen $k) }}{{ $seen = merge $seen (dict $k true) }}{{ $terms = $terms | append (dict "t" .t "d" .d "k" $k) }}{{ end }}{{ end }}{{ end }}
+{{ range (where site.RegularPages "Section" "for").ByWeight }}{{ range .Params.terms }}{{ $k := lower .t }}{{ if not (index $seen $k) }}{{ $seen = merge $seen (dict $k true) }}{{ $terms = $terms | append (dict "t" .t "d" .d "k" $k) }}{{ end }}{{ end }}{{ end }}
+<section class="block wrap">
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ .Description }}</p>
+  <dl class="terms">{{ range sort $terms "k" }}<div id="{{ anchorize .t }}"><dt>{{ .t }}</dt><dd>{{ .d }}</dd></div>{{ end }}</dl>
+</section>
+{{ end }}

@@ -182,8 +182,8 @@ if (dataEl) {
     const fromHash = () => {
       const h = location.hash.slice(1);
       if (h.startsWith('e-') && byId[h.slice(2)]) { sel = h.slice(2); mode = 'entity'; render(); $('model')?.scrollIntoView(); }
-      else if (h === 'questions') { mode = 'question'; render(); }
-      else if (h === 'gaps') { mode = 'gap'; render(); }
+      else if (h === 'questions') { mode = 'question'; render(); $('model')?.scrollIntoView(); }
+      else if (h === 'gaps') { mode = 'gap'; render(); $('model')?.scrollIntoView(); }
     };
     render(); fromHash();
     window.addEventListener('hashchange', fromHash);
@@ -245,6 +245,28 @@ document.addEventListener('click', async (e) => {
   setTimeout(() => { b.textContent = label; delete b.dataset.state; }, 1800);
 });
 
+// ---------- "who it is for" pages: build a message from the ticked questions ----------
+document.querySelectorAll('form.askbox').forEach((f) => {
+  const pre = document.getElementById(f.dataset.ask + '-text');
+  const own = f.querySelector('.own input');
+  const mail = f.querySelector('[data-ask-mail]');
+  const boxes = [...f.querySelectorAll('input[type=checkbox]')];
+  const paint = () => {
+    const qs = boxes.filter((b) => b.checked).map((b) => b.value);
+    if (own && own.value.trim()) qs.push(own.value.trim());
+    const text = f.dataset.intro + '\n\n' + (qs.length ? qs.map((q) => '- ' + q).join('\n') : f.dataset.hint) + '\n\n' + f.dataset.url;
+    pre.textContent = text;
+    if (mail) mail.href = 'mailto:' + f.dataset.email + '?subject=' + encodeURIComponent(f.dataset.subject) + '&body=' + encodeURIComponent(text);
+  };
+  f.addEventListener('input', paint);
+  f.addEventListener('submit', (e) => e.preventDefault());
+  f.addEventListener('click', (e) => {
+    if (!e.target.closest('[data-ask-send]')) return;
+    boxes.filter((b) => b.checked).forEach((b) => document.dispatchEvent(new CustomEvent('wm:count', { detail: f.dataset.ask + '-' + b.dataset.n })));
+  });
+  paint();
+});
+
 // ---------- cookieless visit counter: page views, sections scrolled into view, prompts copied ----------
 // Nothing is stored in the browser except the opt-out flag. Honours Global Privacy Control and Do Not Track.
 (() => {
@@ -288,4 +310,17 @@ document.addEventListener('click', async (e) => {
     const b = e.target.closest('[data-copy]');
     if (b) send('copy', b.dataset.copy.replace(/-text$/, ''));
   });
+  document.addEventListener('wm:count', (e) => send('copy', String(e.detail)));
+})();
+
+// ---------- main menu: one dropdown open at a time; close on outside click or Escape; start closed on phones ----------
+(() => {
+  const dds = [...document.querySelectorAll('[data-dd]')];
+  const menu = document.querySelector('details.menu');
+  const narrow = () => window.matchMedia('(max-width: 1240px)').matches;
+  if (menu && narrow()) menu.open = false;
+  dds.forEach((d) => d.addEventListener('toggle', () => { if (d.open && !narrow()) dds.forEach((o) => { if (o !== d) o.open = false; }); }));
+  document.addEventListener('click', (e) => { if (narrow()) return; if (!e.target.closest('[data-dd]')) dds.forEach((d) => { d.open = false; }); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { dds.forEach((d) => { d.open = false; }); } });
+  window.addEventListener('resize', () => { if (menu && !narrow()) menu.open = true; });
 })();

@@ -1,5 +1,5 @@
 ---
-title: Security operations control
+title: Day-to-day security management
 uc: security-operations
 group: operations
 weight: 160
@@ -20,7 +20,7 @@ stages:
   media:
   - plans-list
   ai: Shows progress per plan.
-  decides: The CISO.
+  decides: The security lead.
 - title: Daily work
   text: Tasks come from controls, vulnerabilities, incidents and findings, and land with people.
   nodes:

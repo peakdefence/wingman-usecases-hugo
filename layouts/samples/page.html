@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="block wrap prose-wrap kb sample">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></nav>
+  <p class="eyebrow">{{ i18n "sample_eyebrow" }}</p>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ .Params.summary }}</p>
+  <p class="inwm">{{ i18n "sample_note" }}</p>
+  <div class="prose">{{ .Content }}</div>
+</article>
+
+<section class="block wrap">
+  <h2>{{ i18n "for_next" }}</h2>
+  <div class="cards">
+  {{ range .Params.for }}{{ with site.GetPage (printf "/for/%s" .) }}<a class="card" href="{{ .RelPermalink }}"><p class="eyebrow">{{ .Params.short }}</p><h4>{{ .Title }}</h4></a>{{ end }}{{ end }}
+  {{ range .Params.use_cases }}{{ with site.GetPage (printf "/use-cases/%s" .) }}<a class="card" href="{{ .RelPermalink }}"><p class="eyebrow">{{ i18n "nav_usecases" }}</p><h4>{{ .Title }}</h4><p>{{ .Params.summary }}</p></a>{{ end }}{{ end }}
+  </div>
+</section>
+
+<section class="block wrap">
+  <h2>{{ i18n "sample_others" }}</h2>
+  <div class="cards">{{ range (where (where site.RegularPages "Section" "samples") "RelPermalink" "ne" .RelPermalink).ByWeight }}{{ partial "sample-card.html" . }}{{ end }}</div>
+</section>
+{{ end }}

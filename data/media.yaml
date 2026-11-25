@@ -26,7 +26,7 @@
   env: dev
   width: 1105
   height: 1092
-  title: { en: "The Brief: state of the programme", lv: "Pārskats: programmas stāvoklis" }
+  title: { en: "The Brief: state of the programme", lv: "Kopsavilkums: programmas stāvoklis" }
   caption:
     en: "Every morning WINGMAN writes the state of the programme from the records: where risk concentrates, coverage and control, a watch list and the tensions between groups of records."
     lv: "Katru rītu WINGMAN no ierakstiem uzraksta programmas stāvokli: kur koncentrējas risks, pārklājums un kontrole, novērošanas saraksts un pretrunas starp ierakstu grupām."
@@ -142,8 +142,8 @@
   height: 1092
   title: { en: "A review task with its prepared brief", lv: "Pārskatīšanas uzdevums ar sagatavoto kopsavilkumu" }
   caption:
-    en: "WINGMAN prepares the review when the task is created: what changed since the last review, any suggested changes, and one button to confirm that the risk still stands."
-    lv: "WINGMAN sagatavo pārskatīšanu, kad uzdevums tiek izveidots: kas mainījies kopš pēdējās pārskatīšanas, ieteiktās izmaiņas un viena poga, lai apstiprinātu, ka risks joprojām ir spēkā."
+    en: "WINGMAN prepares the review when the task is created: what changed since the last review, any suggested changes, and, once the reviewer has looked at the changes, a button to confirm that the risk still stands."
+    lv: "WINGMAN sagatavo pārskatīšanu, kad uzdevums tiek izveidots: kas mainījies kopš pēdējās pārskatīšanas, ieteiktās izmaiņas un, kad pārskatītājs izmaiņas ir izskatījis, poga, ar ko apstiprināt, ka risks joprojām ir spēkā."
 
 - id: task-review-start
   file: media/task-review-card-stage-startreview.png
@@ -403,7 +403,7 @@
   title: { en: "An incident record", lv: "Incidenta ieraksts" }
   caption:
     en: "Description, mitigation recommendations, owner, reported and resolved dates, and the related records to add. Empty status and type are what the Brief flags as a gap."
-    lv: "Apraksts, mazināšanas ieteikumi, īpašnieks, ziņošanas un atrisināšanas datumi un pievienojamie saistītie ieraksti. Tukšs statuss un tips ir tas, ko Pārskats atzīmē kā nepilnību."
+    lv: "Apraksts, mazināšanas ieteikumi, īpašnieks, ziņošanas un atrisināšanas datumi un pievienojamie saistītie ieraksti. Tukšs statuss un tips ir tas, ko Kopsavilkums atzīmē kā nepilnību."
 
 - id: inc-detail-registered
   file: media/inc-detail-stage-29043.jpg
@@ -431,8 +431,8 @@
   height: 1092
   title: { en: "The signals inbox", lv: "Signālu iesūtne" }
   caption:
-    en: "Human-reported observations arrive as cards. WINGMAN classifies each one with a confidence score and proposes a risk or an incident; the owner accepts or rejects."
-    lv: "Cilvēku ziņotie novērojumi ienāk kā kartītes. WINGMAN katru klasificē ar ticamības vērtējumu un ierosina risku vai incidentu; īpašnieks pieņem vai noraida."
+    en: "Human-reported observations arrive as cards. WINGMAN classifies each one and proposes a risk or an incident; the owner accepts or rejects."
+    lv: "Cilvēku ziņotie novērojumi ienāk kā kartītes. WINGMAN katru klasificē un ierosina risku vai incidentu; īpašnieks pieņem vai noraida."
 
 - id: sig-report-1-form
   file: media/sig-report-1-form.png
@@ -549,7 +549,7 @@
   title: { en: "Triage with the incident handler", lv: "Triāža kopā ar incidenta apstrādātāju" }
   caption:
     en: "The assigned handler asks for severity, reporting obligations and next-hour decisions. The Incident Management skill runs eleven steps and ends with suggestions: link the two candidate source systems, create the missing threat, and six remediation tasks. The handler accepts or rejects each."
-    lv: "Nozīmētais apstrādātājs prasa smagumu, ziņošanas pienākumus un nākamās stundas lēmumus. Incidentu pārvaldības prasme izpilda vienpadsmit soļus un beidz ar ieteikumiem: sasaistīt divas iespējamās avota sistēmas, izveidot trūkstošo draudu un sešus novēršanas uzdevumus. Apstrādātājs katru pieņem vai noraida."
+    lv: "Nozīmētais apstrādātājs prasa smagumu, ziņošanas pienākumus un nākamās stundas lēmumus. Incidentu pārvaldības prasme izpilda vienpadsmit soļus un beidz ar ieteikumiem: sasaistīt divas iespējamās avota sistēmas, izveidot trūkstošo apdraudējumu un sešus novēršanas uzdevumus. Apstrādātājs katru pieņem vai noraida."
 
 - id: ask-skill-incident-triage-1-steps
   file: media/ask-skill-incident-triage-1-steps.jpg
@@ -591,10 +591,10 @@
   sequence: { key: ask-skill-incident-triage, step: 3 }
   width: 1232
   height: 960
-  title: { en: "Suggestions: link assets, create the threat", lv: "Ieteikumi: sasaistīt aktīvus, izveidot draudu" }
+  title: { en: "Suggestions: link assets, create the threat", lv: "Ieteikumi: sasaistīt aktīvus, izveidot apdraudējumu" }
   caption:
     en: "Update suggestions add InvoiceNinja and Gmail as candidate sources; a create suggestion adds the threat Phishing, business email compromise and domain impersonation and links the incident as its instance."
-    lv: "Atjaunošanas ieteikumi pievieno InvoiceNinja un Gmail kā iespējamos avotus; izveides ieteikums pievieno draudu Pikšķerēšana, biznesa e-pasta kompromitēšana un domēna viltošana un sasaista incidentu kā tā gadījumu."
+    lv: "Atjaunošanas ieteikumi pievieno InvoiceNinja un Gmail kā iespējamos avotus; izveides ieteikums pievieno apdraudējumu Pikšķerēšana, biznesa e-pasta kompromitēšana un domēna viltošana un sasaista incidentu kā tā gadījumu."
 
 - id: ask-skill-incident-triage-4-accepted
   file: media/ask-skill-incident-triage-4-accepted.jpg
@@ -638,7 +638,7 @@
   title: { en: "Article 33(3)(a): nature of the breach", lv: "33. panta 3. punkta a) apakšpunkts: pārkāpuma būtība" }
   caption:
     en: "Summary, breach type, cause or vector with the three possibilities from the record, linked threat and systems, each marked KNOWN or UNKNOWN."
-    lv: "Kopsavilkums, pārkāpuma tips, cēlonis vai vektors ar trim iespējām no ieraksta, saistītais drauds un sistēmas, katrs atzīmēts kā ZINĀMS vai NEZINĀMS."
+    lv: "Kopsavilkums, pārkāpuma tips, cēlonis vai vektors ar trim iespējām no ieraksta, saistītais apdraudējums un sistēmas, katrs atzīmēts kā ZINĀMS vai NEZINĀMS."
 
 - id: ask-skill-incident-authority-notice-2
   file: media/ask-skill-incident-authority-notice-2.jpg

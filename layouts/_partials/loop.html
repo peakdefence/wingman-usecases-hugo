@@ -1,0 +1,15 @@
+{{/* How WINGMAN works in one picture: four steps. Context: dict "compact" (bool). */}}
+<div class="loopwrap{{ if .compact }} compact{{ end }}">
+  {{ if not .compact }}<p class="eyebrow">{{ i18n "loop_eyebrow" }}</p><h2>{{ i18n "loop_title" }}</h2><p class="lede">{{ i18n "loop_lede" }}</p>{{ end }}
+  <ol class="loop">
+    {{ range $i, $s := slice (dict "id" "1" "icon" "bolt") (dict "id" "2" "icon" "spark") (dict "id" "3" "icon" "decide") (dict "id" "4" "icon" "history") }}
+    <li class="step{{ if eq $s.id "3" }} human{{ end }}">
+      <span class="ico">{{ partial "icon.html" $s.icon }}</span>
+      <span class="num">{{ $s.id }}</span>
+      <h3>{{ i18n (printf "loop_%s_t" $s.id) }}</h3>
+      <p>{{ i18n (printf "loop_%s_p" $s.id) }}</p>
+    </li>
+    {{ end }}
+  </ol>
+  <p class="loopback">{{ i18n "loop_back" }}</p>
+</div>

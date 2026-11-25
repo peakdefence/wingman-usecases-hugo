@@ -1,6 +1,6 @@
 ---
 title: Finanšu nozare – DORA, MiCA un uzraudzības prasības
-short: Finanšu nozare
+short: Finanšu nozare (DORA)
 sector: financial
 weight: 20
 summary: Vadīt operacionālo, finanšu, reputācijas un citu nefinanšu risku pārvaldību vienā modelī un notvert notikumus, kuriem tā būtu jāmaina.
@@ -10,6 +10,7 @@ standards:
 - MiCA (ES) 2023/1114
 - ECB / VUM uzraudzības prasības
 - EBI vadlīnijas par iekšējo pārvaldību un ārpakalpojumiem
+- EAAPI vadlīnijas par IKT drošību un pārvaldību
 - ISO 31000
 stages:
 - title: Risku taksonomija un apetīte

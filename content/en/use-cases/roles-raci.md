@@ -54,7 +54,7 @@ stages:
   - brief-gaps
   - asset-detail
   ai: Lists unowned records by area.
-  decides: The CISO assigns owners.
+  decides: The security lead assigns owners.
 - title: Segregation of duties
   text: One person holding roles that should be separate, such as implementing and approving changes.
   nodes:

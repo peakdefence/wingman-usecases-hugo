@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $m := partial "model.html" . }}
 <section class="hero">
   <div class="wrap herogrid">
     <div class="text">
@@ -6,29 +7,92 @@
       <h1>{{ i18n "hero_title" }}</h1>
       <p class="lede">{{ i18n "hero_lede" }}</p>
       <div class="ctas">
-        {{ with site.GetPage "/use-cases" }}<a class="btn" href="{{ .RelPermalink }}">{{ i18n "hero_cta_uc" }}</a>{{ end }}
-        <a class="btn ghost" href="#model">{{ i18n "hero_cta_model" }}</a>
+        <a class="btn" href="#situations">{{ i18n "hero_cta_sit" }}</a>
+        <a class="btn ghost" href="#promises">{{ i18n "hero_cta_prom" }}</a>
       </div>
     </div>
-    <div class="compare">
+    <div class="compare three">
+      <div><h3>{{ i18n "compare_ai_t" }}</h3><p>{{ i18n "compare_ai" }}</p></div>
       <div><h3>{{ i18n "compare_left_t" }}</h3><p>{{ i18n "compare_left" }}</p></div>
       <div class="on"><h3>{{ i18n "compare_right_t" }}</h3><p>{{ i18n "compare_right" }}</p></div>
     </div>
   </div>
 </section>
 
-<section class="block wrap" id="model">
-  <p class="eyebrow">{{ i18n "model_eyebrow" }}</p>
-  <h2>{{ i18n "model_title" }}</h2>
-  <p class="lede">{{ i18n "model_lede" }}</p>
-  {{ partial "explorer.html" . }}
+<section class="block wrap" id="how">
+  {{ partial "loop.html" (dict "compact" false) }}
 </section>
 
-<section class="block wrap" id="use-cases">
-  <p class="eyebrow">{{ i18n "uc_eyebrow" }}</p>
-  <h2>{{ i18n "uc_title" }}</h2>
-  <p class="lede">{{ i18n "uc_lede" }}</p>
-  {{ partial "uc-grid.html" . }}
+<section class="block wrap" id="situations">
+  <p class="eyebrow">{{ i18n "sit_eyebrow" }}</p>
+  <h2>{{ i18n "sit_title" }}</h2>
+  <p class="lede">{{ i18n "sit_lede" }}</p>
+  <div class="cards sits">
+  {{ range site.Data.home.situations }}
+    {{ $id := .id }}{{ $icon := .icon }}
+    {{ with site.GetPage .page }}
+    <a class="card sit" href="{{ .RelPermalink }}">
+      <span class="ico">{{ partial "icon.html" $icon }}</span>
+      <h3>{{ i18n (printf "sit_%s_t" $id) }}</h3>
+      <p>{{ i18n (printf "sit_%s_p" $id) }}</p>
+      <span class="meta go">{{ .Params.short | default .Title }} →</span>
+    </a>
+    {{ end }}
+  {{ end }}
+  </div>
+</section>
+
+<section class="block wrap" id="see">
+  <p class="eyebrow">{{ i18n "see_eyebrow" }}</p>
+  <h2>{{ i18n "see_title" }}</h2>
+  <p class="lede">{{ i18n "see_lede" }}</p>
+  <div class="seegrid">
+    {{ range site.Data.media }}{{ if eq .id "brief-top" }}{{ partial "media.html" (dict "m" .) }}{{ end }}{{ end }}
+    {{ range first 1 (where site.Data.videos "model" true) }}{{ partial "video.html" . }}{{ end }}
+  </div>
+  <p class="morelinks">{{ with site.GetPage "/library" }}<a class="more" href="{{ .RelPermalink }}">{{ i18n "see_more_screens" }} →</a>{{ end }}<a class="more" href="#videos">{{ i18n "all_videos" }} →</a></p>
+  <p class="fine">{{ i18n "video_consent" }}</p>
+</section>
+
+<section class="block wrap" id="promises">
+  <p class="eyebrow">{{ i18n "prom_eyebrow" }}</p>
+  <h2>{{ i18n "prom_title" }}</h2>
+  <p class="lede">{{ i18n "prom_lede" }}</p>
+  <ol class="promises">
+  {{ range site.Data.home.promises }}
+    {{ $id := .id }}
+    <li class="promise">
+      <span class="ico">{{ partial "icon.html" .icon }}</span>
+      <h3>{{ i18n (printf "prom_%s_t" $id) }}</h3>
+      <p>{{ i18n (printf "prom_%s_p" $id) }}</p>
+      <ul class="uclinks" aria-label="{{ i18n "nav_usecases" }}">
+        {{ if .model }}<li><a href="#model">{{ i18n "nav_model" }}</a></li>{{ end }}
+        {{ range .use_cases }}{{ with site.GetPage (printf "/use-cases/%s" .) }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+      </ul>
+    </li>
+  {{ end }}
+  </ol>
+  <p class="morelinks">{{ with site.GetPage "/use-cases" }}<a class="more" href="{{ .RelPermalink }}">{{ i18n "prom_all" }} →</a>{{ end }}{{ range (where site.RegularPages "Section" "trust").ByWeight }}<a class="more" href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}</p>
+</section>
+
+<section class="block wrap" id="answers">
+  <p class="eyebrow">{{ i18n "ans_eyebrow" }}</p>
+  <h2>{{ i18n "ans_title" }}</h2>
+  <p class="lede">{{ i18n "ans_lede" }}</p>
+  <div class="qa">
+  {{ range site.Data.graph.questions }}{{ with index $m.questions .id }}
+    <div class="card reg"><h3>{{ .q }}</h3><p>{{ .a }}</p></div>
+  {{ end }}{{ end }}
+  </div>
+  <p><a class="more" href="#questions">{{ i18n "ans_graph" }} →</a></p>
+  <h3 class="sub">{{ i18n "gap_title" }}</h3>
+  <p class="lede">{{ i18n "gap_note" }}</p>
+  <ul class="gaplist">
+  {{ range site.Data.graph.gaps }}{{ with index $m.gaps .id }}
+    <li><b>{{ .t }}</b><span>{{ .m }}</span></li>
+  {{ end }}{{ end }}
+  </ul>
+  <p><a class="more" href="#gaps">{{ i18n "gap_graph" }} →</a></p>
 </section>
 
 <section class="block wrap" id="sectors">
@@ -45,12 +109,26 @@
   {{ partial "videos.html" site.Data.videos }}
 </section>
 
+{{ with where site.RegularPages "Section" "case-studies" }}
 <section class="block wrap" id="case-studies">
   <p class="eyebrow">{{ i18n "cases_eyebrow" }}</p>
   <h2>{{ i18n "cases_title" }}</h2>
-  {{ $cs := where site.RegularPages "Section" "case-studies" }}
-  {{ with $cs }}<div class="cards">{{ range first 6 .ByDate.Reverse }}{{ partial "case-card.html" . }}{{ end }}</div>
-  {{ else }}<p class="lede">{{ i18n "cases_empty" }}</p>{{ end }}
+  <div class="cards">{{ range first 6 .ByDate.Reverse }}{{ partial "case-card.html" . }}{{ end }}</div>
+</section>
+{{ end }}
+
+<section class="block wrap" id="samples">
+  <p class="eyebrow">{{ i18n "sample_eyebrow" }}</p>
+  <h2>{{ i18n "samples_title" }}</h2>
+  <p class="lede">{{ i18n "samples_lede" }}</p>
+  <div class="cards">{{ range (where site.RegularPages "Section" "samples").ByWeight }}{{ partial "sample-card.html" . }}{{ end }}</div>
+</section>
+
+<section class="block wrap" id="model">
+  <p class="eyebrow">{{ i18n "model_eyebrow" }}</p>
+  <h2>{{ i18n "model_title" }}</h2>
+  <p class="lede">{{ i18n "model_lede" }}</p>
+  {{ partial "explorer.html" . }}
 </section>
 
 {{ partial "reference.html" . }}
