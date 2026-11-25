@@ -61,6 +61,7 @@ for_ask_contact = "Copy and open the contact page"
 for_cta_button = "Ask for the walk-through"
 for_try = "Try it in your own assistant first"
 for_try_lede = "This prompt works in any capable AI assistant, without WINGMAN and without sending us anything. Leave out names and confidential details."
+trust_others = "More on how it works"
 for_next = "Where to look next"
 for_others = "Other situations"
 

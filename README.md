@@ -15,6 +15,7 @@ hugo --gc --minify     # build to public/
 | Data model texts per language | `data/<lang>/model.yaml` |
 | Home page structure: the situation cards and the four promises with their use cases | `data/home.yaml`, texts in `i18n/<lang>.toml` (`sit_*`, `prom_*`) |
 | "Who it is for" pages, one per visitor situation: problems, glossary, the four promises from that angle, a self-check prompt, screens, what stays with people, and a question picker built from `ask` | `content/<lang>/for/<id>.md` (all in front matter), layout in `layouts/for/` |
+| "How it works" pages: working with AI assistants, how AI is controlled, and a draft data and hosting page (`draft: true` until its facts are confirmed) | `content/<lang>/trust/`, layout in `layouts/trust/`; the question picker is `layouts/_partials/ask.html` |
 | Where the question picker sends people: `contactEmail` and `linkedinURL` (empty hides the button; with both empty it falls back to `contactURL`) | `hugo.toml` `[params]` |
 | Use cases, one page each, with stages in front matter | `content/<lang>/use-cases/<id>.md` |
 | Sectors and regulations (NIS2, financial, ISO 27001/SOC 2, AI, CRA, GDPR) | `content/<lang>/sectors/<id>.md` |

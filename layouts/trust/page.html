@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="block wrap prose-wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></nav>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ .Params.summary }}</p>
+  <div class="prose trust">{{ .Content }}</div>
+</article>
+
+{{ with .Params.media }}
+<section class="block wrap">
+  <h2>{{ i18n "for_screens" }}</h2>
+  {{ partial "media-strip.html" (dict "ids" .) }}
+</section>
+{{ end }}
+
+{{ partial "ask.html" . }}
+
+<section class="block wrap">
+  <h2>{{ i18n "trust_others" }}</h2>
+  <div class="cards">
+  {{ range (where (where site.RegularPages "Section" "trust") "RelPermalink" "ne" .RelPermalink).ByWeight }}<a class="card" href="{{ .RelPermalink }}"><h4>{{ .Title }}</h4><p>{{ .Params.summary }}</p></a>{{ end }}
+  {{ with site.GetPage "/for" }}<a class="card" href="{{ .RelPermalink }}"><h4>{{ .Title }}</h4><p>{{ i18n "sit_lede" }}</p></a>{{ end }}
+  </div>
+</section>
+{{ end }}

@@ -54,7 +54,7 @@
     </li>
   {{ end }}
   </ol>
-  {{ with site.GetPage "/use-cases" }}<p><a class="more" href="{{ .RelPermalink }}">{{ i18n "prom_all" }} →</a></p>{{ end }}
+  <p class="morelinks">{{ with site.GetPage "/use-cases" }}<a class="more" href="{{ .RelPermalink }}">{{ i18n "prom_all" }} →</a>{{ end }}{{ range (where site.RegularPages "Section" "trust").ByWeight }}<a class="more" href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}</p>
 </section>
 
 <section class="block wrap" id="answers">
