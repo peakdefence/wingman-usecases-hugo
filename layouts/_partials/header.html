@@ -1,16 +1,21 @@
+{{ $groups := partial "navdata.html" . }}
 <header class="site">
   <div class="wrap bar">
     <a class="brand" href="{{ site.Home.RelPermalink }}">{{ partial "logo.html" . }}<b>PEAKDEFENCE</b><span>WINGMAN · {{ i18n "site_tagline" }}</span></a>
-    <nav class="nav" aria-label="Main">
-      {{ $home := site.Home.RelPermalink }}
-      <a href="{{ $home }}#model">{{ i18n "nav_model" }}</a>
-      {{ with site.GetPage "/use-cases" }}<a href="{{ .RelPermalink }}"{{ if or (eq $.Section "use-cases") }} aria-current="true"{{ end }}>{{ i18n "nav_usecases" }}</a>{{ end }}
-      {{ with site.GetPage "/sectors" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "sectors" }} aria-current="true"{{ end }}>{{ i18n "nav_sectors" }}</a>{{ end }}
-      {{ with site.GetPage "/library" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "library" }} aria-current="true"{{ end }}>{{ i18n "nav_library" }}</a>{{ end }}
-      {{ with site.GetPage "/videos" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "videos" }} aria-current="true"{{ end }}>{{ i18n "nav_videos" }}</a>{{ end }}
-      {{ with site.GetPage "/case-studies" }}{{ if .RegularPages }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "case-studies" }} aria-current="true"{{ end }}>{{ i18n "nav_cases" }}</a>{{ end }}{{ end }}
-      {{ with site.GetPage "/knowledge-base" }}<a href="{{ .RelPermalink }}"{{ if eq $.Section "knowledge-base" }} aria-current="true"{{ end }}>{{ i18n "nav_kb" }}</a>{{ end }}
-    </nav>
+    <details class="menu" open>
+      <summary>{{ i18n "nav_menu" }}</summary>
+      <nav class="nav" aria-label="Main">
+        {{ range $groups }}
+        <details class="dd{{ if .current }} current{{ end }}" data-dd>
+          <summary>{{ .label }}</summary>
+          <div class="panel{{ if eq .key "what" }} wide{{ end }}">
+            {{ with .all }}<a class="all" href="{{ . }}">{{ i18n "nav_all" }} →</a>{{ end }}
+            <ul>{{ range .items }}{{ if .head }}<li class="head">{{ .label }}</li>{{ else }}<li><a href="{{ .href }}"{{ if eq .href $.RelPermalink }} aria-current="page"{{ end }}>{{ .label }}</a></li>{{ end }}{{ end }}</ul>
+          </div>
+        </details>
+        {{ end }}
+      </nav>
+    </details>
     {{ if gt (len site.Languages) 1 }}
     <nav class="langs" aria-label="{{ i18n "lang_switch" }}">
       {{ range site.Languages }}
@@ -23,5 +28,6 @@
       {{ end }}
     </nav>
     {{ end }}
+    {{ with site.GetPage "/for" }}<a class="btn navcta" href="{{ .RelPermalink }}">{{ i18n "nav_cta" }}</a>{{ end }}
   </div>
 </header>

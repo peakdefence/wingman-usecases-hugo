@@ -312,3 +312,15 @@ document.querySelectorAll('form.askbox').forEach((f) => {
   });
   document.addEventListener('wm:count', (e) => send('copy', String(e.detail)));
 })();
+
+// ---------- main menu: one dropdown open at a time; close on outside click or Escape; start closed on phones ----------
+(() => {
+  const dds = [...document.querySelectorAll('[data-dd]')];
+  const menu = document.querySelector('details.menu');
+  const narrow = () => window.matchMedia('(max-width: 1240px)').matches;
+  if (menu && narrow()) menu.open = false;
+  dds.forEach((d) => d.addEventListener('toggle', () => { if (d.open && !narrow()) dds.forEach((o) => { if (o !== d) o.open = false; }); }));
+  document.addEventListener('click', (e) => { if (narrow()) return; if (!e.target.closest('[data-dd]')) dds.forEach((d) => { d.open = false; }); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { dds.forEach((d) => { d.open = false; }); } });
+  window.addEventListener('resize', () => { if (menu && !narrow()) menu.open = true; });
+})();

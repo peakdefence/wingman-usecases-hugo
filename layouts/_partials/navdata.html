@@ -1,0 +1,42 @@
+{{/* The site's menu as data, used by the header dropdowns and the footer sitemap.
+     Returns a slice of groups: {key, label, all (href), current (bool), items: [{label, href, head (bool)}]}. */}}
+{{ $p := . }}
+{{ $sec := $p.Section }}
+{{ $home := site.Home.RelPermalink }}
+{{ $groups := slice }}
+
+{{/* Who it is for */}}
+{{ $items := slice }}
+{{ with site.GetPage "/for" }}{{ range .Pages.ByWeight }}{{ $items = $items | append (dict "label" .Params.short "href" .RelPermalink) }}{{ end }}{{ end }}
+{{ $groups = $groups | append (dict "key" "who" "label" (i18n "nav_who") "all" ((site.GetPage "/for").RelPermalink) "current" (eq $sec "for") "items" $items) }}
+
+{{/* How it works */}}
+{{ $items = slice (dict "label" (i18n "nav_how_picture") "href" (printf "%s#how" $home)) }}
+{{ with site.GetPage "/trust" }}{{ range .Pages.ByWeight }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}{{ end }}
+{{ $items = $items | append (dict "label" (i18n "nav_model") "href" (printf "%s#model" $home)) }}
+{{ $groups = $groups | append (dict "key" "how" "label" (i18n "nav_how") "all" ((site.GetPage "/trust").RelPermalink) "current" (eq $sec "trust") "items" $items) }}
+
+{{/* What it does: use cases grouped by the four promises */}}
+{{ $items = slice }}
+{{ range site.Data.home.promises }}
+  {{ $items = $items | append (dict "label" (i18n (printf "nav_g_%s" .id)) "head" true) }}
+  {{ range .use_cases }}{{ with site.GetPage (printf "/use-cases/%s" .) }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}{{ end }}
+{{ end }}
+{{ $groups = $groups | append (dict "key" "what" "label" (i18n "nav_what") "all" ((site.GetPage "/use-cases").RelPermalink) "current" (eq $sec "use-cases") "items" $items) }}
+
+{{/* Regulations */}}
+{{ $items = slice }}
+{{ range (where site.RegularPages "Section" "sectors").ByWeight }}{{ $items = $items | append (dict "label" (.Params.short | default .Title) "href" .RelPermalink) }}{{ end }}
+{{ $groups = $groups | append (dict "key" "regs" "label" (i18n "nav_sectors") "all" ((site.GetPage "/sectors").RelPermalink) "current" (eq $sec "sectors") "items" $items) }}
+
+{{/* Resources */}}
+{{ $items = slice }}
+{{ with site.GetPage "/samples" }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}
+{{ with site.GetPage "/knowledge-base" }}{{ $items = $items | append (dict "label" (i18n "nav_kb") "href" .RelPermalink) }}{{ end }}
+{{ with site.GetPage "/library" }}{{ $items = $items | append (dict "label" (i18n "nav_library") "href" .RelPermalink) }}{{ end }}
+{{ with site.GetPage "/videos" }}{{ $items = $items | append (dict "label" (i18n "nav_videos") "href" .RelPermalink) }}{{ end }}
+{{ with site.GetPage "/glossary" }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}
+{{ with site.GetPage "/case-studies" }}{{ if .RegularPages }}{{ $items = $items | append (dict "label" (i18n "nav_cases") "href" .RelPermalink) }}{{ end }}{{ end }}
+{{ $groups = $groups | append (dict "key" "res" "label" (i18n "nav_resources") "all" "" "current" (in (slice "samples" "knowledge-base" "library" "videos" "case-studies" "glossary") $sec) "items" $items) }}
+
+{{ return $groups }}
