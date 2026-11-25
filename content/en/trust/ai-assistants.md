@@ -8,7 +8,7 @@ media: [ask-scope, ask-skill-task-1-help, ask-incident-detect-1-suggestion]
 ask:
 - The full list of MCP tools
 - Which assistants you have tested it with
-- Which model Ask Wingman and the briefs use, and where it runs
+- Which models each AI option offers
 - Whether my own skills can run inside Ask Wingman
 next:
   title: See WINGMAN connected to an assistant
@@ -20,7 +20,7 @@ next:
 
 WINGMAN runs an MCP server. MCP, the Model Context Protocol, is an open standard that lets an AI assistant use tools and data. Claude, ChatGPT and other assistants that support MCP connectors can use it.
 
-The assistant signs in with your own WINGMAN account and works as you. It sees the projects your account can see, and every call names the project it works in. A connection can be limited to reading; changing records needs write access.
+The assistant signs in with your own WINGMAN account and works with your permissions. Permissions are set per person and can differ by type of record: someone may read everything, change risks and tasks, and not touch documents or people. The assistant gets exactly that access. It sees the projects your account can see, and every call names the project it works in.
 
 Each organisation has its own project. A consultant with several clients works in each client's project in turn.
 
@@ -31,7 +31,7 @@ Each organisation has its own project. A consultant with several clients works i
 - **Change records directly.** Create and update records, link them, upload documents and cite evidence for an audit finding. Only with write access.
 - **Run reviews.** Open a review task and complete a risk review.
 - **Administer.** People, groups and access roles. Only for an administrator.
-- **Look things up.** Search the public web for current information, kept apart from your records.
+- **Look things up.** Search the public web for current information, through WINGMAN's built-in search or an external search service, kept apart from your records.
 
 ## Skills
 
@@ -52,4 +52,6 @@ In Claude, a skill is a set of instructions kept in your own account. You can wr
 
 ## Which model does the work
 
-When you connect through MCP, the model is the one in your assistant. You choose it, under your own agreement with its provider. Ask Wingman and the briefs inside WINGMAN use a model that WINGMAN runs; that is one of the questions below.
+When you connect through MCP, the model is the one in your assistant. You choose it, under your own agreement with its provider.
+
+Inside WINGMAN, the briefs, Ask Wingman and the suggestions are written by a model your organisation chooses: a globally available model, a model hosted in the EU, or a model provided by Peak Defence. Each AI-written brief records which model wrote it.

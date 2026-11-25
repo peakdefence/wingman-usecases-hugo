@@ -8,7 +8,7 @@ media: [ask-scope, ask-skill-task-1-help, ask-incident-detect-1-suggestion]
 ask:
 - Pilns MCP rīku saraksts
 - Ar kuriem asistentiem tas ir pārbaudīts
-- Kuru modeli izmanto Ask Wingman un ierakstu kopsavilkumi, un kur tas darbojas
+- Kurus modeļus piedāvā katra MI iespēja
 - Vai manas prasmes var darboties Ask Wingman iekšienē
 next:
   title: Apskatiet WINGMAN, kas savienots ar asistentu
@@ -20,7 +20,7 @@ next:
 
 WINGMAN darbina MCP serveri. MCP (Model Context Protocol) ir atvērts standarts, kas ļauj MI asistentam izmantot rīkus un datus. To var izmantot Claude, ChatGPT un citi asistenti, kas atbalsta MCP savienotājus.
 
-Asistents pieslēdzas ar jūsu WINGMAN kontu un strādā jūsu vārdā. Tas redz tos projektus, kurus redz jūsu konts, un katrā darbībā norāda projektu, kurā strādā. Savienojumu var ierobežot tikai ar lasīšanu; ierakstu mainīšanai vajadzīgas rakstīšanas tiesības.
+Asistents pieslēdzas ar jūsu WINGMAN kontu un strādā ar jūsu tiesībām. Tiesības tiek noteiktas katram cilvēkam un var atšķirties pa ierakstu veidiem: kāds var lasīt visu, mainīt riskus un uzdevumus, bet neaizskart dokumentus un cilvēkus. Asistents saņem tieši šādu piekļuvi. Tas redz tos projektus, kurus redz jūsu konts, un katrā darbībā norāda projektu, kurā strādā.
 
 Katrai organizācijai ir savs projekts. Konsultants, kuram ir vairāki klienti, strādā katra klienta projektā pēc kārtas.
 
@@ -31,7 +31,7 @@ Katrai organizācijai ir savs projekts. Konsultants, kuram ir vairāki klienti, 
 - **Mainīt ierakstus tieši.** Veidot un atjaunināt ierakstus, tos sasaistīt, augšupielādēt dokumentus un norādīt pierādījumus audita konstatējumam. Tikai ar rakstīšanas tiesībām.
 - **Veikt pārskatīšanas.** Atvērt pārskatīšanas uzdevumu un pabeigt riska pārskatīšanu.
 - **Administrēt.** Cilvēkus, grupas un piekļuves lomas. Tikai administratoram.
-- **Uzzināt.** Meklēt aktuālu informāciju publiskajā tīmeklī, nošķirti no jūsu ierakstiem.
+- **Uzzināt.** Meklēt aktuālu informāciju publiskajā tīmeklī ar WINGMAN iebūvēto meklēšanu vai ārēju meklēšanas pakalpojumu, nošķirti no jūsu ierakstiem.
 
 ## Prasmes
 
@@ -52,4 +52,6 @@ Claude prasme ir instrukciju kopums jūsu pašu kontā. Varat uzrakstīt savas p
 
 ## Kurš modelis dara darbu
 
-Ja pieslēdzaties ar MCP, modelis ir tas, kas ir jūsu asistentā. To izvēlaties jūs, saskaņā ar savu līgumu ar tā nodrošinātāju. Ask Wingman un ierakstu kopsavilkumi WINGMAN iekšienē izmanto modeli, ko darbina WINGMAN; tas ir viens no jautājumiem zemāk.
+Ja pieslēdzaties ar MCP, modelis ir tas, kas ir jūsu asistentā. To izvēlaties jūs, saskaņā ar savu līgumu ar tā nodrošinātāju.
+
+WINGMAN iekšienē kopsavilkumus, Ask Wingman atbildes un ieteikumus raksta modelis, ko izvēlas jūsu organizācija: vispārpieejams modelis, ES izvietots modelis vai Peak Defence nodrošināts modelis. Katrā MI rakstītā kopsavilkumā saglabājas, kurš modelis to uzrakstīja.

@@ -10,7 +10,6 @@ ask:
 - Whether text an AI drafted stays marked after a person accepts it
 - Whether an approval shows that the approver opened the item
 - Read-only access for an external auditor
-- Whether an administrator can stop assistants from changing records directly
 next:
   title: Follow one suggestion from proposal to history
   text: We can show a suggestion being made, accepted and recorded, on a fictional company.
@@ -25,7 +24,7 @@ In a review, accepted suggestions are written only when the reviewer completes t
 
 ## Who can change what
 
-Access roles decide what each person may read and change. An assistant connected over MCP signs in as a person and has that person's access, no more. A connection can be limited to reading.
+Permissions are set for each person and can differ by type of record, for example reading everything but changing only risks and tasks. An assistant connected over MCP signs in as a person and has that person's permissions, no more.
 
 People with write access can also change records directly, and so can an assistant they connect. If you let your assistant accept suggestions or change records, it does so as you, and the history shows your name. Choose which way of working fits each kind of record.
 

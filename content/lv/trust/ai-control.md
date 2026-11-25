@@ -10,7 +10,6 @@ ask:
 - Vai MI sagatavots teksts paliek atzīmēts arī pēc tam, kad cilvēks to pieņēmis
 - Vai apstiprinājums parāda, ka apstiprinātājs ierakstu ir atvēris
 - Tikai lasāma piekļuve ārējam auditoram
-- Vai administrators var aizliegt asistentiem mainīt ierakstus tieši
 next:
   title: Izsekojiet vienam ieteikumam no ierosinājuma līdz vēsturei
   text: Varam parādīt, kā ieteikums tiek izveidots, pieņemts un fiksēts, uz izdomāta uzņēmuma piemēra.
@@ -25,7 +24,7 @@ Pārskatīšanā pieņemtie ieteikumi tiek ierakstīti tikai tad, kad pārskatī
 
 ## Kurš ko var mainīt
 
-Piekļuves lomas nosaka, ko katrs cilvēks drīkst lasīt un mainīt. Asistents, kas pieslēgts ar MCP, pieslēdzas kā konkrēts cilvēks un saņem tieši šī cilvēka piekļuvi, ne vairāk. Savienojumu var ierobežot tikai ar lasīšanu.
+Tiesības tiek noteiktas katram cilvēkam un var atšķirties pa ierakstu veidiem, piemēram, lasīt visu, bet mainīt tikai riskus un uzdevumus. Asistents, kas pieslēgts ar MCP, pieslēdzas kā konkrēts cilvēks un saņem tieši šī cilvēka tiesības, ne vairāk.
 
 Cilvēki ar rakstīšanas tiesībām var mainīt ierakstus arī tieši, un to var arī viņu pieslēgts asistents. Ja ļaujat asistentam pieņemt ieteikumus vai mainīt ierakstus, tas to dara jūsu vārdā, un vēsturē redzams jūsu vārds. Izvēlieties, kurš darba veids der katram ierakstu veidam.
 

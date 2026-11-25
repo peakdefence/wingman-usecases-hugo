@@ -19,6 +19,8 @@ problems:
   a: Lomas ir nodalītas no cilvēkiem, un viens cilvēks var pildīt vairākas. Ierakstā redzams arī, kurā lomā lēmums pieņemts, tāpēc pienākumus vēlāk var sadalīt, neko nepārbūvējot.
 - q: Mani piegādātāji ir līgumu saraksts Excel.
   a: Piegādātājs ir ieraksts, kas sasaistīts ar pakalpojumiem, ko tas nodrošina, līgumu, novērtēšanas datumu un riskiem, kuros tas iesaistīts. Kad piegādātāja paziņojums par incidentu ir reģistrēts kā signāls, saites parāda, kurus pakalpojumus tas skar.
+- q: Neesmu pārliecināts, vai šos datus drīkstam nodot mākoņpakalpojumā izvietotam MI.
+  a: 'Modeli, kas raksta kopsavilkumus, ieteikumus un Ask Wingman atbildes, izvēlas jūsu organizācija: vispārpieejams modelis, ES izvietots modelis vai Peak Defence nodrošināts modelis. Katrā MI rakstītā kopsavilkumā saglabājas, kurš modelis to uzrakstīja, tāpēc izvēli var pārbaudīt.'
 terms:
 - t: Signāls
   d: 'Pazīme, ka kaut kas mainās: monitoringa brīdinājums, skenera rezultāts, piegādātāja paziņojums, brīdinājums par apdraudējumu vai kolēģa ziņojums.'
@@ -63,7 +65,7 @@ yours:
 - Panākt, lai īpašnieki atbild. WINGMAN nosūta uzdevumu un atgādinājumu; kolēģa vietā tas neatbildēs.
 ask:
 - Jūsu esošo Word un Excel failu imports
-- Vai valsts iestāde drīkst šiem datiem izmantot mākoņpakalpojumā izvietotu MI un kā WINGMAN strādā bez tā
+- Kurus modeļus izmanto katra MI iespēja un kur katrs no tiem darbojas
 - Kur tiek glabāti dati
 - Cena, licences vienība un kā tas iekļaujas iepirkuma procedūrā
 - Cik stundas mēnesī tas prasa vienam cilvēkam
