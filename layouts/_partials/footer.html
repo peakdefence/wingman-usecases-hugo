@@ -14,7 +14,7 @@
 <footer class="site">
   <div class="wrap sitemap">
     {{ range partial "navdata.html" . }}
-    <div><h2>{{ .label }}</h2><ul>{{ range .items }}{{ if .head }}<li class="head">{{ .label }}</li>{{ else }}<li><a href="{{ .href }}">{{ .label }}</a></li>{{ end }}{{ end }}</ul></div>
+    <div><h2>{{ .label }}</h2><ul>{{ range .items }}{{ if .head }}<li class="head">{{ .label }}</li>{{ else }}<li><a href="{{ .href }}"{{ if .ext }} target="_blank" rel="noopener"{{ end }}>{{ .label }}</a></li>{{ end }}{{ end }}</ul></div>
     {{ end }}
   </div>
   <div class="wrap foot">

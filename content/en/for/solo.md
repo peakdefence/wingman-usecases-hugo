@@ -1,6 +1,6 @@
 ---
 title: I look after security alone, next to another job
-short: For one-person security functions
+short: For public bodies and one-person security functions
 summary: You are the cybersecurity manager, the incident manager and the risk coordinator, and you also have another job. WINGMAN keeps the registers the law expects and prepares the reports from them, so they are not written from nothing each time.
 weight: 40
 slug_id: solo

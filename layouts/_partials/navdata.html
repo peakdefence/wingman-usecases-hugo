@@ -11,8 +11,13 @@
 {{ $groups = $groups | append (dict "key" "who" "label" (i18n "nav_who") "all" ((site.GetPage "/for").RelPermalink) "current" (eq $sec "for") "items" $items) }}
 
 {{/* How it works */}}
-{{ $items = slice (dict "label" (i18n "nav_how_picture") "href" (printf "%s#how" $home)) }}
-{{ with site.GetPage "/trust" }}{{ range .Pages.ByWeight }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}{{ end }}
+{{/* The data page comes first: the readers who check it want it before anything else. */}}
+{{ $items = slice }}
+{{ with site.GetPage "/trust" }}
+  {{ range first 1 .Pages.ByWeight }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}
+  {{ $items = $items | append (dict "label" (i18n "nav_how_picture") "href" (printf "%s#how" $home)) }}
+  {{ range after 1 .Pages.ByWeight }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}
+{{ end }}
 {{ $items = $items | append (dict "label" (i18n "nav_model") "href" (printf "%s#model" $home)) }}
 {{ $groups = $groups | append (dict "key" "how" "label" (i18n "nav_how") "all" ((site.GetPage "/trust").RelPermalink) "current" (eq $sec "trust") "items" $items) }}
 
@@ -37,6 +42,7 @@
 {{ with site.GetPage "/videos" }}{{ $items = $items | append (dict "label" (i18n "nav_videos") "href" .RelPermalink) }}{{ end }}
 {{ with site.GetPage "/glossary" }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}
 {{ with site.GetPage "/case-studies" }}{{ if .RegularPages }}{{ $items = $items | append (dict "label" (i18n "nav_cases") "href" .RelPermalink) }}{{ end }}{{ end }}
+{{ with site.Params.contactURL }}{{ $items = $items | append (dict "label" (printf "%s ↗" (i18n "nav_talk")) "href" . "ext" true) }}{{ end }}
 {{ $items = $items | append (dict "label" (i18n "nav_guides") "head" true) }}
 {{ range slice "nis2-applicability" "iso27001-from-zero" "security-questionnaire" }}{{ with site.GetPage (printf "/knowledge-base/%s" .) }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}{{ end }}
 {{ $groups = $groups | append (dict "key" "res" "label" (i18n "nav_resources") "all" "" "current" (in (slice "samples" "knowledge-base" "library" "videos" "case-studies" "glossary") $sec) "items" $items) }}

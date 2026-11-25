@@ -2,7 +2,7 @@
 title: Dati, mitināšana un MI
 short: Dati, mitināšana un MI
 slug_id: data
-weight: 30
+weight: 5
 summary: Kas ir skaidrs par to, kur atrodas jūsu ieraksti, kurš MI ar tiem strādā, kurš tiem var piekļūt un ko varat paņemt līdzi, un kas vēl jājautā.
 ask:
 - Kur tiek glabāti ieraksti un pie kura mitināšanas pakalpojuma sniedzēja

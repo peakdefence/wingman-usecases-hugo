@@ -2,7 +2,7 @@
 title: Data, hosting and AI
 short: Data, hosting and AI
 slug_id: data
-weight: 30
+weight: 5
 summary: What is settled about where your records live, which AI works on them, who can reach them and what you can take with you, and what still has to be asked.
 ask:
 - Where the records are stored, and with which hosting provider

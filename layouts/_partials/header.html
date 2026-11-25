@@ -10,7 +10,7 @@
           <summary>{{ .label }}</summary>
           <div class="panel{{ if eq .key "what" }} wide{{ end }}">
             {{ with .all }}<a class="all" href="{{ . }}">{{ i18n "nav_all" }} →</a>{{ end }}
-            <ul>{{ range .items }}{{ if .head }}<li class="head">{{ .label }}</li>{{ else }}<li><a href="{{ .href }}"{{ if eq .href $.RelPermalink }} aria-current="page"{{ end }}>{{ .label }}</a></li>{{ end }}{{ end }}</ul>
+            <ul>{{ range .items }}{{ if .head }}<li class="head">{{ .label }}</li>{{ else }}<li><a href="{{ .href }}"{{ if eq .href $.RelPermalink }} aria-current="page"{{ end }}{{ if .ext }} target="_blank" rel="noopener"{{ end }}>{{ .label }}</a></li>{{ end }}{{ end }}</ul>
           </div>
         </details>
         {{ end }}
@@ -28,6 +28,6 @@
       {{ end }}
     </nav>
     {{ end }}
-    {{ with site.GetPage "/for" }}<a class="btn navcta" href="{{ .RelPermalink }}">{{ i18n "nav_cta" }}</a>{{ end }}
+    {{ with site.GetPage "/samples" }}<a class="btn navcta" href="{{ .RelPermalink }}">{{ i18n "nav_cta" }}</a>{{ end }}
   </div>
 </header>
