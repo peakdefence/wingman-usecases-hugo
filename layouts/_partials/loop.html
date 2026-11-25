@@ -4,7 +4,7 @@
   <ol class="loop">
     {{ range $i, $s := slice (dict "id" "1" "icon" "bolt") (dict "id" "2" "icon" "spark") (dict "id" "3" "icon" "decide") (dict "id" "4" "icon" "history") }}
     <li class="step{{ if eq $s.id "3" }} human{{ end }}">
-      <span class="ico">{{ partial "icon.html" $s.icon }}</span>
+      <span class="pico">{{ partial "icon.html" $s.icon }}</span>
       <span class="num">{{ $s.id }}</span>
       <h3>{{ i18n (printf "loop_%s_t" $s.id) }}</h3>
       <p>{{ i18n (printf "loop_%s_p" $s.id) }}</p>

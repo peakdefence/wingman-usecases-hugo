@@ -32,7 +32,7 @@
     {{ $id := .id }}{{ $icon := .icon }}
     {{ with site.GetPage .page }}
     <a class="card sit" href="{{ .RelPermalink }}">
-      <span class="ico">{{ partial "icon.html" $icon }}</span>
+      <span class="pico">{{ partial "icon.html" $icon }}</span>
       <h3>{{ i18n (printf "sit_%s_t" $id) }}</h3>
       <p>{{ i18n (printf "sit_%s_p" $id) }}</p>
       <span class="meta go">{{ .Params.short | default .Title }} →</span>
@@ -62,7 +62,7 @@
   {{ range site.Data.home.promises }}
     {{ $id := .id }}
     <li class="promise">
-      <span class="ico">{{ partial "icon.html" .icon }}</span>
+      <span class="pico">{{ partial "icon.html" .icon }}</span>
       <h3>{{ i18n (printf "prom_%s_t" $id) }}</h3>
       <p>{{ i18n (printf "prom_%s_p" $id) }}</p>
       <ul class="uclinks" aria-label="{{ i18n "nav_usecases" }}">
