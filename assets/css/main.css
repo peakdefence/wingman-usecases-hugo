@@ -271,7 +271,7 @@ dialog.lightbox::backdrop { background: rgba(20, 18, 40, .82) }
 .inwm p { margin: 0 }
 .inwm a { font-family: var(--f-label); font-weight: 600; text-decoration: none }
 .related { margin-top: 10px; display: flex; flex-direction: column; gap: 14px }
-@media (max-width: 760px) { .kb .prose table { display: block; overflow-x: auto; white-space: nowrap } .kb .prose td, .kb .prose th { white-space: normal; min-width: 150px } }
+@media (max-width: 760px) { .kb .prose table { display: block; overflow-x: auto; white-space: nowrap; max-width: 100%; min-width: 0 } .kb .prose td, .kb .prose th { white-space: normal; min-width: 150px } }
 .optout { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px }
 .optout .btn { cursor: pointer; border: 0 }
 .optout .btn[aria-pressed="true"] { background: var(--accent); color: var(--on-accent) }
@@ -323,3 +323,5 @@ h1.forq { font-size: clamp(1.8rem, 3.6vw, 2.7rem); max-width: 22ch }
 .askbox li.walk label { border-width: 2px }
 .morelinks { display: flex; flex-wrap: wrap; gap: 8px 24px }
 .prose.trust ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px }
+.sample .inwm { margin: 0 }
+.sample .prose blockquote { margin: 0; padding: 10px 16px; border-left: 3px solid var(--line); color: var(--ink-2) }

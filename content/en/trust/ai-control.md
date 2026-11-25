@@ -4,6 +4,7 @@ short: How AI is controlled
 slug_id: control
 weight: 20
 summary: AI in WINGMAN proposes and a named person decides. This page says what that means in the records, who can change what, what history is kept, and what AI does not do.
+samples: [risk-change-trail, audit-trace]
 media: [risk-accept-1-suggestion, risk-accept-2-accepted, risk-confirm-3-completed, sig-inbox]
 ask:
 - Whether text an AI drafted stays marked after a person accepts it

@@ -10,6 +10,7 @@
 <section class="block wrap">
   <h2>{{ i18n "for_screens" }}</h2>
   {{ partial "media-strip.html" (dict "ids" .) }}
+  {{ with $.Params.samples }}<div class="cards">{{ range . }}{{ with site.GetPage (printf "/samples/%s" .) }}{{ partial "sample-card.html" . }}{{ end }}{{ end }}</div>{{ end }}
 </section>
 {{ end }}
 

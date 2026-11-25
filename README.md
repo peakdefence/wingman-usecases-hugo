@@ -16,6 +16,8 @@ hugo --gc --minify     # build to public/
 | Home page structure: the situation cards and the four promises with their use cases | `data/home.yaml`, texts in `i18n/<lang>.toml` (`sit_*`, `prom_*`) |
 | "Who it is for" pages, one per visitor situation: problems, glossary, the four promises from that angle, a self-check prompt, screens, what stays with people, and a question picker built from `ask` | `content/<lang>/for/<id>.md` (all in front matter), layout in `layouts/for/` |
 | "How it works" pages: working with AI assistants, how AI is controlled, and a draft data and hosting page (`draft: true` until its facts are confirmed) | `content/<lang>/trust/`, layout in `layouts/trust/`; the question picker is `layouts/_partials/ask.html` |
+| Sample outputs on a fictional company (management review pack, audit trace, risk change trail, consultant report). `for` lists the "Who it is for" pages that show each sample | `content/<lang>/samples/`, layout in `layouts/samples/` |
+| Glossary, built from the `terms` of the "Who it is for" pages plus its own front matter | `content/<lang>/glossary.md`, layout in `layouts/glossary/` |
 | Where the question picker sends people: `contactEmail` and `linkedinURL` (empty hides the button; with both empty it falls back to `contactURL`) | `hugo.toml` `[params]` |
 | Use cases, one page each, with stages in front matter | `content/<lang>/use-cases/<id>.md` |
 | Sectors and regulations (NIS2, financial, ISO 27001/SOC 2, AI, CRA, GDPR) | `content/<lang>/sectors/<id>.md` |
@@ -55,7 +57,7 @@ Drop the file into `static/media/<id>.<ext>`, add an entry to `data/media.yaml` 
 hugo new content/en/case-studies/my-case.md
 ```
 
-Fill in the front matter (`client`, `sector`, `standards`, `use_cases`, `videos`) and set `draft: false` to publish. Keep it anonymised: no company, people or tool names, and only results the client has confirmed. Put the Latvian version at the same file name under `content/lv/case-studies/` so the language switch links them. Each use-case page lists the case studies whose `use_cases` include it.
+Fill in the front matter (`client`, `sector`, `standards`, `use_cases`, `videos`) and set `draft: false` to publish. Keep it anonymised: no company, people or tool names, and only results the client has confirmed. Put the Latvian version at the same file name under `content/lv/case-studies/` so the language switch links them. Each use-case page lists the case studies whose `use_cases` include it. The Case studies menu item and home section appear only once one is published.
 
 The example `internal-iso-27001-audit.md` is a draft skeleton and is not built until `draft: false`. Preview drafts with `hugo server -D`.
 

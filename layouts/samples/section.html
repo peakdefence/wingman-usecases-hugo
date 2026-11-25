@@ -1,0 +1,8 @@
+{{ define "main" }}
+<section class="block wrap">
+  <p class="eyebrow">{{ i18n "sample_eyebrow" }}</p>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ .Description }}</p>
+  <div class="cards">{{ range .Pages.ByWeight }}{{ partial "sample-card.html" . }}{{ end }}</div>
+</section>
+{{ end }}

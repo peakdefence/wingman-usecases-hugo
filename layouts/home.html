@@ -91,12 +91,19 @@
   {{ partial "videos.html" site.Data.videos }}
 </section>
 
+{{ with where site.RegularPages "Section" "case-studies" }}
 <section class="block wrap" id="case-studies">
   <p class="eyebrow">{{ i18n "cases_eyebrow" }}</p>
   <h2>{{ i18n "cases_title" }}</h2>
-  {{ $cs := where site.RegularPages "Section" "case-studies" }}
-  {{ with $cs }}<div class="cards">{{ range first 6 .ByDate.Reverse }}{{ partial "case-card.html" . }}{{ end }}</div>
-  {{ else }}<p class="lede">{{ i18n "cases_empty" }}</p>{{ end }}
+  <div class="cards">{{ range first 6 .ByDate.Reverse }}{{ partial "case-card.html" . }}{{ end }}</div>
+</section>
+{{ end }}
+
+<section class="block wrap" id="samples">
+  <p class="eyebrow">{{ i18n "sample_eyebrow" }}</p>
+  <h2>{{ i18n "samples_title" }}</h2>
+  <p class="lede">{{ i18n "samples_lede" }}</p>
+  <div class="cards">{{ range (where site.RegularPages "Section" "samples").ByWeight }}{{ partial "sample-card.html" . }}{{ end }}</div>
 </section>
 
 <section class="block wrap" id="model">

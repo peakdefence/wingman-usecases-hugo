@@ -38,6 +38,7 @@
 <section class="block wrap">
   <h2>{{ i18n "for_screens" }}</h2>
   {{ partial "media-strip.html" (dict "ids" .) }}
+  {{ with where (where site.RegularPages "Section" "samples") "Params.for" "intersect" (slice $.Params.slug_id) }}<div class="cards">{{ range .ByWeight }}{{ partial "sample-card.html" . }}{{ end }}</div>{{ end }}
 </section>
 {{ end }}
 
