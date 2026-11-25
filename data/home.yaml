@@ -9,6 +9,7 @@ situations:
   - { id: accountable, page: /use-cases/management-review }
   - { id: alone, page: /sectors/nis2 }
   - { id: team, page: /use-cases/security-operations }
+  - { id: moving, page: /use-cases/vulnerability-impact }
   - { id: auditor, page: /use-cases/auditing }
   - { id: consultant, page: /use-cases/risk-identification }
 

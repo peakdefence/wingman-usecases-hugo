@@ -278,8 +278,8 @@ dialog.lightbox::backdrop { background: rgba(20, 18, 40, .82) }
 .foot a { color: inherit }
 
 /* home: situations, promises, questions and gaps */
-.sits { grid-template-columns: repeat(3, minmax(0, 1fr)) }
-@media (max-width: 900px) { .sits { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+.sits { grid-template-columns: repeat(4, minmax(0, 1fr)) }
+@media (max-width: 1100px) { .sits { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
 @media (max-width: 600px) { .sits { grid-template-columns: 1fr } }
 .card.sit h3 { font-size: 1.08rem; line-height: 1.25 }
 .card .go { color: var(--accent) }
