@@ -2,7 +2,7 @@
 title: Viena riska izmaiņa no signāla līdz vēsturei
 weight: 30
 summary: Ievainojamība, ko jau izmanto uzbrucēji, maina riska vērtējumu. Paraugs parāda signālu, ierobežošanu, MI ierosināto ieteikumu, cilvēku, kurš to pieņēma, apstrādi un to, kas saglabājas vēsturē.
-for: [ciso]
+for: [ciso, auditor]
 use_cases: [vulnerability-impact, risk-review]
 ---
 

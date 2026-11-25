@@ -28,7 +28,7 @@ terms:
   d: Atvērts standarts, kas ļauj MI asistentam izmantot rīkus un datus. Ar to Claude vai ChatGPT pieslēdzas WINGMAN.
 - t: Signāls
   d: 'Pazīme, ka kaut kas mainās: monitoringa brīdinājums, skenera rezultāts, piegādātāja paziņojums, brīdinājums par apdraudējumu vai kolēģa ziņojums.'
-- t: Pārskats
+- t: Kopsavilkums
   d: Īss rakstisks kopsavilkums par programmas stāvokli, ko WINGMAN MI katru rītu sagatavo no ierakstiem.
 - t: Reģistra pārbaude
   d: Noteikums, ko WINGMAN piemēro katram ierakstam, lai atrastu nepilnības, piemēram, risku bez īpašnieka vai kontroli bez derīga pierādījuma.
@@ -87,5 +87,5 @@ sectors:
 next:
   title: Apskatiet to ar saviem reģistriem
   text: Varam izrādīt reģistru pārbaudes, riska pārskatīšanu un ievainojamību ar jūsu pašu ierakstiem.
-  ask: Reģistru pārbaužu, riska pārskatīšanas un ievainojamības demonstrācija uz izdomāta uzņēmuma piemēra
+  ask: Reģistru pārbaužu, riska pārskatīšanas un ievainojamības demonstrācija uz izdomātas organizācijas piemēra
 ---

@@ -2,7 +2,7 @@
 title: One risk change, from signal to history
 weight: 30
 summary: A vulnerability that is being exploited moves a risk rating. This sample shows the signal, the containment, the suggestion the AI raised, the person who accepted it, the treatment, and what the history keeps.
-for: [ciso]
+for: [ciso, auditor]
 use_cases: [vulnerability-impact, risk-review]
 ---
 

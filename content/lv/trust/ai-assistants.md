@@ -13,8 +13,8 @@ ask:
 - Vai manas prasmes var darboties Ask Wingman
 next:
   title: Apskatiet WINGMAN, kas savienots ar asistentu
-  text: Varam parādīt, kā Claude strādā ar izdomāta uzņēmuma ierakstiem, no jautājuma līdz pieņemtām izmaiņām.
-  ask: Demonstrācija, kā WINGMAN strādā kopā ar Claude, uz izdomāta uzņēmuma piemēra
+  text: Varam parādīt, kā Claude strādā ar izdomātas organizācijas ierakstiem, no jautājuma līdz pieņemtām izmaiņām.
+  ask: Demonstrācija, kā WINGMAN strādā kopā ar Claude, uz izdomātas organizācijas piemēra
 ---
 
 ## Kā asistents savienojas

@@ -84,6 +84,6 @@ sectors:
 - iso27001-soc2
 next:
   title: Izsekojiet vienai prasībai no apgalvojuma līdz secinājumam
-  text: 'Varam izrādīt auditu ar izdomāto uzņēmumu: viena prasība, tās deklarētā kontrole, pierādījums, konstatējums un secinājums.'
-  ask: Vienas prasības izsekošana no deklarētās kontroles līdz secinājumam uz izdomāta uzņēmuma piemēra
+  text: 'Varam izrādīt auditu ar izdomāto organizāciju: viena prasība, tās deklarētā kontrole, pierādījums, konstatējums un secinājums.'
+  ask: Vienas prasības izsekošana no deklarētās kontroles līdz secinājumam uz izdomātas organizācijas piemēra
 ---

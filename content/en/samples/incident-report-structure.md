@@ -2,7 +2,7 @@
 title: "Reporting a significant incident to CERT.LV: a structural example"
 weight: 70
 summary: The shape of the reports for a significant incident, prepared from the incident record. Not the official template; deadlines to be checked against the national law.
-for: [solo]
+for: [solo, board]
 use_cases: [incident-handling]
 ---
 

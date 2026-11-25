@@ -13,8 +13,8 @@ ask:
 - Kādas papildu kontroles var ieviest asistenta savienojumam
 next:
   title: Izsekojiet vienam ieteikumam no ierosinājuma līdz vēsturei
-  text: Varam parādīt, kā ieteikums tiek izveidots, pieņemts un fiksēts, uz izdomāta uzņēmuma piemēra.
-  ask: Demonstrācija, kā viens MI ieteikums nonāk no ierosinājuma līdz ieraksta vēsturei, uz izdomāta uzņēmuma piemēra
+  text: Varam parādīt, kā ieteikums tiek izveidots, pieņemts un fiksēts, uz izdomātas organizācijas piemēra.
+  ask: Demonstrācija, kā viens MI ieteikums nonāk no ierosinājuma līdz ieraksta vēsturei, uz izdomātas organizācijas piemēra
 ---
 
 **Vadības institūcijai īsumā.** MI sagatavo un ierosina. Katra ierakstu izmaiņa tiek saglabāta kopā ar cilvēku, kurš to veica, un laiku, un šo vēsturi nevar labot vai dzēst. Par katru izmaiņu atbild konkrēts cilvēks, arī par tām, ko veic viņa vārdā strādājošs asistents. Tiesības nosaka, ko drīkst darīt katrs cilvēks un katrs viņa pieslēgtais asistents.

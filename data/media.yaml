@@ -26,7 +26,7 @@
   env: dev
   width: 1105
   height: 1092
-  title: { en: "The Brief: state of the programme", lv: "Pārskats: programmas stāvoklis" }
+  title: { en: "The Brief: state of the programme", lv: "Kopsavilkums: programmas stāvoklis" }
   caption:
     en: "Every morning WINGMAN writes the state of the programme from the records: where risk concentrates, coverage and control, a watch list and the tensions between groups of records."
     lv: "Katru rītu WINGMAN no ierakstiem uzraksta programmas stāvokli: kur koncentrējas risks, pārklājums un kontrole, novērošanas saraksts un pretrunas starp ierakstu grupām."
@@ -403,7 +403,7 @@
   title: { en: "An incident record", lv: "Incidenta ieraksts" }
   caption:
     en: "Description, mitigation recommendations, owner, reported and resolved dates, and the related records to add. Empty status and type are what the Brief flags as a gap."
-    lv: "Apraksts, mazināšanas ieteikumi, īpašnieks, ziņošanas un atrisināšanas datumi un pievienojamie saistītie ieraksti. Tukšs statuss un tips ir tas, ko Pārskats atzīmē kā nepilnību."
+    lv: "Apraksts, mazināšanas ieteikumi, īpašnieks, ziņošanas un atrisināšanas datumi un pievienojamie saistītie ieraksti. Tukšs statuss un tips ir tas, ko Kopsavilkums atzīmē kā nepilnību."
 
 - id: inc-detail-registered
   file: media/inc-detail-stage-29043.jpg

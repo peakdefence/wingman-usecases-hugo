@@ -6,7 +6,7 @@ weight: 60
 slug_id: consultant
 problems:
 - q: Pirmdien viens klients, otrdien cits. Zaudēju laiku, pārlasot pats savas piezīmes.
-  a: 'Pārskats katru rītu tiek uzrakstīts no šī klienta ierakstiem: kur koncentrējas risks, kas kavējas, kuras nepilnības ir atvērtas. Jūs sākat no pašreizējā stāvokļa, nevis no savām pēdējām piezīmēm.'
+  a: 'Kopsavilkums katru rītu tiek uzrakstīts no šī klienta ierakstiem: kur koncentrējas risks, kas kavējas, kuras nepilnības ir atvērtas. Jūs sākat no pašreizējā stāvokļa, nevis no savām pēdējām piezīmēm.'
 - q: Mana jaunākā kolēģa risku darbnīca izskatās citādi nekā manējā.
   a: 'Prasme katru reizi veic tos pašus soļus. Risku intervija uzdod pa vienam jautājumam, katru nosaukto apdraudējumu vispirms salīdzina ar esošajiem riskiem un tikai tad veido jaunu, un sasaista aktīvus, piegādātājus un kontroles. Varat arī izveidot savu prasmju kopumu darbam ar WINGMAN, lai soļi būtu jūsu metode, un ar prasmēm veidot politiku veidnes pēc savām vēlmēm. Tās paliek jūsu īpašumā: tās neredz ne Peak Defence, ne citi konsultanti.'
 - q: Starp manām vizītēm reģistri pamazām atšķiras.
@@ -22,7 +22,7 @@ problems:
 terms:
 - t: Prasme
   d: Procedūra, ko jūsu MI asistents soli pa solim izpilda ar jūsu WINGMAN ierakstiem, piemēram, risku intervija vai audits. Tā darbojas asistentā, ko jau lietojat, piemēram, Claude.
-- t: Pārskats
+- t: Kopsavilkums
   d: Īss rakstisks kopsavilkums par programmas stāvokli, ko WINGMAN MI katru rītu sagatavo no ierakstiem.
 - t: Plāns
   d: Regulāru vai vienreizēju uzdevumu kopums vienam mērķim, piemēram, gada pārskatīšanu kalendārs.
@@ -79,7 +79,7 @@ sectors:
 - nis2
 next:
   title: Izmēģiniet nākamo darbnīcu ar vienu klientu
-  text: Varam kopā ar jums veikt risku identificēšanu ar izdomāto uzņēmumu vai sagatavot to kādam jūsu klientam.
-  ask: Kopīga risku identificēšana uz izdomāta uzņēmuma piemēra vai kādam no maniem klientiem
+  text: Varam kopā ar jums veikt risku identificēšanu ar izdomāto organizāciju vai sagatavot to kādam jūsu klientam.
+  ask: Kopīga risku identificēšana uz izdomātas organizācijas piemēra vai kādam no maniem klientiem
 linkedin: true
 ---

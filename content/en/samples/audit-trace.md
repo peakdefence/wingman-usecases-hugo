@@ -2,7 +2,7 @@
 title: One audit requirement, from claim to conclusion
 weight: 20
 summary: How a single requirement is traced in an internal audit, from the document that claims the control to the conclusion, the correction and the check that the fix worked.
-for: [auditor, start]
+for: [auditor, ciso, start]
 use_cases: [auditing, audit-scopes]
 ---
 

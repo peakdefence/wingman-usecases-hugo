@@ -13,7 +13,7 @@ ask:
 - Peak Defence pašas sertifikāti
 next:
   title: Izskatiet iespējas savai organizācijai
-  text: Varam izskatīt izvietošanas un MI iespējas atbilstoši jūsu prasībām uz izdomāta uzņēmuma piemēra.
+  text: Varam izskatīt izvietošanas un MI iespējas atbilstoši jūsu prasībām uz izdomātas organizācijas piemēra.
   ask: Datu un MI iespēju izskatīšana atbilstoši mūsu prasībām
 ---
 

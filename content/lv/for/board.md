@@ -10,7 +10,7 @@ problems:
 - q: Es parakstu to, kas atnāk dienu pirms sēdes.
   a: 'Vadības pārskats ir regulārs darbs ar datumu un atbildīgo lomu. Tā materiāli tiek salikti no ierakstiem: iepriekšējie lēmumi, auditu rezultāti, risku izmaiņas, incidenti un piegādātāju sniegums. Tas nav atkarīgs no tā, vai kāds iepriekšējā vakarā sagatavo slaidus.'
 - q: Drošību redzu reizi gadā slaidos, kurus nesaprotu.
-  a: 'Pārskats ir īss kopsavilkums, ko WINGMAN MI katru rītu uzraksta no ierakstiem, teikumos: kur koncentrējas risks, kas ir nosegts, kam jāpievērš uzmanība. Tajā uzskaitītās nepilnības ved uz ierakstiem aiz tām, tāpēc drošības vadītājs to var pārbaudīt un jūs varat jautāt par jebkuru rindu.'
+  a: 'Kopsavilkums ir īss teksts, ko WINGMAN MI katru rītu uzraksta no ierakstiem, teikumos: kur koncentrējas risks, kas ir nosegts, kam jāpievērš uzmanība. Tajā uzskaitītās nepilnības ved uz ierakstiem aiz tām, tāpēc drošības vadītājs to var pārbaudīt un jūs varat jautāt par jebkuru rindu.'
 - q: IT vadītājs saka, ka viss ir kārtībā. Es to nevaru pārbaudīt.
   a: 'Nepilnības ir uzskaitītas konkrēti: riski bez īpašnieka, tiesību aktu prasības, kuru izpildei nekas netiek darīts, uzdevumi, kas kavējas vairāk nekā 30 dienas, dokumenti, ko neviens nav apstiprinājis. Katra ved uz ierakstu un atbildīgo cilvēku. Saraksts ir tik labs, cik labi ir ieraksti, un tos aktuālus uztur regulārās pārskatīšanas.'
 - q: Ja mūsu vienīgais drošības cilvēks aiziet, viss aiziet līdzi.
@@ -18,7 +18,7 @@ problems:
 - q: Kas notiek, kad kaut kas noiet greizi?
   a: 'Incidenta ieraksts parāda, cik tas ir smags, kādi ziņojumi un līdz kuram laikam jāiesniedz (pēc NIS2: agrīnais brīdinājums 24 stundās un paziņojums 72 stundās) un kas vada reaģēšanu. WINGMAN sagatavo ziņojumu melnrakstus; tos apstiprina un nosūta konkrēts cilvēks.'
 terms:
-- t: Pārskats
+- t: Kopsavilkums
   d: Īss rakstisks kopsavilkums par programmas stāvokli, ko WINGMAN MI katru rītu sagatavo no ierakstiem.
 - t: Vadības pārskats
   d: Regulāra sanāksme, kurā vadība izvērtē drošības stāvokli un lemj, ko darīt. Tās protokols tiek saglabāts kā ieraksts.
@@ -75,6 +75,6 @@ sectors:
 - financial
 next:
   title: Apskatiet vadības skatu piemērā
-  text: Varam izrādīt Pārskatu un vadības pārskatu uz izdomāta uzņēmuma ar reālistiskiem ierakstiem vai ar jūsu pašu ierakstiem.
-  ask: '30 minūšu demonstrācija: Pārskats un vadības pārskats uz izdomāta uzņēmuma piemēra'
+  text: Varam izrādīt Kopsavilkumu un vadības pārskatu uz izdomātas organizācijas ar reālistiskiem ierakstiem vai ar jūsu pašu ierakstiem.
+  ask: '30 minūšu demonstrācija: Kopsavilkums un vadības pārskats uz izdomātas organizācijas piemēra'
 ---

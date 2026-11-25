@@ -2,7 +2,7 @@
 title: Viena audita prasība no apgalvojuma līdz secinājumam
 weight: 20
 summary: Kā iekšējā auditā tiek izsekota viena prasība, no dokumenta, kas deklarē kontroli, līdz secinājumam, korekcijai un pārbaudei, vai novēršana iedarbojās.
-for: [auditor, start]
+for: [auditor, ciso, start]
 use_cases: [auditing, audit-scopes]
 ---
 
