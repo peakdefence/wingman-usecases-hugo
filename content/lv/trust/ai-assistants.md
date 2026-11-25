@@ -51,7 +51,7 @@ WINGMAN iekšienē **Ask Wingman** ir iebūvēts asistents, kas atveras blakus j
 
 **No kurienes prasmes.** Tās nodrošina Peak Defence – iebūvētas WINGMAN vai kā prasmju faili, ko izvieto jūsu izmantotajā MI platformā vai aģentā, atkarībā no jūsu līguma.
 
-**Jūsu pašu prasmes.** Konsultants vai drošības komanda var izveidot savu prasmju kopumu darbam ar WINGMAN un ar prasmēm veidot politiku veidnes pēc savām vēlmēm. Claude prasme ir instrukciju kopums jūsu pašu kontā, tāpēc tā paliek jums.
+**Jūsu pašu prasmes.** Konsultants vai drošības komanda var izveidot savu prasmju kopumu darbam ar WINGMAN un ar prasmēm veidot politiku veidnes pēc savām vēlmēm. Claude prasme ir instrukciju kopums jūsu pašu kontā, tāpēc tā paliek jums. Konsultanta paša prasmes paliek konsultanta īpašumā: tās nav pieejamas Peak Defence un ir paslēptas no citiem konsultantiem.
 
 ## Kurš modelis dara darbu
 

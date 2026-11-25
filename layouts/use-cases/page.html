@@ -8,7 +8,15 @@
   {{ .Content }}
 
   {{ partial "stage-explorer.html" . }}
+  <p class="rolesnote">{{ i18n "roles_note" }}</p>
 </section>
+
+{{ with where (where site.RegularPages "Section" "samples") "Params.use_cases" "intersect" (slice $uc) }}
+<section class="block wrap">
+  <h2>{{ i18n "uc_samples" }}</h2>
+  <div class="cards">{{ range .ByWeight }}{{ partial "sample-card.html" . }}{{ end }}</div>
+</section>
+{{ end }}
 
 {{/* Sector pages that give this use case a sector-specific angle */}}
 {{ $angles := slice }}

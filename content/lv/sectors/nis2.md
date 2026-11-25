@@ -147,6 +147,8 @@ use_cases:
   text: Visu apdraudējumu risku novērtējums katram pakalpojumam, ar apstrādi, ko vadības institūcija var apstiprināt.
 - uc: vulnerability-impact
   text: CERT.LV brīdinājumi un skeneru rezultāti nonāk uz aktīviem, kuros ir attiecīgā ievainojamība.
+- uc: business-impact-analysis
+  text: Darbības ietekmes analīze katram pakalpojumam nosaka atjaunošanas mērķus – pamatu likumā prasītā kiberrisku pārvaldības un darbības nepārtrauktības plāna nepārtrauktības daļai.
 - uc: management-review
   text: Vadības institūcija redz riska pakāpi, incidentus un nokavētos darbus un apstiprina pasākumus; protokoli un lēmumi tiek saglabāti.
 - uc: roles-raci

@@ -40,7 +40,7 @@ Example Co. runs 47 controls. One control can cover several Annex A requirements
 
 | Decision | Waiting since | What it holds up |
 |---|---|---|
-| Name an owner for the payroll provider | 19 September | The supplier review (A.5.19) stays open; it is one of the 15 controls still to cover |
+| Name an owner for the payroll provider | 19 September | The supplier review (A.5.19) stays open; it is one of the 15 Annex A requirements still to cover |
 | Approve the business continuity exercise date | 3 October | Without an exercise by February, A.5.30 has no evidence for the March audit |
 
 ## Next month

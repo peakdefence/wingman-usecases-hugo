@@ -142,8 +142,8 @@
   height: 1092
   title: { en: "A review task with its prepared brief", lv: "Pārskatīšanas uzdevums ar sagatavoto kopsavilkumu" }
   caption:
-    en: "WINGMAN prepares the review when the task is created: what changed since the last review, any suggested changes, and one button to confirm that the risk still stands."
-    lv: "WINGMAN sagatavo pārskatīšanu, kad uzdevums tiek izveidots: kas mainījies kopš pēdējās pārskatīšanas, ieteiktās izmaiņas un viena poga, lai apstiprinātu, ka risks joprojām ir spēkā."
+    en: "WINGMAN prepares the review when the task is created: what changed since the last review, any suggested changes, and, once the reviewer has looked at the changes, a button to confirm that the risk still stands."
+    lv: "WINGMAN sagatavo pārskatīšanu, kad uzdevums tiek izveidots: kas mainījies kopš pēdējās pārskatīšanas, ieteiktās izmaiņas un, kad pārskatītājs izmaiņas ir izskatījis, poga, ar ko apstiprināt, ka risks joprojām ir spēkā."
 
 - id: task-review-start
   file: media/task-review-card-stage-startreview.png

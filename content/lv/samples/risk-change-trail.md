@@ -6,7 +6,7 @@ for: [ciso]
 use_cases: [vulnerability-impact, risk-review]
 ---
 
-**SIA „Piemērs”.** Risks **R-07: Klientu dati tiek atklāti caur identitātes serveri**. Identitātes serveri uzņēmums uztur pats. Riska īpašnieks: A. Ozola (IT direktore). Varbūtību un ietekmi vērtē skalā no 1 līdz 5; vērtējums ir abu reizinājums. Riska apetīte: 12.
+**SIA „Piemērs”.** Risks **R-07: Klientu dati tiek atklāti caur identitātes serveri**. Identitātes serveri uzņēmums uztur pats. Riska īpašnieks: A. Ozola (IT direktore). Varbūtību un ietekmi vērtē skalā no 1 līdz 5; vērtējums ir abu reizinājums. Riska apetīte, kas iestatīta WINGMAN, tāpēc katrs vērtējums redzams attiecībā pret to: riskam ar vērtējumu 12 vai vairāk vajadzīgs vadības institūcijas lēmums par apstrādi vai fiksēts pieņemšanas lēmums. Līdz vadības institūcijas sēdei riska politika ļauj riska īpašniekam šādu risku pieņemt uz laiku līdz 14 dienām, informējot valdes priekšsēdētāju.
 
 ## Signāls
 
@@ -36,12 +36,14 @@ Konsole bija pieejama laikā, kad ievainojamību jau zināmi izmantoja. No plkst
 
 | Laiks (iestata sistēma) | Kurš | Kas mainījās | Pirms | Pēc |
 |---|---|---|---|---|
+| 01.10.2026. plkst. 09.05 | J. Liepa (IT vadītājs) | Uzdevums: atslēgt administrēšanas konsoles piekļuvi no interneta | – | izpildīts; pievienota ugunsmūra izmaiņa |
 | 01.10.2026. plkst. 09.14 | A. Ozola (IT direktore) | Ieteikums: varbūtība 2 → 4 | ierosināts | pieņemts |
 | 01.10.2026. plkst. 09.16 | A. Ozola (IT direktore) | Varbūtība, no pieņemtā ieteikuma | 2 | 4 |
 | 01.10.2026. plkst. 09.16 | A. Ozola (IT direktore) | Vērtējums | 8 | 16 |
 | 01.10.2026. plkst. 09.16 | A. Ozola (IT direktore) | Apstrāde | – | Pagaidu: labojums līdz 3. okt., līdz tam atlikušais risks pieņemts |
 | 01.10.2026. plkst. 09.16 | A. Ozola (IT direktore) | Saistītie uzdevumi | – | Uzstādīt ražotāja labojumu, J. Liepa, termiņš 3. okt. |
 | 01.10.2026. plkst. 09.17 | WINGMAN | Kopsavilkums | iepriekšējā versija | atjaunots |
+| 01.10.2026. plkst. 09.22 | A. Ozola (IT direktore) | Pielikums | – | E-pasts valdes priekšsēdētājam: pagaidu lēmums |
 | 01.10.2026. plkst. 11.02 | J. Liepa (IT vadītājs) | Pierādījumi | – | Piekļuves žurnālu pārskats, piekļuves datu nomaiņa |
 | 03.10.2026. plkst. 14.20 | J. Liepa (IT vadītājs) | Uzdevums: uzstādīt ražotāja labojumu | atvērts | izpildīts; pievienots skenera rezultāts |
 | 03.10.2026. plkst. 14.40 | A. Ozola (IT direktore) | Varbūtība | 4 | 2 |
@@ -51,4 +53,4 @@ Vēsturi nevar labot vai dzēst. Ieteikuma pieņemšana ir atsevišķs ieraksts 
 
 ## Eskalācija
 
-Vērtējums 16 divas dienas pārsniedza riska apetīti 12, un tam bija fiksēts pagaidu lēmums. Vadības pārskats 14. oktobrī apstiprināja apstrādi un lēma par papildu soli administrēšanas konsolei.
+Divas dienas vērtējums bija 16, t. i., sasniedza vai pārsniedza riska apetītes robežu 12, un tam bija pagaidu pieņemšanas lēmums, ko riska politika ļauj pieņemt riska īpašniekam. Pēc konsoles atslēgšanas no interneta varbūtība palika 4, jo līdz labojuma uzstādīšanai ievainojamība bija sasniedzama no iekšējā tīkla. Vadības pārskats 14. oktobrī (protokols, 1. lēmums) apstiprināja apstrādi un nolēma līdz 30. novembrim ieviest administrēšanas konsolei divfaktoru autentifikāciju, īpašniece A. Ozola.

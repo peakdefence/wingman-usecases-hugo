@@ -10,6 +10,7 @@ standards:
 - MiCA (ES) 2023/1114
 - ECB / VUM uzraudzības prasības
 - EBI vadlīnijas par iekšējo pārvaldību un ārpakalpojumiem
+- EAAPI vadlīnijas par IKT drošību un pārvaldību
 - ISO 31000
 stages:
 - title: Risku taksonomija un apetīte

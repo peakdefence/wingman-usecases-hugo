@@ -20,7 +20,7 @@ stages:
   media:
   - plans-list
   ai: Shows progress per plan.
-  decides: The CISO.
+  decides: The security lead.
 - title: Daily work
   text: Tasks come from controls, vulnerabilities, incidents and findings, and land with people.
   nodes:

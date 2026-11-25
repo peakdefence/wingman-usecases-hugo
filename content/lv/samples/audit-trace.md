@@ -24,7 +24,7 @@ M. Kalns, izstrādes vadītājs un izmaiņu pārvaldības procesa īpašnieks, 2
 
 ## Kopa un izlase
 
-Kopa tika saskaņota ar izlaišanas žurnālu, ne tikai ar izmaiņu ierakstiem. 24. septembra žurnāla eksports aptver visu periodu. Produktam B tajā ir 41 izlaišana ražošanas vidē. 38 ir izmaiņu ieraksti (CHG-211 līdz CHG-248); 3 steidzamie labojumi tika izlaisti bez izmaiņu ieraksta.
+Kopa tika saskaņota ar izlaišanas žurnālu, ne tikai ar izmaiņu ierakstiem. 24. septembra žurnāla eksports aptver visu periodu un rāda, kā katra izlaišana veikta: caur izlaides procesu vai manuāli. Produktam B tajā ir 41 izlaišana ražošanas vidē. 38 ir izmaiņu ieraksti (CHG-211 līdz CHG-248); 3 steidzamie labojumi tika izlaisti bez izmaiņu ieraksta.
 
 Izlase: 10 izmaiņu ieraksti, izvēlēti nejauši (sākumvērtība saglabāta darba dokumentos), un visi 3 neierakstītie steidzamie labojumi.
 
@@ -35,13 +35,14 @@ Izlase: 10 izmaiņu ieraksti, izvēlēti nejauši (sākumvērtība saglabāta da
 | CHG-236 (steidzams labojums), CHG-247 (steidzams labojums) | Nav pārskatīts |
 | 3 neierakstīti steidzamie labojumi (izlaišanas žurnāls: 14. maijs, 2. jūlijs, 19. augusts) | Nav izmaiņu ieraksta, nav pārskatīts |
 
-Nejaušā izlase: 4 no 10 bez pārskatīšanas pirms izlaišanas. Neierakstītie steidzamie labojumi: 3 no 3 bez jebkādas pārskatīšanas. Piecas no septiņām kļūmēm bija steidzamie labojumi.
+Nejaušā izlase: 4 no 10 bez pārskatīšanas pirms izlaišanas. Neierakstītie steidzamie labojumi: 3 no 3 bez jebkādas pārskatīšanas. Piecas no septiņām kļūmēm bija steidzamie labojumi, un žurnāls rāda, ka visi pieci ieviesti manuāli, ārpus izlaides procesa.
 
 ## Norādītie pierādījumi
 
 | Pierādījums | Nozīme |
 |---|---|
-| Izlaišanas žurnāla eksports, 24. septembris, 41 ieraksts | Norāda uz neatbilstību |
+| Izlaišanas žurnāla eksports, 24. septembris, 41 ieraksts ar ieviešanas veidu | Norāda uz neatbilstību |
+| Intervijas ar CHG-223 un 242 inženieriem, 24. septembris | Norāda uz neatbilstību |
 | Izmaiņu ieraksti CHG-223, 236, 242, 247 | Norāda uz neatbilstību |
 | Intervijas transkripts, 23. septembris, apstiprināts 25. septembrī | Norāda uz neatbilstību |
 | Produkts B: izlaides procesa konfigurācijas eksports, 24. septembris (nav apstiprināšanas soļa) | Norāda uz neatbilstību |
@@ -51,7 +52,7 @@ Nejaušā izlase: 4 no 10 bez pārskatīšanas pirms izlaišanas. Neierakstītie
 
 ## Konstatējums un secinājums
 
-**Konstatējums:** Būtiska neatbilstība. Produkta B izmaiņas ražošanas vidē tiek ieviestas bez procedūrā prasītās otrās pārskatīšanas: 4 no 10 izlases izmaiņām un visi 3 steidzamie labojumi, kas ieviesti bez izmaiņu ieraksta. Kļūme ir sistemātiska: produkta B izlaides procesā nav apstiprināšanas soļa, steidzamie labojumi procesu apiet, un procesa īpašnieks apstiprināja, ka pārskatīšana ir atkarīga no atmiņas. Melnrakstu ar pierādījumiem sagatavoja audita prasme; smagumu noteica auditore 2. oktobrī.
+**Konstatējums:** Būtiska neatbilstība. Produkta B izmaiņas ražošanas vidē tiek ieviestas bez procedūrā prasītās otrās pārskatīšanas: 4 no 10 izlases izmaiņām un visi 3 steidzamie labojumi, kas ieviesti bez izmaiņu ieraksta. Kļūme ir sistemātiska: produkta B izlaides procesā nav apstiprināšanas soļa, steidzamie labojumi procesu apiet, un procesa īpašnieks apstiprināja, ka steidzamo labojumu pārskatīšana pēc izlaišanas ir atkarīga no atmiņas. Melnrakstu ar pierādījumiem sagatavoja audita prasme; smagumu noteica auditore 2. oktobrī.
 
 **Produkts A** salīdzinājumam: kopa saskaņota ar izlaišanas žurnālu, 52 izlaišanas un 52 izmaiņu ieraksti. Nejaušā izlasē 10, visas pārskatītas pirms izlaišanas; izlaides process prasa otro apstiprinājumu (konfigurācijas eksports, 24. septembris). Atbilstība.
 
@@ -59,9 +60,9 @@ Nejaušā izlase: 4 no 10 bez pārskatīšanas pirms izlaišanas. Neierakstītie
 
 ## Turpmākā rīcība
 
-- **Pamatcēlonis:** produkta B izlaides procesā nav obligāta apstiprināšanas soļa (konfigurācijas eksports, 24. septembris). Parastās izmaiņas ir atkarīgas no tā, vai inženieris lūdz pārskatīšanu, kā CHG-223 un 242; steidzamie labojumi procesu apiet pavisam, kā CHG-236, 247 un 3 neierakstītās izlaišanas.
+- **Pamatcēlonis:** produkta B izlaides procesā nav obligāta apstiprināšanas soļa (konfigurācijas eksports, 24. septembris). Parastās izmaiņas ir atkarīgas no tā, vai inženieris lūdz pārskatīšanu, kā 24. septembra intervijās apstiprināja abi inženieri, kas veica CHG-223 un 242; steidzamie labojumi procesu apiet pavisam, kā CHG-236, 247 un 3 neierakstītās izlaišanas.
 - **Korekcija:** 7 pirms ieviešanas nepārskatīto izlaišanu pārskatīšana pēc fakta un 28 nepārbaudīto izmaiņu ierakstu salīdzināšana ar izlaišanas žurnālu līdz 31. oktobrim. Īpašnieks M. Kalns.
 - **Korektīvā darbība:** produkta B izlaides procesā ieviest tādu pašu obligātu apstiprināšanas soli kā produktam A un virzīt caur to arī steidzamos labojumus. Īpašnieks M. Kalns, termiņš 2026. gada 15. decembris.
 - **Efektivitātes pārbaude:** 2027. gada martā atkārtota izlase no produkta B janvāra un februāra izlaišanām, salīdzinot ar izlaišanas žurnālu. Īpašniece I. Dreimane. Izpildīta, ja katra izlases izlaišana un katrs žurnālā redzamais steidzamais labojums pirms izlaišanas ir pārskatīts.
 
-Vadība apstiprināja novēršanas plānu pārskatā 14. oktobrī.
+Vadība apstiprināja novēršanas plānu pārskatā 14. oktobrī (protokols, 5. lēmums).

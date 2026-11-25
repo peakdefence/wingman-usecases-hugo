@@ -8,7 +8,7 @@ problems:
 - q: Monday is one client, Tuesday another. I lose time re-reading my own notes.
   a: 'The Brief is written each morning from that client''s records: where risk concentrates, what is overdue, which gaps are open. You start from the current state, not from your last notes.'
 - q: My junior's risk workshop looks different from mine.
-  a: A skill follows the same steps every time. The risk interview asks one question at a time, matches each concern to existing risks before creating a new one, and links assets, suppliers and controls. You can also build your own skill set to use with WINGMAN, so the steps are your method, and use skills to build policy templates to your own preferences.
+  a: 'A skill follows the same steps every time. The risk interview asks one question at a time, matches each concern to existing risks before creating a new one, and links assets, suppliers and controls. You can also build your own skill set to use with WINGMAN, so the steps are your method, and use skills to build policy templates to your own preferences. They stay your property: Peak Defence cannot see them, and neither can other consultants.'
 - q: The registers drift between my visits.
   a: Reviews are tasks for the client's own owners, on a calendar. Register checks list what has gone stale, so your visit starts with a list, not with a reconciliation.
 - q: I chase evidence by email, client after client.
@@ -64,7 +64,6 @@ yours:
 - The client relationship. Owners at the client confirm their own risks and controls.
 - Review of what you accept. A suggestion you accept is your decision, on the record.
 ask:
-- Who can see the skills and templates you build
 - Partner licensing and pricing
 - One view across all your clients
 - 'Who holds the contract for a client''s workspace: you or the client'

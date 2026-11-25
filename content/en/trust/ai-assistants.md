@@ -51,7 +51,7 @@ Inside WINGMAN, **Ask Wingman** is a built-in assistant that opens beside any re
 
 **Where the skills come from.** Peak Defence provides them, either built into WINGMAN or as skill files to deploy on the AI platform or agent you use, depending on your agreement.
 
-**Your own skills.** A consultant or a security team can build their own skill set to use with WINGMAN, and use skills to build policy templates to their own preferences. In Claude, a skill is a set of instructions kept in your own account, so it stays with you.
+**Your own skills.** A consultant or a security team can build their own skill set to use with WINGMAN, and use skills to build policy templates to their own preferences. In Claude, a skill is a set of instructions kept in your own account, so it stays with you. A consultant's own skills remain the consultant's property: they are not available to Peak Defence, and they are hidden from other consultants.
 
 ## Which model does the work
 

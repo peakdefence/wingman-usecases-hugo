@@ -24,7 +24,7 @@ M. Kalns, Head of Engineering and owner of the change management process, 23 Sep
 
 ## Population and sample
 
-The population was reconciled against the deployment log, not only the change records. The log export of 24 September covers the whole period. Product B had 41 production deployments in it. 38 have change records (CHG-211 to CHG-248); 3 hotfixes were deployed with no change record at all.
+The population was reconciled against the deployment log, not only the change records. The log export of 24 September covers the whole period and records how each deployment was made: through the release pipeline or by hand. Product B had 41 production deployments in it. 38 have change records (CHG-211 to CHG-248); 3 hotfixes were deployed with no change record at all.
 
 Sample: 10 change records chosen at random (the seed is kept in the working papers), plus all 3 unrecorded hotfixes.
 
@@ -35,13 +35,14 @@ Sample: 10 change records chosen at random (the seed is kept in the working pape
 | CHG-236 (hotfix), CHG-247 (hotfix) | No review |
 | 3 unrecorded hotfixes (deployment log 14 May, 2 July, 19 August) | No change record, no review |
 
-Random sample: 4 of 10 without the review before release. Unrecorded hotfixes: 3 of 3 without any review. Five of the seven failures were hotfixes.
+Random sample: 4 of 10 without the review before release. Unrecorded hotfixes: 3 of 3 without any review. Five of the seven failures were hotfixes, and the log shows all five were deployed by hand, outside the pipeline.
 
 ## Evidence cited
 
 | Evidence | Stance |
 |---|---|
-| Deployment log export, 24 September, 41 entries | Indicates a nonconformity |
+| Deployment log export, 24 September, 41 entries with deployment method | Indicates a nonconformity |
+| Interviews with the engineers of CHG-223 and 242, 24 September | Indicates a nonconformity |
 | Change records CHG-223, 236, 242, 247 | Indicates a nonconformity |
 | Interview transcript, 23 September, confirmed 25 September | Indicates a nonconformity |
 | Product B: release pipeline configuration export, 24 September (no approval gate) | Indicates a nonconformity |
@@ -51,7 +52,7 @@ Random sample: 4 of 10 without the review before release. Unrecorded hotfixes: 3
 
 ## Finding and conclusion
 
-**Finding:** Major nonconformity. Production changes to Product B are released without the second review the procedure requires: 4 of 10 sampled changes, and all 3 hotfixes deployed with no change record. The failure is systematic: Product B's pipeline has no approval gate, hotfixes bypass the pipeline, and the process owner confirmed review depends on memory. Drafted with its evidence by the audit skill; graded by the auditor on 2 October.
+**Finding:** Major nonconformity. Production changes to Product B are released without the second review the procedure requires: 4 of 10 sampled changes, and all 3 hotfixes deployed with no change record. The failure is systematic: Product B's pipeline has no approval gate, hotfixes bypass the pipeline, and the process owner confirmed that reviewing hotfixes after release depends on memory. Drafted with its evidence by the audit skill; graded by the auditor on 2 October.
 
 **Product A**, for comparison: population reconciled against the deployment log, 52 deployments and 52 change records. 10 sampled at random, all reviewed before release; the release pipeline enforces a second approval (configuration export, 24 September). Conformity.
 
@@ -59,9 +60,9 @@ Random sample: 4 of 10 without the review before release. Unrecorded hotfixes: 3
 
 ## Follow-up
 
-- **Root cause:** Product B's release pipeline has no enforced approval gate (configuration export, 24 September). Normal changes rely on engineers asking for a review, as with CHG-223 and 242; hotfixes bypass the pipeline entirely, as with CHG-236, 247 and the 3 unrecorded deployments.
+- **Root cause:** Product B's release pipeline has no enforced approval gate (configuration export, 24 September). Normal changes rely on engineers asking for a review, as the two engineers who made CHG-223 and 242 confirmed in interview on 24 September; hotfixes bypass the pipeline entirely, as with CHG-236, 247 and the 3 unrecorded deployments.
 - **Correction:** retrospective review of the 7 deployments not reviewed before release, and a check of the 28 untested change records against the deployment log, by 31 October. Owner M. Kalns.
 - **Corrective action:** add the same enforced approval gate as Product A to Product B's pipeline, and route hotfixes through it. Owner M. Kalns, due 15 December 2026.
 - **Effectiveness check:** in March 2027, re-sample Product B deployments for January and February against the deployment log. Owner I. Dreimane. Passed if every sampled deployment, and every hotfix in the log, was reviewed before release.
 
-Management accepted the fix plan at the review on 14 October.
+Management accepted the fix plan at the review on 14 October (minutes, decision 5).

@@ -39,7 +39,7 @@ stages:
   links:
   - control-evidence
   - audit-evidence
-  ai: Ierosina izlasi katram tvērumam.
+  ai: Var ierosināt izlasi katram tvērumam; izlasi veic auditors.
   decides: Auditors veic izlasi.
 - title: Secinājums katram tvērumam
   text: Prasība produktam A var atbilst, bet produktam B būt neatbilstība. Katrs secinājums saglabā savu tvērumu.

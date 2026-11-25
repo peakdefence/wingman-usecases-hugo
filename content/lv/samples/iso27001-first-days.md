@@ -12,7 +12,7 @@ use_cases: [new-requirements, risk-identification]
 
 Prasme uzdod vienu jautājumu pēc otra: ko uzņēmums veido, kur tas darbojas, kā cilvēki autentificējas, kas ir klienti, kuri piegādātāji ir svarīgi, kurš var palīdzēt. No atbildēm:
 
-- **Tvērums:** „Piemērs Labs analītikas platformas izstrāde, uzturēšana un atbalsts, kas darbojas publiskā mākonī, no Rīgas un Tallinas birojiem. Korporatīvais IT ir iekļauts tiktāl, cik tas atbalsta platformu.”
+- **Tvērums:** „Piemērs Labs analītikas platformas izstrāde, uzturēšana un atbalsts, kas darbojas publiskā mākonī, no Rīgas un Tallinas birojiem. Korporatīvais IT ir iekļauts: darbinieku klēpjdatori, e-pasts un identitātes pakalpojums.”
 - **Izveidotie aktīvi, katram savs īpašnieks:** analītikas platforma, mākoņa konts, koda repozitorijs, identitātes pakalpojums, klientu datubāze, atbalsta dienests un 9 piegādātāji.
 - **Ielādētais ietvars:** ISO/IEC 27001:2022, 4.–10. punkta prasības un 93 A pielikuma kontroles kā prasību ieraksti: katrai prasībai viens ieraksts, ar kuru sasaista kontroles, pierādījumus un uzdevumus.
 
@@ -56,7 +56,7 @@ Katrs dokuments ir atsevišķs ieraksts WINGMAN ar savu īpašnieku. Īpašnieks
 
 Katrs no bankas 240 jautājumiem tiek sasaistīts ar kontroli un standarta punktu. Trīs no tiem:
 
-| Bankas jautājums | Kontrole | ISO 27001 | Statuss šodien |
+| Bankas jautājums | Kontrole | ISO 27001 | Statuss 3. dienā |
 |---|---|---|---|
 | Vai visai administratīvajai piekļuvei prasāt daudzfaktoru autentifikāciju? | DFA mākoņa konsolei un koda repozitorijam | A.8.5 | Ieviests; pierādījums pievienots |
 | Kā tiek pārskatītas izmaiņas ražošanas vidē? | Otrā pārskatīšana izlaides procesā | A.8.32 | Daļēji: izlaidēm ieviests, steidzamajiem labojumiem vēl nav |
@@ -76,8 +76,8 @@ Pārējie 237 tiek sasaistīti tāpat. 3. dienā uz 96 no 240 varēja atbildēt 
 
 Trīs dienās top tvērums, nepilnību analīze, risku reģistrs, plāns ar uzdevumiem katram cilvēkam un dokumenti – tā daļa, kas parasti aizņem mēnešiem ilgas sanāksmes. Plānā ietverto darbu paveikt prasa nedēļas. Pierādīt to – vēl ilgāk: kontrolēm jādarbojas un jāatstāj pierādījumi, pirms auditors tās var pārbaudīt. Pēc tam seko iekšējais audits, vadības pārskats un divi sertifikācijas institūcijas auditi: pirmais pārbauda dokumentus, otrais – kontroļu darbību. Cik mēnešu ierakstus vēlas redzēt jūsu sertifikācijas institūcija, jājautā tai; WINGMAN pa kontrolei parāda, kurām pierādījumi jau ir.
 
-Tipisks kalendārs bankas noteiktajos divpadsmit mēnešos: plānā ietvertais darbs paveikts līdz 12. nedēļai; tad aptuveni trīs mēnešus kontroles darbojas un uzkrāj pierādījumus; iekšējais audits un vadības pārskats notiek 5. un 6. mēnesī; sertifikācijas institūcijas pirmais audits – 6. mēnesī, otrais – 7. līdz 9. mēnesī. Precīzos minimumus nosaka jūsu sertifikācijas institūcija, un tās maksa ir atsevišķa.
+Tipisks kalendārs bankas noteiktajos divpadsmit mēnešos: plānā ietvertais darbs paveikts līdz 12. nedēļai; tad aptuveni trīs mēnešus kontroles darbojas un uzkrāj pierādījumus; iekšējais audits un vadības pārskats notiek 5. un 6. mēnesī; sertifikācijas institūcijas pirmais audits – 6. mēnesī, otrais – 7. līdz 9. mēnesī. Precīzos minimumus nosaka jūsu sertifikācijas institūcija, un tā ņem savu maksu.
 
 ## Ar konsultantu
 
-Tās pašas trīs dienas var vadīt konsultants ar klienta ierakstiem. Prasme var būt paša konsultanta, ar viņa interviju jautājumiem un politiku veidnēm. Konsultants sagatavo iepriekš minētos piecus lēmumus; tos pieņem tehniskais direktors. Kad sadarbība beidzas, ieraksti paliek klienta darba vidē.
+Tās pašas trīs dienas var vadīt konsultants ar klienta ierakstiem. Prasme var būt paša konsultanta, ar viņa interviju jautājumiem un politiku veidnēm. Konsultants sagatavo iepriekš minētos piecus lēmumus; tos pieņem tehniskais direktors. Kad sadarbība beidzas, ieraksti paliek klienta darba vidē; konsultanta prasme paliek konsultanta īpašumā, paslēpta no Peak Defence un citiem konsultantiem.

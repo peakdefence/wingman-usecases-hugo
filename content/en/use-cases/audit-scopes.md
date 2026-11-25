@@ -39,7 +39,7 @@ stages:
   links:
   - control-evidence
   - audit-evidence
-  ai: Proposes samples per scope.
+  ai: Can propose a sample per scope; the auditor draws it.
   decides: The auditor samples.
 - title: Conclusion per scope
   text: A requirement can be compliant for Product A and a nonconformity for Product B. Each conclusion keeps its scope.

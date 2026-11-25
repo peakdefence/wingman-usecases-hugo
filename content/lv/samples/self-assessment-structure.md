@@ -26,7 +26,7 @@ Ierosinātie novērtējumi ir melnraksts. Skalu aizstāj ar NKDC noteikto skalu,
 
 ## Uz ko balstās ziņojums
 
-Katrs novērtējums ir sasaistīts ar kontrolēm, to statusu un pierādījumiem, kas ir derīgi ziņojuma datumā. Prasības bez kontroles vai ar pierādījumiem, kuru derīgums beidzies tiek uzskaitītas kā nepilnības, pirms kāds paraksta.
+Katrs novērtējums ir sasaistīts ar kontrolēm, to statusu un pierādījumiem, kas ir derīgi ziņojuma datumā. Prasības bez kontroles vai ar pierādījumiem, kuru derīgums beidzies, tiek uzskaitītas kā nepilnības, pirms ziņojumu paraksta.
 
 ## Apstiprināšana
 

@@ -20,7 +20,7 @@ stages:
   - plans-list
   - task-calendar
   ai: Builds the calendar from the requirements that ask for reviews.
-  decides: The CISO approves.
+  decides: The security lead approves.
 - title: Assets and suppliers
   text: Owners confirm their assets, dependencies and suppliers are current.
   nodes:

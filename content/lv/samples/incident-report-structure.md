@@ -39,4 +39,4 @@ Datplūsmas filtrēšana pie mitināšanas pakalpojuma sniedzēja ieslēgta plks
 
 ## Kas saglabājas ierakstā
 
-Incidents ir daļa no iestādes kiberincidentu žurnāla. Katram iepriekš minētajam solim saglabājas, kas to veica, un sistēmas fiksētais laiks, un vēsturi nevar labot vai dzēst.
+Incidents ir daļa no iestādes kiberincidentu žurnāla. Katram iepriekš minētajam solim tiek saglabāts izpildītājs un sistēmas fiksētais laiks, un vēsturi nevar labot vai dzēst.

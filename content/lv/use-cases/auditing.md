@@ -3,7 +3,7 @@ title: Audits
 uc: auditing
 group: assurance
 weight: 10
-summary: Plānot, veikt un noslēgt iekšējo vai ārējo auditu, izmantojot ierakstus, kas organizācijai jau ir.
+summary: Plānot, veikt un noslēgt iekšējo vai piegādātāja auditu, izmantojot ierakstus, kas organizācijai jau ir.
 standards:
 - ISO 27001
 - NIS2
@@ -45,7 +45,7 @@ stages:
   - plan-audit
   - role-risk
   - person-role
-  ai: Ierosina tēmas un papildjautājumus; transkribē lokāli.
+  ai: Ierosina tēmas un papildjautājumus; ar intervējamo piekrišanu transkribē lokāli.
   decides: Auditors izlemj, ko jautāt.
 - title: Pierādījumi
   text: Savāc ierakstus, izlases un ekrānuzņēmumus, pārbauda to derīgumu un salīdzina darīto ar uzrakstīto.
@@ -56,8 +56,8 @@ stages:
   links:
   - audit-evidence
   - control-evidence
-  ai: Apsolītie pierādījumi tiek izsekoti ar termiņiem; transkripti un ekrānuzņēmumi kļūst par pierādījumiem pēc auditējamā apstiprinājuma.
-  decides: Auditējamais apstiprina ierakstīto.
+  ai: Apsolītie pierādījumi tiek izsekoti ar termiņiem. Intervētais apstiprina, ka transkripts ir precīzs, un ekrānuzņēmumiem tiek fiksēts, kurš un kad tos pievienoja.
+  decides: Auditors izlemj, kas ir pierādījums.
 - title: Pamatota pārliecība
   text: Katrai prasībai izlemj, vai pierādījumi sniedz pamatotu pārliecību. Ja nesniedz, reģistrē konstatējumu.
   nodes:

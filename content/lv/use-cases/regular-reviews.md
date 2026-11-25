@@ -17,7 +17,7 @@ stages:
   links:
   - role-plan
   ai: Izveido kalendāru no prasībām, kas paredz pārskatīšanas.
-  decides: CISO apstiprina.
+  decides: Drošības vadītājs apstiprina.
 - title: Aktīvi un piegādātāji
   text: Īpašnieki apstiprina, ka viņu aktīvi, atkarības un piegādātāji ir aktuāli.
   nodes:

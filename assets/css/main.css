@@ -325,3 +325,4 @@ h1.forq { font-size: clamp(1.8rem, 3.6vw, 2.7rem); max-width: 22ch }
 .prose.trust ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px }
 .sample .inwm { margin: 0 }
 .sample .prose blockquote { margin: 0; padding: 10px 16px; border-left: 3px solid var(--line); color: var(--ink-2) }
+.rolesnote { color: var(--muted); font-size: .92rem; margin: 4px 0 0 }

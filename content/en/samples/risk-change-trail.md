@@ -6,7 +6,7 @@ for: [ciso]
 use_cases: [vulnerability-impact, risk-review]
 ---
 
-**Example Co.** Risk **R-07: Customer data exposed through the identity server**. Example Co. runs the identity server itself. Risk owner: A. Ozola (Head of IT). Likelihood and impact are rated 1 to 5; the score is the two multiplied. Risk appetite: 12.
+**Example Co.** Risk **R-07: Customer data exposed through the identity server**. Example Co. runs the identity server itself. Risk owner: A. Ozola (Head of IT). Likelihood and impact are rated 1 to 5; the score is the two multiplied. Risk appetite, set in WINGMAN so every score is shown against it: a score of 12 or more needs treatment or a recorded acceptance by the management body. Until the management body meets, the risk policy lets the risk owner accept such a risk for up to 14 days, with the CEO informed.
 
 ## The signal
 
@@ -36,12 +36,14 @@ The console was exposed while the vulnerability was known to be exploited. 09:30
 
 | Time (set by the system) | Who | What changed | Before | After |
 |---|---|---|---|---|
+| 1 Oct 2026, 09:05 | J. Liepa (IT lead) | Task: remove internet access to the admin console | – | done; firewall change attached |
 | 1 Oct 2026, 09:14 | A. Ozola (Head of IT) | Suggestion: likelihood 2 → 4 | proposed | accepted |
 | 1 Oct 2026, 09:16 | A. Ozola (Head of IT) | Likelihood, from the accepted suggestion | 2 | 4 |
 | 1 Oct 2026, 09:16 | A. Ozola (Head of IT) | Score | 8 | 16 |
 | 1 Oct 2026, 09:16 | A. Ozola (Head of IT) | Treatment | – | Interim: fix by 3 Oct, residual accepted until then |
 | 1 Oct 2026, 09:16 | A. Ozola (Head of IT) | Linked tasks | – | Install the vendor's fix, J. Liepa, due 3 Oct |
 | 1 Oct 2026, 09:17 | WINGMAN | Brief | previous version | refreshed |
+| 1 Oct 2026, 09:22 | A. Ozola (Head of IT) | Attachment | – | Email to the CEO: interim decision |
 | 1 Oct 2026, 11:02 | J. Liepa (IT lead) | Evidence | – | Access log review, credential rotation |
 | 3 Oct 2026, 14:20 | J. Liepa (IT lead) | Task: install the vendor's fix | open | done; scan result attached |
 | 3 Oct 2026, 14:40 | A. Ozola (Head of IT) | Likelihood | 4 | 2 |
@@ -51,4 +53,4 @@ The history cannot be edited or deleted. Accepting the suggestion is its own ent
 
 ## Escalation
 
-16 was above the appetite of 12 for two days, under a recorded interim decision. The management review on 14 October confirmed the treatment and decided on a further step for the admin console.
+The score was 16, at or above the appetite threshold of 12, for two days, under an interim acceptance the risk policy allows the risk owner to make. Likelihood stayed at 4 after the console was taken off the internet, because the vulnerability could still be reached from inside the network until the fix. The management review on 14 October (minutes, decision 1) confirmed the treatment and decided to add two-factor authentication to the admin console by 30 November, owner A. Ozola.

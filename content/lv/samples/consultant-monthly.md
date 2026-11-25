@@ -40,7 +40,7 @@ SIA „Piemērs” darbojas 47 kontroles. Viena kontrole var nosegt vairākas A 
 
 | Lēmums | Gaida kopš | Ko tas aiztur |
 |---|---|---|
-| Noteikt īpašnieku algu aprēķina pakalpojuma sniedzējam | 19. septembra | Piegādātāja pārskatīšana (A.5.19) paliek atvērta; tā ir viena no 15 vēl nenosegtajām kontrolēm |
+| Noteikt īpašnieku algu aprēķina pakalpojuma sniedzējam | 19. septembra | Piegādātāja pārskatīšana (A.5.19) paliek atvērta; tā ir viena no 15 vēl nenosegtajām A pielikuma prasībām |
 | Apstiprināt darbības nepārtrauktības mācību datumu | 3. oktobra | Ja mācības nenotiek līdz februārim, A.5.30 martā nebūs pierādījuma |
 
 ## Nākamajā mēnesī

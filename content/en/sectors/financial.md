@@ -10,6 +10,7 @@ standards:
 - MiCA (EU) 2023/1114
 - ECB / SSM supervisory expectations
 - EBA guidelines on internal governance and outsourcing
+- EIOPA guidelines on ICT security and governance
 - ISO 31000
 stages:
 - title: Risk taxonomy and appetite

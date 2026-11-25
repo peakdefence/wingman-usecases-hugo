@@ -12,7 +12,7 @@ use_cases: [new-requirements, risk-identification]
 
 The skill asks one question at a time: what the company builds, where it runs, how people sign in, who the customers are, which suppliers matter, who can help. From the answers:
 
-- **Scope:** "The development, operation and support of the Example Labs analytics platform, run on a public cloud from the Riga and Tallinn offices. Corporate IT is included as far as it supports the platform."
+- **Scope:** "The development, operation and support of the Example Labs analytics platform, run on a public cloud from the Riga and Tallinn offices. Corporate IT is included: staff laptops, email and the identity provider."
 - **Assets created, each with an owner:** the analytics platform, the cloud account, the code repository, the identity provider, the customer database, the support desk, and 9 suppliers.
 - **Framework loaded:** ISO/IEC 27001:2022, the requirements of clauses 4 to 10 and the 93 Annex A controls, as requirement records: one record per requirement, to which controls, evidence and tasks are linked.
 
@@ -56,7 +56,7 @@ Each document is its own record in WINGMAN, with an owner. Its owner gets a revi
 
 Each of the bank's 240 questions is mapped to a control and a clause. Three of them:
 
-| Bank's question | Control | ISO 27001 | Status today |
+| Bank's question | Control | ISO 27001 | Status on day 3 |
 |---|---|---|---|
 | Do you enforce multi-factor authentication for all administrative access? | MFA for the cloud console and code repository | A.8.5 | In place; evidence attached |
 | How are production changes reviewed? | Second review in the release pipeline | A.8.32 | Partly: in place for releases, not yet for hotfixes |
@@ -76,8 +76,8 @@ The other 237 are mapped the same way. On day 3, 96 of the 240 could be answered
 
 Three days produce the scope, the gap analysis, the risk register, the plan with tasks for each person, and the documents: the part that usually takes months of meetings. Doing the work in the plan takes weeks. Proving it takes longer: controls have to run and leave evidence before an auditor can test them. Then come an internal audit, a management review, and the certification body's two audits, the first of the documents and the second of the controls in operation. How many months of records your certification body wants to see is a question for them; WINGMAN shows, control by control, which ones have the evidence.
 
-A typical calendar inside the bank's twelve months: the plan's work is done by week 12; controls then run and collect evidence for about three months; the internal audit and the management review follow in months 5 and 6; the certification body's first audit comes in month 6 and the second in months 7 to 9. Your certification body sets the exact minimums, and its fee is separate.
+A typical calendar inside the bank's twelve months: the plan's work is done by week 12; controls then run and collect evidence for about three months; the internal audit and the management review follow in months 5 and 6; the certification body's first audit comes in month 6 and the second in months 7 to 9. Your certification body sets the exact minimums and charges its own fee.
 
 ## With a consultant
 
-The same three days can be run by a consultant on the client's records. The skill can be the consultant's own, with their interview questions and their policy templates. The consultant prepares the five decisions above; the CTO makes them. The records stay in the client's workspace when the engagement ends.
+The same three days can be run by a consultant on the client's records. The skill can be the consultant's own, with their interview questions and their policy templates. The consultant prepares the five decisions above; the CTO makes them. The records stay in the client's workspace when the engagement ends; the consultant's skill stays the consultant's property, hidden from Peak Defence and from other consultants.
