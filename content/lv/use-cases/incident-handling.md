@@ -10,7 +10,7 @@ standards:
 - VDAR 33. pants
 stages:
 - title: Atklāšana
-  text: Monitoringa brīdinājumi, piegādātāju paziņojumi un draudu jaunumi ienāk kā signāli. Signāli, kas jau saistīti ar riskiem un aktīviem, tiek atpazīti ātrāk.
+  text: Monitoringa brīdinājumi, piegādātāju paziņojumi un apdraudējumu jaunumi ienāk kā signāli. Signāli, kas jau saistīti ar riskiem un aktīviem, tiek atpazīti ātrāk.
   nodes:
   - signal
   - incident

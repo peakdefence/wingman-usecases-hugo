@@ -1,6 +1,6 @@
 <section class="cta">
   <div class="wrap ctain">
-    <div><h2>{{ i18n "cta_title" }}</h2><p>{{ i18n "cta_text" }}</p></div>
+    {{ with .Params.next }}<div><h2>{{ .title }}</h2><p>{{ .text }}</p></div>{{ else }}<div><h2>{{ i18n "cta_title" }}</h2><p>{{ i18n "cta_text" }}</p></div>{{ end }}
     <a class="btn" href="{{ site.Params.contactURL }}">{{ i18n "cta_button" }}</a>
   </div>
 </section>

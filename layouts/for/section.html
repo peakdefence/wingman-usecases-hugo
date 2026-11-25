@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section class="block wrap">
+  <p class="eyebrow">{{ i18n "sit_eyebrow" }}</p>
+  <h1>{{ i18n "sit_title" }}</h1>
+  <p class="lede">{{ i18n "sit_lede" }}</p>
+  <div class="cards sits">
+  {{ range .Pages.ByWeight }}
+    <a class="card sit" href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3><p>{{ .Params.summary }}</p><span class="meta go">{{ .Params.short }} →</span></a>
+  {{ end }}
+  </div>
+</section>
+{{ end }}

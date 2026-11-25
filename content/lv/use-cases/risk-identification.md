@@ -29,7 +29,7 @@ stages:
   ai: Ierosina atbilstības un veido risku tikai tad, ja nekas neatbilst.
   decides: Īpašnieks apstiprina katru atbilstību.
 - title: Sasaistīt
-  text: Tiek sasaistīti aktīvi, piegādātāji, draudi un esošās kontroles.
+  text: Tiek sasaistīti aktīvi, piegādātāji, apdraudējumi un esošās kontroles.
   nodes:
   - risk
   - asset

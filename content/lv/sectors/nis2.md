@@ -3,7 +3,7 @@ title: NIS2 un Nacionālās kiberdrošības likums
 short: NIS2
 sector: nis2
 weight: 10
-summary: Vadīt būtiska vai svarīga subjekta informācijas drošības funkciju no viena reģistra, kurā ir piegādātāji, aktīvi, riski, incidenti, ievainojamības, draudi un uzdevumi.
+summary: Vadīt būtiska vai svarīga subjekta informācijas drošības funkciju no viena reģistra, kurā ir piegādātāji, aktīvi, riski, incidenti, ievainojamības, apdraudējumi un uzdevumi.
 audience: Būtiskie un svarīgie subjekti saskaņā ar NIS2, tostarp valsts un pašvaldību institūcijas un privātie pakalpojumu sniedzēji, uz kuriem attiecas Nacionālās kiberdrošības likums.
 standards:
 - NIS2 (ES) 2022/2555
@@ -34,8 +34,8 @@ stages:
   - control-document
   ai: Sasaista prasības ar esošajām kontrolēm un uzskaita prasības bez kontroles.
   decides: Kiberdrošības pārvaldnieks saskaņo nepilnību sarakstu.
-- title: Riski, draudi un ievainojamības
-  text: Riski ir piesaistīti tvēruma pakalpojumiem. Draudi un ievainojamības padara scenārijus konkrētus un maina novērtējumu starp pārskatīšanām.
+- title: Riski, apdraudējumi un ievainojamības
+  text: Riski ir piesaistīti tvēruma pakalpojumiem. Apdraudējumi un ievainojamības padara scenārijus konkrētus un maina novērtējumu starp pārskatīšanām.
   nodes:
   - risk
   - asset
@@ -46,7 +46,7 @@ stages:
   - threat-risk
   - vulnerability-asset
   - vulnerability-risk
-  ai: Ierosina riskus no nozares draudu ainas un atvērtajām ievainojamībām.
+  ai: Ierosina riskus no nozares apdraudējumu ainas un atvērtajām ievainojamībām.
   decides: Risku īpašnieki novērtē un izvēlas apstrādi.
 - title: Vadības atbildība
   text: Vadības institūcija apstiprina risku pārvaldības pasākumus un uzrauga to izpildi. Pienākumi ir piesaistīti lomām, tāpēc personāla maiņa nepārtrauc atbildības ķēdi.
@@ -125,8 +125,8 @@ registers:
   title: Ievainojamību reģistrs
   text: Skenēšanas, ielaušanās testu un brīdinājumu rezultāti, piesaistīti aktīviem, ar novēršanas uzdevumiem un termiņiem.
 - entity: threat
-  title: Draudu reģistrs
-  text: Nozarei būtiski apdraudējuma avoti un notikumi, ko papildina draudu izlūkošanas signāli un kas sasaistīti ar riskiem, kurus tie ietekmē.
+  title: Apdraudējumu reģistrs
+  text: Nozarei būtiski apdraudējuma avoti un notikumi, ko papildina apdraudējumu izlūkošanas signāli un kas sasaistīti ar riskiem, kurus tie ietekmē.
 - entity: conclusion
   title: Pašvērtējuma rezultāti
   text: Katras prasības izpildes līmenis ar kontrolēm un pierādījumiem, uz kuriem tas balstās, iekļauts pašvērtējuma ziņojumā un salīdzināms starp cikliem.

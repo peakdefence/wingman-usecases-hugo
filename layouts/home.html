@@ -30,7 +30,7 @@
     <a class="card sit" href="{{ .RelPermalink }}">
       <h3>{{ i18n (printf "sit_%s_t" $id) }}</h3>
       <p>{{ i18n (printf "sit_%s_p" $id) }}</p>
-      <span class="meta go">{{ i18n (printf "sit_%s_go" $id) }} →</span>
+      <span class="meta go">{{ .Params.short | default .Title }} →</span>
     </a>
     {{ end }}
   {{ end }}

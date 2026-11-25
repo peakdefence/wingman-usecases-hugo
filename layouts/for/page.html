@@ -1,0 +1,79 @@
+{{ define "main" }}
+<section class="block wrap ucpage">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></nav>
+  <p class="eyebrow">{{ .Params.short }}</p>
+  <h1 class="forq">{{ .Title }}</h1>
+  <p class="lede">{{ .Params.summary }}</p>
+</section>
+
+{{ with .Params.problems }}
+<section class="block wrap">
+  <h2>{{ i18n "for_problems" }}</h2>
+  <p class="lede">{{ i18n "for_problems_lede" }}</p>
+  <div class="qa">{{ range . }}<div class="card reg prob"><h3>{{ .q }}</h3><p>{{ .a }}</p></div>{{ end }}</div>
+</section>
+{{ end }}
+
+{{ with .Params.terms }}
+<section class="block wrap">
+  <h2>{{ i18n "for_terms" }}</h2>
+  <dl class="terms">{{ range . }}<div><dt>{{ .t }}</dt><dd>{{ .d }}</dd></div>{{ end }}</dl>
+</section>
+{{ end }}
+
+{{ with .Params.does }}
+<section class="block wrap">
+  <h2>{{ i18n "for_does" }}</h2>
+  <p class="lede">{{ i18n "for_does_lede" }}</p>
+  <ol class="promises">
+  {{ $d := . }}
+  {{ range site.Data.home.promises }}{{ $id := .id }}{{ with index $d $id }}
+    <li class="promise"><h3>{{ i18n (printf "prom_%s_t" $id) }}</h3><p>{{ . }}</p></li>
+  {{ end }}{{ end }}
+  </ol>
+</section>
+{{ end }}
+
+{{ with .Params.media }}
+<section class="block wrap">
+  <h2>{{ i18n "for_screens" }}</h2>
+  {{ partial "media-strip.html" (dict "ids" .) }}
+</section>
+{{ end }}
+
+{{ with .Params.yours }}
+<section class="block wrap">
+  <h2>{{ $.Params.yours_title | default (i18n "for_yours") }}</h2>
+  <p class="lede">{{ i18n "for_yours_lede" }}</p>
+  <ul class="plain">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+</section>
+{{ end }}
+
+{{ with .Params.ask }}
+<section class="block wrap">
+  <h2>{{ i18n "for_ask" }}</h2>
+  <p class="lede">{{ i18n "for_ask_lede" }}</p>
+  <ul class="plain ask">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+</section>
+{{ end }}
+
+<section class="block wrap">
+  <h2>{{ i18n "for_next" }}</h2>
+  <div class="cards">
+  {{ range .Params.use_cases }}{{ with site.GetPage (printf "/use-cases/%s" .) }}
+    <a class="card" href="{{ .RelPermalink }}"><p class="eyebrow">{{ i18n (printf "group_%s" .Params.group) }}</p><h4>{{ .Title }}</h4><p>{{ .Params.summary }}</p></a>
+  {{ end }}{{ end }}
+  {{ range .Params.sectors }}{{ with site.GetPage (printf "/sectors/%s" .) }}{{ partial "sector-card.html" . }}{{ end }}{{ end }}
+  </div>
+</section>
+
+<section class="block wrap">
+  <h2>{{ i18n "for_others" }}</h2>
+  <div class="cards sits">
+  {{ range (where (where site.RegularPages "Section" "for") "RelPermalink" "ne" .RelPermalink).ByWeight }}
+    <a class="card sit" href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3><span class="meta go">{{ .Params.short }} →</span></a>
+  {{ end }}
+  </div>
+</section>
+
+{{ end }}

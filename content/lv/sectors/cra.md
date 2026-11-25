@@ -33,7 +33,7 @@ stages:
   - risk-asset
   - threat-risk
   - document-asset
-  ai: Ierosina riskus no produkta arhitektūras, komponentēm un draudu ainas.
+  ai: Ierosina riskus no produkta arhitektūras, komponentēm un apdraudējumu ainas.
   decides: Produkta drošības atbildīgais apstiprina.
 - title: Būtiskās prasības kā kontroles
   text: Katra I pielikuma prasība tiek sasaistīta ar izstrādes cikla kontrolēm, no kurām daudzas jau ir ieviestas ISO 27001 vai IEC 62443 vajadzībām.

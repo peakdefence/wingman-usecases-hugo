@@ -549,7 +549,7 @@
   title: { en: "Triage with the incident handler", lv: "Triāža kopā ar incidenta apstrādātāju" }
   caption:
     en: "The assigned handler asks for severity, reporting obligations and next-hour decisions. The Incident Management skill runs eleven steps and ends with suggestions: link the two candidate source systems, create the missing threat, and six remediation tasks. The handler accepts or rejects each."
-    lv: "Nozīmētais apstrādātājs prasa smagumu, ziņošanas pienākumus un nākamās stundas lēmumus. Incidentu pārvaldības prasme izpilda vienpadsmit soļus un beidz ar ieteikumiem: sasaistīt divas iespējamās avota sistēmas, izveidot trūkstošo draudu un sešus novēršanas uzdevumus. Apstrādātājs katru pieņem vai noraida."
+    lv: "Nozīmētais apstrādātājs prasa smagumu, ziņošanas pienākumus un nākamās stundas lēmumus. Incidentu pārvaldības prasme izpilda vienpadsmit soļus un beidz ar ieteikumiem: sasaistīt divas iespējamās avota sistēmas, izveidot trūkstošo apdraudējumu un sešus novēršanas uzdevumus. Apstrādātājs katru pieņem vai noraida."
 
 - id: ask-skill-incident-triage-1-steps
   file: media/ask-skill-incident-triage-1-steps.jpg
@@ -591,10 +591,10 @@
   sequence: { key: ask-skill-incident-triage, step: 3 }
   width: 1232
   height: 960
-  title: { en: "Suggestions: link assets, create the threat", lv: "Ieteikumi: sasaistīt aktīvus, izveidot draudu" }
+  title: { en: "Suggestions: link assets, create the threat", lv: "Ieteikumi: sasaistīt aktīvus, izveidot apdraudējumu" }
   caption:
     en: "Update suggestions add InvoiceNinja and Gmail as candidate sources; a create suggestion adds the threat Phishing, business email compromise and domain impersonation and links the incident as its instance."
-    lv: "Atjaunošanas ieteikumi pievieno InvoiceNinja un Gmail kā iespējamos avotus; izveides ieteikums pievieno draudu Pikšķerēšana, biznesa e-pasta kompromitēšana un domēna viltošana un sasaista incidentu kā tā gadījumu."
+    lv: "Atjaunošanas ieteikumi pievieno InvoiceNinja un Gmail kā iespējamos avotus; izveides ieteikums pievieno apdraudējumu Pikšķerēšana, biznesa e-pasta kompromitēšana un domēna viltošana un sasaista incidentu kā tā gadījumu."
 
 - id: ask-skill-incident-triage-4-accepted
   file: media/ask-skill-incident-triage-4-accepted.jpg
@@ -638,7 +638,7 @@
   title: { en: "Article 33(3)(a): nature of the breach", lv: "33. panta 3. punkta a) apakšpunkts: pārkāpuma būtība" }
   caption:
     en: "Summary, breach type, cause or vector with the three possibilities from the record, linked threat and systems, each marked KNOWN or UNKNOWN."
-    lv: "Kopsavilkums, pārkāpuma tips, cēlonis vai vektors ar trim iespējām no ieraksta, saistītais drauds un sistēmas, katrs atzīmēts kā ZINĀMS vai NEZINĀMS."
+    lv: "Kopsavilkums, pārkāpuma tips, cēlonis vai vektors ar trim iespējām no ieraksta, saistītais apdraudējums un sistēmas, katrs atzīmēts kā ZINĀMS vai NEZINĀMS."
 
 - id: ask-skill-incident-authority-notice-2
   file: media/ask-skill-incident-authority-notice-2.jpg
