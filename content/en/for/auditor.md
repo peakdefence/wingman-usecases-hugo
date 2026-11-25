@@ -8,25 +8,57 @@ problems:
 - q: I start every engagement blind, with a folder of PDFs.
   a: Before fieldwork the documents are read against the requirements in scope. Each requirement is marked documented, partly documented or not documented, with paragraph references. Unreadable documents are flagged.
 - q: AI cites the wrong paragraph with confidence.
-  a: Each mapping carries its paragraph reference so you can open the document and check it. The mapping is a proposal, and the auditor reviews it. Checking references stays the auditor's work.
+  a: Each mapping carries its paragraph reference, and each document its version, so you can open the document and check. The mapping is a proposal, and the auditor reviews it. Checking references stays the auditor's work.
 - q: Evidence promised in an interview never arrives.
   a: Promised evidence is tracked with a due date, so what is still missing on report day is a list, not a memory.
+- q: The summary lost the qualifier that mattered.
+  a: Interviews are transcribed, and the transcript is kept as evidence once the interviewee confirms it is accurate. A finding can cite it, so the original words are there when a summary is disputed.
 - q: I see fluent policies that nobody runs.
   a: 'A document shows the claimed control. Evidence shows whether it operates: it records what was collected, when and by whom, and until when it is valid. Expired evidence counts as none.'
 - q: Who decided this, and on what basis?
-  a: AI changes arrive as suggestions with their reasons. A named person accepts or rejects each one, and nothing is written until then. A finding cites the evidence it rests on.
+  a: AI changes arrive as suggestions with their reasons. A named person accepts or rejects each one, and nothing is written until then. For findings and conclusions that person is the auditor. A finding cites the evidence it rests on.
 - q: One requirement, three products, three different answers.
   a: 'An audit can have several scopes. Each control protects its own product, evidence is collected per scope, and each conclusion keeps its scope: compliant for one product, a nonconformity for another.'
+terms:
+- t: Claimed control
+  d: What the organisation's documents say it does. Whether it is done is a separate question, answered by evidence.
+- t: Evidence
+  d: 'Proof that a control actually ran: a record, a screenshot, a log export. It has a date and it expires.'
+- t: Finding and conclusion
+  d: 'A finding is an observation raised during the audit. Once the auditor confirms it, the conclusion is the result for that requirement: compliant, or a nonconformity.'
+- t: Skill
+  d: A procedure your AI assistant follows step by step on your WINGMAN records, such as a risk interview or an audit. It runs in the assistant you already use, for example Claude.
 does:
-  knowledge: Requirement, claimed control, document, evidence, finding and conclusion are separate linked records. Any statement in the report can be followed back to what it rests on.
+  knowledge: Requirement, claimed control, document, evidence, finding and conclusion are separate linked records. A statement in the report can be followed back to what it rests on wherever that link was made, and a finding must cite its evidence.
   projects: The audit skill works through scope, claimed controls, plan and interviews, evidence, findings and conclusions. The requirement list comes from WINGMAN or from your own checklist workbook.
   regular: The audit programme sits in the yearly plan. Corrective actions are tasks with owners and dates, and last year's finding can be followed to its task, its evidence and the conclusion.
   events: Incidents and changes in the audit period are records with dates, available for sampling like any other.
+prompt:
+  title: Test an AI document review before you rely on it
+  text: |-
+    You are assisting a lead auditor who follows ISO 19011. The auditor wants to see how far an AI document review can be trusted. Answer in the language I write in.
+
+    I will paste one policy or procedure with names removed, and then a short list of requirements (for example five ISO 27001 Annex A controls).
+
+    For each requirement, give me a table row with:
+    - Verdict: documented, partly documented or not documented.
+    - The exact words of the document that support the verdict, quoted, with the section or paragraph number as it appears in the document.
+    - What the document claims is done, in one sentence.
+    - What evidence would show it is actually done, and the question I should ask in the interview.
+
+    Rules:
+    - Quote only text that is in the document. If you cannot quote it, the verdict is "not documented".
+    - Never infer a control from the general tone of the document.
+    - Mark any qualifier ("should", "where possible", "planned") and say how it weakens the claim.
+    - Do not judge whether the control operates; a document cannot show that.
+
+    End with the three references I should check by hand first, and why.
 media:
 - risk-accept-2-accepted
 - ctl-detail
 - doc-list
 yours_title: What WINGMAN does not do
+yours_lede: Stated plainly, because these are an auditor's judgements.
 yours:
 - It does not decide what counts as evidence. The auditee confirms that a transcript or a screenshot records what was said or shown; whether it is sufficient is the auditor's judgement.
 - It does not choose the sample. It proposes samples per scope; the auditor samples.

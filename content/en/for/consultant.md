@@ -16,12 +16,42 @@ problems:
 - q: At month end the client asks what they got for the retainer.
   a: Completed reviews, accepted changes, closed tasks and new evidence are dated records in the client's register. The work is visible there, not only in your invoice.
 - q: When the engagement ends, the client gets a zip file.
-  a: What you build is a set of linked records in the client's WINGMAN, owned by the client's roles. It stays usable when you leave.
+  a: Each client has its own workspace, and its data can be exported. What you build stays there as linked records, owned by roles at the client, and remains usable when you leave.
+- q: I worry about mixing clients when I use AI tools.
+  a: Each client's records sit in that client's own workspace, not in a chat project you keep tidy by hand.
+terms:
+- t: Skill
+  d: A procedure your AI assistant follows step by step on your WINGMAN records, such as a risk interview or an audit. It runs in the assistant you already use, for example Claude.
+- t: The Brief
+  d: A short written summary of the state of the programme, produced by WINGMAN's AI every morning from the records.
+- t: Plan
+  d: A set of recurring or one-off tasks toward one goal, such as the yearly calendar of reviews.
+- t: Signal
+  d: 'A sign that something is changing: a monitoring alert, a scanner result, a supplier''s notice, threat news, or something a colleague reports.'
 does:
-  knowledge: 'Each organisation has its own record: requirements, assets, risks, controls, suppliers and evidence, linked. Your assistant works on one client''s record at a time.'
-  projects: 'Skills cover the engagements you already sell: a framework implementation, a risk identification, a business impact analysis, an internal audit. For an audit you can bring your own checklist workbook.'
+  knowledge: 'Each client has its own workspace with its own record: requirements, assets, risks, controls, suppliers and evidence, linked. The data can be exported.'
+  projects: 'Skills cover the engagements you already sell: a framework implementation, a risk identification, a business impact analysis, an internal audit. Frameworks come with their requirements loaded, and you can add single requirements. For an audit you can bring your own checklist workbook.'
   regular: Plans generate the recurring reviews between your visits. The management review pack is assembled from the records.
   events: A signal at a client is classified and linked to the assets and risks it touches, so you see what it concerns before you pick up the phone.
+prompt:
+  title: What state is this client in?
+  text: |-
+    You are helping an independent security consultant who runs programmes for several client organisations. Answer in the language I write in.
+
+    Ask me the questions below one at a time and wait for each answer. Do not ask for client names or confidential details; I will describe one client in general terms.
+    1. What does the client do, how large is it, and which standard or law are you working toward?
+    2. What have you delivered so far, and where does it live (documents, spreadsheets, a tool)?
+    3. What does the client's own staff do between your visits, and how do you know it was done?
+    4. Which evidence are you still waiting for, and from whom?
+    5. What would the client have to do alone if your engagement ended next month?
+    6. What do you report to the client each month?
+
+    Then give me:
+    - A one-page state of this client: done, in progress, stale, missing.
+    - What depends on my memory and not on anything the client holds.
+    - A handover list: what a successor or an internal hire would need.
+    - A monthly report outline that shows the work done and the decisions waiting for the client.
+    - The three recurring tasks I should hand to the client's own people, with a reminder cadence.
 media:
 - ask-scope
 - plans-list
@@ -34,9 +64,8 @@ ask:
 - Whether you can add your own skills, checklists and templates, and who can see them
 - Partner licensing and pricing
 - One view across all your clients
-- Who owns the client's workspace, and what happens when an engagement ends
+- 'Who holds the contract for a client''s workspace: you or the client'
 - How Peak Defence's own consulting relates to partners
-- How client data is kept apart
 use_cases:
 - risk-identification
 - business-impact-analysis

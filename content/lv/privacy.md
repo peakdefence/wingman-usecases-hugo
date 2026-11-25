@@ -7,7 +7,7 @@ description: Ko šī vietne uzskaita, kā, un kā no tā atteikties.
 
 ## Kas tiek uzskaitīts
 
-- Lapa, kuru skatāt, lapas sadaļas, kas parādās ekrānā ritinot, un tas, vai uzvedne tika nokopēta.
+- Lapa, kuru skatāt, lapas sadaļas, kas parādās ekrānā ritinot, tas, vai uzvedne vai ziņa tika nokopēta, un kuri no uzskaitītajiem jautājumiem lapā „Kam tas paredzēts” tajā brīdī bija atzīmēti. Ziņas teksts un tas, ko ierakstāt, mums netiek nosūtīts.
 - Vietne, no kuras atnācāt, tikai kā domēna vārds, ja pārlūks to nosūta.
 - Jūsu valsts, ko mitināšanas pakalpojuma sniedzējs nosaka pēc tīkla adreses.
 - Apmeklētāja marķieris šai dienai: vienvirziena jaucējkods no jūsu tīkla adreses un pārlūka paraksta kopā ar nejaušu vērtību, kas katru dienu tiek ģenerēta no jauna un nākamajā dienā dzēsta. Tas ļauj atšķirt vienu apmeklētāju no desmit vienā dienā. To nevar atšifrēt, tas nekad netiek rakstīts jūsu ierīcē un divu dienu laikā tiek aizstāts ar vienkāršu skaitli.

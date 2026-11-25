@@ -7,7 +7,7 @@ This site is published by Peak Defence. It sets no cookies, loads nothing from a
 
 ## What is counted
 
-- The page you view, the sections of a page that scroll into view, and whether a prompt was copied.
+- The page you view, the sections of a page that scroll into view, whether a prompt or a message was copied, and which of the listed questions on a “Who it is for” page were ticked when it was. The text of the message and anything you type are not sent to us.
 - The website you came from, as a domain name only, when your browser sends one.
 - Your country, derived by the hosting provider from your network address.
 - A visitor token for the current day: a one-way hash of your network address and browser signature mixed with a random value that is generated fresh every day and deleted the day after. It lets us tell one visitor from ten on the same day. It cannot be reversed, is never written to your device, and is replaced by a plain count within two days.

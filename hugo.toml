@@ -24,6 +24,11 @@ defaultContentLanguageInSubdir = false
 [params]
   company = "Peak Defence"
   contactURL = "https://peakdefence.com/"
+  # Where the question picker on the "Who it is for" pages sends people. Leave empty to hide a button.
+  # contactEmail: the address the "Send by email" button writes to.
+  # linkedinURL: a LinkedIn profile or company page; the button copies the message and opens it.
+  contactEmail = ""
+  linkedinURL = ""
   # Videos load from youtube-nocookie.com only after a visitor clicks play.
 
 [markup.goldmark.renderer]

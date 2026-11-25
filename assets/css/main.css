@@ -309,3 +309,14 @@ h1.forq { font-size: clamp(1.8rem, 3.6vw, 2.7rem); max-width: 22ch }
 .plain { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; max-width: 78ch }
 .plain li { padding-left: 16px; border-left: 3px solid var(--line); color: var(--ink-2) }
 .plain.ask { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); max-width: none }
+.askbox { display: flex; flex-direction: column; gap: 14px }
+.askbox .plain.ask li { padding: 0; border: 0 }
+.askbox label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink) }
+.askbox label:has(input:checked) { border-color: var(--accent); background: var(--accent-soft) }
+.askbox input[type=checkbox] { margin-top: .3em; accent-color: var(--accent); flex: none }
+.askbox .own { flex-direction: column; gap: 6px; cursor: default; max-width: 78ch }
+.askbox .own span { font-family: var(--f-label); font-size: .85rem; font-weight: 600; color: var(--muted) }
+.askbox .own input { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; width: 100% }
+.sendrow { margin-left: auto; display: flex; flex-wrap: wrap; gap: 8px }
+.prompt .sendrow .copy { margin-left: 0; text-decoration: none }
+.prompt .sendrow .copy + .copy { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent) }
