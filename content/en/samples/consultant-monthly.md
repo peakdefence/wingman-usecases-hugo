@@ -12,7 +12,7 @@ use_cases: [regular-reviews, risk-identification]
 
 | | September | October |
 |---|---|---|
-| Requirements covered | 71 of 93 | 78 of 93 |
+| Annex A controls covered | 71 of 93 | 78 of 93 |
 | Controls with valid evidence | 36 of 47 | 41 of 47 |
 | Open major nonconformities | 0 | 1 (A.8.32, fix due 15 December) |
 
@@ -30,16 +30,16 @@ use_cases: [regular-reviews, risk-identification]
 
 | Work | Records |
 |---|---|
-| Reviews completed | R-07 by A. Ozola, 1 Oct; access management policy v4 by J. Liepa, 2 Oct; payroll provider by L. Vītola, 20 Oct; 6 more |
+| Reviews completed | R-07 by A. Ozola, 1 Oct; access management policy v4 by J. Liepa, 2 Oct; payroll provider by L. Vītola, 20 Oct; R-03, R-11, R-15, R-22, R-27 and the logging procedure by their owners |
 | Tasks closed | 11, including "Remove unused admin accounts" (J. Liepa, 13 days late) |
 | Evidence added | 6, including the restore test of the customer database, 22 Oct |
 
 ## Waiting on the client
 
-| Decision | Waiting since |
-|---|---|
-| Name an owner for the payroll provider | 19 September |
-| Approve the business continuity exercise date | 3 October |
+| Decision | Waiting since | What it holds up |
+|---|---|---|
+| Name an owner for the payroll provider | 19 September | The supplier review (A.5.19) stays open; it is one of the 15 controls still to cover |
+| Approve the business continuity exercise date | 3 October | Without an exercise by February, A.5.30 has no evidence for the March audit |
 
 ## Next month
 

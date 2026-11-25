@@ -7,7 +7,7 @@ summary: WINGMAN keeps the record, and the assistant you already use does the wo
 media: [ask-scope, ask-skill-task-1-help, ask-incident-detect-1-suggestion]
 ask:
 - The connection details and sign-in method for our organisation
-- Where to get the skills and how to install them
+- Which AI platforms the skill files are available for
 - The full list of MCP tools
 - Which AI configuration you would recommend for us
 - Whether my own skills can run inside Ask Wingman
@@ -40,7 +40,7 @@ A skill is a written procedure the assistant follows step by step on your record
 
 Skills that work with WINGMAN:
 
-- **Framework implementation.** Any regulation or standard: ISO 27001, NIS2, DORA, SOC 2 and others. It runs in Claude Code on WINGMAN's records and guides one person through the whole implementation, in stages you can stop and resume. It builds the implementation architecture: context and scope, requirements, a risk workshop, controls grouped into workstreams, and tasks split between the people who will do them, all created in WINGMAN. It drafts the policies and procedures from the organisation's own context and sends them out for review, approval and acknowledgement. The implementation work takes days instead of months; running the controls long enough to prove them still takes its time. [ISO 27001 from zero, the first three days]({{< relref "/samples/iso27001-first-days" >}})
+- **Framework implementation.** Any regulation or standard: ISO 27001, NIS2, DORA, SOC 2 and others. It runs in Claude Code on WINGMAN's records and guides one person through the whole implementation, in stages you can stop and resume. It builds the implementation architecture: context and scope, requirements, a risk workshop, controls grouped into workstreams, and tasks split between the people who will do them, all created in WINGMAN. It drafts the policies and procedures from the organisation's own context and sends them out for review, approval and acknowledgement. Building the plan, the risk register and the documents takes days instead of months; doing the work and running the controls long enough to prove them still takes its time. [ISO 27001 from zero, the first three days]({{< relref "/samples/iso27001-first-days" >}})
 - **Risk identification.** An interview with a risk owner, one question at a time, matching each concern to existing risks before creating a new one. [Risk identification]({{< relref "/use-cases/risk-identification" >}})
 - **Risk treatment and register quality.** A treatment proposal per risk for the owner to confirm, and a check of the register for missing owners, ratings, controls and links. [Risk review and treatment]({{< relref "/use-cases/risk-review" >}})
 - **Business impact analysis.** Service by service, with the owner, recorded as one control per service that holds its impact over time and recovery objectives. [Business impact analysis]({{< relref "/use-cases/business-impact-analysis" >}})
@@ -49,7 +49,9 @@ Skills that work with WINGMAN:
 
 Inside WINGMAN, **Ask Wingman** is a built-in assistant that opens beside any record. It offers skills grouped by area: incident communications, risk analysis, audit plan, management review, business impact analysis and AI use case review.
 
-In Claude, a skill is a set of instructions kept in your own Claude account. You can write your own for your own method, and it stays with you.
+**Where the skills come from.** Peak Defence provides them, either built into WINGMAN or as skill files to deploy on the AI platform or agent you use, depending on your agreement.
+
+**Your own skills.** A consultant or a security team can build their own skill set to use with WINGMAN, and use skills to build policy templates to their own preferences. In Claude, a skill is a set of instructions kept in your own account, so it stays with you.
 
 ## Which model does the work
 

@@ -6,7 +6,7 @@ weight: 40
 slug_id: solo
 problems:
 - q: Pašvērtējuma ziņojumu katru reizi rakstu no nulles.
-  a: Ziņojums tiek sagatavots no ierakstiem. Katrai prasībai tas uzskaita kontroles, to statusu un derīgos pierādījumus un ierosina izpildes līmeni ar pamatojumu. Secinājums par katru prasību saglabājas nākamajai reizei.
+  a: Ziņojums NKDC tiek sagatavots no aktuālajiem ierakstiem katru reizi, kad tas jāiesniedz, tāpēc tas balstās uz tās dienas datiem. Katrai prasībai tas uzskaita kontroles, to statusu un derīgos pierādījumus un ierosina novērtējumu ar pamatojumu. Katras prasības novērtējums saglabājas, tāpēc nākamais ziņojums parāda, kas mainījies.
 - q: Piektdiena, 16.40. Vai šis incidents ir nozīmīgs?
   a: MK noteikumu Nr. 397 prasības ir ielādētas kā ieraksti. WINGMAN ierosina klasifikāciju pēc to kritērijiem ar pamatojumu, seko termiņiem un no incidenta ieraksta sagatavo katra CERT.LV iesniedzamā ziņojuma melnrakstu. Izlemjat un nosūtāt jūs.
 - q: Nepārtrauktības plāns ir vienreiz apstiprināts un nekad nav pārbaudīts.

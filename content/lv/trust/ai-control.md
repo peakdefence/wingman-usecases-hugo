@@ -38,6 +38,8 @@ Katra ieraksta izmaiņa tiek saglabāta tā vēsturē: kas mainījās, vērtība
 
 Dažas izmaiņas WINGMAN veic pats, bez ieteikuma, piemēram, atjauno ieraksta kopsavilkumu, kad ieraksts mainās. Arī tās tiek fiksētas, un katram MI rakstītajam kopsavilkumam vēsturē saglabājas modelis, kas to uzrakstīja, un laiks.
 
+Ieteikuma pieņemšana vēsturē tiek fiksēta kā atsevišķs ieraksts ar cilvēku, kurš to pieņēma, un laiku.
+
 Dokumentiem un citiem pielikumiem tiek saglabātas versijas.
 
 ## Konstatējumi norāda savus pierādījumus

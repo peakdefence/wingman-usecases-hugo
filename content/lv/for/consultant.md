@@ -8,7 +8,7 @@ problems:
 - q: Pirmdien viens klients, otrdien cits. Zaudēju laiku, pārlasot pats savas piezīmes.
   a: 'Pārskats katru rītu tiek uzrakstīts no šī klienta ierakstiem: kur koncentrējas risks, kas kavējas, kuras nepilnības ir atvērtas. Jūs sākat no pašreizējā stāvokļa, nevis no savām pēdējām piezīmēm.'
 - q: Mana jaunākā kolēģa risku darbnīca izskatās citādi nekā manējā.
-  a: Prasme katru reizi veic tos pašus soļus. Risku intervija uzdod pa vienam jautājumam, katru nosaukto apdraudējumu vispirms salīdzina ar esošajiem riskiem un tikai tad veido jaunu, un sasaista aktīvus, piegādātājus un kontroles.
+  a: Prasme katru reizi veic tos pašus soļus. Risku intervija uzdod pa vienam jautājumam, katru nosaukto apdraudējumu vispirms salīdzina ar esošajiem riskiem un tikai tad veido jaunu, un sasaista aktīvus, piegādātājus un kontroles. Varat arī izveidot savu prasmju kopumu darbam ar WINGMAN, lai soļi būtu jūsu metode, un ar prasmēm veidot politiku veidnes pēc savām vēlmēm.
 - q: Starp manām vizītēm reģistri pamazām atšķiras.
   a: Pārskatīšanas ir uzdevumi klienta paša īpašniekiem, pēc kalendāra. Reģistru pārbaudes uzskaita, kas ir novecojis, tāpēc jūsu vizīte sākas ar sarakstu, nevis ar saskaņošanu.
 - q: Pierādījumus pieprasu pa e-pastu, klientu pēc klienta.
@@ -64,7 +64,7 @@ yours:
 - Attiecības ar klientu. Klienta īpašnieki paši apstiprina savus riskus un kontroles.
 - Pieņemtā pārbaude. Ieteikums, ko pieņemat, ir jūsu lēmums, un tas paliek ierakstā.
 ask:
-- Vai varat pievienot savas prasmes, kontrolsarakstus un veidnes un kurš tās redz
+- Kurš redz jūsu izveidotās prasmes un veidnes
 - Partneru licencēšana un cenas
 - Viens skats uz visiem jūsu klientiem
 - 'Kurš slēdz līgumu par klienta darba vidi: jūs vai klients'

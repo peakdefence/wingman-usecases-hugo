@@ -6,7 +6,7 @@ weight: 40
 slug_id: solo
 problems:
 - q: The self-assessment report is written from nothing every time.
-  a: The report is generated from the records. For each requirement it lists the controls, their status and valid evidence and proposes a fulfilment level with reasons. The conclusion per requirement is kept for next time.
+  a: The report for NKDC is produced from the current records whenever it is due, so it rests on that day's data. For each requirement it lists the controls, their status and valid evidence and proposes an assessment with reasons. The assessment per requirement is kept, so the next report shows what changed.
 - q: Friday, 16:40. Is this incident significant?
   a: The requirements of the regulation come loaded as records. WINGMAN proposes the classification against its criteria, with reasons, tracks the deadlines and drafts each report to CERT.LV from the incident record. You decide and you send.
 - q: The continuity plan was approved once and never tested.

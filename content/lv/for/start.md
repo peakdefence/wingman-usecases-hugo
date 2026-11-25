@@ -1,7 +1,7 @@
 ---
 title: Klients prasa ISO 27001, bet mums nav drošības komandas
 short: Sākt no nulles
-summary: Lai sāktu, nav vajadzīga drošības nodaļa. Jāzina darbu secība un vajadzīga viena vieta, kur glabājas katrs rezultāts, lai nākamais solis balstītos uz iepriekšējo. Ar ieviešanas prasmi viens cilvēks ieviešanas darbu paveic dienās, nevis mēnešos.
+summary: Lai sāktu, nav vajadzīga drošības nodaļa. Jāzina darbu secība un vajadzīga viena vieta, kur glabājas katrs rezultāts, lai nākamais solis balstītos uz iepriekšējo. Ar ieviešanas prasmi viens cilvēks plānu, risku reģistru un dokumentus sagatavo dienās, nevis mēnešos.
 weight: 20
 slug_id: start
 problems:
@@ -30,7 +30,7 @@ terms:
   d: Atbildība, kas nodalīta no cilvēka, kurš to pilda, piemēram, riska īpašnieks vai incidentu vadītājs. Viens cilvēks var pildīt vairākas lomas.
 does:
   knowledge: Sāciet no tā, kas jums jau darbojas. Produkti, sistēmas, dati un piegādātāji kļūst par aktīviem ar īpašniekiem; tvēruma apraksts tiek sagatavots no tiem.
-  projects: 'Jūs izvēlaties ietvaru, un tā prasības tiek ielādētas kā ieraksti. Tās tiek salīdzinātas ar to, ko jau darāt, pēc tā, ko pastāstāt asistentam, un pēc jūsu esošajiem dokumentiem. Katra ir atzīmēta kā nosegta, daļēji nosegta vai atvērta; atvērtās kļūst par ieviešamām kontrolēm, uzdevumiem un plānu. Ieviešanas prasme visu arhitektūru izveido dienās: darba virzienus ar īpašniekiem, uzdevumus ar stundām un politikas un procedūras, kas izsūtītas apstiprināšanai un iepazīšanai.'
+  projects: 'Jūs izvēlaties ietvaru, un tā prasības tiek ielādētas kā ieraksti. Tās tiek salīdzinātas ar to, ko jau darāt, pēc tā, ko pastāstāt asistentam, un pēc jūsu esošajiem dokumentiem. Katra ir atzīmēta kā nosegta, daļēji nosegta vai atvērta; atvērtās kļūst par ieviešamām kontrolēm, uzdevumiem un plānu. Ieviešanas prasme plānu izveido dienās: darba virzienus ar īpašniekiem, uzdevumus ar stundām un politikas un procedūras, kas izsūtītas apstiprināšanai un iepazīšanai.'
   regular: Pārskatīšanu kalendārs tiek veidots no prasībām, kas tās paredz. Īpašnieki saņem uzdevumus un atgādinājumus; jūs redzat, kas kavējas un kam tas pieder.
   events: Ikviens var ziņot par kaut ko aizdomīgu. Aprakstiet sarunā, kas noticis, un WINGMAN sagatavo incidenta ierakstu kā ieteikumu, ko apstiprina cilvēks.
 prompt:

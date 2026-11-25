@@ -7,7 +7,7 @@ summary: WINGMAN uztur ierakstus, un asistents, ko jau lietojat, ar tiem strād�
 media: [ask-scope, ask-skill-task-1-help, ask-incident-detect-1-suggestion]
 ask:
 - Savienojuma dati un pieslēgšanās veids mūsu organizācijai
-- Kur iegūt prasmes un kā tās uzstādīt
+- Kurām MI platformām pieejami prasmju faili
 - Pilns MCP rīku saraksts
 - Kādu MI konfigurāciju jūs ieteiktu mums
 - Vai manas prasmes var darboties Ask Wingman
@@ -40,7 +40,7 @@ Prasme ir rakstiska procedūra, ko asistents soli pa solim izpilda ar jūsu iera
 
 Prasmes, kas strādā ar WINGMAN:
 
-- **Ietvara ieviešana.** Jebkurš regulējums vai standarts: ISO 27001, NIS2, DORA, SOC 2 un citi. Prasme darbojas Claude Code ar WINGMAN ierakstiem un izved vienu cilvēku cauri visai ieviešanai posmos, kurus var pārtraukt un turpināt. Tā izveido ieviešanas arhitektūru: kontekstu un tvērumu, prasības, risku darbnīcu, kontroles, kas sagrupētas darba virzienos, un uzdevumus, kas sadalīti starp cilvēkiem, kuri tos veiks, un tas viss tiek izveidots WINGMAN. Tā sagatavo politikas un procedūras no organizācijas paša konteksta un izsūta tās pārskatīšanai, apstiprināšanai un iepazīšanai. Ieviešanas darbs aizņem dienas, nevis mēnešus; lai kontroles darbotos pietiekami ilgi un to varētu pierādīt, joprojām vajadzīgs laiks. [ISO 27001 no nulles, pirmās trīs dienas]({{< relref "/samples/iso27001-first-days" >}})
+- **Ietvara ieviešana.** Jebkurš regulējums vai standarts: ISO 27001, NIS2, DORA, SOC 2 un citi. Prasme darbojas Claude Code ar WINGMAN ierakstiem un izved vienu cilvēku cauri visai ieviešanai posmos, kurus var pārtraukt un turpināt. Tā izveido ieviešanas arhitektūru: kontekstu un tvērumu, prasības, risku darbnīcu, kontroles, kas sagrupētas darba virzienos, un uzdevumus, kas sadalīti starp cilvēkiem, kuri tos veiks, un tas viss tiek izveidots WINGMAN. Tā sagatavo politikas un procedūras no organizācijas paša konteksta un izsūta tās pārskatīšanai, apstiprināšanai un iepazīšanai. Plāna, risku reģistra un dokumentu izveide aizņem dienas, nevis mēnešus; darba veikšanai un tam, lai kontroles darbotos pietiekami ilgi un to varētu pierādīt, joprojām vajadzīgs laiks. [ISO 27001 no nulles, pirmās trīs dienas]({{< relref "/samples/iso27001-first-days" >}})
 - **Risku identificēšana.** Intervija ar riska īpašnieku pa vienam jautājumam, katru nosaukto apdraudējumu vispirms salīdzinot ar esošajiem riskiem. [Risku identificēšana]({{< relref "/use-cases/risk-identification" >}})
 - **Risku apstrāde un reģistra kvalitāte.** Apstrādes priekšlikums katram riskam, ko apstiprina īpašnieks, un reģistra pārbaude, vai netrūkst īpašnieku, vērtējumu, kontroļu un saišu. [Risku pārskatīšana un apstrāde]({{< relref "/use-cases/risk-review" >}})
 - **Darbības ietekmes analīze.** Pakalpojumu pa pakalpojumam, kopā ar īpašnieku; katram pakalpojumam tiek izveidota viena kontrole, kurā fiksēta ietekme laika gaitā un atjaunošanas mērķi. [Darbības ietekmes analīze]({{< relref "/use-cases/business-impact-analysis" >}})
@@ -49,7 +49,9 @@ Prasmes, kas strādā ar WINGMAN:
 
 WINGMAN iekšienē **Ask Wingman** ir iebūvēts asistents, kas atveras blakus jebkuram ierakstam. Tas piedāvā prasmes, sagrupētas pa jomām: incidentu komunikācija, risku analīze, audita plāns, vadības pārskats, darbības ietekmes analīze un MI lietojuma izvērtēšana.
 
-Claude prasme ir instrukciju kopums jūsu pašu Claude kontā. Varat uzrakstīt savas prasmes savai metodei, un tās paliek jums.
+**No kurienes prasmes.** Tās nodrošina Peak Defence – iebūvētas WINGMAN vai kā prasmju faili, ko izvieto jūsu izmantotajā MI platformā vai aģentā, atkarībā no jūsu līguma.
+
+**Jūsu pašu prasmes.** Konsultants vai drošības komanda var izveidot savu prasmju kopumu darbam ar WINGMAN un ar prasmēm veidot politiku veidnes pēc savām vēlmēm. Claude prasme ir instrukciju kopums jūsu pašu kontā, tāpēc tā paliek jums.
 
 ## Kurš modelis dara darbu
 

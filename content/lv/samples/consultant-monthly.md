@@ -12,7 +12,7 @@ use_cases: [regular-reviews, risk-identification]
 
 | | Septembris | Oktobris |
 |---|---|---|
-| Nosegtās prasības | 71 no 93 | 78 no 93 |
+| Nosegtās A pielikuma kontroles | 71 no 93 | 78 no 93 |
 | Kontroles ar derīgiem pierādījumiem | 36 no 47 | 41 no 47 |
 | Atvērtās būtiskās neatbilstības | 0 | 1 (A.8.32, novēršanas termiņš 15. decembris) |
 
@@ -30,16 +30,16 @@ use_cases: [regular-reviews, risk-identification]
 
 | Darbs | Ieraksti |
 |---|---|
-| Pabeigtās pārskatīšanas | R-07, A. Ozola, 1. okt.; piekļuves pārvaldības politikas 4. versija, J. Liepa, 2. okt.; algu aprēķina pakalpojuma sniedzējs, L. Vītola, 20. okt.; vēl 6 |
+| Pabeigtās pārskatīšanas | R-07, A. Ozola, 1. okt.; piekļuves pārvaldības politikas 4. versija, J. Liepa, 2. okt.; algu aprēķina pakalpojuma sniedzējs, L. Vītola, 20. okt.; R-03, R-11, R-15, R-22, R-27 un žurnālu procedūra – to īpašnieki |
 | Slēgtie uzdevumi | 11, tostarp „Dzēst neizmantotos administratoru kontus” (J. Liepa, 13 dienas pēc termiņa) |
 | Pievienotie pierādījumi | 6, tostarp klientu datubāzes atjaunošanas tests, 22. okt. |
 
 ## Gaida klienta lēmumu
 
-| Lēmums | Gaida kopš |
-|---|---|
-| Noteikt īpašnieku algu aprēķina pakalpojuma sniedzējam | 19. septembra |
-| Apstiprināt darbības nepārtrauktības mācību datumu | 3. oktobra |
+| Lēmums | Gaida kopš | Ko tas aiztur |
+|---|---|---|
+| Noteikt īpašnieku algu aprēķina pakalpojuma sniedzējam | 19. septembra | Piegādātāja pārskatīšana (A.5.19) paliek atvērta; tā ir viena no 15 vēl nenosegtajām kontrolēm |
+| Apstiprināt darbības nepārtrauktības mācību datumu | 3. oktobra | Ja mācības nenotiek līdz februārim, A.5.30 martā nebūs pierādījuma |
 
 ## Nākamajā mēnesī
 
