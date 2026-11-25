@@ -1,12 +1,12 @@
 ---
 title: A customer asks for ISO 27001, and we have no security team
 short: Starting from zero
-summary: You do not need a security department to start. You need to know the order of the work, and one place where each result is kept so the next step builds on it.
+summary: You do not need a security department to start. You need to know the order of the work, and one place where each result is kept so the next step builds on it. With the implementation skill, one person gets through the implementation work in days instead of months.
 weight: 20
 slug_id: start
 problems:
 - q: I don't know what to do first.
-  a: 'A skill is a procedure your AI assistant, for example Claude, follows step by step while connected to WINGMAN. The implementation skill works through fixed stages that you can stop and resume: your context, the requirements, the documents, a risk workshop (an interview about what could go wrong), the controls and a roadmap. Each stage leaves records the next one uses.'
+  a: 'A skill is a procedure your AI assistant, for example Claude, follows step by step while connected to WINGMAN. The implementation skill works through fixed stages that you can stop and resume: your context, the requirements, the documents, a risk workshop (an interview about what could go wrong), the controls, and a roadmap that splits the tasks between the people who will do them. Each stage leaves records the next one uses, and the policies and procedures it drafts go out for approval and acknowledgement.'
 - q: I don't know the vocabulary, and I'm embarrassed to ask.
   a: The assistant asks one question at a time in plain words and explains a term when it needs one. The few you cannot avoid are listed below.
 - q: I'm afraid of ending up with a binder of policies nobody follows.
@@ -30,7 +30,7 @@ terms:
   d: A responsibility separate from the person who holds it, such as risk owner or incident manager. One person can hold several roles.
 does:
   knowledge: Start from what you already run. Products, systems, data and suppliers become assets with owners; the scope statement is drafted from them.
-  projects: You select the framework, and its requirements are loaded as records. They are matched to what you already do, from what you tell the assistant and the documents you have. Each one is marked covered, partly covered or open; the open ones become controls to build, tasks and a plan.
+  projects: 'You select the framework, and its requirements are loaded as records. They are matched to what you already do, from what you tell the assistant and the documents you have. Each one is marked covered, partly covered or open; the open ones become controls to build, tasks and a plan. The implementation skill builds the whole architecture in days: workstreams with owners, tasks with hours, and the policies and procedures, sent out for approval and acknowledgement.'
   regular: A review calendar is built from the requirements that ask for reviews. Owners get their tasks and reminders; you see what is late and whose it is.
   events: Anyone can report something odd. Describe what happened in the chat and WINGMAN drafts the incident record as a suggestion for a person to accept.
 prompt:

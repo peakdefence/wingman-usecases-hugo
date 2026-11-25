@@ -1,31 +1,46 @@
 ---
 title: Konsultanta ikmēneša ziņojums klientam
 weight: 40
-summary: Viena mēneša darbs vienam klientam, salikts no datētiem ierakstiem klienta darba vidē, ar lēmumiem, ko gaida no klienta.
+summary: "Viena mēneša darbs vienam klientam: ko darīja konsultants, ko darīja klienta cilvēki, virzība uz mērķi un lēmumi, ko gaida no klienta."
 for: [consultant]
 use_cases: [regular-reviews, risk-identification]
 ---
 
-**Klients:** Piemērs SIA. **Mēnesis:** 2026. gada oktobris. Šādu ziņojumu konsultants var salikt no klienta ierakstiem, piemēram, palūdzot to savam asistentam. Katra rinda norāda uz ierakstiem klienta darba vidē.
+**Klients:** Piemērs SIA. **Mērķis:** ISO 27001 sertifikācijas audits 2027. gada martā. **Mēnesis:** 2026. gada oktobris. Šādu ziņojumu konsultants var salikt no klienta ierakstiem, piemēram, palūdzot to savam asistentam. Šeit minētie ieraksti atrodas klienta darba vidē ar saviem datumiem un īpašniekiem.
 
-## Paveiktais šomēnes
+## Virzība uz mērķi
 
-| Darbs | Skaits | Ieraksti |
+| | Septembris | Oktobris |
 |---|---|---|
-| Klienta īpašnieku pabeigtās pārskatīšanas | 9 | 6 riski, 2 politikas, 1 piegādātājs |
-| Pieņemtie / noraidītie MI ieteikumi | 14 / 3 | pārskatītajiem riskiem un politikām |
-| Slēgtie uzdevumi | 11 | tostarp 2 kavēti no septembra |
-| Pievienotie pierādījumi | 6 | 4 aizstāj tos, kuriem tuvojās derīguma beigas |
-| Risku intervija | 1 | Pārdošanas vadītājs: 2 jauni riski, 3 sasaistīti ar esošajiem |
+| Nosegtās prasības | 71 no 93 | 78 no 93 |
+| Kontroles ar derīgiem pierādījumiem | 36 no 47 | 41 no 47 |
+| Atvērtās būtiskās neatbilstības | 0 | 1 (A.8.32, novēršanas termiņš 15. decembris) |
+
+## Mans darbs šomēnes
+
+| Darbs | Ieraksti |
+|---|---|
+| Risku intervija ar pārdošanas vadītāju 8. oktobrī: 2 jauni riski, 3 apdraudējumi sasaistīti ar esošajiem | R-32, R-33; atjaunināti R-09, R-14, R-21 |
+| Sagatavoti 3. ceturkšņa vadības pārskata materiāli, piedalīšanās pārskatā 14. oktobrī | Protokols, 14. oktobris |
+| Ierosināts A.8.32 neatbilstības novēršanas plāns | 3 uzdevumi, īpašnieks M. Kalns |
+| Pārskatīti un kā nepamatoti noraidīti 3 MI ieteikumi | R-12, R-19, D-04 |
+| Patērētais laiks | 14 stundas |
+
+## Klienta cilvēku darbs šomēnes
+
+| Darbs | Ieraksti |
+|---|---|
+| Pabeigtās pārskatīšanas | R-07, A. Ozola, 1. okt.; piekļuves pārvaldības politikas 4. versija, J. Liepa, 2. okt.; algu aprēķina pakalpojuma sniedzējs, L. Vītola, 20. okt.; vēl 6 |
+| Slēgtie uzdevumi | 11, tostarp „Dzēst neizmantotos administratoru kontus” (J. Liepa, 13 dienas pēc termiņa) |
+| Pievienotie pierādījumi | 6, tostarp klientu datubāzes atjaunošanas tests, 22. okt. |
 
 ## Gaida klienta lēmumu
 
 | Lēmums | Gaida kopš |
 |---|---|
-| Pieņemt atlikušo risku, ka mākoni uztur viens inženieris, vai finansēt otru | 14. oktobra |
-| Apstiprināt piekļuves pārvaldības politikas 4. versiju | 2. oktobra |
 | Noteikt īpašnieku algu aprēķina pakalpojuma sniedzējam | 19. septembra |
+| Apstiprināt darbības nepārtrauktības mācību datumu | 3. oktobra |
 
 ## Nākamajā mēnesī
 
-A.5 un A.8 iekšējais audits sākas 4. novembrī. Divu pierādījumu derīgums beidzas novembrī. Mitināšanas pakalpojuma sniedzēja pārskatīšanas termiņš ir 20. novembris.
+A.5 un A.8 audita turpmākā rīcība sākas 4. novembrī. Divu pierādījumu derīgums beidzas novembrī. Mitināšanas pakalpojuma sniedzēja pārskatīšanas termiņš ir 20. novembris.

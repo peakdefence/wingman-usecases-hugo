@@ -1,12 +1,12 @@
 ---
 title: Klients prasa ISO 27001, bet mums nav drošības komandas
 short: Sākt no nulles
-summary: Lai sāktu, nav vajadzīga drošības nodaļa. Jāzina darbu secība un vajadzīga viena vieta, kur glabājas katrs rezultāts, lai nākamais solis balstītos uz iepriekšējo.
+summary: Lai sāktu, nav vajadzīga drošības nodaļa. Jāzina darbu secība un vajadzīga viena vieta, kur glabājas katrs rezultāts, lai nākamais solis balstītos uz iepriekšējo. Ar ieviešanas prasmi viens cilvēks ieviešanas darbu paveic dienās, nevis mēnešos.
 weight: 20
 slug_id: start
 problems:
 - q: Es nezinu, ar ko sākt.
-  a: 'Prasme ir procedūra, ko jūsu MI asistents, piemēram, Claude, soli pa solim izpilda, būdams pieslēgts WINGMAN. Ieviešanas prasme iet cauri noteiktiem posmiem, kurus var pārtraukt un turpināt: jūsu konteksts, prasības, dokumenti, risku darbnīca (intervija par to, kas var noiet greizi), kontroles un ceļa karte. Katrs posms atstāj ierakstus, ko izmanto nākamais.'
+  a: 'Prasme ir procedūra, ko jūsu MI asistents, piemēram, Claude, soli pa solim izpilda, būdams pieslēgts WINGMAN. Ieviešanas prasme iet cauri noteiktiem posmiem, kurus var pārtraukt un turpināt: jūsu konteksts, prasības, dokumenti, risku darbnīca (intervija par to, kas var noiet greizi), kontroles un ceļa karte, kas sadala uzdevumus starp cilvēkiem, kuri tos veiks. Katrs posms atstāj ierakstus, ko izmanto nākamais, un sagatavotās politikas un procedūras tiek izsūtītas apstiprināšanai un iepazīšanai.'
 - q: Es nezinu terminus, un ir neērti jautāt.
   a: Asistents uzdod vienu jautājumu pēc otra vienkāršiem vārdiem un paskaidro terminu, kad tas vajadzīgs. Tie daži, bez kuriem neiztikt, ir zemāk.
 - q: Baidos, ka beigās būs mape ar politikām, ko neviens neievēro.
@@ -30,7 +30,7 @@ terms:
   d: Atbildība, kas nodalīta no cilvēka, kurš to pilda, piemēram, riska īpašnieks vai incidentu vadītājs. Viens cilvēks var pildīt vairākas lomas.
 does:
   knowledge: Sāciet no tā, kas jums jau darbojas. Produkti, sistēmas, dati un piegādātāji kļūst par aktīviem ar īpašniekiem; tvēruma apraksts tiek sagatavots no tiem.
-  projects: Jūs izvēlaties ietvaru, un tā prasības tiek ielādētas kā ieraksti. Tās tiek salīdzinātas ar to, ko jau darāt, pēc tā, ko pastāstāt asistentam, un pēc jūsu esošajiem dokumentiem. Katra ir atzīmēta kā nosegta, daļēji nosegta vai atvērta; atvērtās kļūst par ieviešamām kontrolēm, uzdevumiem un plānu.
+  projects: 'Jūs izvēlaties ietvaru, un tā prasības tiek ielādētas kā ieraksti. Tās tiek salīdzinātas ar to, ko jau darāt, pēc tā, ko pastāstāt asistentam, un pēc jūsu esošajiem dokumentiem. Katra ir atzīmēta kā nosegta, daļēji nosegta vai atvērta; atvērtās kļūst par ieviešamām kontrolēm, uzdevumiem un plānu. Ieviešanas prasme visu arhitektūru izveido dienās: darba virzienus ar īpašniekiem, uzdevumus ar stundām un politikas un procedūras, kas izsūtītas apstiprināšanai un iepazīšanai.'
   regular: Pārskatīšanu kalendārs tiek veidots no prasībām, kas tās paredz. Īpašnieki saņem uzdevumus un atgādinājumus; jūs redzat, kas kavējas un kam tas pieder.
   events: Ikviens var ziņot par kaut ko aizdomīgu. Aprakstiet sarunā, kas noticis, un WINGMAN sagatavo incidenta ierakstu kā ieteikumu, ko apstiprina cilvēks.
 prompt:
