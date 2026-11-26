@@ -19,7 +19,7 @@ hugo --gc --minify     # build to public/
 | Worked examples on a fictional company (management review pack, audit trace, risk change trail, consultant report). `for` lists the "Who it is for" pages that show each sample | `content/<lang>/samples/`, layout in `layouts/samples/` |
 | Glossary, built from the `terms` of the "Who it is for" pages plus its own front matter | `content/<lang>/glossary.md`, layout in `layouts/glossary/` |
 | Main menu and footer sitemap: five groups built from the site's sections (`layouts/_partials/navdata.html`); labels in `i18n` (`nav_*`) | `layouts/_partials/header.html`, `footer.html` |
-| Where the question picker sends people: `contactEmail` and `linkedinURL` (empty hides the button; with both empty it falls back to `contactURL`) | `hugo.toml` `[params]` |
+| Contact form at `/contact/` (Netlify Forms, form name `contact`; only email and message required; honeypot `bot-field` plus Netlify spam filtering, no reCAPTCHA). The question picker on "Who it's for" pages hands its message to the form. Set the notification email in Netlify: Site configuration > Forms > Form notifications. Optional extra buttons: `contactEmail` and `linkedinURL` | `content/<lang>/contact/`, `layouts/contact/`, `hugo.toml` `[params]` |
 | Use cases, one page each, with stages in front matter | `content/<lang>/use-cases/<id>.md` |
 | Sectors and regulations (NIS2, financial, ISO 27001/SOC 2, AI, CRA, GDPR) | `content/<lang>/sectors/<id>.md` |
 | Videos (YouTube ids, titles per language, linked use cases and sectors) | `data/videos.yaml` |
