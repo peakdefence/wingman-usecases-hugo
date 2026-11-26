@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{{ with .Params.robots }}<meta name="robots" content="{{ . }}">{{ end }}
 {{ $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
 <title>{{ $title }}</title>
 {{ with .Description | default .Summary | default site.Home.Description }}<meta name="description" content="{{ . | plainify | truncate 180 }}">{{ end }}

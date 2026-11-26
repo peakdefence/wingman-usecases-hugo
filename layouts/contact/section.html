@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{/* Contact form handled by Netlify Forms. Only email and message are required.
+     Spam protection: Netlify's built-in filter plus a honeypot field that people never see. No reCAPTCHA, so no third-party script or cookie. */}}
+{{ $thanks := "" }}{{ with .GetPage "thanks" }}{{ $thanks = .RelPermalink }}{{ end }}
+<article class="block wrap prose-wrap">
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ i18n "contact_lede" }}</p>
+  <form class="contact" name="contact" method="POST" action="{{ $thanks }}" data-netlify="true" netlify-honeypot="bot-field" data-contact>
+    <input type="hidden" name="form-name" value="contact">
+    <input type="hidden" name="language" value="{{ site.Language.Lang }}">
+    <input type="hidden" name="page" value="" data-contact-from>
+    <p class="hp" aria-hidden="true"><label>{{ i18n "contact_hp" }} <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <label class="field"><span>{{ i18n "contact_email" }} <b class="req">{{ i18n "contact_required" }}</b></span><input type="email" name="email" required autocomplete="email" maxlength="200"></label>
+    <label class="field"><span>{{ i18n "contact_message" }} <b class="req">{{ i18n "contact_required" }}</b></span><textarea name="message" required rows="8" maxlength="5000" data-contact-msg></textarea></label>
+    <div class="two">
+      <label class="field"><span>{{ i18n "contact_name" }} <i class="opt">{{ i18n "contact_optional" }}</i></span><input type="text" name="name" autocomplete="name" maxlength="200"></label>
+      <label class="field"><span>{{ i18n "contact_org" }} <i class="opt">{{ i18n "contact_optional" }}</i></span><input type="text" name="organisation" autocomplete="organization" maxlength="200"></label>
+    </div>
+    <div class="sendrow"><button type="submit" class="btn">{{ i18n "contact_send" }}</button></div>
+    {{ with site.GetPage "/privacy" }}<p class="note">{{ i18n "contact_privacy" }} <a href="{{ .RelPermalink }}#contact-form">{{ .Title }}</a>.</p>{{ end }}
+  </form>
+</article>
+{{ end }}

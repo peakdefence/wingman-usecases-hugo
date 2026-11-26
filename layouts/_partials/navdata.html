@@ -42,9 +42,9 @@
 {{ with site.GetPage "/videos" }}{{ $items = $items | append (dict "label" (i18n "nav_videos") "href" .RelPermalink) }}{{ end }}
 {{ with site.GetPage "/glossary" }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}
 {{ with site.GetPage "/case-studies" }}{{ if .RegularPages }}{{ $items = $items | append (dict "label" (i18n "nav_cases") "href" .RelPermalink) }}{{ end }}{{ end }}
-{{ with site.Params.contactURL }}{{ $items = $items | append (dict "label" (printf "%s ↗" (i18n "nav_talk")) "href" . "ext" true) }}{{ end }}
+{{ with site.GetPage "/contact" }}{{ $items = $items | append (dict "label" (i18n "nav_talk") "href" .RelPermalink) }}{{ end }}
 {{ $items = $items | append (dict "label" (i18n "nav_guides") "head" true) }}
 {{ range slice "nis2-applicability" "iso27001-from-zero" "security-questionnaire" }}{{ with site.GetPage (printf "/knowledge-base/%s" .) }}{{ $items = $items | append (dict "label" .Title "href" .RelPermalink) }}{{ end }}{{ end }}
-{{ $groups = $groups | append (dict "key" "res" "label" (i18n "nav_resources") "all" "" "current" (in (slice "samples" "knowledge-base" "library" "videos" "case-studies" "glossary") $sec) "items" $items) }}
+{{ $groups = $groups | append (dict "key" "res" "label" (i18n "nav_resources") "all" "" "current" (in (slice "samples" "knowledge-base" "library" "videos" "case-studies" "glossary" "contact") $sec) "items" $items) }}
 
 {{ return $groups }}

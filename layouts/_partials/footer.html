@@ -1,3 +1,4 @@
+{{ if ne .Section "contact" }}
 <section class="cta">
   <div class="wrap ctain">
     {{ $p := . }}
@@ -7,10 +8,11 @@
     <a class="btn" href="{{ .RelPermalink }}#ask">{{ i18n "sample_cta_button" }}</a>
     {{ else }}
     {{ with $p.Params.next }}<div><h2>{{ .title }}</h2><p>{{ .text }}</p></div>{{ else }}<div><h2>{{ i18n "cta_title" }}</h2><p>{{ i18n "cta_text" }}</p></div>{{ end }}
-    {{ if $p.Params.ask }}<a class="btn" href="#ask">{{ i18n "for_cta_button" }}</a>{{ else }}<a class="btn" href="{{ site.Params.contactURL }}">{{ i18n "cta_button" }}</a>{{ end }}
+    {{ if $p.Params.ask }}<a class="btn" href="#ask">{{ i18n "for_cta_button" }}</a>{{ else }}{{ with site.GetPage "/contact" }}<a class="btn" href="{{ .RelPermalink }}">{{ i18n "cta_button" }}</a>{{ end }}{{ end }}
     {{ end }}
   </div>
 </section>
+{{ end }}
 <footer class="site">
   <div class="wrap sitemap">
     {{ range partial "navdata.html" . }}

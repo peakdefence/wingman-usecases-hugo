@@ -23,8 +23,8 @@ defaultContentLanguageInSubdir = false
 
 [params]
   company = "Peak Defence"
-  contactURL = "https://peakdefence.com/"
-  # Where the question picker on the "Who it is for" pages sends people. Leave empty to hide a button.
+  # Contact goes through the site's own form at /contact/ (Netlify Forms, form name "contact").
+  # Set where submissions are emailed in Netlify: Site configuration > Forms > Form notifications.
   # contactEmail: the address the "Send by email" button writes to.
   # linkedinURL: a LinkedIn profile or company page; the button copies the message and opens it.
   #   Shown only on pages with `linkedin: true` (the consultant page): other visitors said they would not use it.
@@ -38,3 +38,7 @@ defaultContentLanguageInSubdir = false
 [outputs]
   home = ["html"]
   section = ["html"]
+
+# Keep attribute quotes when minifying, so Netlify's form detection reads the contact form reliably.
+[minify.tdewolff.html]
+  keepQuotes = true

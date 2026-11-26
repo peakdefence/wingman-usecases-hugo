@@ -1,0 +1,1 @@
+{{ define "main" }}<article class="block wrap prose-wrap"><h1>{{ .Title }}</h1><div class="prose">{{ .Content }}</div>{{ with site.GetPage "/" }}<p><a class="btn" href="{{ .RelPermalink }}">{{ i18n "contact_back" }}</a></p>{{ end }}</article>{{ end }}

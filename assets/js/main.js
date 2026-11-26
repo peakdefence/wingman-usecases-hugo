@@ -250,6 +250,7 @@ document.querySelectorAll('form.askbox').forEach((f) => {
   const pre = document.getElementById(f.dataset.ask + '-text');
   const own = f.querySelector('.own input');
   const mail = f.querySelector('[data-ask-mail]');
+  const form = f.querySelector('[data-ask-form]');
   const boxes = [...f.querySelectorAll('input[type=checkbox]')];
   const paint = () => {
     const qs = boxes.filter((b) => b.checked).map((b) => b.value);
@@ -257,6 +258,7 @@ document.querySelectorAll('form.askbox').forEach((f) => {
     const text = f.dataset.intro + '\n\n' + (qs.length ? qs.map((q) => '- ' + q).join('\n') : f.dataset.hint) + '\n\n' + f.dataset.url;
     pre.textContent = text;
     if (mail) mail.href = 'mailto:' + f.dataset.email + '?subject=' + encodeURIComponent(f.dataset.subject) + '&body=' + encodeURIComponent(text);
+    if (form) form.href = form.pathname + '?from=' + encodeURIComponent(f.dataset.url) + '&msg=' + encodeURIComponent(text);
   };
   f.addEventListener('input', paint);
   f.addEventListener('submit', (e) => e.preventDefault());
@@ -265,6 +267,14 @@ document.querySelectorAll('form.askbox').forEach((f) => {
     boxes.filter((b) => b.checked).forEach((b) => document.dispatchEvent(new CustomEvent('wm:count', { detail: f.dataset.ask + '-' + b.dataset.n })));
   });
   paint();
+});
+
+// ---------- contact form: take over a message prepared on a "who it is for" page ----------
+document.querySelectorAll('form[data-contact]').forEach((f) => {
+  const q = new URLSearchParams(location.search);
+  const msg = f.querySelector('[data-contact-msg]'), from = f.querySelector('[data-contact-from]');
+  if (msg && !msg.value && q.get('msg')) msg.value = q.get('msg').slice(0, 5000);
+  if (from) from.value = (q.get('from') || document.referrer || '').slice(0, 300);
 });
 
 // ---------- cookieless visit counter: page views, sections scrolled into view, prompts copied ----------

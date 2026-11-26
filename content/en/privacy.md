@@ -20,6 +20,10 @@ The data model explorer remembers which view you last chose, in your browser's l
 
 Videos are embedded from youtube-nocookie.com and load only after you press play. From that moment YouTube's own terms apply.
 
+## Contact form {#contact-form}
+
+If you send the contact form, we receive your email address and your message, plus your name and organisation if you give them, the page you wrote from, and the site language. The form is processed by Netlify, the site's hosting provider, and passed to Peak Defence. We use it only to reply to you and to follow up on what you asked. Netlify's spam filter checks each message; nothing else is shared. The form loads no third-party script and sets no cookie.
+
 ## Legal basis and hosting
 
 The counter runs on the site's hosting provider, Netlify, which also serves the pages and processes your network address for that purpose. We rely on our legitimate interest in understanding how the published material is used, in a way designed to have no meaningful effect on you. Your browser's Global Privacy Control or Do Not Track signal is honoured automatically.

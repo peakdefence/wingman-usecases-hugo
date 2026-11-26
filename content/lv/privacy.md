@@ -20,6 +20,10 @@ Datu modeļa pārlūks pārlūka lokālajā krātuvē atceras pēdējo izvēlēt
 
 Video tiek iegulti no youtube-nocookie.com un ielādējas tikai pēc atskaņošanas pogas nospiešanas. No šī brīža ir spēkā YouTube noteikumi.
 
+## Saziņas forma {#contact-form}
+
+Ja nosūtāt saziņas formu, mēs saņemam jūsu e-pasta adresi un ziņu, kā arī vārdu un organizāciju, ja tos norādāt, lapu, no kuras rakstījāt, un vietnes valodu. Formu apstrādā vietnes mitināšanas pakalpojuma sniedzējs Netlify un nodod to Peak Defence. To izmantojam tikai, lai jums atbildētu un turpinātu sarunu par to, ko jautājāt. Netlify surogātpasta filtrs pārbauda katru ziņu; citiem tā netiek nodota. Forma neielādē trešo pušu skriptus un neiestata sīkdatnes.
+
 ## Tiesiskais pamats un mitināšana
 
 Skaitītājs darbojas pie vietnes mitināšanas pakalpojuma sniedzēja Netlify, kas arī izsniedz lapas un šim nolūkam apstrādā jūsu tīkla adresi. Mēs balstāmies uz savām leģitīmajām interesēm saprast, kā publicētais materiāls tiek lietots, veidā, kas uz jums būtiski neietekmējas. Jūsu pārlūka Global Privacy Control vai Do Not Track signāls tiek ievērots automātiski.
