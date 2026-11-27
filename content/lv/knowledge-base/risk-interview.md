@@ -14,7 +14,7 @@ updated: 2026-11-25
 
 Risku reģistrā, kas veidots no apdraudējumu kataloga, parasti ir tie paši riski, kas jebkurā organizācijā, un trūkst tieši to, kas svarīgi šai organizācijai. Biznesa īpašnieks zina, ko viņš cenšas sasniegt, no kā ir atkarīgs un kas jau agrāk ir nogājis greizi. Laba intervija šīs zināšanas pārvērš nelielā skaitā risku, ko īpašnieks atpazīst kā savus un kas uzrakstīti tā, ka tos var novērtēt, apstrādāt un pārskatīt.
 
-## Kā lietot šo rakstu
+## Kā lietot šo ceļvedi
 
 1. Sagatavojieties, kā aprakstīts zemāk, ieskaitot vērtēšanas skalu un esošo risku sarakstu.
 2. Interviju vadiet paši. Uzvedni izmantojiet sarunas laikā vai pēc tās, lai strukturētu piezīmes, vai ļaujiet īpašniekam uz to atbildēt tieši jūsu klātbūtnē.
@@ -23,7 +23,7 @@ Risku reģistrā, kas veidots no apdraudējumu kataloga, parasti ir tie paši ri
 
 ## Kāpēc jautāt par mērķiem, nevis nolasīt apdraudējumus
 
-ISO 31000 risku apraksta kā nenoteiktības ietekmi uz mērķiem. Sākot ar īpašnieka mērķiem, intervija paliek pie tā, ko organizācija patiešām zaudētu. Apdraudējumu saraksta nolasīšana ("izspiedējvīrusi, pikšķerēšana, iekšējais apdraudējums, DDoS...") izraisa pieklājīgu piekrišanu visam un nedod nekādu informāciju par to, kas ir svarīgs, kādas būtu sekas un kas jau ir ieviests. Tā arī pārceļ sarunu drošības komandas vārdnīcā, kur īpašnieks jūtas visnedrošāk.
+ISO 31000 risku apraksta kā nenoteiktības ietekmi uz mērķiem. Sākot ar īpašnieka mērķiem, intervija paliek pie tā, ko organizācija patiešām zaudētu. Apdraudējumu saraksta nolasīšana („izspiedējvīrusi, pikšķerēšana, iekšējais apdraudējums, DDoS...”) izraisa pieklājīgu piekrišanu visam un nedod nekādu informāciju par to, kas ir svarīgs, kādas būtu sekas un kas jau ir ieviests. Tā arī pārceļ sarunu drošības komandas vārdnīcā, kur īpašnieks jūtas visnedrošāk.
 
 Tā vietā jautājiet, kas īpašniekam šogad jāpaveic, no kā tas ir atkarīgs un kas to varētu apturēt. Apdraudējumi parādās vēlāk kā cēloņi notikumiem, ko īpašnieks aprakstījis.
 
@@ -39,12 +39,12 @@ Tā vietā jautājiet, kas īpašniekam šogad jāpaveic, no kā tas ir atkarīg
 
 | Tā vietā, lai jautātu | Jautājiet |
 |---|---|
-| "Vai jūs uztrauc izspiedējvīrusi?" | "Kas varētu apturēt jūsu komandas darbu šomēnes?" |
-| "Vai jums ir rezerves kopēšanas politika?" | "Ja sistēmas rīt vairs nebūtu, ko jūs darītu vispirms?" |
-| "Vai datu zudums ir risks?" | "Kura informācija kaitētu visvairāk, ja to ieraudzītu konkurents vai prese?" |
-| "Novērtējiet to no 1 līdz 5." | "Vai tas ir noticis šeit vai kur līdzīgi? Cik ilgi jūs varētu iztikt ar apiešanas risinājumu?" |
+| „Vai jūs uztrauc izspiedējvīrusi?” | „Kas varētu apturēt jūsu komandas darbu šomēnes?” |
+| „Vai jums ir rezerves kopēšanas politika?” | „Ja sistēmas rīt vairs nebūtu, ko jūs darītu vispirms?” |
+| „Vai datu zudums ir risks?” | „Kura informācija kaitētu visvairāk, ja to ieraudzītu konkurents vai prese?” |
+| „Novērtējiet to no 1 līdz 5.” | „Vai tas ir noticis šeit vai kur līdzīgi? Cik ilgi jūs varētu iztikt ar apiešanas risinājumu?” |
 
-Uzdodiet vienu jautājumu vienlaikus. Piezīmēs izmantojiet īpašnieka vārdus. Kad īpašnieks nosauc kontroli ("mums ir otrs piegādātājs"), jautājiet, kā viņš zina, ka tā darbojas.
+Uzdodiet pa vienam jautājumam. Piezīmēs izmantojiet īpašnieka vārdus. Kad īpašnieks nosauc kontroli („mums ir otrs piegādātājs”), jautājiet, kā viņš zina, ka tā darbojas.
 
 ## Salīdzināt, pirms veidot jaunu
 
@@ -56,11 +56,11 @@ Riska aprakstā nosauc cēloni, notikumu un sekas kādam mērķim:
 
 > Tā kā *rēķinus apstiprina viena persona bez otrreizējas pārbaudes* (cēlonis), *tiek apmaksāts krāpniecisks piegādātāja rēķins* (notikums), *radot tiešus finanšu zaudējumus un aizkavētu mēneša slēgšanu* (sekas).
 
-Viena vārda risku ("krāpšana", "mākonis") nevar ne novērtēt, ne apstrādāt, jo tas nepasaka, kas notiek un ar ko.
+Viena vārda risku („krāpšana”, „mākonis”) nevar ne novērtēt, ne apstrādāt, jo tas nepasaka, kas notiek un ar ko.
 
 ## Varbūtības un ietekmes vērtēšana
 
-Vērtējiet pēc organizācijas noteiktās skalas un pie katra vērtējuma pierakstiet iemeslu: līdzīgu notikumu biežums, īpašnieka pieredze, ieviestās kontroles, seku apmērs. Vērtējumu bez iemesla nākamgad nevar pārskatīt. Ja skalas nav, šī ir tikai piemērs:
+Vērtējiet pēc organizācijas noteiktās skalas un pie katra vērtējuma pierakstiet iemeslu: līdzīgu notikumu biežums, īpašnieka pieredze, ieviestās kontroles, seku apmērs. Vērtējumu bez iemesla nākamgad nevar pārskatīt. Ja skalas nav, šis ir tikai piemērs:
 
 | Vērtējums | Varbūtība | Ietekme |
 |---|---|---|
@@ -74,7 +74,7 @@ Vērtējiet pašreizējo risku ar šodien esošajām kontrolēm, nevis ar plāno
 
 ## Aktīvu, piegādātāju un kontroļu sasaiste
 
-Katram riskam pierakstiet aktīvus, uz kuriem tas attiecas (sistēmas, dati, telpas, cilvēki pēc lomas), iesaistītos piegādātājus un īpašnieka nosauktās kontroles. Tas ļauj vēlākām izmaiņām, incidentam vai piegādātāja problēmai atrast riskus, kurus tie ietekmē.
+Katram riskam pierakstiet aktīvus, uz kuriem tas attiecas (sistēmas, dati, telpas, cilvēki pēc lomas), iesaistītos piegādātājus un īpašnieka nosauktās kontroles. Tādējādi vēlāku izmaiņu, incidentu vai piegādātāja problēmu var sasaistīt ar riskiem, kurus tā ietekmē.
 
 ## Indikatori
 
@@ -108,7 +108,7 @@ Aptver šīs tēmas šādā secībā, pielāgojoties atbildēm:
 - Mērķi, par kuriem īpašnieks šogad atbild, un kā mēra panākumus.
 - No kā joma ir atkarīga: cilvēki pēc lomas, sistēmas, informācija, piegādātāji, telpas.
 - Kas agrāk ir nogājis greizi šeit vai kur līdzīgi, un kas notika tālāk.
-- Kas varētu apturēt īpašnieku sasniegt katru mērķi un cik ilgi viņš varētu iztikt ar apiešanas risinājumu.
+- Kas varētu traucēt īpašniekam sasniegt katru mērķi un cik ilgi viņš varētu iztikt ar apiešanas risinājumu.
 - Kura informācija radītu vislielāko kaitējumu, ja tiktu zaudēta, mainīta vai izpausta.
 - Kas jau ir ieviests, lai katru minēto problēmu novērstu, atklātu vai no tās atgūtos, un kā īpašnieks zina, ka tas darbojas.
 - Kas parādītu, ka problēma pieaug.
@@ -134,7 +134,7 @@ Sāc ar 1. soļa 1. jautājumu.
 {{< /prompt >}}
 
 {{< wingman uc="risk-identification" stage="2" >}}
-WINGMAN risku intervija notiek pa vienam jautājumam, un katra īpašnieka minētā problēma tiek salīdzināta ar esošajiem riskiem, pirms tiek izveidots jauns. Izmaiņas pienāk kā ieteikumi, un īpašnieks katru pieņem vai noraida, bet vēsturē paliek, kas un kad to izdarīja.
+WINGMAN sistēmā risku intervija notiek pa vienam jautājumam, un katra īpašnieka minētā problēma tiek salīdzināta ar esošajiem riskiem, pirms tiek izveidots jauns. Izmaiņas pienāk kā ieteikumi, un īpašnieks katru pieņem vai noraida, bet vēsturē paliek, kas un kad to izdarīja.
 {{< /wingman >}}
 
 ## Ko uzvedne nedara
