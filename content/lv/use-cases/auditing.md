@@ -10,7 +10,7 @@ standards:
 - DORA
 stages:
 - title: Tvērums
-  text: Izvēlas tvērumā esošās prasības un produktus, pakalpojumus vai vietas, uz kurām tās attiecas.
+  text: Izvēlas tvērumā esošās prasības un produktus, pakalpojumus vai vietas, uz kuriem tās attiecas.
   nodes:
   - audit
   - requirement
@@ -18,7 +18,7 @@ stages:
   links:
   - audit-requirement
   - audit-asset
-  ai: Audita prasme izveido prasību sarakstu no WINGMAN vai kontrolsaraksta, ņemot vērā uzņēmuma kontekstu.
+  ai: Audita prasme izveido prasību sarakstu no WINGMAN sistēmas vai kontrolsaraksta, ņemot vērā uzņēmuma kontekstu.
   decides: Auditors apstiprina tvērumu un periodu.
 - title: Deklarētās kontroles
   text: Izlasa politikas un procedūras, lai saprastu, kā organizācija apgalvo, ka izpilda katru prasību.
@@ -72,7 +72,7 @@ stages:
   ai: Sagatavo konstatējumu projektus ar pierādījumiem un atsaucēm un ierosina nopietnību.
   decides: Auditors apstiprina vai maina katru konstatējumu.
 - title: Secinājumi un turpmākā rīcība
-  text: Apstiprinātie konstatējumi kļūst par secinājumiem katrai prasībai. Neatbilstībām tiek izveidoti korektīvie uzdevumi plānā, un ziņojums atgriežas WINGMAN.
+  text: Apstiprinātie konstatējumi kļūst par secinājumiem katrai prasībai. Neatbilstībām tiek izveidoti korektīvie uzdevumi plānā, un ziņojums tiek saglabāts WINGMAN sistēmā.
   nodes:
   - finding
   - conclusion

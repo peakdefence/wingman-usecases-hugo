@@ -8,7 +8,7 @@ audience: Bankas, maksājumu un elektroniskās naudas iestādes, ieguldījumu br
 standards:
 - DORA (ES) 2022/2554
 - MiCA (ES) 2023/1114
-- ECB / VUM uzraudzības prasības
+- ECB / VUM uzraudzības gaidas
 - EBI vadlīnijas par iekšējo pārvaldību un ārpakalpojumiem
 - EAAPI vadlīnijas par IKT drošību un pārvaldību
 - ISO 31000
@@ -79,7 +79,7 @@ stages:
   ai: Klasificē notikumu, sagatavo pamatcēloņa analīzi un ziņojumus un ierosina novērtējuma izmaiņas.
   decides: Risku īpašnieks un risku pārvaldības funkcija apstiprina.
 - title: Ziņošana un uzraudzība
-  text: Vadības institūcija redz riska pakāpi pret apetīti, notikumus un nokavētās darbības. Iekšējais audits pārbauda tos pašus ierakstus.
+  text: Vadības institūcija redz riska pakāpi pret apetīti, notikumus un nokavētos uzdevumus. Iekšējais audits pārbauda tos pašus ierakstus.
   nodes:
   - role
   - plan
@@ -92,7 +92,7 @@ stages:
   - audit-finding
   - finding-conclusion
   ai: Sagatavo risku ziņojumu un uzraudzības materiālus no aktuālajiem ierakstiem.
-  decides: Vadības institūcija lemj par darbībām.
+  decides: Vadības institūcija lemj par turpmāko rīcību.
 registers:
 - entity: risk
   title: Nefinanšu risku reģistrs
@@ -102,32 +102,32 @@ registers:
   text: Biznesa procesi, produkti un kritiskās vai svarīgās funkcijas, ar sistēmām, datiem un trešajām pusēm aiz katras.
 - entity: supplier
   title: Trešo pušu un ārpakalpojumu reģistrs
-  text: IKT trešo pušu līgumi un citi ārpakalpojumi ar funkcijām, ko tie atbalsta, līgumiem, izejas plāniem un novērtējumiem. Pamats DORA informācijas reģistram.
+  text: IKT trešo pušu līgumiskās vienošanās un citi ārpakalpojumi ar funkcijām, ko tie atbalsta, līgumiem, izejas plāniem un novērtējumiem. Pamats DORA informācijas reģistram.
 - entity: signal
   title: Rādītāju un notikumu plūsma
   text: Galvenie riska rādītāji, sūdzības, mediju un nozares ziņas, piegādātāju paziņojumi un uzraudzības iestādes saziņa, katrs izvērtēts un sasaistīts ar riskiem.
 - entity: incident
   title: Zaudējumu notikumu un incidentu žurnāls
-  text: Zaudējumu notikumi, gandrīz notikušie gadījumi un nozīmīgi incidenti ar cēloni, ietekmi, īstenotajiem riskiem, ziņošanu un turpmākajām darbībām.
+  text: Zaudējumu notikumi, gandrīz notikušie gadījumi un nozīmīgi incidenti ar cēloni, ietekmi, īstenotajiem riskiem, ziņošanu un turpmāko rīcību.
 - entity: control
   title: Kontroļu bibliotēka
   text: Kontroles ar īpašniekiem, biežumu un pierādījumiem, pārbaudītas pašnovērtējumos un iekšējā auditā.
 - entity: requirement
   title: Regulējošās prasības
-  text: DORA, MiCA, EBI vadlīnijas un uzraudzības prasības kā punktu līmeņa ieraksti, sasaistīti starp ietvariem, lai viena kontrole derētu vairākām prasībām.
+  text: DORA, MiCA, EBI vadlīnijas un uzraudzības gaidas kā punktu līmeņa ieraksti, sasaistīti starp ietvariem, lai viena kontrole derētu vairākām prasībām.
 use_cases:
 - uc: risk-identification
-  text: Uz intervijām balstīta risku identificēšana katram procesam, kas papildina operacionālo risku hierarhiju, nevis vienreizējs seminārs.
+  text: Uz intervijām balstīta risku identificēšana katram procesam, kuras rezultāti papildina operacionālo risku hierarhiju, nevis vienreizējs seminārs.
 - uc: risk-review
   text: Risku un kontroļu pašnovērtējums ar otrās līnijas apstrīdēšanu, plānots un uzraudzīts kā plāns.
 - uc: incident-handling
   text: Zaudējumu notikumi un nozīmīgi ar IKT saistīti incidenti tiek reģistrēti vienreiz, ar klasifikāciju, ziņošanu un gūtajām mācībām, kas atjaunina riskus.
 - uc: supplier-evaluation
-  text: Trešo pušu risks saskaņā ar DORA un ārpakalpojumu vadlīnijām, no novērtējuma pirms līguma līdz izejas plāniem, papildinot informācijas reģistru.
+  text: Trešo pušu riska pārvaldība saskaņā ar DORA un ārpakalpojumu vadlīnijām, no novērtējuma pirms līguma līdz izejas plāniem. Tās rezultāti papildina informācijas reģistru.
 - uc: business-impact-analysis
   text: Kritiskās vai svarīgās funkcijas ar ietekmes pielaidēm, atjaunošanas mērķiem un atkarībām aiz tām.
 - uc: new-requirements
-  text: Jaunas uzraudzības prasības vai MiCA prasības tiek sasaistītas ar esošajām kontrolēm, pirms kāds sāk rakstīt jaunu politiku.
+  text: Jaunas uzraudzības gaidas vai MiCA prasības tiek sasaistītas ar esošajām kontrolēm, pirms kāds sāk rakstīt jaunu politiku.
 - uc: management-review
   text: Vadības institūcija pārskata riska pakāpi pret risku apetīti, notikumus un novēršanas statusu.
 - uc: change-management
@@ -143,6 +143,6 @@ questions:
   a: Piegādātāji bez sasaistītas funkcijas, līguma vai novērtējuma parādās kā nepilnības pirms iesniegšanas termiņa.
 ---
 
-Finanšu uzraudzības iestādes skatās uz visu nefinanšu risku kopumu, ne tikai uz IKT. DORA nosaka noteikumus IKT riskam, incidentu ziņošanai, noturības testēšanai un IKT trešajām pusēm. MiCA kriptoaktīvu pakalpojumu sniedzējiem nosaka prasības pārvaldībai, interešu konfliktiem, sūdzību izskatīšanai, ārpakalpojumiem un darbības nepārtrauktībai. Uzraudzības prasības, tostarp ECB prasības nozīmīgām iestādēm un EBI vadlīnijas, prasa risku taksonomiju, apetīti, pašnovērtējumus, zaudējumu datus un vadības institūcijas uzraudzību.
+Finanšu uzraudzības iestādes skatās uz visu nefinanšu risku kopumu, ne tikai uz IKT. DORA nosaka noteikumus IKT riskam, incidentu ziņošanai, noturības testēšanai un IKT trešajām pusēm. MiCA kriptoaktīvu pakalpojumu sniedzējiem nosaka prasības pārvaldībai, interešu konfliktiem, sūdzību izskatīšanai, ārpakalpojumiem un darbības nepārtrauktībai. Uzraudzības gaidas, tostarp ECB gaidas nozīmīgām iestādēm un EBI vadlīnijas, prasa risku taksonomiju, apetīti, pašnovērtējumus, zaudējumu datus un vadības institūcijas uzraudzību.
 
-Liela daļa šī darba joprojām notiek manuāli: pašnovērtējumi izklājlapās, notikumi tiek vākti e-pastā, rādītāji atsevišķā pārskatā. WINGMAN sistēmā riski, kontroles, notikumi un trešās puses ir sasaistīti ieraksti, tāpēc notikums atjaunina risku, uz kuru tas attiecas, un vadības institūcija redz vienu kopainu.
+Liela daļa šī darba joprojām notiek manuāli: pašnovērtējumi tiek veikti izklājlapās, notikumi tiek vākti e-pastā, rādītāji ir atsevišķā pārskatā. WINGMAN sistēmā riski, kontroles, notikumi un trešās puses ir sasaistīti ieraksti, tāpēc notikums atjaunina risku, uz kuru tas attiecas, un vadības institūcija redz vienu kopainu.

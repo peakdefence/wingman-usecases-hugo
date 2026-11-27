@@ -33,7 +33,7 @@ stages:
   - requirement-requirement
   - document-asset
   ai: Ierosina kategoriju un lomu ar rakstisku pamatojumu.
-  decides: MI pārvaldības vadītājs izlemj.
+  decides: MI pārvaldības vadītājs.
 - title: Ietekmes un risku novērtējums
   text: Riskus cilvēkiem, organizācijai un sabiedrībai novērtē katram lietojumam, kopā ar MI sistēmas ietekmes novērtējumu.
   nodes:
@@ -128,7 +128,7 @@ use_cases:
   text: Nodrošinātāja un uzturētāja pienākumi, cilvēka uzraudzība un MI pratība ir piesaistīti konkrētām lomām.
 questions:
 - q: Kuras MI sistēmas mēs izmantojam, un kuras no tām ir augsta riska?
-  a: No MI lietojumu reģistra uz katram reģistrēto kategoriju un lomu, ar pamatojumu un to, kas lēma.
+  a: No MI lietojumu reģistra uz katram lietojumam reģistrēto kategoriju un lomu, ar pamatojumu un norādi, kas lēma.
 - q: Ko MI akts prasa no mums šim lietojumam, un kas vēl trūkst?
   a: No lietojuma uz piemērojamajiem pienākumiem, uz kontrolēm, kas tos izpilda, uz to pierādījumiem. Pienākumi bez kontroles ir darba plāns.
 - q: Vai esošās ISO 27001 kontroles var izmantot ISO 42001?
@@ -137,6 +137,6 @@ questions:
   a: No incidenta uz lietojumu, uz uzraudzības lomu un riskiem, ko tas īsteno, ar ziņošanas termiņu, ja tas ir nopietns incidents.
 ---
 
-ISO/IEC 42001 nosaka MI pārvaldības sistēmu. EN 18286, kas publicēts 2026. gadā, nosaka kvalitātes vadības sistēmu, kas nodrošinātājiem nepieciešama ES MI akta vajadzībām. Pats MI akts nosaka pienākumus nodrošinātājiem un uzturētājiem atkarībā no katras MI sistēmas riska kategorijas.
+ISO/IEC 42001 nosaka MI vadības sistēmu. EN 18286, kas publicēts 2026. gadā, nosaka kvalitātes vadības sistēmu, kas nodrošinātājiem nepieciešama ES MI akta vajadzībām. Pats MI akts nosaka pienākumus nodrošinātājiem un uzturētājiem atkarībā no katras MI sistēmas riska kategorijas.
 
-Visi trīs sākas vienā vietā: jāzina, kādi MI lietojumi pastāv, ko katrs dara un kam tas pieder. WINGMAN katrs MI lietojums ir aktīvs, tāpēc tam ir tās pašas saites kā visam pārējam: riski, kontroles, piegādātāji, dokumenti, incidenti un auditi. Jau ieviestās ISO 27001 un VDAR kontroles tiek izmantotas atkārtoti, un darbā pārvēršas tikai reālās nepilnības.
+Visi trīs sākas vienā vietā: jāzina, kādi MI lietojumi pastāv, ko katrs dara un kam tas pieder. WINGMAN sistēmā katrs MI lietojums ir aktīvs, tāpēc tam ir tās pašas saites kā visam pārējam: riski, kontroles, piegādātāji, dokumenti, incidenti un auditi. Jau ieviestās ISO 27001 un VDAR kontroles tiek izmantotas atkārtoti, un darbā pārvēršas tikai reālās nepilnības.

@@ -23,7 +23,7 @@ stages:
   ai: Sagatavo pakalpojumu karti no esošajiem sistēmu, līgumu un iepirkumu ierakstiem.
   decides: Kiberdrošības pārvaldnieks apstiprina tvērumu.
 - title: Minimālās prasības sasaistītas
-  text: Katra likuma un noteikumu prasība ir ieraksts, kas sasaistīts ar ISO 27001 punktiem un jau ieviestām kontrolēm. Tas, kas paliek, ir nepilnības.
+  text: Katra likuma un noteikumu prasība ir ieraksts, kas sasaistīts ar ISO 27001 punktiem un jau ieviestām kontrolēm. Prasības, kas paliek nesegtas, ir nepilnības.
   nodes:
   - requirement
   - control
@@ -64,7 +64,7 @@ stages:
   ai: Sagatavo apstiprināšanas materiālus un uzskaita ierakstus bez atbildīgās lomas.
   decides: Vadības institūcija apstiprina.
 - title: Incidentu ziņošana
-  text: Signāli tiek izvērtēti un pārvērsti incidentos, ko klasificē pēc MK noteikumos Nr. 397 noteiktajiem nozīmīguma kritērijiem. Nozīmīgam incidentam ir ziņojumi CERT.LV – agrīnais brīdinājums, paziņojums, progresa un gala ziņojums – un turpmākais darbs. Incidenti veido kiberincidentu žurnālu.
+  text: Signāli tiek izvērtēti un pārvērsti incidentos, ko klasificē pēc MK noteikumos Nr. 397 paredzētajiem nozīmīguma kritērijiem. Nozīmīgam incidentam ir ziņojumi CERT.LV – agrīnais brīdinājums, paziņojums, progresa un gala ziņojums – un turpmākais darbs. Incidenti veido kiberincidentu žurnālu.
   nodes:
   - signal
   - incident
@@ -76,10 +76,10 @@ stages:
   - incident-asset
   - incident-document
   - incident-task
-  ai: Ierosina klasifikāciju ar pamatojumu, seko termiņiem un no incidenta ieraksta sagatavo katru ziņojumu vadlīnijās noteiktajā struktūrā.
+  ai: Ierosina klasifikāciju ar pamatojumu, seko termiņiem un no incidenta ieraksta sagatavo katru ziņojumu vadlīnijās paredzētajā struktūrā.
   decides: Incidentu vadītājs izlemj, par ko ziņot.
 - title: Pašvērtējuma ziņojums
-  text: Pašvērtējuma ziņojums izvērtē katru formālo prasību pret ieviestajām kontrolēm un to pierādījumiem. Tas tiek sagatavots no ierakstiem, nevis rakstīts no nulles, un secinājums par katru prasību saglabājas nākamajai reizei.
+  text: Pašvērtējuma ziņojums katrai formālajai prasībai izvērtē ieviestās kontroles un to pierādījumus. Tas tiek sagatavots no ierakstiem, nevis rakstīts no nulles, un secinājums par katru prasību saglabājas nākamajai reizei.
   nodes:
   - requirement
   - control
@@ -132,7 +132,7 @@ registers:
   text: Katras prasības izpildes līmenis ar kontrolēm un pierādījumiem, uz kuriem tas balstās, iekļauts pašvērtējuma ziņojumā un salīdzināms starp cikliem.
 - entity: requirement
   title: Prasību katalogs
-  text: Likuma panti un noteikumu minimālās prasības, katra kā atsevišķs ieraksts, sasaistītas ar ISO 27001 un kontrolēm.
+  text: Likuma panti un noteikumu minimālās prasības, katrs kā atsevišķs ieraksts, sasaistīti ar ISO 27001 un kontrolēm.
 - entity: task
   title: Darba plāns
   text: Korektīvās darbības, risku apstrādes uzdevumi un regulārās pārskatīšanas, katrs ar atbildīgo un termiņu, apkopoti gada plānā.
@@ -140,13 +140,13 @@ use_cases:
 - uc: supplier-evaluation
   text: Piegādes ķēdes drošība, kā to prasa likums. Kritiskos piegādātājus novērtē pirms sadarbības, un piegādātāju paziņojumi nonāk risku reģistrā.
 - uc: incident-handling
-  text: Incidentu ziņošana atbilstoši MK noteikumos Nr. 397 noteiktajām vadlīnijām – klasifikācija pēc nozīmīguma kritērijiem, agrīnais brīdinājums 24 stundās, paziņojums 72 stundās, progresa un gala ziņojums CERT.LV, sagatavoti no incidenta ieraksta.
+  text: Incidentu ziņošana atbilstoši MK noteikumos Nr. 397 paredzētajām vadlīnijām – klasifikācija pēc nozīmīguma kritērijiem, agrīnais brīdinājums 24 stundās, paziņojums 72 stundās, progresa un gala ziņojums CERT.LV, sagatavoti no incidenta ieraksta.
 - uc: new-requirements
   text: Kad mainās likums vai noteikumi, jaunās prasības sasaista ar jau ieviestām kontrolēm, un uzdevumos pārvēršas tikai reālās nepilnības.
 - uc: risk-review
   text: Visu apdraudējumu risku novērtējums katram pakalpojumam, ar apstrādi, ko vadības institūcija var apstiprināt.
 - uc: vulnerability-impact
-  text: CERT.LV brīdinājumi un skeneru rezultāti nonāk uz aktīviem, kuros ir attiecīgā ievainojamība.
+  text: CERT.LV brīdinājumi un skeneru rezultāti tiek piesaistīti aktīviem, kuros ir attiecīgā ievainojamība.
 - uc: business-impact-analysis
   text: Darbības ietekmes analīze katram pakalpojumam nosaka atjaunošanas mērķus – pamatu likumā prasītā kiberrisku pārvaldības un darbības nepārtrauktības plāna nepārtrauktības daļai.
 - uc: management-review
@@ -156,7 +156,7 @@ use_cases:
 - uc: auditing
   text: Pašvērtējums un regulārais kiberdrošības audits notiek uz tiem pašiem ierakstiem, ar secinājumiem par katru prasību.
 questions:
-- q: Vai varam uzraugošajai iestādei parādīt, ko mēs darbinām, kas to piegādā un kā tas ir aizsargāts?
+- q: Vai varam uzraudzības iestādei parādīt, ko mēs darbinām, kas to piegādā un kā tas ir aizsargāts?
   a: No tvēruma pakalpojumiem uz sistēmām un piegādātājiem, no kuriem tie ir atkarīgi, uz to riskiem un kontrolēm, kas šos riskus mazina.
 - q: Kuri piegādātāji šodien ietekmētu būtisku pakalpojumu, ja tie pārtrauktu darbību?
   a: No pakalpojuma uz aktīviem, no kuriem tas atkarīgs, uz piegādātājiem, kas tos nodrošina, ar to kritiskumu un novērtēšanas datumu.
@@ -170,8 +170,8 @@ questions:
   a: Prasības bez kontroles vai ar kontrolēm, kuru pierādījumi ir novecojuši, parādās kā nepilnības pirms audita.
 ---
 
-Neesat pārliecināts, vai NIS2 attiecas uz jums, piemēram, kā uz piegādātāju organizācijai, kas ir tvērumā? Sāciet ar ceļvedi [Vai NIS2 attiecas uz jums?]({{< relref "/knowledge-base/nis2-applicability" >}}).
+Neesat pārliecināti, vai NIS2 attiecas uz jums, piemēram, kā uz tvērumā esoša subjekta piegādātāju? Sāciet ar ceļvedi [Vai NIS2 attiecas uz jums?]({{< relref "/knowledge-base/nis2-applicability" >}}).
 
-NIS2 prasa vairāk nekā dokumentu kopumu. Subjektam jāzina, ko tas darbina, no kā tas ir atkarīgs, kādus riskus tas nes un kā tiek pārvaldīti incidenti, un tā vadības institūcijai pasākumi jāapstiprina un jāuzrauga. Latvijā NIS2 ir pārņemta Nacionālās kiberdrošības likumā, un Ministru kabineta noteikumi Nr. 397 „Minimālās kiberdrošības prasības” nosaka prasības no pārvaldības un kiberdrošības pārvaldnieka lomas līdz incidentu klasifikācijai, rezerves kopijām, šifrēšanai un ārpakalpojumiem. Par nozīmīgiem incidentiem ziņo CERT.LV atbilstoši noteikumos noteiktajai klasifikācijai un ziņošanas kārtībai, un subjekti iesniedz kiberdrošības pašvērtējuma ziņojumu, kas izvērtē, kā tiek izpildīta katra prasība.
+NIS2 prasa vairāk nekā dokumentu kopumu. Subjektam jāzina, ko tas darbina, no kā tas ir atkarīgs, kādus riskus tas nes un kā tiek pārvaldīti incidenti, un tā vadības institūcijai pasākumi jāapstiprina un jāuzrauga. Latvijā NIS2 ir pārņemta Nacionālās kiberdrošības likumā, un Ministru kabineta noteikumi Nr. 397 „Minimālās kiberdrošības prasības” nosaka prasības no pārvaldības un kiberdrošības pārvaldnieka lomas līdz incidentu klasifikācijai, rezerves kopijām, šifrēšanai un ārpakalpojumiem. Par nozīmīgiem incidentiem ziņo CERT.LV atbilstoši noteikumos paredzētajai klasifikācijai un ziņošanas kārtībai, un subjekti iesniedz kiberdrošības pašvērtējuma ziņojumu, kas izvērtē, kā tiek izpildīta katra prasība.
 
-WINGMAN uztur tos kā sasaistītus reģistrus vienā modelī, līdzīgi kā ISO 27001 informācijas drošības pārvaldības sistēmā. Informācijas drošības funkcija strādā no viena avota: tas, ko redz uzraugošā iestāde, auditors un vadības institūcija, ir tas pats, ar ko strādā drošības komanda. Incidentu ziņojumi un pašvērtējuma ziņojums tiek sagatavoti no tiem pašiem ierakstiem, tāpēc tie atbilst tam, kas patiešām ir ieviests.
+WINGMAN uztur tos kā sasaistītus reģistrus vienā modelī, līdzīgi kā ISO 27001 informācijas drošības vadības sistēmā (IDVS). Informācijas drošības funkcija strādā no viena avota: tas, ko redz uzraudzības iestāde, auditors un vadības institūcija, ir tas pats, ar ko strādā drošības komanda. Incidentu ziņojumi un pašvērtējuma ziņojums tiek sagatavoti no tiem pašiem ierakstiem, tāpēc tie atbilst tam, kas patiešām ir ieviests.

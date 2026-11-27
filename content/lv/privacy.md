@@ -9,8 +9,8 @@ description: Ko šī vietne uzskaita, kā, un kā no tā atteikties.
 
 - Lapa, kuru skatāt, lapas sadaļas, kas parādās ekrānā ritinot, tas, vai uzvedne vai ziņa tika nokopēta, un kuri no uzskaitītajiem jautājumiem lapā „Kam tas paredzēts” tajā brīdī bija atzīmēti. Ziņas teksts un tas, ko ierakstāt, mums netiek nosūtīts.
 - Vietne, no kuras atnācāt, tikai kā domēna vārds, ja pārlūks to nosūta.
-- Jūsu valsts, ko mitināšanas pakalpojuma sniedzējs nosaka pēc tīkla adreses.
-- Apmeklētāja marķieris šai dienai: vienvirziena jaucējkods no jūsu tīkla adreses un pārlūka paraksta kopā ar nejaušu vērtību, kas katru dienu tiek ģenerēta no jauna un nākamajā dienā dzēsta. Tas ļauj atšķirt vienu apmeklētāju no desmit vienā dienā. To nevar atšifrēt, tas nekad netiek rakstīts jūsu ierīcē un divu dienu laikā tiek aizstāts ar vienkāršu skaitli.
+- Jūsu valsts, ko mitināšanas pakalpojuma sniedzējs nosaka pēc IP adreses.
+- Apmeklētāja marķieris šai dienai: vienvirziena jaucējkods no jūsu IP adreses un pārlūka paraksta kopā ar nejaušu vērtību, kas katru dienu tiek ģenerēta no jauna un nākamajā dienā dzēsta. Tas ļauj atšķirt vienu apmeklētāju no desmit vienā dienā. To nevar atšifrēt, tas nekad netiek rakstīts jūsu ierīcē un divu dienu laikā tiek aizstāts ar vienkāršu skaitli.
 
 Nekādu vārdu, e-pasta adrešu, starpvietņu identifikatoru vai reklāmas profilu. Skaitļi tiek glabāti kā dienas kopsummas un izmantoti tikai, lai redzētu, kurš saturs ir noderīgs.
 
@@ -26,7 +26,7 @@ Ja nosūtāt saziņas formu, mēs saņemam jūsu e-pasta adresi un ziņu, kā ar
 
 ## Tiesiskais pamats un mitināšana
 
-Skaitītājs darbojas pie vietnes mitināšanas pakalpojuma sniedzēja Netlify, kas arī izsniedz lapas un šim nolūkam apstrādā jūsu tīkla adresi. Mēs balstāmies uz savām leģitīmajām interesēm saprast, kā publicētais materiāls tiek lietots, veidā, kas uz jums būtiski neietekmējas. Jūsu pārlūka Global Privacy Control vai Do Not Track signāls tiek ievērots automātiski.
+Skaitītājs darbojas pie vietnes mitināšanas pakalpojuma sniedzēja Netlify, kas arī izsniedz lapas un šim nolūkam apstrādā jūsu IP adresi. Mēs balstāmies uz savām leģitīmajām interesēm saprast, kā publicētais materiāls tiek lietots, veidā, kas jūs būtiski neietekmē. Jūsu pārlūka Global Privacy Control vai Do Not Track signāls tiek ievērots automātiski.
 
 ## Atteikties
 

@@ -47,7 +47,7 @@ stages:
   - role-control
   - role-risk
   ai: Uzskaita ierakstus bez īpašnieka pa jomām.
-  decides: Drošības vadītājs nozīmē īpašniekus.
+  decides: Drošības vadītājs ieceļ īpašniekus.
 - title: Pienākumu nošķiršana
   text: Viena persona pilda lomas, kurām jābūt nošķirtām, piemēram, izmaiņu ieviešanu un apstiprināšanu.
   nodes:
@@ -55,8 +55,8 @@ stages:
   - role
   links:
   - person-role
-  ai: Atzīmē nesavienojamas kombinācijas pēc jūsu noteiktiem noteikumiem.
-  decides: Vadība izlemj.
+  ai: Atzīmē nesavienojamas kombinācijas pēc jūsu iestatītajiem noteikumiem.
+  decides: Vadība.
   conflict: true
 - title: Aizvietotāji un nodošana
   text: Kad cilvēks aiziet, viņa lomas pāriet aizvietotājam, un visi ieraksti seko.

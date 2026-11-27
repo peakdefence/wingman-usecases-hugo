@@ -26,7 +26,7 @@ stages:
   links:
   - requirement-requirement
   ai: Ierosina kategoriju ar pamatojumu.
-  decides: Atbilstības vadītājs izlemj.
+  decides: Atbilstības vadītājs.
 - title: Riski un kontroles
   text: Lietojuma riski un kontroles, kas izpilda pienākumus.
   nodes:
@@ -48,7 +48,7 @@ stages:
   links:
   - role-asset
   ai: Uzskaita pienākumus katrai lomai.
-  decides: Vadība nozīmē.
+  decides: Vadība ieceļ.
 - title: Pierādījumi un uzraudzība
   text: Pierādījumi katrai kontrolei un signāli no sistēmas uzraudzības lietošanā.
   nodes:

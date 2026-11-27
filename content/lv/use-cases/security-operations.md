@@ -3,7 +3,7 @@ title: Ikdienas drošības pārvaldība
 uc: security-operations
 group: operations
 weight: 160
-summary: Vadīt drošības darbu ar plāniem un uzdevumiem, ar kopsavilkumiem, atgādinājumiem un eskalācijām, un jautāt "kas jāizdara" visam, ko modelis zina.
+summary: Vadīt drošības darbu ar plāniem un uzdevumiem, ar Kopsavilkumiem, atgādinājumiem un eskalācijām un jautāt „kas jāizdara” visam, ko modelis zina.
 standards:
 - ISO 27001
 - NIS2 21. pants
@@ -34,7 +34,7 @@ stages:
   - vulnerability-task
   - incident-task
   - finding-task
-  ai: No saitēm atbild, "kas jāizdara šonedēļ".
+  ai: No saitēm atbild, „kas jāizdara šonedēļ”.
   decides: Katrs cilvēks.
 - title: Kopsavilkumi un atgādinājumi
   text: Kopsavilkumi par to, kam pienācis termiņš, kas nokavēts vai bloķēts, un atgādinājumi īpašniekiem.
@@ -45,7 +45,7 @@ stages:
   links:
   - person-task
   - task-plan
-  ai: Sagatavo kopsavilkumu un pēc jūsu apstiprinājuma sūta atgādinājumus jūsu vārdā.
+  ai: Sagatavo Kopsavilkumu un pēc jūsu apstiprinājuma sūta atgādinājumus jūsu vārdā.
   decides: Jūs apstiprināt katru sūtījumu.
 - title: Eskalācija
   text: Kavējumi kritiskā darbā tiek nodoti atbildīgajai lomai.
@@ -70,5 +70,5 @@ stages:
   - signal-vulnerability
   - vulnerability-task
   ai: Izvērtē signālus un ierosina darbus.
-  decides: Drošības vadītājs izlemj.
+  decides: Drošības vadītājs.
 ---

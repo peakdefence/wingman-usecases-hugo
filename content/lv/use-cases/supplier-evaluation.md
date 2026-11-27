@@ -20,7 +20,7 @@ stages:
   ai: Aizpilda piegādātāja ierakstu no pieprasījuma un publiskiem avotiem.
   decides: Pieprasītājs apstiprina.
 - title: Kritiskums un risks
-  text: Kritiskums izriet no aktīviem, ko tas skar. Esošie trešo pušu riski tiek izmantoti atkārtoti.
+  text: Kritiskums izriet no aktīviem, ko piegādātājs ietekmē. Esošie trešo pušu riski tiek izmantoti atkārtoti.
   nodes:
   - supplier
   - risk
@@ -28,7 +28,7 @@ stages:
   links:
   - risk-supplier
   - risk-asset
-  ai: Ierosina kritiskumu un atbilstošos riskus.
+  ai: Ierosina kritiskumu un līdzīgus esošus riskus.
   decides: Riska īpašnieks apstiprina.
 - title: Novērtēšana
   text: Anketa, sertifikāti, līguma un datu apstrādes noteikumi, izejas plāns.
@@ -41,7 +41,7 @@ stages:
   - audit-supplier
   - supplier-document
   - audit-evidence
-  ai: Pārbauda atbildes pret saņemtajiem pierādījumiem un uzskaita nepilnības.
+  ai: Salīdzina atbildes ar saņemtajiem pierādījumiem un uzskaita nepilnības.
   decides: Pārskata drošības un iepirkumu speciālisti.
 - title: Lēmums
   text: Apstiprināt, apstiprināt ar nosacījumiem vai noraidīt. Nosacījumi kļūst par kontrolēm un uzdevumiem.
@@ -55,7 +55,7 @@ stages:
   - control-risk
   - control-task
   ai: Sagatavo lēmuma ierakstu un nosacījumus.
-  decides: Atbildīgā loma izlemj.
+  decides: Atbildīgā loma.
 - title: Uzraudzība
   text: Piegādātāju signāli un plānotas atkārtotas novērtēšanas uztur ierakstu aktuālu.
   nodes:

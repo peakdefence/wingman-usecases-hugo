@@ -27,7 +27,7 @@ use_cases: [incident-handling]
 | Ziņojums | Saturs | Termiņš | Nosūtīts (kas, kad) |
 |---|---|---|---|
 | Agrīnais brīdinājums | Aizdomas par nozīmīgu incidentu; skartais pakalpojums; vai iespējama ļaunprātīga darbība | 24 h – līdz 13.11. plkst. 09.58 | R. Grava, 12.11. plkst. 14.10 |
-| Paziņojums par incidentu | Klasifikācija, sākotnējais smaguma un ietekmes novērtējums, kompromitācijas pazīmes | 72 h – līdz 15.11. plkst. 09.58 | R. Grava, 13.11. plkst. 09.30 |
+| Paziņojums par incidentu | Klasifikācija, sākotnējais nopietnības un ietekmes novērtējums, kompromitācijas pazīmes | 72 h – līdz 15.11. plkst. 09.58 | R. Grava, 13.11. plkst. 09.30 |
 | Starpziņojums | Statuss pēc pieprasījuma vai situācijai mainoties | pēc pieprasījuma | – |
 | Gala ziņojums | Apraksts, pamatcēlonis, veiktie pasākumi, pārrobežu ietekme | 1 mēnesis pēc paziņojuma – līdz 13.12. | – |
 

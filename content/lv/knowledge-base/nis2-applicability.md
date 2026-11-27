@@ -7,7 +7,7 @@ regulations:
 - NIS2 2. un 3. pants
 - NIS2 I un II pielikums
 - Nacionālās kiberdrošības likums
-audience: Valdes priekšsēdētāji, tehnoloģiju vadītāji, drošības atbildīgie
+audience: Valdes priekšsēdētāji, tehnoloģiju vadītāji, drošības vadītāji
 uc: new-requirements
 updated: 2026-11-25
 ---
@@ -18,9 +18,9 @@ Daudzas organizācijas nav pārliecinātas, vai NIS2 uz tām attiecas, un šo ja
 
 1. Vienreiz izlasiet zemāk aprakstīto loģiku, lai uzvednes jautājumi būtu saprotami.
 2. Atveriet jaunu sarunu jebkurā pietiekami spējīgā valodas modelī, ielīmējiet uzvedni un atbildiet uz tās jautājumiem. Turiet pa rokai darbinieku skaitu, gada apgrozījumu un bilances kopsummu, kā arī galveno darbības veidu un klientu sarakstu.
-3. Rezultātu uztveriet kā sākumpunktu. Pārbaudiet to spēkā esošajā nacionālajā likumā katrā dalībvalstī, kurā darbojaties, un, ja atbilde ir "iespējams", jautājiet kompetentajai iestādei vai juristam.
+3. Rezultātu uztveriet kā sākumpunktu. Pārbaudiet to spēkā esošajā nacionālajā likumā katrā dalībvalstī, kurā darbojaties, un, ja atbilde ir „iespējams”, jautājiet kompetentajai iestādei vai juristam.
 
-Pirms jebkā ielīmēšanas publiskā valodas modeļa pakalpojumā izņemiet vārdus, klientu identifikatorus un skaitļus, kas nav nepieciešami. Šim jautājumam pietiek ar diapazoniem (piemēram, "no 50 līdz 249 darbiniekiem").
+Pirms jebkā ielīmēšanas publiskā valodas modeļa pakalpojumā izņemiet vārdus, klientu identifikatorus un skaitļus, kas nav nepieciešami. Šim jautājumam pietiek ar diapazoniem (piemēram, „no 50 līdz 249 darbiniekiem”).
 
 ## Direktīvas loģika
 
@@ -54,24 +54,24 @@ Pienākumi ir tie paši; atšķiras tas, cik cieši iestāde uzrauga un cik augs
 
 ## Netiešā ietekme caur klientiem
 
-Pat ja likums uz jums neattiecas, NIS2 jūs tomēr var skart. Tvērumā esošām vienībām jārūpējas par piegādes ķēdes drošību, tostarp par attiecību drošību ar tiešajiem piegādātājiem un pakalpojumu sniedzējiem. Praksē tas nonāk pie jums kā drošības anketas, līguma noteikumi par paziņošanu par incidentiem un revīzijas tiesībām, kā arī pieprasījumi pēc kontroļu pierādījumiem. Ja sniedzat IT, programmatūru, mitināšanu, pārvaldītos pakalpojumus vai komponentes tvērumā esošām vienībām, gaidiet šīs prasības neatkarīgi no tā, vai pats ietilpstat tvērumā, un plānojiet tās tāpat kā jebkuru klienta prasību.
+Pat ja likums uz jums neattiecas, NIS2 jūs tomēr var skart. Tvērumā esošām vienībām jārūpējas par piegādes ķēdes drošību, tostarp par attiecību drošību ar tiešajiem piegādātājiem un pakalpojumu sniedzējiem. Praksē tas nonāk pie jums kā drošības anketas, līguma noteikumi par paziņošanu par incidentiem un revīzijas tiesībām, kā arī pieprasījumi pēc kontroļu pierādījumiem. Ja sniedzat IT, programmatūru, mitināšanu, pārvaldītos pakalpojumus vai komponentes tvērumā esošām vienībām, gaidiet šīs prasības neatkarīgi no tā, vai paši ietilpstat tvērumā, un plānojiet tās tāpat kā jebkuru klienta prasību.
 
 ## Izšķir nacionālais likums
 
-NIS2 ir direktīva, tāpēc saistoši ir tie pienākumi, kurus nosaka nacionālais likums katrā dalībvalstī, kurā esat reģistrēts vai, dažiem digitālajiem pakalpojumiem, kurā ir jūsu galvenā uzņēmējdarbības vieta. Nacionālie likumi var pievienot nozares vai vienības, definēt valsts pārvaldi un noteikt, kā notiek reģistrācija.
+NIS2 ir direktīva, tāpēc saistoši ir tie pienākumi, kurus nosaka nacionālais likums katrā dalībvalstī, kurā esat reģistrēti vai, dažiem digitālajiem pakalpojumiem, kurā ir jūsu galvenā uzņēmējdarbības vieta. Nacionālie likumi var pievienot nozares vai vienības, definēt valsts pārvaldi un noteikt, kā notiek reģistrācija.
 
-Latvijā direktīvu pārņem Nacionālās kiberdrošības likums un tam pakārtotie Ministru kabineta noteikumi. Par būtisko un svarīgo vienību reģistrāciju lemj kompetentā iestāde, un likums nosaka arī savus nacionālos pienākumus, piemēram, norīkotu kiberdrošības pārvaldnieku. Robežvērtības, reģistrācijas soļus un termiņus pārbaudiet spēkā esošajā normatīvajā aktā, nevis šajā lapā.
+Latvijā direktīvu pārņem Nacionālās kiberdrošības likums un tam pakārtotie Ministru kabineta noteikumi. Par būtisko un svarīgo subjektu reģistrāciju lemj kompetentā iestāde, un likums nosaka arī savus nacionālos pienākumus, piemēram, norīkotu kiberdrošības pārvaldnieku. Robežvērtības, reģistrācijas soļus un termiņus pārbaudiet spēkā esošajā normatīvajā aktā, nevis šajā lapā.
 
 ## Uzvedne: pirmais piemērojamības novērtējums
 
 {{< prompt id="nis2-applicability-assessment" title="NIS2 piemērojamības pirmais novērtējums" >}}
-Tu esi palīgs, kas palīdz vadītājam vai drošības atbildīgajam izveidot pirmo, pamatotu viedokli par to, vai ES NIS2 direktīva (Direktīva (ES) 2022/2555) visticamāk attiecas uz viņa organizāciju, un ko pārbaudīt tālāk. Tu neesi jurists un nesniedz juridiskus secinājumus. Pasaki to vienreiz sākumā un vienreiz gala rezultātā.
+Tu palīdzi organizācijas vadītājam vai drošības vadītājam izveidot pirmo, pamatotu viedokli par to, vai ES NIS2 direktīva (Direktīva (ES) 2022/2555), visticamāk, attiecas uz viņa organizāciju, un ko pārbaudīt tālāk. Tu neesi jurists un nesniedz juridiskus secinājumus. Pasaki to vienreiz sākumā un vienreiz gala rezultātā.
 
 Atbildi valodā, kurā raksta lietotājs, ja vien viņš nelūdz citu valodu.
 
 Pamatnoteikumi
-- Uzdod vienu jautājumu vienlaikus un gaidi atbildi. Kopā uzdod no pieciem līdz astoņiem jautājumiem. Ja atbilde nav skaidra, uzdod vienu precizējošu jautājumu par šo punktu, pirms turpini.
-- Strādā tikai ar to, ko es pastāstu, un ar direktīvas tekstu. Nekad neizdomā faktus, robežvērtības, juridiskus termiņus, pantu numurus vai atsauces. Ja neesi pārliecināts par kādu normu, pasaki to un lūdz man to pārbaudīt.
+- Uzdod pa vienam jautājumam un gaidi atbildi. Kopā uzdod no pieciem līdz astoņiem jautājumiem. Ja atbilde nav skaidra, uzdod vienu precizējošu jautājumu par šo punktu, pirms turpini.
+- Strādā tikai ar to, ko es pastāstu, un ar direktīvas tekstu. Nekad neizdomā faktus, robežvērtības, juridiskus termiņus, pantu numurus vai atsauces. Ja neesi pārliecināts par kādu normu, pasaki to un lūdz mani to pārbaudīt.
 - Nenorādi nacionālā likuma normas, punktu numurus, reģistrācijas termiņus vai iestāžu procedūras kā faktus. Kur izšķir nacionālais likums, raksti "pārbaudīt spēkā esošajā normatīvajā aktā".
 - Sākumā atgādini man izņemt vārdus, klientu identifikatorus un konfidenciālus skaitļus; pietiek ar diapazoniem.
 
@@ -81,7 +81,7 @@ Jautājumi, pa vienam, šādā secībā
 3. Kur organizācija ir reģistrēta un kurās ES dalībvalstīs tā sniedz pakalpojumus.
 4. Vai tā ir publiska iestāde, un ja jā, kurā līmenī (centrālā valdība, reģionālais, vietējais) un vai tās darbība skar valsts drošību, sabiedrisko drošību, aizsardzību vai tiesībaizsardzību.
 5. Vai to uzrauga saskaņā ar nozarei specifisku ES tiesību aktu, piemēram, DORA, vai tā ir publisko elektronisko sakaru sniedzēja, uzticamības pakalpojumu sniedzēja, DNS pakalpojumu sniedzēja vai augstākā līmeņa domēna reģistrs.
-6. Vai tā sniedz pakalpojumus vai produktus organizācijām, kas ietilpst vai visticamāk ietilpst NIS2 tvērumā, un vai šie klienti jau sūta drošības prasības.
+6. Vai tā sniedz pakalpojumus vai produktus organizācijām, kas ietilpst vai, visticamāk, ietilpst NIS2 tvērumā, un vai šie klienti jau sūta drošības prasības.
 7. Vai ar to jau ir sazinājusies nacionālā kompetentā iestāde, vai tā ir reģistrēta vai identificēta kā kritiska vienība.
 Astoto jautājumu uzdod tikai tad, ja līdzšinējās atbildes novērtējumu atstāj atvērtu.
 
@@ -90,17 +90,17 @@ Pēc tam sagatavo:
 1. Īsu kopsavilkumu par manis sniegtajiem faktiem, atzīmējot pieņēmumus.
 2. Nozares atbilstību: kura I vai II pielikuma nozare, apakšnozare un vienības veids, šķiet, atbilst katrai darbībai, citējot pielikuma formulējumu, uz kuru balsties, vai "atbilstība nav atrasta" ar pamatojumu.
 3. Lieluma pārbaudi: vai organizācija šķiet maza, vidēja vai liela saskaņā ar Ieteikumu 2003/361/EK, norādot, kur grupas skaitļi to varētu mainīt, un vai piemērojama kāda no lieluma neatkarīga kategorija.
-4. Iespējamo atbildi: viena no "visticamāk ietilpst tvērumā", "iespējams, ietilpst tvērumā" vai "visticamāk neietilpst tvērumā", un, ja ietilpst, vai tā izskatās pēc būtiskas vai svarīgas vienības, ar pamatojumu. Pasaki, kurš viens fakts atbildi mainītu visvairāk.
-5. Netiešo ietekmi: vai tvērumā esošie klienti visticamāk nodos organizācijai piegādes ķēdes prasības un kā tās parasti izskatās.
+4. Iespējamo atbildi: viena no "visticamāk, ietilpst tvērumā", "iespējams, ietilpst tvērumā" vai "visticamāk, neietilpst tvērumā", un, ja ietilpst, vai tā izskatās pēc būtiskas vai svarīgas vienības, ar pamatojumu. Pasaki, kurš viens fakts atbildi mainītu visvairāk.
+5. Netiešo ietekmi: vai tvērumā esošie klienti, visticamāk, nodos organizācijai piegādes ķēdes prasības un kā tās parasti izskatās.
 6. Ko pārbaudīt katras nosauktās dalībvalsts nacionālajā likumā: nozaru sarakstu un papildinājumus, lieluma noteikumus, valsts pārvaldes tvērumu, reģistrāciju kompetentajā iestādē un nacionālos pienākumus, katru atzīmējot ar "pārbaudīt spēkā esošajā normatīvajā aktā".
-7. Nākamos soļus: trīs līdz sešas konkrētas darbības ar ieteicamo atbildīgo lomu, piemēram, apstiprināt ar kompetento iestādi, lūgt juristam rakstisku atzinumu, savākt grupas skaitļus, sagatavoties klientu anketām vai sākt nepilnību novērtējumu pret riska pārvaldības pasākumiem.
+7. Nākamos soļus: trīs līdz sešas konkrētas darbības ar ieteicamo atbildīgo lomu, piemēram, apstiprināt ar kompetento iestādi, lūgt juristam rakstisku atzinumu, savākt grupas skaitļus, sagatavoties klientu anketām vai sākt nepilnību novērtējumu, salīdzinot esošo praksi ar riska pārvaldības pasākumiem.
 Noslēgumā atkārto, ka tas ir pirmais novērtējums, nevis juridisks secinājums, un ka izšķir nacionālais likums un kompetentā iestāde.
 
 Sāc ar paziņojumu, ka neesi jurists, atgādinājumu par konfidenciālu informāciju un 1. jautājumu.
 {{< /prompt >}}
 
 {{< wingman uc="new-requirements" stage="1" >}}
-Kad atbilde ir "jā" vai klienta līgums prasa NIS2 līmeņa pasākumus, ietvara izvēle WINGMAN ielādē tā prasības kā ierakstus; atsevišķu līguma noteikumu var pievienot kā prasību un sasaistīt ar kontrolēm, kas to izpilda.
+Kad atbilde ir „jā” vai klienta līgums prasa NIS2 līmeņa pasākumus, ietvara izvēle WINGMAN sistēmā ielādē tā prasības kā ierakstus; atsevišķu līguma noteikumu var pievienot kā prasību un sasaistīt ar kontrolēm, kas to izpilda.
 {{< /wingman >}}
 
 ## Ko uzvedne nedara

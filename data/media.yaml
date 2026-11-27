@@ -43,7 +43,7 @@
   title: { en: "Gaps to close and the organisation's temperature", lv: "Novēršamās nepilnības un organizācijas temperatūra" }
   caption:
     en: "Eleven register checks run on every record: risks without an owner or score, requirements without a control, tasks overdue by more than 30 days, vulnerabilities past the patching SLA, unapproved documents. Each gap links to the records behind it."
-    lv: "Vienpadsmit reģistra pārbaudes katram ierakstam: riski bez īpašnieka vai vērtējuma, prasības bez kontroles, uzdevumi, kas kavē vairāk par 30 dienām, ievainojamības pēc ielāpu SLA, neapstiprināti dokumenti. Katra nepilnība ved uz ierakstiem."
+    lv: "Vienpadsmit reģistra pārbaudes katram ierakstam: riski bez īpašnieka vai vērtējuma, prasības bez kontroles, uzdevumi, kas kavē vairāk par 30 dienām, ievainojamības ar pārsniegtu ielāpu SLA, neapstiprināti dokumenti. Katra nepilnība ved uz ierakstiem."
 
 # ---------------------------------------------------------------- Plans
 - id: plans-list
@@ -58,7 +58,7 @@
   title: { en: "Plans: recurring and one-off programmes", lv: "Plāni: regulārās un vienreizējās programmas" }
   caption:
     en: "Each plan groups the tasks it generates (asset, access, policy and risk reviews, internal audit) with its activities, owner and progress. Propose a plan asks WINGMAN to draft one."
-    lv: "Katrs plāns apvieno uzdevumus, ko tas ģenerē (aktīvu, piekļuves, politiku un risku pārskatīšana, iekšējais audits), ar aktivitātēm, īpašnieku un progresu. Ierosināt plānu liek WINGMAN to uzmetumu sagatavot."
+    lv: "Katrs plāns apvieno uzdevumus, ko tas ģenerē (aktīvu, piekļuves, politiku un risku pārskatīšana, iekšējais audits), ar aktivitātēm, īpašnieku un progresu. Ar pogu „Ierosināt plānu” WINGMAN sagatavo plāna melnrakstu."
 
 - id: plan-detail
   file: media/plan-detail.jpg
@@ -86,7 +86,7 @@
   title: { en: "Activities: what the plan generates and how often", lv: "Aktivitātes: ko plāns ģenerē un cik bieži" }
   caption:
     en: "Activity definitions name the target entity, the cadence (monthly, quarterly, semi-annual, annual) and whether tasks are generated per entity. Author with Wingman drafts the activities from the plan's instruction."
-    lv: "Aktivitāšu definīcijas nosaka mērķa ierakstu, biežumu (reizi mēnesī, ceturksnī, pusgadā, gadā) un vai uzdevumi tiek ģenerēti katram ierakstam. Autors ar Wingman sagatavo aktivitātes no plāna uzdevuma."
+    lv: "Aktivitāšu definīcijas nosaka mērķa ierakstu, biežumu (reizi mēnesī, ceturksnī, pusgadā, gadā) un vai uzdevumi tiek ģenerēti katram ierakstam. Funkcija „Autors ar Wingman” sagatavo aktivitātes no plāna norādījumiem."
 
 # ---------------------------------------------------------------- Tasks
 - id: task-list
@@ -115,7 +115,7 @@
   title: { en: "Overdue tasks across the organisation", lv: "Kavētie uzdevumi visā organizācijā" }
   caption:
     en: "The Overdue quick view lists late work with its assignee, so delays surface as people's names, not as a number."
-    lv: "Kavēto uzdevumu skats rāda nokavēto darbu ar izpildītāju, tāpēc kavējumi parādās kā cilvēku vārdi, nevis kā skaitlis."
+    lv: "Ātrais skats „Kavētie” rāda nokavēto darbu ar izpildītāju, tāpēc kavējumi parādās kā cilvēku vārdi, nevis kā skaitlis."
 
 - id: task-calendar
   file: media/task-calendar.jpg
@@ -157,7 +157,7 @@
   title: { en: "The review brief with a suggested rating change", lv: "Pārskatīšanas kopsavilkums ar ieteikto vērtējuma maiņu" }
   caption:
     en: "After Start review, the brief proposes likelihood 3 → 4 with its reasoning: the system is in active use and no accuracy monitoring is deployed yet. Accept or Skip, then Complete review."
-    lv: "Pēc pārskatīšanas sākšanas kopsavilkums ierosina varbūtību 3 → 4 ar pamatojumu: sistēma tiek aktīvi lietota, un precizitātes uzraudzība vēl nav ieviesta. Pieņemt vai izlaist, tad pabeigt pārskatīšanu."
+    lv: "Pēc „Sākt pārskatīšanu” kopsavilkums ierosina varbūtību 3 → 4 ar pamatojumu: sistēma tiek aktīvi lietota, un precizitātes uzraudzība vēl nav ieviesta. Tad „Pieņemt” vai „Izlaist” un „Pabeigt pārskatīšanu”."
 
 - id: ask-skill-task
   file: media/ask-skill-task-review.gif
@@ -171,7 +171,7 @@
   title: { en: "Help me complete this task", lv: "Palīdzi pabeigt šo uzdevumu" }
   caption:
     en: "Start review on a quarterly risk review task, ask Wingman for help, read its findings against the task checklist, accept the likelihood change, and complete the review with the outcome Monitored. The task closes as Done."
-    lv: "Sāc pārskatīšanu ceturkšņa riska uzdevumā, palūdz Wingman palīdzību, izlasi atzinumus pret uzdevuma sarakstu, pieņem varbūtības maiņu un pabeidz pārskatīšanu ar iznākumu Uzraudzīts. Uzdevums aizveras kā pabeigts."
+    lv: "Ceturkšņa riska pārskatīšanas uzdevumā tiek sākta pārskatīšana un palūgta Wingman palīdzība, Wingman atzinumi salīdzināti ar uzdevuma kontrolsarakstu, varbūtības maiņa pieņemta un pārskatīšana pabeigta ar iznākumu „Uzraudzīts”. Uzdevums tiek slēgts kā „Pabeigts”."
 
 - id: ask-skill-task-1-help
   file: media/ask-skill-task-1-help.jpg
@@ -183,10 +183,10 @@
   sequence: { key: ask-skill-task, step: 1 }
   width: 1232
   height: 960
-  title: { en: "Findings against the task checklist", lv: "Atzinumi pret uzdevuma sarakstu" }
+  title: { en: "Findings against the task checklist", lv: "Atzinumi pēc uzdevuma kontrolsaraksta" }
   caption:
     en: "The skill walks the task's own checklist: likelihood and impact need a decision, the definition is fine, the treatment plan needs updating, three overlapping review tasks should be consolidated. It offers to propose each change."
-    lv: "Prasme iziet cauri uzdevuma sarakstam: varbūtībai un ietekmei vajag lēmumu, definīcija ir kārtībā, apstrādes plāns jāatjauno, trīs pārklājošies pārskatīšanas uzdevumi jāapvieno. Tā piedāvā ierosināt katru izmaiņu."
+    lv: "Prasme iziet cauri uzdevuma kontrolsarakstam: varbūtībai un ietekmei vajag lēmumu, definīcija ir kārtībā, apstrādes plāns jāatjaunina, trīs pārklājošies pārskatīšanas uzdevumi jāapvieno. Tā piedāvā ierosināt katru izmaiņu."
 
 - id: ask-skill-task-2-completed
   file: media/ask-skill-task-2-completed.jpg
@@ -201,7 +201,7 @@
   title: { en: "Review completed, task done", lv: "Pārskatīšana pabeigta, uzdevums izpildīts" }
   caption:
     en: "After Complete review the risk shows Monitored and Last reviewed today, and the task status is Done."
-    lv: "Pēc pārskatīšanas pabeigšanas risks rāda Uzraudzīts un Pēdējo reizi pārskatīts šodien, un uzdevuma statuss ir Pabeigts."
+    lv: "Pēc „Pabeigt pārskatīšanu” riskam redzams „Uzraudzīts” un „Pēdējo reizi pārskatīts: šodien”, un uzdevuma statuss ir „Pabeigts”."
 
 # ---------------------------------------------------------------- Risks
 - id: risk-list
@@ -216,7 +216,7 @@
   title: { en: "The risk register", lv: "Risku reģistrs" }
   caption:
     en: "All risks with owner, severity, score, status and type. Quick views for my risks, critical, high and critical."
-    lv: "Visi riski ar īpašnieku, smagumu, vērtējumu, statusu un tipu. Ātrie skati: mani riski, kritiskie, augstie un kritiskie."
+    lv: "Visi riski ar īpašnieku, nopietnību, vērtējumu, statusu un tipu. Ātrie skati: „Mani riski”, „Kritiskie”, „Augstie un kritiskie”."
 
 - id: risk-matrix
   file: media/risk-matrix.jpg
@@ -244,7 +244,7 @@
   title: { en: "A risk with an open review and a suggestion", lv: "Risks ar atvērtu pārskatīšanu un ieteikumu" }
   caption:
     en: "On the risk itself: what changed since the last review (a linked incident, a training task, a parent risk), one suggested change (likelihood 4 → 2 with the reason), and Confirm & complete."
-    lv: "Uz paša riska: kas mainījies kopš pēdējās pārskatīšanas (saistīts incidents, apmācību uzdevums, vecākrisks), viens ieteikums (varbūtība 4 → 2 ar pamatojumu) un Apstiprināt un pabeigt."
+    lv: "Paša riska ierakstā: kas mainījies kopš pēdējās pārskatīšanas (saistīts incidents, apmācību uzdevums, vecākrisks), viens ieteikums (varbūtība 4 → 2 ar pamatojumu) un „Apstiprināt un pabeigt”."
 
 - id: risk-accept-1-suggestion
   file: media/risk-accept-1-suggestion.png
@@ -274,7 +274,7 @@
   title: { en: "Accepted, with Undo", lv: "Pieņemts, ar atsaukšanu" }
   caption:
     en: "The suggestion is marked Accepted and the button becomes Apply 1 change & complete. Nothing is written until the review is completed."
-    lv: "Ieteikums atzīmēts kā pieņemts, un poga kļūst par Piemērot 1 izmaiņu un pabeigt. Nekas netiek ierakstīts, kamēr pārskatīšana nav pabeigta."
+    lv: "Ieteikums atzīmēts kā „Pieņemts”, un poga kļūst par „Piemērot 1 izmaiņu un pabeigt”. Nekas netiek ierakstīts, kamēr pārskatīšana nav pabeigta."
 
 - id: risk-confirm-3-completed
   file: media/risk-confirm-3-completed.jpg
@@ -289,7 +289,7 @@
   title: { en: "Review completed: score 16 → 8, Monitored", lv: "Pārskatīšana pabeigta: vērtējums 16 → 8, Uzraudzīts" }
   caption:
     en: "The score drops from 16 to 8, severity from Critical to High, status moves to Monitored, the position on the matrix shifts, and the brief regenerates."
-    lv: "Vērtējums krīt no 16 uz 8, smagums no Kritisks uz Augsts, statuss kļūst Uzraudzīts, pozīcija matricā pārvietojas, un kopsavilkums pārģenerējas."
+    lv: "Vērtējums krīt no 16 uz 8, nopietnība no „Kritisks” uz „Augsts”, statuss kļūst „Uzraudzīts”, pozīcija matricā pārvietojas, un kopsavilkums tiek ģenerēts no jauna."
 
 - id: risk-detail
   file: media/risk-detail.jpg
@@ -329,10 +329,10 @@
   env: dev
   width: 1105
   height: 1092
-  title: { en: "A contractual requirement mapped to standard clauses", lv: "Līguma prasība, kas kartēta uz standarta punktiem" }
+  title: { en: "A contractual requirement mapped to standard clauses", lv: "Līguma prasība, kas sasaistīta ar standarta punktiem" }
   caption:
     en: "A customer contract clause (report incidents within 72 h) is met by one control and mapped to ISO 27001 A.5.26 and NIS2 Article 21, so one control satisfies three sources."
-    lv: "Klienta līguma punkts (ziņot par incidentiem 72 h laikā) tiek izpildīts ar vienu kontroli un kartēts uz ISO 27001 A.5.26 un NIS2 21. pantu, tātad viena kontrole apmierina trīs avotus."
+    lv: "Klienta līguma punkts (ziņot par incidentiem 72 h laikā) tiek izpildīts ar vienu kontroli un sasaistīts ar ISO 27001 A.5.26 un NIS2 21. pantu, tātad viena kontrole apmierina trīs avotus."
 
 - id: asset-list
   file: media/asset-list.jpg
@@ -360,7 +360,7 @@
   title: { en: "An asset with its quality score and dependencies", lv: "Aktīvs ar kvalitātes vērtējumu un atkarībām" }
   caption:
     en: "The identity provider for 500+ customers: a data-quality score with the reason (owners recorded as raw strings), related risks and incident, a parent asset, and custom fields for data classification."
-    lv: "Identitātes nodrošinātājs 500+ klientiem: datu kvalitātes vērtējums ar pamatojumu, saistītie riski un incidents, vecākaktīvs un pielāgotie lauki datu klasifikācijai."
+    lv: "Identitātes nodrošinātājs 500+ klientiem: datu kvalitātes vērtējums ar pamatojumu (īpašnieki ierakstīti kā neapstrādātas teksta virknes), saistītie riski un incidents, vecākaktīvs un pielāgotie lauki datu klasifikācijai."
 
 # ---------------------------------------------------------------- Vulnerabilities, incidents, signals
 - id: vuln-list
@@ -418,7 +418,7 @@
   title: { en: "The incident WINGMAN registered from the conversation", lv: "Incidents, ko WINGMAN reģistrēja no sarunas" }
   caption:
     en: "Title, description, ten mitigation recommendations and a fresh brief, written from what the reporter said in chat. Post-mortem fields wait for later."
-    lv: "Nosaukums, apraksts, desmit mazināšanas ieteikumi un jauns kopsavilkums, uzrakstīti no tā, ko ziņotājs teica sarunā. Pēcanalīzes lauki gaida vēlāku brīdi."
+    lv: "Nosaukums, apraksts, desmit mazināšanas ieteikumi un jauns kopsavilkums, uzrakstīti no tā, ko ziņotājs teica sarunā. Pēcincidenta analīzes lauki gaida vēlāku brīdi."
 
 - id: sig-inbox
   file: media/sig-inbox.jpg
@@ -462,7 +462,7 @@
   title: { en: "The new signal, under review", lv: "Jaunais signāls, pārskatīšanā" }
   caption:
     en: "The card appears in Needs review while WINGMAN classifies it. The owner receives an email at the same moment."
-    lv: "Kartīte parādās sadaļā Jāpārskata, kamēr WINGMAN to klasificē. Īpašnieks tajā pašā brīdī saņem e-pastu."
+    lv: "Kartīte parādās sadaļā „Jāpārskata”, kamēr WINGMAN to klasificē. Īpašnieks tajā pašā brīdī saņem e-pastu."
 
 - id: notif-email-signal
   file: media/notif-email-signal.png
@@ -476,7 +476,7 @@
   title: { en: "The email the owner receives", lv: "E-pasts, ko saņem īpašnieks" }
   caption:
     en: "A signal routed to you: the record id and title, and what to do: open it beside the AI classification, then accept a suggestion or mark it a false positive."
-    lv: "Jums novirzīts signāls: ieraksta id un nosaukums un kas jādara: atvērt to blakus MI klasifikācijai, tad pieņemt ieteikumu vai atzīmēt kā viltus trauksmi."
+    lv: "Jums novirzīts signāls: ieraksta ID un nosaukums un kas jādara: atvērt to blakus MI klasifikācijai, tad pieņemt ieteikumu vai atzīmēt kā viltus trauksmi."
 
 # ---------------------------------------------------------------- Ask Wingman flows (stage)
 - id: ask-scope
@@ -488,10 +488,10 @@
   env: dev
   width: 1105
   height: 1092
-  title: { en: "Ask Wingman, scoped to one record", lv: "Jautā Wingman, vienam ierakstam" }
+  title: { en: "Ask Wingman, scoped to one record", lv: "Jautā Wingman ar tvērumu uz vienu ierakstu" }
   caption:
     en: "The side panel opens on any record with the scope set to it and the skills grouped by area: incident communications, risk analysis, audit plan, management review, BIA, AI use case review and more."
-    lv: "Sānu panelis atveras uz jebkura ieraksta ar tvērumu uz to un prasmēm pa jomām: incidentu komunikācija, risku analīze, audita plāns, vadības pārskats, BIA, MI lietojuma pārskats un citas."
+    lv: "Sānu panelis atveras jebkurā ierakstā ar tvērumu, kas iestatīts uz šo ierakstu, un prasmēm, sagrupētām pa jomām: incidentu komunikācija, risku analīze, audita plāns, vadības pārskats, BIA, MI lietojuma izvērtēšana un citas."
 
 - id: ask-incident-detect
   file: media/ask-incident-detect.gif
@@ -502,10 +502,10 @@
   env: stage
   width: 960
   height: 748
-  title: { en: "Describe what happened; WINGMAN registers the incident", lv: "Apraksti notikušo; WINGMAN reģistrē incidentu" }
+  title: { en: "Describe what happened; WINGMAN registers the incident", lv: "Aprakstiet notikušo; WINGMAN reģistrē incidentu" }
   caption:
     en: "A support colleague describes three customer reports of invoice emails with a changed bank account. The orchestrator recognises a suspected incident, offers Register incident or Report a signal, runs the four-step skill, and submits the drafted record as a suggestion. Accept writes it."
-    lv: "Atbalsta kolēģis apraksta trīs klientu ziņojumus par rēķinu e-pastiem ar mainītu bankas kontu. Orķestrators atpazīst iespējamu incidentu, piedāvā Reģistrēt incidentu vai Ziņot signālu, izpilda četru soļu prasmi un iesniedz ieraksta uzmetumu kā ieteikumu. Pieņemšana to ieraksta."
+    lv: "Atbalsta kolēģis apraksta trīs klientu ziņojumus par rēķinu e-pastiem ar mainītu bankas kontu. Orķestrators atpazīst iespējamu incidentu, piedāvā „Reģistrēt incidentu” vai „Ziņot signālu”, izpilda četru soļu prasmi un iesniedz ieraksta melnrakstu kā ieteikumu. Ar „Pieņemt” tas tiek ierakstīts."
 
 - id: ask-incident-detect-1-suggestion
   file: media/ask-incident-detect-1-suggestion.jpg
@@ -517,10 +517,10 @@
   sequence: { key: ask-incident-detect, step: 1 }
   width: 1232
   height: 960
-  title: { en: "The drafted incident as a suggestion", lv: "Incidenta uzmetums kā ieteikums" }
+  title: { en: "The drafted incident as a suggestion", lv: "Incidenta melnraksts kā ieteikums" }
   caption:
     en: "The skill collected the details, drafted the record with title, affected parties, source of the problem and ten mitigation recommendations, and shows it with Accept and Reject."
-    lv: "Prasme savāca detaļas, sagatavoja ierakstu ar nosaukumu, skartajām pusēm, problēmas avotu un desmit mazināšanas ieteikumiem un rāda to ar Pieņemt un Noraidīt."
+    lv: "Prasme savāca detaļas, sagatavoja ierakstu ar nosaukumu, skartajām pusēm, problēmas avotu un desmit mazināšanas ieteikumiem un rāda to ar pogām „Pieņemt” un „Noraidīt”."
 
 - id: ask-incident-detect-2-accepted
   file: media/ask-incident-detect-2-accepted.jpg
@@ -532,7 +532,7 @@
   sequence: { key: ask-incident-detect, step: 2 }
   width: 1232
   height: 960
-  title: { en: "Accepted — written to the record", lv: "Pieņemts — ierakstīts" }
+  title: { en: "Accepted — written to the record", lv: "Pieņemts – ierakstīts" }
   caption:
     en: "One click turns the suggestion into INCIDENT-29043."
     lv: "Viens klikšķis pārvērš ieteikumu par INCIDENT-29043."
@@ -549,7 +549,7 @@
   title: { en: "Triage with the incident handler", lv: "Triāža kopā ar incidenta apstrādātāju" }
   caption:
     en: "The assigned handler asks for severity, reporting obligations and next-hour decisions. The Incident Management skill runs eleven steps and ends with suggestions: link the two candidate source systems, create the missing threat, and six remediation tasks. The handler accepts or rejects each."
-    lv: "Nozīmētais apstrādātājs prasa smagumu, ziņošanas pienākumus un nākamās stundas lēmumus. Incidentu pārvaldības prasme izpilda vienpadsmit soļus un beidz ar ieteikumiem: sasaistīt divas iespējamās avota sistēmas, izveidot trūkstošo apdraudējumu un sešus novēršanas uzdevumus. Apstrādātājs katru pieņem vai noraida."
+    lv: "Nozīmētais apstrādātājs prasa nopietnību, ziņošanas pienākumus un nākamās stundas lēmumus. Incidentu pārvaldības prasme izpilda vienpadsmit soļus un beidz ar ieteikumiem: sasaistīt divas iespējamās avota sistēmas, izveidot trūkstošo apdraudējumu un sešus novēršanas uzdevumus. Apstrādātājs katru pieņem vai noraida."
 
 - id: ask-skill-incident-triage-1-steps
   file: media/ask-skill-incident-triage-1-steps.jpg
@@ -561,10 +561,10 @@
   sequence: { key: ask-skill-incident-triage, step: 1 }
   width: 1232
   height: 960
-  title: { en: "Eleven steps, severity Critical", lv: "Vienpadsmit soļi, smagums Kritisks" }
+  title: { en: "Eleven steps, severity Critical", lv: "Vienpadsmit soļi, nopietnība „Kritisks”" }
   caption:
     en: "Company context, intake, severity classification, evidence and duplicates, response plan, suggestions, findings, next-hour decisions, draft notifications, interim post-mortem, brief update. Then what is required: no regulatory obligation recorded yet, GDPR 72 h clock only if Legal confirms a breach, customer notice required now."
-    lv: "Uzņēmuma konteksts, pieņemšana, smaguma klasifikācija, pierādījumi un dublikāti, reaģēšanas plāns, ieteikumi, atzinumi, nākamās stundas lēmumi, paziņojumu uzmetumi, pagaidu pēcanalīze, kopsavilkuma atjaunošana. Tad, kas nepieciešams: regulatīvs pienākums vēl nav reģistrēts, GDPR 72 h termiņš tikai ja juristi apstiprina pārkāpumu, klientu paziņojums vajadzīgs tūlīt."
+    lv: "Uzņēmuma konteksts, pieņemšana, nopietnības klasifikācija, pierādījumi un dublikāti, reaģēšanas plāns, ieteikumi, atzinumi, nākamās stundas lēmumi, paziņojumu melnraksti, pagaidu pēcincidenta analīze, kopsavilkuma atjaunināšana. Tad, kas nepieciešams: regulatīvs pienākums vēl nav reģistrēts, GDPR 72 h termiņš tikai tad, ja juristi apstiprina pārkāpumu, klientu paziņojums vajadzīgs tūlīt."
 
 - id: ask-skill-incident-triage-2-notice
   file: media/ask-skill-incident-triage-2-notice.jpg
@@ -576,7 +576,7 @@
   sequence: { key: ask-skill-incident-triage, step: 2 }
   width: 1232
   height: 960
-  title: { en: "Draft customer security notice", lv: "Klientu drošības paziņojuma uzmetums" }
+  title: { en: "Draft customer security notice", lv: "Klientu drošības paziņojuma melnraksts" }
   caption:
     en: "Owner, timing, channels, subject and body, with the facts that must be confirmed before sending: wording on the source, whether to publish bank details, payments already made, personal data."
     lv: "Īpašnieks, laiks, kanāli, tēma un teksts ar faktiem, kas jāapstiprina pirms nosūtīšanas: formulējums par avotu, vai publicēt bankas rekvizītus, jau veiktie maksājumi, personas dati."
@@ -594,7 +594,7 @@
   title: { en: "Suggestions: link assets, create the threat", lv: "Ieteikumi: sasaistīt aktīvus, izveidot apdraudējumu" }
   caption:
     en: "Update suggestions add InvoiceNinja and Gmail as candidate sources; a create suggestion adds the threat Phishing, business email compromise and domain impersonation and links the incident as its instance."
-    lv: "Atjaunošanas ieteikumi pievieno InvoiceNinja un Gmail kā iespējamos avotus; izveides ieteikums pievieno apdraudējumu Pikšķerēšana, biznesa e-pasta kompromitēšana un domēna viltošana un sasaista incidentu kā tā gadījumu."
+    lv: "Atjaunināšanas ieteikumi pievieno InvoiceNinja un Gmail kā iespējamos avotus; izveides ieteikums pievieno apdraudējumu „Pikšķerēšana, biznesa e-pasta kompromitēšana un domēna viltošana” un sasaista incidentu kā tā gadījumu."
 
 - id: ask-skill-incident-triage-4-accepted
   file: media/ask-skill-incident-triage-4-accepted.jpg
@@ -609,7 +609,7 @@
   title: { en: "Remediation tasks accepted", lv: "Novēršanas uzdevumi pieņemti" }
   caption:
     en: "Out-of-band verification for payment-detail changes, SPF/DKIM/DMARC reject policy, phishing-resistant MFA and more become tasks linked to the incident and its assets. One duplicate with a wrong id is rejected."
-    lv: "Ārpusjoslas verifikācija maksājumu rekvizītu maiņai, SPF/DKIM/DMARC noraidīšanas politika, pret pikšķerēšanu noturīga MFA un citi kļūst par uzdevumiem, kas saistīti ar incidentu un tā aktīviem. Viens dublikāts ar nepareizu id tiek noraidīts."
+    lv: "Ārpusjoslas verifikācija maksājumu rekvizītu maiņai, SPF/DKIM/DMARC noraidīšanas politika, pret pikšķerēšanu noturīga MFA un citi kļūst par uzdevumiem, kas saistīti ar incidentu un tā aktīviem. Viens dublikāts ar nepareizu ID tiek noraidīts."
 
 - id: ask-skill-incident-authority-notice
   file: media/ask-skill-incident-authority-notice.gif
@@ -620,10 +620,10 @@
   env: stage
   width: 960
   height: 748
-  title: { en: "Draft the notification to the authority", lv: "Sagatavo paziņojumu uzraudzības iestādei" }
+  title: { en: "Draft the notification to the authority", lv: "Paziņojuma melnraksts uzraudzības iestādei" }
   caption:
     en: "Asked in plain words on the incident, WINGMAN fills the GDPR Article 33 notification from the record: nature of the breach, data subjects, data categories, DPO contact, likely consequences, measures taken, communication to data subjects, other notifications. Every field is marked KNOWN, UNKNOWN or ASSUMED."
-    lv: "Vienkāršos vārdos uz incidenta pajautāts, WINGMAN aizpilda GDPR 33. panta paziņojumu no ieraksta: pārkāpuma būtība, datu subjekti, datu kategorijas, DAS kontakts, iespējamās sekas, veiktie pasākumi, saziņa ar datu subjektiem, citi paziņojumi. Katrs lauks atzīmēts kā ZINĀMS, NEZINĀMS vai PIEŅEMTS."
+    lv: "Kad incidenta ierakstā to palūdz vienkāršos vārdos, WINGMAN aizpilda GDPR 33. panta paziņojumu no ieraksta: pārkāpuma būtība, datu subjekti, datu kategorijas, DAS kontakts, iespējamās sekas, veiktie pasākumi, saziņa ar datu subjektiem, citi paziņojumi. Katrs lauks atzīmēts kā ZINĀMS, NEZINĀMS vai PIEŅĒMUMS."
 
 - id: ask-skill-incident-authority-notice-1
   file: media/ask-skill-incident-authority-notice-1.jpg
@@ -668,7 +668,7 @@
   title: { en: "The graph of one record", lv: "Viena ieraksta grafs" }
   caption:
     en: "Every record has a Graph tab: the risk in the centre, its review tasks, the incident that realised it and the control that reduces it. Depth 1 to 3, or open the full graph."
-    lv: "Katram ierakstam ir cilne Grafs: risks centrā, tā pārskatīšanas uzdevumi, incidents, kas to īstenoja, un kontrole, kas to mazina. Dziļums no 1 līdz 3 vai pilns grafs."
+    lv: "Katram ierakstam ir cilne „Grafs”: risks centrā, tā pārskatīšanas uzdevumi, incidents, kas to īstenoja, un kontrole, kas to mazina. Dziļums no 1 līdz 3 vai pilns grafs."
 
 - id: graph-global
   file: media/graph-global.jpg
@@ -682,7 +682,7 @@
   title: { en: "The whole model, clustered", lv: "Viss modelis, klasteros" }
   caption:
     en: "228 nodes and 310 edges: risks, requirements, controls, assets and tasks as clusters, with the links between them. Start from any entity type, choose the depth, find a node, save a view."
-    lv: "228 mezgli un 310 saites: riski, prasības, kontroles, aktīvi un uzdevumi kā klasteri ar saitēm starp tiem. Sāc no jebkura ieraksta tipa, izvēlies dziļumu, atrodi mezglu, saglabā skatu."
+    lv: "228 mezgli un 310 saites: riski, prasības, kontroles, aktīvi un uzdevumi kā klasteri ar saitēm starp tiem. Var sākt no jebkura ieraksta tipa, izvēlēties dziļumu, atrast mezglu un saglabāt skatu."
 
 - id: palette-create
   file: media/palette-create.jpg
@@ -693,7 +693,7 @@
   env: dev
   width: 1105
   height: 1092
-  title: { en: "Create any record from the command palette", lv: "Izveido jebkuru ierakstu no komandu paletes" }
+  title: { en: "Create any record from the command palette", lv: "Jebkura ieraksta izveide no komandu paletes" }
   caption:
     en: "⌘K searches records, jumps, opens chat, and creates any of the eleven record types."
     lv: "⌘K meklē ierakstus, pārlec, atver sarunu un izveido jebkuru no vienpadsmit ierakstu tipiem."
