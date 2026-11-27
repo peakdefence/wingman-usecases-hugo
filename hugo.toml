@@ -20,6 +20,10 @@ defaultContentLanguageInSubdir = false
   languageCode = "lv"
   contentDir = "content/lv"
   weight = 2
+  # Latvian quotation marks („…”) for straight quotes in Markdown.
+  [languages.lv.markup.goldmark.extensions.typographer]
+    leftDoubleQuote = "&bdquo;"
+    rightDoubleQuote = "&rdquo;"
 
 [params]
   company = "Peak Defence"
