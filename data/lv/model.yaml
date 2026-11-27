@@ -139,60 +139,60 @@ entities:
     ex: 3. ceturkšņa piekļuves pārskata ieraksts, derīgs līdz 31. janvārim.
 
 edges:
-  requirement-control: { v: izpilda, p: izpilda, why: Viena kontrole var segt punktus no vairākiem standartiem. }
+  requirement-control: { v: ko izpilda, p: izpilda, why: Viena kontrole var segt punktus no vairākiem standartiem. }
   requirement-requirement: { v: sasaistīta ar, p: sasaistīta ar, why: NIS2 pants sasaistās ar jau segtiem ISO 27001 un DORA punktiem. }
   requirement-document: { v: skaidrota, p: skaidro, why: Politika nosaka, kā punkts šeit tiek piemērots. }
   control-document: { v: aprakstīta, p: apraksta, why: Uzrakstītais noteikums un prakse ir blakus. }
-  control-risk: { v: mazina, p: mazina, why: Atlikušais risks seko kontroļu statusam. }
-  control-asset: { v: aizsargā, p: aizsargā, why: Redzams katra aktīva vai produkta pārklājums. }
+  control-risk: { v: mazina, p: ko mazina, why: Atlikušais risks seko kontroļu statusam. }
+  control-asset: { v: aizsargā, p: ko aizsargā, why: Redzams katra aktīva vai produkta pārklājums. }
   control-evidence: { v: pierādīta ar, p: pierāda, why: Derīguma termiņš parāda, kad pierādījums noveco. }
-  control-task: { v: uzlabo, p: uzlabo, why: Plānotām kontrolēm ir darbi, atbildīgie un termiņi. }
+  control-task: { v: ko uzlabo, p: uzlabo, why: Plānotām kontrolēm ir darbi, atbildīgie un termiņi. }
   task-plan: { v: ietilpst, p: ietver, why: Progress apkopojas programmās un kalendāros. }
   risk-risk: { v: apkopojas, p: ietver, why: Procesu riski apkopojas uzņēmuma līmeņa riskos. }
-  risk-asset: { v: ietekmē, p: ietekmē, why: Ietekme balstās uz to, ar ko organizācija tiešām strādā. }
+  risk-asset: { v: ietekmē, p: ko ietekmē, why: Ietekme balstās uz to, ar ko organizācija tiešām strādā. }
   risk-supplier: { v: saistīts ar, p: saistīts ar, why: Trešo pušu riski norāda piegādātāju. }
-  asset-asset: { v: atkarīgs no, p: nepieciešams, why: "Atkarību kartes: kur atrodas katrs pakalpojums un datu kopa." }
-  supplier-asset: { v: nodrošina, p: nodrošina, why: Atkarība no trešajām pusēm ir daļa no ietekmes analīzes. }
-  supplier-document: { v: saistošs, p: saista, why: Līgumi, datu apstrādes līgumi un izejas plāni ir pie piegādātāja. }
-  threat-vulnerability: { v: izmanto, p: izmanto, why: Scenāriji ir konkrēti, nevis vispārīgi. }
-  threat-risk: { v: ietekmē, p: ietekmē, why: Varbūtība seko apdraudējumu ainai. }
+  asset-asset: { v: atkarīgs no, p: ko izmanto, why: "Atkarību kartes: kur atrodas katrs pakalpojums un datu kopa." }
+  supplier-asset: { v: nodrošina, p: ko nodrošina, why: Atkarība no trešajām pusēm ir daļa no ietekmes analīzes. }
+  supplier-document: { v: ko saista, p: saista, why: Līgumi, datu apstrādes līgumi un izejas plāni ir pie piegādātāja. }
+  threat-vulnerability: { v: izmanto, p: ko izmanto, why: Scenāriji ir konkrēti, nevis vispārīgi. }
+  threat-risk: { v: ietekmē, p: ko ietekmē, why: Varbūtība seko apdraudējumu ainai. }
   vulnerability-asset: { v: atrasta, p: satur, why: Vājā vieta atrodas reālā sistēmā. }
-  vulnerability-risk: { v: palielina, p: palielina, why: Atvērti vājumi paaugstina vērtējumu, novēršana to samazina. }
+  vulnerability-risk: { v: palielina, p: ko palielina, why: Atvērti vājumi paaugstina vērtējumu, novēršana to samazina. }
   vulnerability-task: { v: novērsta ar, p: novērš, why: Novēršanai ir atbildīgais un termiņš. }
-  signal-risk: { v: norāda, p: norāda, why: Agrīns brīdinājums starp plānotām pārskatīšanām. }
-  signal-threat: { v: norāda, p: norāda, why: Apdraudējumu jaunumi nonāk reģistrā. }
-  signal-vulnerability: { v: ziņo, p: ziņo, why: Skeneru rezultāti un brīdinājumi atver ievainojamības. }
-  signal-supplier: { v: attiecas, p: attiecas, why: Piegādātāju uzraudzība nodrošina agrīnu brīdinājumu. }
-  signal-incident: { v: eskalējas, p: no, why: Izvērtēšanas lēmumi tiek reģistrēti. }
-  incident-risk: { v: īsteno, p: īstenots, why: Pēcincidenta analīze atjauno vērtējumus un apstrādi. }
-  incident-asset: { v: skar, p: skar, why: Ietekme un ziņošanas apjoms ir skaidri uzreiz. }
+  signal-risk: { v: norāda uz, p: uz ko norāda, why: Agrīns brīdinājums starp plānotām pārskatīšanām. }
+  signal-threat: { v: norāda uz, p: uz ko norāda, why: Apdraudējumu jaunumi nonāk reģistrā. }
+  signal-vulnerability: { v: ziņo par, p: par ko ziņo, why: Skeneru rezultāti un brīdinājumi atver ievainojamības. }
+  signal-supplier: { v: attiecas uz, p: uz ko attiecas, why: Piegādātāju uzraudzība nodrošina agrīnu brīdinājumu. }
+  signal-incident: { v: eskalējas, p: radies no, why: Izvērtēšanas lēmumi tiek reģistrēti. }
+  incident-risk: { v: īsteno, p: ko īsteno, why: Pēcincidenta analīze atjaunina vērtējumus un apstrādi. }
+  incident-asset: { v: skar, p: ko skar, why: Ietekme un ziņošanas apjoms ir skaidri uzreiz. }
   incident-supplier: { v: saistīts ar, p: saistīts ar, why: Piegādātāja izraisīti incidenti tiek izsekoti līdz piegādātājam. }
-  incident-document: { v: ziņots, p: ziņo par, why: "Paziņojumi iestādēm, klientiem un piegādātājiem tiek saglabāti." }
+  incident-document: { v: par ko ziņo, p: ziņo par, why: "Paziņojumi iestādēm, klientiem un piegādātājiem tiek saglabāti." }
   incident-task: { v: turpinās ar, p: turpina, why: Mācības pārvēršas darbā. }
-  audit-document: { v: lasa, p: lasīts, why: Dokumenti parāda kontroles, ko organizācija deklarē. }
-  audit-asset: { v: tvērumā, p: tvērumā, why: Viens audits var aptvert vairākus produktus, katru ar savām kontrolēm. }
-  audit-supplier: { v: novērtē, p: novērtēts, why: Piegādātāju novērtēšana izmanto audita metodi. }
-  audit-requirement: { v: pārbauda, p: pārbaudīta, why: Audita tvērums ir izsekojams līdz punktiem. }
-  audit-control: { v: pārbauda, p: pārbaudīta, why: Deklarētais un darbībā esošais tiek pārbaudīts kopā. }
-  audit-evidence: { v: izvērtē, p: izvērtēts, why: Auditori redz jau esošos pierādījumus. }
-  audit-finding: { v: reģistrē, p: reģistrēts, why: Katrs novērojums tiek reģistrēts vienreiz. }
-  finding-conclusion: { v: kļūst par, p: no, why: Apstiprināts konstatējums ir rezultāts par punktu. }
-  conclusion-requirement: { v: vērtē, p: vērtēta, why: Atbilstības statuss katram punktam un tvērumam, gadu no gada. }
+  audit-document: { v: lasa, p: ko lasa, why: Dokumenti parāda kontroles, ko organizācija deklarē. }
+  audit-asset: { v: aptver, p: ietilpst tvērumā, why: Viens audits var aptvert vairākus produktus, katru ar savām kontrolēm. }
+  audit-supplier: { v: novērtē, p: ko novērtē, why: Piegādātāju novērtēšana izmanto audita metodi. }
+  audit-requirement: { v: pārbauda, p: ko pārbauda, why: Audita tvērums ir izsekojams līdz punktiem. }
+  audit-control: { v: pārbauda, p: ko pārbauda, why: Deklarētais un darbībā esošais tiek pārbaudīts kopā. }
+  audit-evidence: { v: izvērtē, p: ko izvērtē, why: Auditori redz jau esošos pierādījumus. }
+  audit-finding: { v: reģistrē, p: ko reģistrē, why: Katrs konstatējums tiek reģistrēts vienreiz. }
+  finding-conclusion: { v: kļūst par, p: izriet no, why: Apstiprināts konstatējums ir rezultāts par punktu. }
+  conclusion-requirement: { v: vērtē, p: ko vērtē, why: Atbilstības statuss katram punktam un tvērumam, gadu no gada. }
   finding-task: { v: novērsts ar, p: novērš, why: Korektīvā darbība tiek izsekota līdz slēgšanai. }
-  evidence-finding: { v: pamato, p: pamatots ar, why: Katrs konstatējums norāda, uz ko tas balstās. }
-  document-asset: { v: aptver, p: aptverts, why: "Novērtējumi (DPIA, BIA, izmaiņas) reģistrē, ko tie aptver." }
-  document-task: { v: rada, p: no, why: Lēmumi protokolos un novērtējumos kļūst par darbu. }
-  plan-audit: { v: plāno, p: plānots, why: Audita programma ir gada kalendārā. }
-  plan-risk: { v: pārskata, p: pārskatīts, why: Risku pārskatīšana ir plānota, nevis jāatceras. }
-  plan-asset: { v: pārskata, p: pārskatīts, why: Aktīvu un piegādātāju pārskatīšana notiek laikā. }
-  plan-document: { v: pārskata, p: pārskatīts, why: Politikas tiek pārskatītas savā ciklā. }
-  person-role: { v: pilda, p: pilda, why: Darbinieki mainās, atbildība paliek. }
-  person-task: { v: izpilda, p: piešķirts, why: Darbs nonāk pie konkrēta cilvēka. }
-  role-risk: { v: pārvalda, p: pārvalda, why: Katram riskam ir atbildīgais. }
-  role-control: { v: pārvalda, p: pārvalda, why: Katrai kontrolei ir izpildītājs. }
-  role-asset: { v: pārvalda, p: pārvalda, why: Katram aktīvam ir biznesa un tehniskais īpašnieks. }
-  role-incident: { v: vada, p: vada, why: Skaidrs incidentu vadītājs un reaģētāji. }
-  role-plan: { v: atbild par, p: atbild, why: Katrai programmai ir viena atbildīgā loma. }
+  evidence-finding: { v: pamato, p: ko pamato, why: Katrs konstatējums norāda, uz ko tas balstās. }
+  document-asset: { v: aptver, p: ko aptver, why: "Novērtējumi (DPIA, BIA, izmaiņas) reģistrē, ko tie aptver." }
+  document-task: { v: rada, p: radies no, why: Lēmumi protokolos un novērtējumos kļūst par darbu. }
+  plan-audit: { v: plāno, p: ko plāno, why: Audita programma ir gada kalendārā. }
+  plan-risk: { v: pārskata, p: ko pārskata, why: Risku pārskatīšana ir plānota, nevis jāatceras. }
+  plan-asset: { v: pārskata, p: ko pārskata, why: Aktīvu un piegādātāju pārskatīšana notiek laikus. }
+  plan-document: { v: pārskata, p: ko pārskata, why: Politikas tiek pārskatītas savā ciklā. }
+  person-role: { v: pilda, p: ko pilda, why: Darbinieki mainās, atbildība paliek. }
+  person-task: { v: izpilda, p: ko izpilda, why: Darbs nonāk pie konkrēta cilvēka. }
+  role-risk: { v: pārvalda, p: ko pārvalda, why: Katram riskam ir atbildīgais. }
+  role-control: { v: pārvalda, p: ko pārvalda, why: Katrai kontrolei ir izpildītājs. }
+  role-asset: { v: pārvalda, p: ko pārvalda, why: Katram aktīvam ir biznesa un tehniskais īpašnieks. }
+  role-incident: { v: vada, p: ko vada, why: Skaidrs incidentu vadītājs un reaģētāji. }
+  role-plan: { v: atbild par, p: par ko atbild, why: Katrai programmai ir viena atbildīgā loma. }
   role-document: { v: noteikta, p: nosaka, why: Pienākumi ir pierakstīti. }
 
 questions:
