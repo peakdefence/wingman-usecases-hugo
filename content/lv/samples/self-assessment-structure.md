@@ -6,7 +6,7 @@ for: [solo]
 use_cases: [new-requirements, management-review]
 ---
 
-**Struktūras piemērs, nav NKDC veidne.** Pašvērtējuma ziņojumu iesniedz Nacionālajam kiberdrošības centram (NKDC). WINGMAN to sagatavo no aktuālajiem ierakstiem katru reizi, kad tas jāiesniedz, tāpēc katrs ziņojums balstās uz tās dienas datiem, nevis uz pagājušā gada dokumentu. Piemērs parāda, kas tajā ietilpst un no kurienes nāk katra daļa. Iesniedzot ziņojumu, šie lauki tiek pārnesti NKDC veidnē; prasību numuri šeit norādīti kā [x], un WINGMAN tos ņem no ielādētajiem prasību ierakstiem.
+**Struktūras piemērs, nav NKDC veidne.** Pašvērtējuma ziņojumu iesniedz Nacionālajam kiberdrošības centram (NKDC). WINGMAN to sagatavo no aktuālajiem ierakstiem katru reizi, kad tas jāiesniedz, tāpēc katrs ziņojums balstās uz tās dienas datiem, nevis uz pagājušā gada dokumentu. Piemērs parāda, kas tajā ietilpst un no kurienes nāk katra daļa. Kad ziņojumu iesniedz, šos laukus pārnes NKDC veidnē; prasību numuri šeit norādīti kā [x], un WINGMAN tos ņem no ielādētajiem prasību ierakstiem.
 
 **Piemēra aģentūra**, izdomāta valsts iestāde ar 250 darbiniekiem, būtisks subjekts saskaņā ar Nacionālās kiberdrošības likumu. **Periods:** 2026. gads. **Dati uz:** 2026. gada 20. novembri; sagatavoja kiberdrošības pārvaldnieks R. Grava.
 

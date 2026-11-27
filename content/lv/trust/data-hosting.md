@@ -9,30 +9,30 @@ ask:
 - Apakšapstrādātāju saraksts
 - Eksporta formāti un vai tajos iekļautas saites starp ierakstiem un faili
 - Ko saņem katra MI iespēja, cik ilgi tas tiek glabāts un vai to izmanto apmācībai
-- Vienotā pieteikšanās un daudzfaktoru autentifikācija
+- Vienotā pieteikšanās un daudzfaktoru autentifikācija (MFA)
 - Peak Defence pašas sertifikāti
 next:
   title: Izskatiet iespējas savai organizācijai
-  text: Varam izskatīt izvietošanas un MI iespējas atbilstoši jūsu prasībām uz izdomātas organizācijas piemēra.
+  text: Varam izskatīt izvietošanas un MI iespējas atbilstoši jūsu prasībām izdomātas organizācijas piemērā.
   ask: Datu un MI iespēju izskatīšana atbilstoši mūsu prasībām
 ---
 
 ## Jūsu darba vide
 
-Katrai organizācijai ir sava darba vide, ko WINGMAN sauc par projektu. Prasības, aktīvi, riski, kontroles, piegādātāji, pierādījumi, uzdevumi un dokumenti tajā atrodas kā sasaistīti ieraksti. Datus var eksportēt.
+Katrai organizācijai ir sava darba vide, ko WINGMAN sauc par „Projektu”. Prasības, aktīvi, riski, kontroles, piegādātāji, pierādījumi, uzdevumi un dokumenti tajā atrodas kā sasaistīti ieraksti. Datus var eksportēt.
 
 Konsultants katra klienta darba vidē strādā atsevišķi. Konsultanta izveidotās prasmes paliek konsultanta īpašumā: tās nav pieejamas Peak Defence un ir paslēptas no citiem konsultantiem.
 
 ## Kurš MI strādā ar jūsu ierakstiem
 
-- **WINGMAN iekšienē.** Kopsavilkumus, Ask Wingman atbildes un ieteikumus raksta modelis, kas iestatīts jūsu organizācijai. Atkarībā no šīs konfigurācijas tas darbojas mākonī, mākonī ar ierobežojumu tikai uz ES vai pilnībā lokālā izvietojumā, un modeli var nodrošināt Peak Defence.
+- **WINGMAN iekšienē.** Kopsavilkumus, Jautā Wingman (Ask Wingman) atbildes un ieteikumus raksta modelis, kas iestatīts jūsu organizācijai. Atkarībā no šīs konfigurācijas tas darbojas mākonī, mākonī ar ierobežojumu tikai uz ES vai pilnībā lokālā izvietojumā, un modeli var nodrošināt Peak Defence.
 - **Jūsu asistents.** Ja ar MCP pieslēdzat Claude, ChatGPT vai citu asistentu, modelis ir tas, kas ir jūsu asistentā, saskaņā ar jūsu līgumu ar tā nodrošinātāju.
 - **Meklēšana tīmeklī.** Kad asistents kaut ko meklē, tas izmanto WINGMAN iebūvēto meklēšanu vai ārēju meklēšanas pakalpojumu, nošķirti no jūsu ierakstiem.
 
 ## Kurš kam var piekļūt
 
 - Tiesības tiek noteiktas katram cilvēkam un katram ierakstu veidam: lasīšana, rakstīšana un dzēšana.
-- Asistents, kas pieslēgts ar MCP, pieslēdzas kā konkrēts cilvēks, ar OAuth vai pilnvaras atslēgu, un saņem tieši šī cilvēka tiesības. Savienojumam var ieviest papildu kontroles un to var ierobežot ar vienu darba vidi vai vēl šaurāk.
+- Asistents, kas pieslēgts ar MCP, pieslēdzas kā konkrēts cilvēks, ar OAuth vai piekļuves tokenu, un saņem tieši šī cilvēka tiesības. Savienojumam var ieviest papildu kontroles un to var ierobežot ar vienu darba vidi vai vēl šaurāk.
 - Ārējam auditoram var iestatīt lomu ar tiesībām tikai lasīt.
 
 ## Kas tiek saglabāts
@@ -41,4 +41,4 @@ Katra ieraksta izmaiņa tiek saglabāta tā vēsturē: kas mainījās, vērtība
 
 ## Kas šajā lapā vēl nav
 
-Kur tiek glabāti ieraksti, mitināšanas pakalpojuma sniedzējs, apakšapstrādātāji, eksporta formāti, katras MI iespējas noteikumi un mūsu pašu sertifikāti ir atkarīgi no detaļām, ko publicēsim šeit. Līdz tam jautājiet zemāk, un atbildi saņemsiet rakstiski.
+Šeit vēl nav publicēts: kur tiek glabāti ieraksti, mitināšanas pakalpojuma sniedzējs, apakšapstrādātāji, eksporta formāti, katras MI iespējas noteikumi un mūsu pašu sertifikāti. Līdz tam jautājiet zemāk, un atbildi saņemsiet rakstiski.

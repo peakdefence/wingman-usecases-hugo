@@ -13,8 +13,8 @@ ask:
 - Kādas papildu kontroles var ieviest asistenta savienojumam
 next:
   title: Izsekojiet vienam ieteikumam no ierosinājuma līdz vēsturei
-  text: Varam parādīt, kā ieteikums tiek izveidots, pieņemts un fiksēts, uz izdomātas organizācijas piemēra.
-  ask: Demonstrācija, kā viens MI ieteikums nonāk no ierosinājuma līdz ieraksta vēsturei, uz izdomātas organizācijas piemēra
+  text: Varam parādīt, kā ieteikums tiek izveidots, pieņemts un fiksēts, izdomātas organizācijas piemērā.
+  ask: Demonstrācija, kā viens MI ieteikums nonāk no ierosinājuma līdz ieraksta vēsturei, izdomātas organizācijas piemērā
 ---
 
 **Vadības institūcijai īsumā.** MI sagatavo un ierosina. Katra ierakstu izmaiņa tiek saglabāta kopā ar cilvēku, kurš to veica, un laiku, un šo vēsturi nevar labot vai dzēst. Par katru izmaiņu atbild konkrēts cilvēks, arī par tām, ko veic viņa vārdā strādājošs asistents. Tiesības nosaka, ko drīkst darīt katrs cilvēks un katrs viņa pieslēgtais asistents.
@@ -27,17 +27,17 @@ Pārskatīšanā pieņemtie ieteikumi stājas spēkā tikai tad, kad pārskatīt
 
 ## Kurš ko var mainīt
 
-Tiesības tiek noteiktas katram cilvēkam un katram ierakstu veidam: lasīšana, rakstīšana un dzēšana. Asistents, kas pieslēgts ar MCP, pieslēdzas kā konkrēts cilvēks un saņem tieši šī cilvēka tiesības, ne vairāk. Savienojumam var ieviest papildu kontroles un to var ierobežot ar vienu projektu.
+Tiesības tiek noteiktas katram cilvēkam un katram ierakstu veidam: lasīšana, rakstīšana un dzēšana. Asistents, kas pieslēgts ar MCP, pieslēdzas kā konkrēts cilvēks un saņem tieši šī cilvēka tiesības, ne vairāk. Savienojumam var ieviest papildu kontroles un to var ierobežot ar vienu darba vidi.
 
 Cilvēki ar rakstīšanas tiesībām var mainīt ierakstus arī tieši, un to var arī viņu pieslēgts asistents. Ja ļaujat asistentam pieņemt ieteikumus vai mainīt ierakstus, tas to dara jūsu vārdā: vēsturē jūs esat norādīts kā izmaiņu veicējs, un jūs par tām atbildat. Tiesības un savienojuma kontroles nosaka, kur asistents drīkst mainīt ierakstus un kur tikai ierosināt.
 
-Ārējam auditoram var iestatīt lomu ar tiesībām tikai lasīt, lai auditors redz ierakstus un to vēsturi, bet nevar tos mainīt.
+Ārējam auditoram var iestatīt lomu ar tiesībām tikai lasīt, lai auditors redzētu ierakstus un to vēsturi, bet nevarētu tos mainīt.
 
 ## Katra izmaiņa tiek fiksēta
 
 Katra ieraksta izmaiņa tiek saglabāta tā vēsturē: kas mainījās, vērtība pirms un pēc, kad un kurš to izdarīja. Laiku iestata sistēma. Vēsturi nevar labot vai dzēst.
 
-Dažas izmaiņas WINGMAN veic pats, bez ieteikuma, piemēram, atjauno ieraksta kopsavilkumu, kad ieraksts mainās. Arī tās tiek fiksētas ar laiku.
+Dažas izmaiņas WINGMAN veic pats, bez ieteikuma, piemēram, atjaunina ieraksta kopsavilkumu, kad ieraksts mainās. Arī tās tiek fiksētas ar laiku.
 
 Ieteikuma pieņemšana vēsturē tiek fiksēta kā atsevišķs ieraksts ar cilvēku, kurš to pieņēma, un laiku.
 

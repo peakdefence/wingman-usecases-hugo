@@ -12,7 +12,7 @@ Riskiem varbūtību un ietekmi vērtē skalā no 1 līdz 5; vērtējums ir abu r
 
 ## Lēmumi, ko lūdz pieņemt
 
-1. **Apstiprināt riska apstrādi pēc robežas pārsniegšanas un finansēt papildu soli.** R-07 „Klientu dati tiek atklāti caur identitātes serveri” 1. oktobrī pieauga no 8 līdz 16, kad atklājās, ka servera ievainojamību aktīvi izmanto uzbrucēji. Tajā pašā dienā apstrādāts ar riska īpašnieces pagaidu lēmumu, 14 dienu laikā, ko riska politika atļauj līdz vadības institūcijas lēmumam: administrēšanas konsole atslēgta no interneta, pārbaudīti tās žurnāli un nomainītas administratoru paroles (nezināmu pieslēgšanos nav), un 3. oktobrī uzstādīts ražotāja labojums. Vērtējums atkal ir 8. Ierosināts: divfaktoru autentifikācija administrēšanas konsolei, aptuveni 4000 EUR, līdz 30. novembrim, lai nākamo ievainojamību nevarētu izmantot tikai ar nozagtu paroli. Ja atsakām, konsole paļaujas uz ražotāja labojumiem un tīkla noteikumiem. Ierosinātāja: riska īpašniece A. Ozola (IT direktore).
+1. **Apstiprināt riska apstrādi pēc robežas pārsniegšanas un finansēt papildu soli.** R-07 „Klientu dati tiek atklāti caur identitātes serveri” 1. oktobrī pieauga no 8 līdz 16, kad atklājās, ka servera ievainojamību aktīvi izmanto uzbrucēji. Tajā pašā dienā apstrādāts ar riska īpašnieces pagaidu lēmumu, ko riska politika atļauj uz laiku līdz 14 dienām, kamēr lemj vadības institūcija: administrēšanas konsole atslēgta no interneta, pārbaudīti tās žurnāli un nomainītas administratoru paroles (nezināmu pieslēgšanos nav), un 3. oktobrī uzstādīts ražotāja labojums. Vērtējums atkal ir 8. Ierosināts: divfaktoru autentifikācija administrēšanas konsolei, aptuveni 4000 EUR, līdz 30. novembrim, lai nākamo ievainojamību nevarētu izmantot tikai ar nozagtu paroli. Ja atsakām, konsole paļaujas uz ražotāja labojumiem un tīkla noteikumiem. Ierosinātāja: riska īpašniece A. Ozola (IT direktore).
 2. **Finansēt novēršanu riskam zem robežas.** Riska „Mākoņplatformu prot uzturēt tikai viens inženieris” vērtējums ir 9, tāpēc īpašnieks to var pieņemt, bet novēršanai vajag budžetu: apmācīt otru inženieri, aptuveni 6500 EUR un 15 darba dienas, līdz 2027. gada 1. ceturksnim. Ja nefinansē, īpašnieks risku pieņem un fiksē pamatojumu; ja inženieris aiziet, platformas atjaunošana pēc kļūmes var ilgt vairākas dienas. Ierosinātājs: M. Kalns (izstrādes vadītājs).
 3. **Apstiprināt politiku.** Piekļuves pārvaldības politika, 4. versija. Kas mainās darbiniekiem: administratoru kontus pārskata reizi ceturksnī, un koplietošanas kontus likvidē līdz 30. novembrim.
 4. **Finansēt testu.** Klientu portāla ārējā ielaušanās testēšana 4. ceturksnī, aplēse 18 000 EUR, riskam R-12 „Klientu portālam uzbrūk caur nezināmu vājumu”. Ja atsakām, portāls vēl gadu paliek bez ārējas pārbaudes, un divi bankas klienti to prasa katru gadu. Īpašniece: A. Ozola.
@@ -44,7 +44,7 @@ WINGMAN MI sagatavotais kopsavilkums (13. oktobris), ko pirms izsūtīšanas pā
 
 | Lēmums (2. ceturksnis) | Statuss |
 |---|---|
-| Ieviest daudzfaktoru autentifikāciju visiem darbiniekiem | Izpildīts 12. augustā; pierādījums pievienots |
+| Ieviest daudzfaktoru autentifikāciju (MFA) visiem darbiniekiem | Izpildīts 12. augustā; pierādījums pievienots |
 | Veikt klientu portāla darbības ietekmes analīzi | Izpildē; 2 no 3 pakalpojumiem pabeigti |
 | Pārskatīt līgumu ar algu aprēķina pakalpojuma sniedzēju | Nav uzsākts, jo nebija noteikts īpašnieks; šajā pārskatā 6. lēmums |
 

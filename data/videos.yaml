@@ -15,7 +15,7 @@
     lv: WINGMAN MI GRC datu modelis
   description:
     en: How risks, controls, assets and suppliers connect in one model, kept current in WINGMAN or through MCP with AI assistants.
-    lv: Kā riski, kontroles, aktīvi un piegādātāji savienojas vienā modelī, ko uztur WINGMAN vai caur MCP ar MI asistentiem.
+    lv: Kā riski, kontroles, aktīvi un piegādātāji savienojas vienā modelī, ko uztur aktuālu WINGMAN sistēmā vai ar MI asistentiem caur MCP.
 
 - youtube: R-gfF52i8-o
   lang: en
@@ -25,14 +25,14 @@
     lv: WINGMAN MI GRC – audita lietojums
   description:
     en: An audit step by step, from claimed controls in documents to findings, the report and the fix plan back in WINGMAN.
-    lv: Audits soli pa solim, no dokumentos deklarētajām kontrolēm līdz konstatējumiem, ziņojumam un novēršanas plānam WINGMAN.
+    lv: Audits soli pa solim, no dokumentos deklarētajām kontrolēm līdz konstatējumiem, ziņojumam un novēršanas plānam WINGMAN sistēmā.
 
 - youtube: 3BiAG2N_b-g
   lang: en
   use_cases: [risk-review, risk-identification, vulnerability-impact, incident-handling]
   title:
     en: WINGMAN AI GRC – risk management use case
-    lv: WINGMAN MI GRC – risku vadības lietojums
+    lv: WINGMAN MI GRC – risku pārvaldības lietojums
   description:
     en: Regular risk reviews and new risk identification, plus incidents, signals and vulnerability changes between reviews.
     lv: Regulāra risku pārskatīšana un jaunu risku identificēšana, kā arī incidenti, signāli un ievainojamību izmaiņas starp pārskatīšanām.
@@ -46,7 +46,7 @@
     lv: WINGMAN MI GRC – finanšu sektors (DORA, MiCA, ECB)
   description:
     en: Live signals on critical functions, ICT and supply-chain risk, major incidents decided by people, and supervisor reports drafted for submission.
-    lv: Signāli par kritiskajām funkcijām reāllaikā, IKT un piegādes ķēdes riski, cilvēku pieņemti lēmumi par būtiskiem incidentiem un uzraugam sagatavoti ziņojumu projekti.
+    lv: Signāli par kritiskajām funkcijām reāllaikā, IKT un piegādes ķēdes riski, cilvēku pieņemti lēmumi par nozīmīgiem incidentiem un uzraugam sagatavoti ziņojumu melnraksti iesniegšanai.
 
 - youtube: JU9-xG1nrjY
   lang: en
@@ -54,10 +54,10 @@
   use_cases: [new-requirements, risk-identification, roles-raci, regular-reviews]
   title:
     en: ISMS implementation with WINGMAN AI
-    lv: Informācijas drošības pārvaldības sistēmas ieviešana ar WINGMAN MI
+    lv: IDVS ieviešana ar WINGMAN MI
   description:
     en: Building an information security management system in WINGMAN, from requirements and scope to risks, controls, owners and the review cycle.
-    lv: Informācijas drošības pārvaldības sistēmas izveide WINGMAN, no prasībām un tvēruma līdz riskiem, kontrolēm, īpašniekiem un pārskatīšanas ciklam.
+    lv: Informācijas drošības vadības sistēmas (IDVS) izveide WINGMAN platformā, no prasībām un tvēruma līdz riskiem, kontrolēm, īpašniekiem un pārskatīšanas ciklam.
 
 - youtube: 27NK-t68BE4
   lang: en
@@ -76,10 +76,10 @@
   use_cases: [management-review]
   title:
     en: Running a regular ISMS management review with WINGMAN AI
-    lv: Regulārs informācijas drošības vadības pārskats ar WINGMAN MI
+    lv: Regulārs IDVS vadības pārskats ar WINGMAN MI
   description:
     en: Preparing and running the management review from live records, and turning its decisions into tracked tasks.
-    lv: Vadības pārskata sagatavošana un vadīšana no aktuālajiem ierakstiem, un tā lēmumu pārvēršana uzraudzītos uzdevumos.
+    lv: Vadības pārskata sagatavošana un vadīšana no aktuālajiem ierakstiem un tā lēmumu pārvēršana uzraudzītos uzdevumos.
 
 - youtube: 749sjrOpnqo
   lang: en
