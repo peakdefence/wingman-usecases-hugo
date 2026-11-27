@@ -9,7 +9,7 @@ problems:
   a: 'Kopsavilkums katru rītu tiek uzrakstīts no šī klienta ierakstiem: kur koncentrējas risks, kas kavējas, kuras nepilnības ir atvērtas. Jūs sākat no pašreizējā stāvokļa, nevis no savām pēdējām piezīmēm.'
 - q: Mana jaunākā kolēģa risku darbnīca izskatās citādi nekā manējā.
   a: 'Prasme katru reizi veic tos pašus soļus. Risku intervija uzdod pa vienam jautājumam, katru nosaukto apdraudējumu vispirms salīdzina ar esošajiem riskiem un tikai tad veido jaunu, un sasaista aktīvus, piegādātājus un kontroles. Varat arī izveidot savu prasmju kopumu darbam ar WINGMAN, lai soļi būtu jūsu metode, un ar prasmēm veidot politiku veidnes pēc savām vēlmēm. Tās paliek jūsu īpašumā: tās neredz ne Peak Defence, ne citi konsultanti.'
-- q: Starp manām vizītēm reģistri pamazām atšķiras.
+- q: Līdz manai nākamajai vizītei reģistri jau vairs nesakrīt.
   a: Pārskatīšanas ir uzdevumi klienta paša īpašniekiem, pēc kalendāra. Reģistru pārbaudes uzskaita, kas ir novecojis, tāpēc jūsu vizīte sākas ar sarakstu, nevis ar saskaņošanu.
 - q: Pierādījumus pieprasu pa e-pastu, klientu pēc klienta.
   a: Uzdevumiem ir īpašnieki un termiņi, un pie kavētajiem norādīts atbildīgais. Atgādinājumi tiek sagatavoti un nosūtīti jūsu vārdā pēc tam, kad tos apstiprināt.
@@ -18,7 +18,7 @@ problems:
 - q: Kad sadarbība beidzas, klients saņem zip failu.
   a: Katram klientam ir sava darba vide, un tās datus var eksportēt. Tas, ko izveidojat, paliek tur kā sasaistīti ieraksti, kas pieder klienta lomām, un paliek lietojams, kad jūs aizejat.
 - q: Baidos sajaukt klientus, kad lietoju MI rīkus.
-  a: Katra klienta ieraksti atrodas šī klienta paša darba vidē, nevis sarunu projektā, ko ar roku uzturat kārtībā. Asistenta savienojumu var ierobežot ar viena klienta projektu vai vēl šaurāk, tāpēc vienā sesijā nevar piekļūt cita klienta ierakstiem.
+  a: Katra klienta ieraksti atrodas šī klienta paša darba vidē, nevis sarunu projektā, ko ar roku uzturat kārtībā. Asistenta savienojumu var ierobežot ar viena klienta darba vidi vai vēl šaurāk, tāpēc vienā sesijā nevar piekļūt cita klienta ierakstiem.
 terms:
 - t: Prasme
   d: Procedūra, ko jūsu MI asistents soli pa solim izpilda ar jūsu WINGMAN ierakstiem, piemēram, risku intervija vai audits. Tā darbojas asistentā, ko jau lietojat, piemēram, Claude.
@@ -62,7 +62,7 @@ media:
 yours:
 - Jūsu spriedums un metode. Prasme izpilda soļus; ko jautāt tālāk un kādam jābūt vērtējumam, lemjat jūs un īpašnieks.
 - Attiecības ar klientu. Klienta īpašnieki paši apstiprina savus riskus un kontroles.
-- Pieņemtā pārbaude. Ieteikums, ko pieņemat, ir jūsu lēmums, un tas paliek ierakstā.
+- Pieņemto ieteikumu pārbaude. Ieteikums, ko pieņemat, ir jūsu lēmums, un tas paliek ierakstā.
 ask:
 - Partneru licencēšana un cenas
 - Viens skats uz visiem jūsu klientiem
@@ -79,7 +79,7 @@ sectors:
 - nis2
 next:
   title: Izmēģiniet nākamo darbnīcu ar vienu klientu
-  text: Varam kopā ar jums veikt risku identificēšanu ar izdomāto organizāciju vai sagatavot to kādam jūsu klientam.
-  ask: Kopīga risku identificēšana uz izdomātas organizācijas piemēra vai kādam no maniem klientiem
+  text: Varam kopā ar jums veikt risku identificēšanu izdomātas organizācijas piemērā vai sagatavot to kādam jūsu klientam.
+  ask: Kopīga risku identificēšana izdomātas organizācijas piemērā vai kādam no maniem klientiem
 linkedin: true
 ---

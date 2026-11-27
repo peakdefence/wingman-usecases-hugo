@@ -1,12 +1,12 @@
 ---
 title: Es auditēju, un katram apgalvojumam jābūt izsekojamam līdz pierādījumam
 short: Ko redz auditors
-summary: Iekšējiem un piegādātāju auditoriem, kas strādā ar WINGMAN, un sertifikācijas auditoriem, kas to redz uz auditējamā ekrāna. Šī lapa pasaka, ko rāda ieraksti, ko dara MI un ko tas nedara.
+summary: Iekšējiem un piegādātāju auditoriem, kas strādā ar WINGMAN, un sertifikācijas auditoriem, kas to redz auditējamā ekrānā. Šī lapa pasaka, ko rāda ieraksti, ko dara MI un ko tas nedara.
 weight: 50
 slug_id: auditor
 problems:
 - q: Katru auditu sāku akli, ar PDF mapi.
-  a: Pirms audita uz vietas dokumenti tiek izlasīti pret tvēruma prasībām. Katra prasība ir atzīmēta kā dokumentēta, daļēji dokumentēta vai nedokumentēta, ar atsaucēm uz punktiem. Nelasāmi dokumenti tiek atzīmēti.
+  a: Pirms audita uz vietas dokumenti tiek izlasīti un salīdzināti ar tvēruma prasībām. Katra prasība ir atzīmēta kā dokumentēta, daļēji dokumentēta vai nedokumentēta, ar atsaucēm uz punktiem. Nelasāmi dokumenti tiek atzīmēti.
 - q: MI pārliecinoši atsaucas uz nepareizo punktu.
   a: Katrai sasaistei ir atsauce uz punktu, un katram dokumentam ir versija, tāpēc varat atvērt dokumentu un pārbaudīt. Sasaiste ir ierosinājums, un auditors to pārskata. Atsauču pārbaude paliek auditora darbs.
 - q: Intervijā apsolītie pierādījumi nekad neatnāk.
@@ -14,7 +14,7 @@ problems:
 - q: Kopsavilkumā pazuda atruna, kas bija svarīga.
   a: Intervijas tiek transkribētas, un transkripts tiek glabāts kā pierādījums, kad intervētais apstiprina, ka tas ir precīzs. Konstatējums var uz to atsaukties, tāpēc sākotnējie vārdi ir pieejami, ja kopsavilkums tiek apstrīdēts.
 - q: Redzu gludas politikas, ko neviens neievēro.
-  a: 'Dokuments parāda deklarēto kontroli. Pierādījums parāda, vai tā darbojas: tajā ir, kas, kad un kurš to ievācis un līdz kuram laikam tas ir derīgs. Pierādījums, kura derīgums beidzies, tiek atzīmēts; vai audita perioda pierādījumi ir pietiekami, vērtē auditors.'
+  a: 'Dokuments parāda deklarēto kontroli. Pierādījums parāda, vai tā darbojas: tajā ir norādīts, kas ievākts, kad un kas to ievācis un līdz kuram laikam tas ir derīgs. Pierādījums, kura derīgums beidzies, tiek atzīmēts; vai audita perioda pierādījumi ir pietiekami, vērtē auditors.'
 - q: Kurš to izlēma, un uz kāda pamata?
   a: MI izmaiņas ienāk kā ieteikumi ar pamatojumu. Konkrēts cilvēks katru pieņem vai noraida, un līdz tam nekas netiek ierakstīts. Konstatējumiem un secinājumiem šis cilvēks ir auditors. Konstatējums norāda pierādījumus, uz kuriem tas balstās. Katra izmaiņa tiek saglabāta ieraksta vēsturē ar to, kurš un kad to veica; laiku iestata sistēma, un vēsturi nevar labot vai dzēst.
 - q: Viena prasība, trīs produkti, trīs dažādas atbildes.
@@ -25,14 +25,14 @@ terms:
 - t: Pierādījums
   d: 'Apliecinājums, ka kontrole tiešām notikusi: ieraksts, ekrānuzņēmums, žurnāla izraksts. Tam ir datums, un tā derīgums beidzas.'
 - t: Konstatējums
-  d: 'ISO 19011 izpratnē: audita pierādījumu izvērtēšanas rezultāts attiecībā pret prasību, atbilstība vai neatbilstība. WINGMAN konstatējumu fiksē, kad tas izvirzīts, un auditors to apstiprina vai maina.'
+  d: 'ISO 19011 izpratnē: audita pierādījumu izvērtēšanas rezultāts salīdzinājumā ar prasību: atbilstība vai neatbilstība. WINGMAN konstatējumu fiksē, kad tas izvirzīts, un auditors to apstiprina vai maina.'
 - t: Secinājums
   d: 'WINGMAN: apstiprinātais rezultāts vienai prasībai vienā tvērumā. ISO 19011 ar „audita secinājumu” saprot visa audita iznākumu, kas izdarīts no visiem konstatējumiem.'
 - t: Prasme
   d: Procedūra, ko jūsu MI asistents soli pa solim izpilda ar jūsu WINGMAN ierakstiem, piemēram, risku intervija vai audits. Tā darbojas asistentā, ko jau lietojat, piemēram, Claude.
 does:
-  knowledge: Prasība, deklarētā kontrole, dokuments, pierādījums, konstatējums un secinājums ir atsevišķi sasaistīti ieraksti. Ziņojuma apgalvojumam var izsekot līdz tam, uz ko tas balstās, visur, kur šāda saite ir izveidota, un konstatējumam jānorāda savi pierādījumi. Var iestatīt auditora lomu ar tiesībām tikai lasīt, lai redzat ierakstus un to vēsturi, bet nevarat tos mainīt.
-  projects: Audita prasme iet cauri tvērumam, deklarētajām kontrolēm, plānam un intervijām, pierādījumiem, konstatējumiem un secinājumiem. Prasību saraksts nāk no WINGMAN vai no jūsu pašu kontrolsaraksta. Asistenta savienojumu var ierobežot ar viena klienta projektu.
+  knowledge: Prasība, deklarētā kontrole, dokuments, pierādījums, konstatējums un secinājums ir atsevišķi sasaistīti ieraksti. Ziņojuma apgalvojumam var izsekot līdz tam, uz ko tas balstās, visur, kur šāda saite ir izveidota, un konstatējumam jānorāda savi pierādījumi. Var iestatīt auditora lomu ar tiesībām tikai lasīt, lai jūs redzētu ierakstus un to vēsturi, bet nevarētu tos mainīt.
+  projects: Audita prasme iet cauri tvērumam, deklarētajām kontrolēm, plānam un intervijām, pierādījumiem, konstatējumiem un secinājumiem. Prasību saraksts nāk no WINGMAN vai no jūsu pašu kontrolsaraksta. Asistenta savienojumu var ierobežot ar viena klienta darba vidi.
   regular: Audita programma ir gada plānā. Korektīvās darbības ir uzdevumi ar īpašniekiem un termiņiem, un pagājušā gada konstatējumam var izsekot līdz uzdevumam, pierādījumam un secinājumam.
   events: Audita periodā notikušie incidenti un izmaiņas ir ieraksti ar datumiem, pieejami izlasei tāpat kā jebkuri citi.
 prompt:
@@ -84,6 +84,6 @@ sectors:
 - iso27001-soc2
 next:
   title: Izsekojiet vienai prasībai no apgalvojuma līdz secinājumam
-  text: 'Varam izrādīt auditu ar izdomāto organizāciju: viena prasība, tās deklarētā kontrole, pierādījums, konstatējums un secinājums.'
-  ask: Vienas prasības izsekošana no deklarētās kontroles līdz secinājumam uz izdomātas organizācijas piemēra
+  text: 'Varam parādīt auditu izdomātas organizācijas piemērā: viena prasība, tās deklarētā kontrole, pierādījums, konstatējums un secinājums.'
+  ask: Vienas prasības izsekošana no deklarētās kontroles līdz secinājumam izdomātas organizācijas piemērā
 ---

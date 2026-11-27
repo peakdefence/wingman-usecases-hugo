@@ -1,7 +1,7 @@
 ---
 title: Es atbildu par drošību, bet nevaru novērtēt, kādā stāvoklī esam
 short: Valdei un vadītājam
-summary: NIS2 prasa, lai vadības institūcija apstiprina kiberdrošības pasākumus un uzrauga tos. WINGMAN dod skatu, ko varat izlasīt bez tulka, un saglabā ierakstu par to, ko un kad izlēmāt.
+summary: NIS2 prasa, lai vadības institūcija apstiprinātu kiberdrošības pasākumus un uzraudzītu tos. WINGMAN dod skatu, ko varat izlasīt bez tulka, un saglabā ierakstu par to, ko un kad izlēmāt.
 weight: 10
 slug_id: board
 problems:
@@ -23,14 +23,14 @@ terms:
 - t: Vadības pārskats
   d: Regulāra sanāksme, kurā vadība izvērtē drošības stāvokli un lemj, ko darīt. Tās protokols tiek saglabāts kā ieraksts.
 - t: Kontrole
-  d: Tas, ko darāt, lai mazinātu risku vai izpildītu prasību, piemēram, obligāta daudzfaktoru autentifikācija vai administratoru kontu pārskatīšana reizi ceturksnī.
+  d: Tas, ko darāt, lai mazinātu risku vai izpildītu prasību, piemēram, obligāta daudzfaktoru autentifikācija (MFA) vai administratoru kontu pārskatīšana reizi ceturksnī.
 - t: Loma
   d: Atbildība, kas nodalīta no cilvēka, kurš to pilda, piemēram, riska īpašnieks vai incidentu vadītājs. Viens cilvēks var pildīt vairākas lomas.
 does:
   knowledge: Jūs lasāt kopsavilkumu, kas uzrakstīts no tiem pašiem ierakstiem, ar kuriem strādā jūsu drošības cilvēki, un tā nepilnības ved uz ierakstu aiz tām.
   projects: Kad sāk attiekties jauns likums vai standarts, darbs kļūst par plānu ar atbildīgo lomu, uzdevumiem un termiņiem. Tā gaitu varat redzēt, nevienam nejautājot.
   regular: Vadības pārskats notiek jūsu noteiktajā ritmā (mūsu piemērā reizi ceturksnī). Lēmumi tiek ierakstīti protokolā, katrs kļūst par uzdevumu ar īpašnieku, un neizpildītie tiek iekļauti nākamajā pārskatā.
-  events: Incidentam ir tā termiņi, ziņojumu melnraksti un turpmākie uzdevumi. Pēc tam ieraksts parāda, kas un kad tika izdarīts.
+  events: Incidentam ir savi termiņi, ziņojumu melnraksti un turpmākie uzdevumi. Pēc tam ieraksts parāda, kas un kad tika izdarīts.
 prompt:
   title: Kādā stāvoklī esmu kā atbildīgā persona?
   lede: Tā uzdod septiņus jautājumus pa vienam un pēc tam pasaka, kādā stāvoklī esat, kādus lēmumus pieprasīt un ko jums vajadzētu spēt parādīt.
@@ -75,6 +75,6 @@ sectors:
 - financial
 next:
   title: Apskatiet vadības skatu piemērā
-  text: Varam izrādīt Kopsavilkumu un vadības pārskatu uz izdomātas organizācijas ar reālistiskiem ierakstiem vai ar jūsu pašu ierakstiem.
-  ask: '30 minūšu demonstrācija: Kopsavilkums un vadības pārskats uz izdomātas organizācijas piemēra'
+  text: Varam parādīt Kopsavilkumu un vadības pārskatu izdomātas organizācijas piemērā ar reālistiskiem ierakstiem vai ar jūsu pašu ierakstiem.
+  ask: '30 minūšu demonstrācija: Kopsavilkums un vadības pārskats izdomātas organizācijas piemērā'
 ---

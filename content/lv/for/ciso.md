@@ -1,7 +1,7 @@
 ---
-title: Mūsu reģistri pamazām atšķiras, un risku reģistrs mainās tikai pirms audita
+title: Mūsu reģistri vairs nesakrīt, un risku reģistrs mainās tikai pirms audita
 short: Informācijas drošības vadītājiem
-summary: Programma darbojas, bet tā balstās uz izklājlapām, atgādinājumiem un jūsu atmiņu vai uz atbilstības rīku, kas netiek tālāk par savām veidnēm. WINGMAN uztur reģistrus kā vienus sasaistītus ierakstus, kurus jūsu MI asistents lasa un kuriem ierosina izmaiņas, un maina tos tad, kad kaut kas notiek, nevis tad, kad tuvojas audits.
+summary: Programma darbojas, bet tā balstās uz izklājlapām, atgādinājumiem un jūsu atmiņu vai uz atbilstības rīku, kas netiek tālāk par savām veidnēm. WINGMAN uztur reģistrus kā vienotu sasaistītu ierakstu kopumu, ko jūsu MI asistents lasa un kam ierosina izmaiņas, un maina tos tad, kad kaut kas notiek, nevis tad, kad tuvojas audits.
 weight: 30
 slug_id: ciso
 problems:
@@ -12,7 +12,7 @@ problems:
 - q: Pārskatīšanas notiek tad, kad atceros tās pieprasīt.
   a: Plāns veido pārskatīšanas uzdevumus savā ritmā, pa vienam katram riskam, aktīvam vai politikai. Kavētie ir uzskaitīti ar izpildītāja vārdu, un atgādinājumi tiek sūtīti jūsu vārdā pēc tam, kad tos apstiprināt.
 - q: Skeneru atradumi nekad nenonāk risku reģistrā.
-  a: Ievainojamības ienāk no skeneriem un ielaušanās testu rīkiem ar CVE, CVSS un EPSS, sasaistītas ar aktīviem, kuros tās atrodas, un riskiem, ko tās palielina. Novēršanu sakārto pēc riska kritiskajiem aktīviem, ne tikai pēc skenera smaguma.
+  a: Ievainojamības ienāk no skeneriem un ielaušanās testu rīkiem ar CVE, CVSS un EPSS, sasaistītas ar aktīviem, kuros tās atrodas, un riskiem, ko tās palielina. Novēršanas secību nosaka risks kritiskajos aktīvos, nevis tikai skenera norādītais smagums.
 - q: Incidenti notiek, bet vērtējumi paliek, kādi bija.
   a: Incidents ir sasaistīts ar risku, kas īstenojies. Nākamā šī riska pārskatīšana sākas ar to, kas mainījies kopš iepriekšējās, un ar ierosinātu vērtējuma maiņu ar pamatojumu.
 - q: Mani MI darba procesi katru sarunu sāk ar iekopētu kontekstu.
@@ -33,7 +33,7 @@ terms:
 - t: Reģistra pārbaude
   d: Noteikums, ko WINGMAN piemēro katram ierakstam, lai atrastu nepilnības, piemēram, risku bez īpašnieka vai kontroli bez derīga pierādījuma.
 does:
-  knowledge: Katrs ieraksts eksistē vienreiz. Kontrole ir sasaistīta ar riskiem, ko tā mazina, punktiem, ko tā izpilda, un pierādījumiem, kas to pierāda, tāpēc reģistri nevar pamazām atšķirties. Tie joprojām var būt kļūdaini, un tam ir vajadzīgas pārskatīšanas. Jūsu datus var eksportēt.
+  knowledge: Katrs ieraksts eksistē vienreiz. Kontrole ir sasaistīta ar riskiem, ko tā mazina, punktiem, ko tā izpilda, un pierādījumiem, kas to pierāda, tāpēc starp reģistriem nevar rasties nesakritības. Tie joprojām var būt kļūdaini, un tam ir vajadzīgas pārskatīšanas. Jūsu datus var eksportēt.
   projects: Izvēlieties ietvaru, un tā prasības tiek ielādētas kā ieraksti, vai pievienojiet atsevišķas prasības, piemēram, līguma punktu. Katra tiek sasaistīta ar kontrolēm, kas jums jau ir. Viena kontrole var derēt vairākiem standartiem; atlikušais ir nepilnība.
   regular: Aktīvu, risku, dokumentu, piekļuves un piegādātāju pārskatīšanas notiek pēc kalendāra. Pierādījumam ir derīguma termiņš, un par tā beigām tiek brīdināts iepriekš. Vadības pārskata materiāli tiek salikti no ierakstiem.
   events: Skenera rezultāts, piegādātāja paziņojums vai brīdinājums par apdraudējumu ienāk kā signāls. WINGMAN to klasificē, parāda, ko tas skar, un ierosina risku, incidentu vai uzdevumus; īpašnieks pieņem vai noraida.
@@ -85,7 +85,7 @@ sectors:
 - iso27001-soc2
 - financial
 next:
-  title: Apskatiet to uz piemēra, pēc tam ar saviem reģistriem
-  text: Varam izrādīt reģistru pārbaudes, riska pārskatīšanu un ievainojamību uz izdomātas organizācijas piemēra vai ar jūsu pašu ierakstiem.
-  ask: Reģistru pārbaužu, riska pārskatīšanas un ievainojamības demonstrācija uz izdomātas organizācijas piemēra vai ar mūsu pašu ierakstiem
+  title: Apskatiet to piemērā, pēc tam ar saviem reģistriem
+  text: Varam parādīt reģistru pārbaudes, riska pārskatīšanu un ievainojamību izdomātas organizācijas piemērā vai ar jūsu pašu ierakstiem.
+  ask: Reģistru pārbaužu, riska pārskatīšanas un ievainojamības demonstrācija izdomātas organizācijas piemērā vai ar mūsu pašu ierakstiem
 ---

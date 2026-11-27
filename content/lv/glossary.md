@@ -5,13 +5,13 @@ layout: single
 type: glossary
 terms:
 - t: Projekts
-  d: Organizācijas darba vide WINGMAN. Konsultants katram klientam strādā atsevišķā projektā, un asistenta savienojumu var ierobežot ar vienu projektu.
+  d: Organizācijas darba vide WINGMAN sistēmā. Konsultants katram klientam strādā atsevišķā darba vidē, un asistenta savienojumu var ierobežot ar vienu darba vidi.
 - t: Ieteikums
   d: Viena ierosināta izmaiņa ierakstos, piemēram, lauks, saite vai jauns ieraksts, ar aprakstu, kas mainās un kāpēc. Tas stājas spēkā tikai tad, kad cilvēks to pieņem.
-- t: Ask Wingman
+- t: Jautā Wingman (Ask Wingman)
   d: WINGMAN iebūvētais asistents. Tas atveras blakus jebkuram ierakstam un piedāvā šim darbam piemērotas prasmes.
 - t: Kopsavilkums
-  d: Īss ieraksta apraksts, ko WINGMAN MI uzraksta no ieraksta un atjauno, kad ieraksts mainās.
+  d: Īss ieraksta apraksts, ko WINGMAN MI uzraksta no ieraksta un atjaunina, kad ieraksts mainās.
 - t: Vēsture
   d: Katra ieraksta izmaiņa ar to, kas mainījās, vērtību pirms un pēc, laiku un izmaiņu veicēju. Laiku iestata sistēma, un vēsturi nevar labot vai dzēst.
 ---

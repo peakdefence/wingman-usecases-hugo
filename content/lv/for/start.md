@@ -17,12 +17,12 @@ problems:
   a: Klienta prasība ir tāds pats ieraksts kā citas. Līguma punkts ir sasaistīts ar kontroli, kas to izpilda, un ar atbilstošajiem standarta punktiem, tāpēc viena kontrole atbild gan klientam, gan auditoram. Šajā vietnē nav parādīts rīks, kas anketu aizpildītu jūsu vietā.
 terms:
 - t: IDVS
-  d: 'Informācijas drošības pārvaldības sistēma (angliski ISMS). To sertificē ISO 27001: kā uzņēmums lemj par drošību, to īsteno un pārbauda. Tā nav programmatūra.'
+  d: 'Informācijas drošības vadības sistēma (angliski ISMS). To sertificē ISO 27001: kā uzņēmums lemj par drošību, to īsteno un pārbauda. Tā nav programmatūra.'
 - t: Prasme
   d: Procedūra, ko jūsu MI asistents soli pa solim izpilda ar jūsu WINGMAN ierakstiem, piemēram, risku intervija vai audits. Tā darbojas asistentā, ko jau lietojat, piemēram, Claude.
 - t: Kontrole
-  d: Tas, ko darāt, lai mazinātu risku vai izpildītu prasību, piemēram, obligāta daudzfaktoru autentifikācija vai administratoru kontu pārskatīšana reizi ceturksnī.
-- t: Piemērojamības paziņojums
+  d: Tas, ko darāt, lai mazinātu risku vai izpildītu prasību, piemēram, obligāta daudzfaktoru autentifikācija (MFA) vai administratoru kontu pārskatīšana reizi ceturksnī.
+- t: Piemērojamības paziņojums (SoA)
   d: Standarta kontroļu saraksts, kurā norādīts, kuras uz jums attiecas, kāpēc, un vai tās ir ieviestas.
 - t: Pierādījums
   d: 'Apliecinājums, ka kontrole tiešām notikusi: ieraksts, ekrānuzņēmums, žurnāla izraksts. Tam ir datums, un tā derīgums beidzas.'
@@ -62,10 +62,10 @@ media:
 - doc-list
 yours:
 - Lēmumi. Asistents var sagatavot tvērumu, risku vai politiku; kādam, kas pazīst uzņēmumu, jāapstiprina, ka tā ir taisnība.
-- Kontroļu izpilde. WINGMAN seko, ka rezerves kopiju tests ir noticis, un glabā tā pierādījumu; pašu testu tas neveic.
+- Kontroļu izpilde. WINGMAN seko, vai rezerves kopiju tests ir noticis, un glabā tā pierādījumu; pašu testu tas neveic.
 - Sertifikācijas audits. To veic akreditēta sertifikācijas institūcija saskaņā ar atsevišķu līgumu ar jums.
 ask:
-- Cik ilgi tas aizņem un cik maksā jūsu lieluma uzņēmumam
+- Cik daudz laika tas aizņem un cik maksā jūsu lieluma uzņēmumam
 - Cik daudz jūsu inženieru laika tas prasa
 - Vai pieredzējis cilvēks pa ceļam pārskata jūsu lēmumus
 - Ar kurām jūsu sistēmām tas savienojas
@@ -80,6 +80,6 @@ sectors:
 - nis2
 next:
   title: Apskatiet pirmo posmu jums līdzīgā uzņēmumā
-  text: Varam izrādīt ieviešanas sākumu uz izdomāta programmatūras uzņēmuma ar reālistiskiem ierakstiem vai sākt ar jūsu pašu tvērumu.
-  ask: Pirmā ieviešanas posma demonstrācija uz izdomāta programmatūras uzņēmuma piemēra
+  text: Varam parādīt ieviešanas sākumu izdomāta programmatūras uzņēmuma piemērā ar reālistiskiem ierakstiem vai sākt ar jūsu pašu tvērumu.
+  ask: Pirmā ieviešanas posma demonstrācija izdomāta programmatūras uzņēmuma piemērā
 ---
