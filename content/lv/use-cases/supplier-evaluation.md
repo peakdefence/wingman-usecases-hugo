@@ -55,7 +55,7 @@ stages:
   - control-risk
   - control-task
   ai: Sagatavo lēmuma ierakstu un nosacījumus.
-  decides: Atbildīgā loma izlemj.
+  decides: Atbildīgā loma.
 - title: Uzraudzība
   text: Piegādātāju signāli un plānotas atkārtotas novērtēšanas uztur ierakstu aktuālu.
   nodes:

@@ -65,5 +65,5 @@ stages:
   - control-task
   - task-plan
   ai: Iesaka vispirms izmantot esošās kontroles un tikai tad veidot jaunas.
-  decides: Kontroles īpašnieks izlemj.
+  decides: Kontroles īpašnieks.
 ---

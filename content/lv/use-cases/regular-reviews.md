@@ -52,7 +52,7 @@ stages:
   - plan-risk
   - incident-risk
   ai: Sagatavo pārskatīšanas materiālus.
-  decides: Risku īpašnieki izlemj.
+  decides: Risku īpašnieki.
 - title: Piekļuves
   text: 'Piekļuves tiesību pārskatīšana ir kontrole ar pierādījumiem katrā periodā: kurš pilda kuru lomu un kam ir kāda piekļuve.'
   nodes:

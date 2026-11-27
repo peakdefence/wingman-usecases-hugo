@@ -27,7 +27,7 @@ stages:
   links:
   - control-asset
   ai: Intervē pa pakalpojumiem un nekad nesecina atjaunošanas laiku no pieejamības rādītājiem.
-  decides: Pakalpojumu īpašnieki izlemj.
+  decides: Pakalpojumu īpašnieki.
 - title: Riski un incidenti
   text: Pārtraukumu riski un iepriekšējie incidenti katram pakalpojumam.
   nodes:

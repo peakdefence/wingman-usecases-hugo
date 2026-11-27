@@ -70,5 +70,5 @@ stages:
   - signal-vulnerability
   - vulnerability-task
   ai: Izvērtē signālus un ierosina darbus.
-  decides: Drošības vadītājs izlemj.
+  decides: Drošības vadītājs.
 ---

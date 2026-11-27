@@ -56,7 +56,7 @@ stages:
   links:
   - person-role
   ai: Atzīmē nesavienojamas kombinācijas pēc jūsu iestatītajiem noteikumiem.
-  decides: Vadība izlemj.
+  decides: Vadība.
   conflict: true
 - title: Aizvietotāji un nodošana
   text: Kad cilvēks aiziet, viņa lomas pāriet aizvietotājam, un visi ieraksti seko.

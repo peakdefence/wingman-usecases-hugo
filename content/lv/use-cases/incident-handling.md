@@ -21,7 +21,7 @@ stages:
   - signal-risk
   - signal-supplier
   ai: Sagrupē saistītos signālus un ierosina, vai atvērt incidentu.
-  decides: Incidentu vadītājs izlemj.
+  decides: Incidentu vadītājs.
 - title: Izvērtēšana
   text: Skartie pakalpojumi, viss, kas no tiem atkarīgs, un iesaistītie riski nosaka nopietnību un ziņošanas pienākumus.
   nodes:

@@ -53,7 +53,7 @@ stages:
   - document-task
   - role-document
   ai: Sagatavo novērtējumu padomei vienkāršā valodā.
-  decides: Izmaiņu padome izlemj.
+  decides: Izmaiņu padome.
 - title: Pēc izmaiņām
   text: Riska līmeņi, kontroles un uzdevumi tiek atjaunināti tajos pašos ierakstos, tāpēc nākamās izmaiņas sākas no aktuāliem datiem.
   nodes:

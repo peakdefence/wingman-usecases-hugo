@@ -117,7 +117,7 @@ registers:
   text: DORA, MiCA, EBI vadlīnijas un uzraudzības gaidas kā punktu līmeņa ieraksti, sasaistīti starp ietvariem, lai viena kontrole derētu vairākām prasībām.
 use_cases:
 - uc: risk-identification
-  text: Uz intervijām balstīta risku identificēšana katram procesam, kas papildina operacionālo risku hierarhiju, nevis vienreizējs seminārs.
+  text: Uz intervijām balstīta risku identificēšana katram procesam, kuras rezultāti papildina operacionālo risku hierarhiju, nevis vienreizējs seminārs.
 - uc: risk-review
   text: Risku un kontroļu pašnovērtējums ar otrās līnijas apstrīdēšanu, plānots un uzraudzīts kā plāns.
 - uc: incident-handling

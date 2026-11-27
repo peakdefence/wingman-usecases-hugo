@@ -33,7 +33,7 @@ stages:
   - requirement-requirement
   - document-asset
   ai: Ierosina kategoriju un lomu ar rakstisku pamatojumu.
-  decides: MI pārvaldības vadītājs izlemj.
+  decides: MI pārvaldības vadītājs.
 - title: Ietekmes un risku novērtējums
   text: Riskus cilvēkiem, organizācijai un sabiedrībai novērtē katram lietojumam, kopā ar MI sistēmas ietekmes novērtējumu.
   nodes:

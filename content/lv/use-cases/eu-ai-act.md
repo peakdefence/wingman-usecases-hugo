@@ -26,7 +26,7 @@ stages:
   links:
   - requirement-requirement
   ai: Ierosina kategoriju ar pamatojumu.
-  decides: Atbilstības vadītājs izlemj.
+  decides: Atbilstības vadītājs.
 - title: Riski un kontroles
   text: Lietojuma riski un kontroles, kas izpilda pienākumus.
   nodes:
