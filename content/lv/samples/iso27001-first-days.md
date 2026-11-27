@@ -43,7 +43,7 @@ Atvērtās un daļēji nosegtās prasības kļūst par ieviešamām kontrolēm, 
 | Darbība, rezerves kopijas un žurnāli | Platformas inženieris | 15 | 70 |
 | Cilvēki: uzņemšana, izpratne, aiziešana | Personāla vadītāja | 8 | 30 |
 | Piegādātāji un līgumi | Biroja vadītāja | 7 | 25 |
-| Pārvaldības sistēma: politika, riski, vadības pārskats | Tehniskais direktors | 16 | 80 |
+| Informācijas drošības vadības sistēma (IDVS): politika, riski, vadības pārskats | Tehniskais direktors | 16 | 80 |
 | Iekšējais audits, ko veic darbā neiesaistīta persona (ārējs auditors vai konsultants) | Iekšējais auditors | 2 | 10 |
 
 ## 2. un 3. diena: politikas un procedūras līdz cilvēkiem

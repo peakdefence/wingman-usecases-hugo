@@ -137,6 +137,6 @@ questions:
   a: No incidenta uz lietojumu, uz uzraudzības lomu un riskiem, ko tas īsteno, ar ziņošanas termiņu, ja tas ir nopietns incidents.
 ---
 
-ISO/IEC 42001 nosaka MI pārvaldības sistēmu. EN 18286, kas publicēts 2026. gadā, nosaka kvalitātes vadības sistēmu, kas nodrošinātājiem nepieciešama ES MI akta vajadzībām. Pats MI akts nosaka pienākumus nodrošinātājiem un uzturētājiem atkarībā no katras MI sistēmas riska kategorijas.
+ISO/IEC 42001 nosaka MI vadības sistēmu. EN 18286, kas publicēts 2026. gadā, nosaka kvalitātes vadības sistēmu, kas nodrošinātājiem nepieciešama ES MI akta vajadzībām. Pats MI akts nosaka pienākumus nodrošinātājiem un uzturētājiem atkarībā no katras MI sistēmas riska kategorijas.
 
 Visi trīs sākas vienā vietā: jāzina, kādi MI lietojumi pastāv, ko katrs dara un kam tas pieder. WINGMAN sistēmā katrs MI lietojums ir aktīvs, tāpēc tam ir tās pašas saites kā visam pārējam: riski, kontroles, piegādātāji, dokumenti, incidenti un auditi. Jau ieviestās ISO 27001 un VDAR kontroles tiek izmantotas atkārtoti, un darbā pārvēršas tikai reālās nepilnības.

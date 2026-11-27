@@ -19,7 +19,7 @@ stages:
   - person-role
   - role-risk
   ai: Vada interviju pa vienam jautājumam.
-  decides: Īpašnieks atbild.
+  decides: Īpašnieks.
 - title: Vispirms salīdzināt
   text: Katrs apdraudējums tiek salīdzināts ar esošajiem riskiem pareizajā līmenī, pirms tiek veidots kaut kas jauns.
   nodes:

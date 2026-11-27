@@ -45,7 +45,7 @@ Prasmes, kas strādā ar WINGMAN:
 - **Risku apstrāde un reģistra kvalitāte.** Apstrādes priekšlikums katram riskam, ko apstiprina īpašnieks, un reģistra pārbaude, vai netrūkst īpašnieku, vērtējumu, kontroļu un saišu. [Risku pārskatīšana un apstrāde]({{< relref "/use-cases/risk-review" >}})
 - **Darbības ietekmes analīze.** Pakalpojumu pa pakalpojumam, kopā ar īpašnieku; katram pakalpojumam tiek izveidota viena kontrole, kurā fiksēta ietekme laika gaitā un atjaunošanas mērķi. [Darbības ietekmes analīze]({{< relref "/use-cases/business-impact-analysis" >}})
 - **Izmaiņu novērtējums.** Plānotu izmaiņu šķirošana un, ja vajag, drošības ietekmes novērtējums izmaiņu padomei. [Izmaiņu pārvaldība]({{< relref "/use-cases/change-management" >}})
-- **Iekšējais audits.** Tvērums, dokumentu izvērtēšana, interviju plāns, pierādījumi, konstatējumi un ziņojums. Audita prasme lasa WINGMAN ierakstus, neko tajā nemainot, un audita darba dokumentus glabā kā Markdown failus mapē, kas paliek auditora rīcībā. [Audits]({{< relref "/use-cases/auditing" >}})
+- **Iekšējais audits.** Tvērums, dokumentu izvērtēšana, interviju plāns, pierādījumi, konstatējumi un ziņojums. Audita prasme lasa WINGMAN ierakstus, neko tajos nemainot, un audita darba dokumentus glabā kā Markdown failus mapē, kas paliek auditora rīcībā. [Audits]({{< relref "/use-cases/auditing" >}})
 
 WINGMAN iekšienē **Jautā Wingman** (Ask Wingman) ir iebūvēts asistents, kas atveras blakus jebkuram ierakstam. Tas piedāvā prasmes, sagrupētas pa jomām: incidentu komunikācija, risku analīze, audita plāns, vadības pārskats, darbības ietekmes analīze un MI lietojuma izvērtēšana.
 

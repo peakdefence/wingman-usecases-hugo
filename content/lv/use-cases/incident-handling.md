@@ -63,7 +63,7 @@ stages:
   ai: Sagatavo ziņojumu iestādei un paziņojumu klientiem laikus līdz termiņam.
   decides: Incidentu vadītājs apstiprina un nosūta.
 - title: Pēcincidenta analīze un risku pārskatīšana
-  text: Pamatcēloņu analīze sasaista incidentu ar riskiem, ko tas īstenoja. Pēcincidenta analīzes ietvaros tiek uzsākta risku pārskatīšana.
+  text: Pamatcēloņu analīze sasaista incidentu ar riskiem, ko tas īstenoja. Pēcincidenta analīze uzsāk risku pārskatīšanu.
   nodes:
   - incident
   - risk

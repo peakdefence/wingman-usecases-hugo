@@ -67,7 +67,7 @@ media:
 - risk-detail
 yours:
 - 'Lēmumi par riskiem: vērtējumus, apstrādi un pieņemšanu apstiprina riska īpašnieks.'
-- Šķirošanas lēmums. WINGMAN ierosina klasifikāciju; izlemj cilvēks.
+- Triāžas lēmums. WINGMAN ierosina klasifikāciju; izlemj cilvēks.
 - Tas, kas tiek nosūtīts. Ziņojumi un atgādinājumi tiek sagatavoti un nosūtīti pēc tam, kad tos apstiprināt.
 ask:
 - Imports no jūsu izklājlapām un eksporta formāti
