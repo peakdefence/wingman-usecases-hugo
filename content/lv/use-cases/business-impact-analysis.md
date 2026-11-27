@@ -17,7 +17,7 @@ stages:
   links:
   - asset-asset
   - supplier-asset
-  ai: BIA prasme iepriekš aizpilda pakalpojumus un atkarības no WINGMAN.
+  ai: BIA prasme iepriekš aizpilda pakalpojumus un atkarības no WINGMAN sistēmas.
   decides: Pakalpojumu īpašnieki apstiprina.
 - title: Ietekme laikā
   text: Viena BIA kontrole katram pakalpojumam reģistrē ietekmi laikā un atjaunošanas mērķus.
@@ -48,6 +48,6 @@ stages:
   links:
   - control-task
   - control-evidence
-  ai: Reģistrē testēšanas vajadzības kā darbības.
+  ai: Reģistrē testēšanas vajadzības kā uzdevumus.
   decides: Īpašnieki plāno testus.
 ---

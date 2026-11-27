@@ -17,7 +17,7 @@ stages:
   - asset-asset
   - supplier-asset
   ai: Sagatavo apstrādes ķēdi no sistēmu un piegādātāju ierakstiem.
-  decides: DAS apstiprina.
+  decides: Datu aizsardzības speciālists (DAS) apstiprina.
 - title: Riski personām
   text: Riski ķēdē, tostarp piegādātāju un datu nosūtīšanas riski.
   nodes:
@@ -45,7 +45,7 @@ stages:
   ai: Atkārtoti izmanto esošās kontroles.
   decides: Kontroļu īpašnieki apstiprina.
 - title: DPIA ieraksts
-  text: Novērtējums ir dokuments, kas sasaistīts ar aptverto darbību, konsultējoties ar DAS.
+  text: Novērtējums ir dokuments, kas sasaistīts ar aptverto darbību. Tā sagatavošanā konsultējas ar DAS.
   nodes:
   - document
   - asset

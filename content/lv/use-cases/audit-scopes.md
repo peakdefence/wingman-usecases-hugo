@@ -20,7 +20,7 @@ stages:
   ai: Tvērumi tiek nolasīti no aktīvu reģistra kopā ar atkarībām.
   decides: Auditors saskaņo tvērumus.
 - title: Dažādas kontroles katram produktam
-  text: Piekļuves tiesības produktam A izpilda SSO balstīti pārskati, produktam B – manuāls ceturkšņa pārskats. Katra kontrole aizsargā savu produktu.
+  text: Prasību par piekļuves tiesībām produktam A izpilda uz SSO balstīta piekļuves tiesību pārskatīšana, produktam B – manuāla pārskatīšana reizi ceturksnī. Katra kontrole aizsargā savu produktu.
   nodes:
   - requirement
   - control
@@ -42,7 +42,7 @@ stages:
   ai: Var ierosināt izlasi katram tvērumam; izlasi veic auditors.
   decides: Auditors veic izlasi.
 - title: Secinājums katram tvērumam
-  text: Prasība produktam A var atbilst, bet produktam B būt neatbilstība. Katrs secinājums saglabā savu tvērumu.
+  text: Produktam A prasība var būt izpildīta, bet produktam B var būt konstatēta neatbilstība. Katrs secinājums saglabā savu tvērumu.
   nodes:
   - finding
   - conclusion
@@ -56,7 +56,7 @@ stages:
   ai: Sagatavo vienu secinājumu katrai prasībai un tvērumam.
   decides: Auditors apstiprina.
 - title: Kopīga turpmākā rīcība
-  text: Produkta B novēršanai var izmantot kontroli, kas jau pierādīta produktam A.
+  text: Lai novērstu neatbilstību produktam B, var izmantot kontroli, kuras darbība jau pierādīta produktam A.
   nodes:
   - task
   - control
@@ -64,6 +64,6 @@ stages:
   links:
   - control-task
   - task-plan
-  ai: Iesaka vispirms izmantot esošās kontroles, pirms veidot jaunas.
+  ai: Iesaka vispirms izmantot esošās kontroles un tikai tad veidot jaunas.
   decides: Kontroles īpašnieks izlemj.
 ---

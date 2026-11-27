@@ -48,7 +48,7 @@ stages:
   links:
   - role-asset
   ai: Uzskaita pienākumus katrai lomai.
-  decides: Vadība nozīmē.
+  decides: Vadība ieceļ.
 - title: Pierādījumi un uzraudzība
   text: Pierādījumi katrai kontrolei un signāli no sistēmas uzraudzības lietošanā.
   nodes:

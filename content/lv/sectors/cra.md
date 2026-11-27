@@ -34,7 +34,7 @@ stages:
   - threat-risk
   - document-asset
   ai: Ierosina riskus no produkta arhitektūras, komponentēm un apdraudējumu ainas.
-  decides: Produkta drošības atbildīgais apstiprina.
+  decides: Produkta drošības komanda apstiprina.
 - title: Būtiskās prasības kā kontroles
   text: Katra I pielikuma prasība tiek sasaistīta ar izstrādes cikla kontrolēm, no kurām daudzas jau ir ieviestas ISO 27001 vai IEC 62443 vajadzībām.
   nodes:
@@ -48,9 +48,9 @@ stages:
   - control-document
   - control-task
   ai: Sasaista prasības ar esošajām kontrolēm un sagatavo uzdevumus nepilnībām.
-  decides: Izstrādes vadītāji apņemas.
+  decides: Izstrādes vadītāji apņemas tās ieviest.
 - title: Ievainojamību apstrāde
-  text: Produkta un tā komponenšu ievainojamības tiek uzskaitītas ar nozīmīgumu, labojumu un drošības atjauninājumu visu atbalsta periodu.
+  text: Produkta un tā komponenšu ievainojamības tiek uzskaitītas ar nopietnību, labojumu un drošības atjauninājumu visu atbalsta periodu.
   nodes:
   - signal
   - vulnerability
@@ -60,8 +60,8 @@ stages:
   - signal-vulnerability
   - vulnerability-asset
   - vulnerability-task
-  ai: Salīdzina brīdinājumus ar SBOM un ierosina nozīmīgumu.
-  decides: Produkta drošības atbildīgais lemj par labojumiem un atklāšanu.
+  ai: Salīdzina brīdinājumus ar SBOM un ierosina nopietnību.
+  decides: Produkta drošības komanda lemj par labojumiem un atklāšanu.
 - title: Ziņošana
   text: Aktīvi izmantotām ievainojamībām un smagiem incidentiem ir 24 h, 72 h un gala ziņojuma termiņi, kopā ar nosūtītajiem ziņojumiem.
   nodes:
@@ -85,7 +85,7 @@ stages:
   - audit-requirement
   - audit-evidence
   - conclusion-requirement
-  ai: Sagatavo tehnisko lietu katrai prasībai un norāda nepilnības.
+  ai: Sagatavo tehnisko dokumentāciju katrai prasībai un norāda nepilnības.
   decides: Vadība paraksta deklarāciju.
 registers:
 - entity: asset
@@ -99,10 +99,10 @@ registers:
   text: Kiberdrošības riski katram produktam, uzturēti aktuāli visu atbalsta periodu.
 - entity: vulnerability
   title: Ievainojamību reģistrs
-  text: Ievainojamības katram produktam un komponentei ar nozīmīgumu, labojumu, drošības atjauninājumu un atklāšanu.
+  text: Ievainojamības katram produktam un komponentei ar nopietnību, labojumu, drošības atjauninājumu un atklāšanu.
 - entity: incident
   title: Ziņojamie notikumi
-  text: Aktīvi izmantotas ievainojamības un smagi incidenti ar termiņiem, ziņojumiem un turpmākajām darbībām.
+  text: Aktīvi izmantotas ievainojamības un smagi incidenti ar termiņiem, ziņojumiem un turpmāko rīcību.
 - entity: requirement
   title: Būtiskās prasības
   text: I pielikuma prasības par produkta drošību un ievainojamību apstrādi, sasaistītas ar izstrādes kontrolēm.
@@ -121,9 +121,9 @@ use_cases:
 - uc: new-requirements
   text: Saskaņotie standarti un vadlīnijas saskaņā ar CRA tiek sasaistīti ar jau ieviestām kontrolēm.
 - uc: risk-identification
-  text: Produktu komandas identificē riskus katram produktam, kas saskaņā ar CRA jādokumentē un jāatjaunina.
+  text: Produktu komandas identificē katra produkta riskus, kurus saskaņā ar CRA ir jādokumentē un jāatjaunina.
 - uc: auditing
-  text: Iekšējās pārbaudes pret būtiskajām prasībām pirms atbilstības novērtēšanas.
+  text: Iekšējās pārbaudes par atbilstību būtiskajām prasībām pirms atbilstības novērtēšanas.
 questions:
 - q: Kuros mūsu produktos un versijās ir šī ievainojamā komponente?
   a: No brīdinājuma uz ievainojamību, uz komponentēm un produktiem un versijām, kurās tās ir.

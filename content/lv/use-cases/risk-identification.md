@@ -20,14 +20,14 @@ stages:
   - role-risk
   ai: Vada interviju pa vienam jautājumam.
   decides: Īpašnieks atbild.
-- title: Salīdzināt pirms veidot
+- title: Vispirms salīdzināt
   text: Katrs apdraudējums tiek salīdzināts ar esošajiem riskiem pareizajā līmenī, pirms tiek veidots kaut kas jauns.
   nodes:
   - risk
   links:
   - risk-risk
-  ai: Ierosina atbilstības un veido risku tikai tad, ja nekas neatbilst.
-  decides: Īpašnieks apstiprina katru atbilstību.
+  ai: Ierosina sakritības ar esošiem riskiem un veido jaunu risku tikai tad, ja līdzīga esoša riska nav.
+  decides: Īpašnieks apstiprina katru sakritību.
 - title: Sasaistīt
   text: Tiek sasaistīti aktīvi, piegādātāji, apdraudējumi un esošās kontroles.
   nodes:
@@ -44,7 +44,7 @@ stages:
   ai: Pirms jebkura saistītā ieraksta izveides vispirms meklē esošos.
   decides: Īpašnieks apstiprina katru saiti.
 - title: Signāli
-  text: Kopā ar risku tiek reģistrēti indikatori, kas liecinātu par tā izmaiņām. Jauni signāli uzsāk identificēšanu vai atkārtotu pārskatīšanu.
+  text: Kopā ar risku tiek reģistrēti rādītāji, kas liecinātu par tā izmaiņām. Jauni signāli uzsāk identificēšanu vai atkārtotu pārskatīšanu.
   nodes:
   - signal
   - risk
@@ -52,7 +52,7 @@ stages:
   links:
   - signal-risk
   - signal-threat
-  ai: Ierosina indikatorus un sliekšņus.
+  ai: Ierosina rādītājus un sliekšņus.
   decides: Īpašnieks piekrīt.
 - title: Plānotās kontroles
   text: Kontrolēm, kas vēl jāievieš, tiek izveidoti uzdevumi ar atbildīgajiem un termiņiem.

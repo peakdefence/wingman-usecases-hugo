@@ -54,7 +54,7 @@ stages:
   ai: Sagatavo pārskatīšanas materiālus.
   decides: Risku īpašnieki izlemj.
 - title: Piekļuves
-  text: 'Piekļuves pārskats ir kontrole ar pierādījumiem katrā periodā: kurš pilda kuru lomu un kam ir kāda piekļuve.'
+  text: 'Piekļuves tiesību pārskatīšana ir kontrole ar pierādījumiem katrā periodā: kurš pilda kuru lomu un kam ir kāda piekļuve.'
   nodes:
   - control
   - evidence
